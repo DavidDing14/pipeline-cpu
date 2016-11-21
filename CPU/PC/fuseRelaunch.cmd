@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "E:/Xilinx/Project/CPU/PC/testPC_ALU_isim_beh.exe" -prj "E:/Xilinx/Project/CPU/PC/testPC_ALU_beh.prj" "work.testPC_ALU" 
+-intstyle "ise" -incremental -o "E:/pipeline-cpu/CPU/PC/test_imm_isim_beh.exe" -prj "E:/pipeline-cpu/CPU/PC/test_imm_beh.prj" "work.test_imm" 

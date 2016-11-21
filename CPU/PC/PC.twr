@@ -118,14 +118,14 @@ PC_to_add<15>|    6.283(R)|clk_BUFGP         |   0.000|
 -------------+------------+------------------+--------+
 
 
-Analysis completed Tue Nov 15 20:34:39 2016 
+Analysis completed Mon Nov 21 18:34:04 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 174 MB
+Peak Memory Usage: 171 MB
 
 
 

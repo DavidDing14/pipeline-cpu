@@ -1,20 +1,21 @@
-Running: E:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o E:/Xilinx/Project/CPU/PC/testPC_ALU_isim_beh.exe -prj E:/Xilinx/Project/CPU/PC/testPC_ALU_beh.prj work.testPC_ALU 
+Running: E:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o E:/pipeline-cpu/CPU/PC/test_imm_isim_beh.exe -prj E:/pipeline-cpu/CPU/PC/test_imm_beh.prj work.test_imm 
 ISim O.76xd (signature 0xc3576ebc)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "E:/Xilinx/Project/CPU/PC/PC_ALU.vhd" into library work
-Parsing VHDL file "E:/Xilinx/Project/CPU/PC/testPC_ALU.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/immidiate_mux_extend.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/test_imm.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture behavioral of entity PC_ALU [pc_alu_default]
-Compiling architecture behavior of entity testpc_alu
+Compiling architecture behavioral of entity immidiate_mux_extend [immidiate_mux_extend_default]
+Compiling architecture behavior of entity test_imm
 Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
 Compiled 7 VHDL Units
-Built simulation executable E:/Xilinx/Project/CPU/PC/testPC_ALU_isim_beh.exe
-Fuse Memory Usage: 31816 KB
-Fuse CPU Usage: 609 ms
+Built simulation executable E:/pipeline-cpu/CPU/PC/test_imm_isim_beh.exe
+Fuse Memory Usage: 32744 KB
+Fuse CPU Usage: 545 ms
