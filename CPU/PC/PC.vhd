@@ -33,6 +33,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity PC is
     Port ( clk : in  STD_LOGIC;
+			  rst : in STD_LOGIC;
            break : in  STD_LOGIC;
            next_PC : in  STD_LOGIC_VECTOR (15 downto 0);
            PC_to_add : out  STD_LOGIC_VECTOR (15 downto 0);
@@ -43,10 +44,12 @@ end PC;
 architecture Behavioral of PC is
 
 begin
-	process(clk)
+	process(clk, rst)
 		variable var_PC:std_logic_vector(15 downto 0):="0000000000000000";
 	begin
-		if(clk'event and clk='1')then	--时钟上升沿触发下一条指令地址的读入
+		if(rst='0')then
+			var_PC:="0000000000000000";
+		elsif(clk'event and clk='1')then	--时钟上升沿触发下一条指令地址的读入
 			if(break='1')then	--中断信号为1则中断操作一次
 				null;	--break变0由控制模块主导
 			else

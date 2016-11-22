@@ -33,6 +33,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Main_Reg is
     Port ( instruction : in  STD_LOGIC_VECTOR (15 downto 0);
+			  rst: in STD_LOGIC;
            Rx : in  STD_LOGIC_VECTOR (2 downto 0);
            Ry : in  STD_LOGIC_VECTOR (2 downto 0);
            ND : in  STD_LOGIC_VECTOR (2 downto 0);
@@ -55,19 +56,39 @@ entity Main_Reg is
 end Main_Reg;
 
 architecture Behavioral of Main_Reg is
-signal R0, R1, R2, R3, R4, R5, R6, R7: std_logic_vector(15 downto 0);
-signal T: std_logic;
-signal SP: std_logic_vector(15 downto 0);
-signal IH: std_logic_vector(15 downto 0);
+signal R0, R1, R2, R3, R4, R5, R6, R7: std_logic_vector(15 downto 0):="0000000000000000";
+signal T: std_logic:='0';
+signal SP: std_logic_vector(15 downto 0):="0000000000000000";
+signal IH: std_logic_vector(15 downto 0):="0000000000000000";
 begin
 --ID阶段
-	process(instruction, Rx, Ry, ND, imm, Result_EX, Result_MEM, Control_ctrl, Control_SP, Control_IH, Control_B)
-	variable g1, g2: std_logic_vector(15 downto 0);	--reg1, reg2
-	variable g3: std_logic_vector(3 downto 0);	--regnd
-	variable g4, g5: std_logic_vector(15 downto 0);	--ry, rx
-	variable c1, c3: std_logic;	--Control_BJ, T
+	process(rst, instruction, Rx, Ry, ND, imm, Result_EX, Result_MEM, Control_ctrl, Control_SP, Control_IH, Control_B)
+	variable g1, g2: std_logic_vector(15 downto 0):="0000000000000000";	--reg1, reg2
+	variable g3: std_logic_vector(3 downto 0):="0000";	--regnd
+	variable g4, g5: std_logic_vector(15 downto 0):="0000000000000000";	--ry, rx
+	variable c1, c3: std_logic:='0';	--Control_BJ, T
 	begin
---	--SP在LW_SP和SW_SP中用作Rx,在ADDSP中用作Rx和RegND，在MTSP中用作RegND
+		if(rst='0')then
+			g1:="0000000000000000";
+			g2:="0000000000000000";
+			g3:="0000";
+			g4:="0000000000000000";
+			g5:="0000000000000000";
+			c1:='0';
+			c3:='0';
+			R0<="0000000000000000";
+			R1<="0000000000000000";
+			R2<="0000000000000000";
+			R3<="0000000000000000";
+			R4<="0000000000000000";
+			R5<="0000000000000000";
+			R6<="0000000000000000";
+			R7<="0000000000000000";
+			T<='0';
+			SP<="0000000000000000";
+			IH<="0000000000000000";
+		else
+			--	--SP在LW_SP和SW_SP中用作Rx,在ADDSP中用作Rx和RegND，在MTSP中用作RegND
 --	--IH在MFIH中用作Rx，在MTIH中用作RegND
 --	--T在BTEQZ中用作判断，在CMP、SLTI和CMPI中被赋值（在寄存器组完成）
 		if(Control_ctrl="00")then	--ctrl模块没有冲突
@@ -89,6 +110,8 @@ begin
 						g1:=R6;
 					when "111"=>
 						g1:=R7;
+					when others=>
+						null;
 				end case;
 			elsif(Control_SP="01")then	--SP用作Rx
 				g1:=SP;
@@ -121,6 +144,8 @@ begin
 					g2:=R6;
 				when "111"=>
 					g2:=R7;
+				when others=>
+					null;
 			end case;
 		else
 			g2:=imm;
@@ -153,6 +178,8 @@ begin
 				g4:=R6;
 			when "111"=>
 				g4:=R7;
+			when others=>
+				null;
 		end case;
 --Rx
 		case Rx is
@@ -172,6 +199,8 @@ begin
 				g5:=R6;
 			when "111"=>
 				g5:=R7;
+			when others=>
+				null;
 		end case;
 --判断
 		if(Control_B='1')then	--需要判断
@@ -224,6 +253,7 @@ begin
 					null;
 			end case;
 		end if;
+		end if;
 		Reg1<=g1;
 		Reg2<=g2;
 		RegND<=g3;
@@ -256,6 +286,8 @@ begin
 					SP<=NI;
 				when "1001"=>
 					IH<=NI;
+				when others=>
+					null;
 			end case;
 		end if;
 	end process;

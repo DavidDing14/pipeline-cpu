@@ -1,0 +1,2 @@
+vhdl work "Main_Reg.vhd"
+vhdl work "testMainReg.vhd"

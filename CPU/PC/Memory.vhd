@@ -32,6 +32,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Memory is
     Port ( clk	: in	STD_LOGIC;	--时钟信号，访问读写
+			  rst: in std_logic;
 			  Addr : inout  STD_LOGIC_VECTOR (15 downto 0);	--二路选择器送来的地址
            Data : inout  STD_LOGIC_VECTOR (15 downto 0);	--从RAM1那条线读出来的数据作为数据传给寄存器堆
            MEM_Ry : inout  STD_LOGIC_VECTOR (15 downto 0);	--MEM阶段送来的Ry的值，可能写回MEM[Addr]
