@@ -52,17 +52,18 @@ entity Main_Reg is
 			  Control_imm_ry:in std_logic;			 
            Control_B : in  STD_LOGIC;
            Control_WB : in  STD_LOGIC;
+			  Control_XY : in  STD_LOGIC;	--写回的数据是Rx还是Ry
            Control_BJ : out  STD_LOGIC);
 end Main_Reg;
 
 architecture Behavioral of Main_Reg is
-signal R0, R1, R2, R3, R4, R5, R6, R7: std_logic_vector(15 downto 0):="0000000000000000";
-signal T: std_logic:='0';
-signal SP: std_logic_vector(15 downto 0):="0000000000000000";
-signal IH: std_logic_vector(15 downto 0):="0000000000000000";
+shared variable R0, R1, R2, R3, R4, R5, R6, R7: std_logic_vector(15 downto 0):="0000000000010000";
+shared variable T: std_logic:='0';
+shared variable SP: std_logic_vector(15 downto 0):="0000000000000000";
+shared variable IH: std_logic_vector(15 downto 0):="0000000000000000";
 begin
 --ID阶段
-	process(rst, instruction, Rx, Ry, ND, imm, Result_EX, Result_MEM, Control_ctrl, Control_SP, Control_IH, Control_B)
+	process(rst, instruction, Rx, Ry, ND, imm, Result_EX, Result_MEM, Control_ctrl, Control_SP, Control_IH, Control_B, Control_XY)
 	variable g1, g2: std_logic_vector(15 downto 0):="0000000000000000";	--reg1, reg2
 	variable g3: std_logic_vector(3 downto 0):="0000";	--regnd
 	variable g4, g5: std_logic_vector(15 downto 0):="0000000000000000";	--ry, rx
@@ -76,17 +77,17 @@ begin
 			g5:="0000000000000000";
 			c1:='0';
 			c3:='0';
-			R0<="0000000000000000";
-			R1<="0000000000000000";
-			R2<="0000000000000000";
-			R3<="0000000000000000";
-			R4<="0000000000000000";
-			R5<="0000000000000000";
-			R6<="0000000000000000";
-			R7<="0000000000000000";
-			T<='0';
-			SP<="0000000000000000";
-			IH<="0000000000000000";
+			R0:="0000000000000001";
+			R1:="0000000000000010";
+			R2:="0000000000000100";
+			R3:="0000000000001000";
+			R4:="0000000000010000";
+			R5:="0000000000100000";
+			R6:="0000000001000000";
+			R7:=R7+1;
+			T:='0';
+			SP:="0000000000000000";
+			IH:="0000000000000000";
 		else
 			--	--SP在LW_SP和SW_SP中用作Rx,在ADDSP中用作Rx和RegND，在MTSP中用作RegND
 --	--IH在MFIH中用作Rx，在MTIH中用作RegND
@@ -161,26 +162,49 @@ begin
 			g3:="1001";	--IH的编号
 		end if;
 --Data_ry
-		case Ry is
-			when "000"=>
-				g4:=R0;
-			when "001"=>
-				g4:=R1;
-			when "010"=>
-				g4:=R2;
-			when "011"=>
-				g4:=R3;
-			when "100"=>
-				g4:=R4;
-			when "101"=>
-				g4:=R5;
-			when "110"=>
-				g4:=R6;
-			when "111"=>
-				g4:=R7;
-			when others=>
-				null;
-		end case;
+		if(Control_XY='0')then	--传递Ry的值
+			case Ry is
+				when "000"=>
+					g4:=R0;
+				when "001"=>
+					g4:=R1;
+				when "010"=>
+					g4:=R2;
+				when "011"=>
+					g4:=R3;
+				when "100"=>
+					g4:=R4;
+				when "101"=>
+					g4:=R5;
+				when "110"=>
+					g4:=R6;
+				when "111"=>
+					g4:=R7;
+				when others=>
+					null;
+			end case;
+		else
+			case Rx is
+				when "000"=>
+					g4:=R0;
+				when "001"=>
+					g4:=R1;
+				when "010"=>
+					g4:=R2;
+				when "011"=>
+					g4:=R3;
+				when "100"=>
+					g4:=R4;
+				when "101"=>
+					g4:=R5;
+				when "110"=>
+					g4:=R6;
+				when "111"=>
+					g4:=R7;
+				when others=>
+					null;
+			end case;
+		end if;
 --Rx
 		case Rx is
 			when "000"=>
@@ -259,7 +283,7 @@ begin
 		RegND<=g3;
 		Control_BJ<=c1;
 		Data_Ry<=g4;
-		T<=c3;
+		T:=c3;
 	end process;
 
 	process(NI, RegND_WB, Control_WB)
@@ -267,25 +291,25 @@ begin
 		if(Control_WB='1')then	--写回
 			case RegND_WB is
 				when "0000"=>
-					R0<=NI;
+					R0:=NI;
 				when "0001"=>
-					R1<=NI;
+					R1:=NI;
 				when "0010"=>
-					R2<=NI;
+					R2:=NI;
 				when "0011"=>
-					R3<=NI;
+					R3:=NI;
 				when "0100"=>
-					R4<=NI;
+					R4:=NI;
 				when "0101"=>
-					R5<=NI;
+					R5:=NI;
 				when "0110"=>
-					R6<=NI;
+					R6:=NI;
 				when "0111"=>
-					R7<=NI;
+					R7:=NI;
 				when "1000"=>
-					SP<=NI;
+					SP:=NI;
 				when "1001"=>
-					IH<=NI;
+					IH:=NI;
 				when others=>
 					null;
 			end case;

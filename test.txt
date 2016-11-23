@@ -1,0 +1,10 @@
+What we have testes:
+	ALU1_MUX
+	ALU2_MUX
+	ALU
+	ADDR_MUX
+	IDEX_Reg
+	Main_Reg
+	PC_ALU
+	PC_EX_MUX
+	

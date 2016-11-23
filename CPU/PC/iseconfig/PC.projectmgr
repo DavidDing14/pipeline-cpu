@@ -9,13 +9,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>PC - Behavioral (E:/pipeline-cpu/CPU/PC/PC.vhd)</SelectedItem>
+         <SelectedItem>Rxyz_MUX - Behavioral (E:/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b60000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>PC - Behavioral (E:/pipeline-cpu/CPU/PC/PC.vhd)</CurrentItem>
+      <CurrentItem>Rxyz_MUX - Behavioral (E:/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -23,13 +23,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -38,7 +38,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000017a000000040101000100000000000000000000000064ffffffff0000008100000000000000040000003d0000000100000000000000610000000100000000000000780000000100000000000000640000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000392000000040101000100000000000000000000000064ffffffff0000008100000000000000040000003d00000001000000000000006100000001000000000000007800000001000000000000027c0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>PC.vhd</CurrentItem>
    </ItemView>
@@ -63,34 +63,40 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Synthesize - XST</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Synthesize - XST</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Test_Rxyz - behavior E:|pipeline-cpu|CPU|PC|Test_Rxyz.vhd</ClosedNode>
+         <ClosedNode>/testALU1 - behavior E:|pipeline-cpu|CPU|PC|testALU1.vhd</ClosedNode>
          <ClosedNode>/testAddr_MUX - behavior E:|Xilinx|Project|CPU|PC|testAddr_MUX.vhd</ClosedNode>
          <ClosedNode>/testAddr_MUX - behavior E:|pipeline-cpu|CPU|PC|testAddr_MUX.vhd</ClosedNode>
+         <ClosedNode>/testIDEX - behavior E:|pipeline-cpu|CPU|PC|testIDEX.vhd</ClosedNode>
+         <ClosedNode>/testMainReg - behavior E:|pipeline-cpu|CPU|PC|testMainReg.vhd</ClosedNode>
          <ClosedNode>/testPC - behavior E:|Xilinx|Project|CPU|PC|testPC.vhd</ClosedNode>
          <ClosedNode>/testPC - behavior E:|pipeline-cpu|CPU|PC|testPC.vhd</ClosedNode>
+         <ClosedNode>/testPCEX_MUX - behavior E:|pipeline-cpu|CPU|PC|testPCEX_MUX.vhd</ClosedNode>
          <ClosedNode>/testPC_ALU - behavior E:|Xilinx|Project|CPU|PC|testPC_ALU.vhd</ClosedNode>
          <ClosedNode>/testPC_ALU - behavior E:|pipeline-cpu|CPU|PC|testPC_ALU.vhd</ClosedNode>
+         <ClosedNode>/test_ALU - behavior E:|pipeline-cpu|CPU|PC|test_ALU.vhd</ClosedNode>
+         <ClosedNode>/test_ALU2 - behavior E:|pipeline-cpu|CPU|PC|test_ALU2.vhd</ClosedNode>
          <ClosedNode>/test_imm - behavior E:|pipeline-cpu|CPU|PC|test_imm.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>testMainReg - behavior (E:/pipeline-cpu/CPU/PC/testMainReg.vhd)</SelectedItem>
+         <SelectedItem>testPCEX_MUX - behavior (E:/pipeline-cpu/CPU/PC/testPCEX_MUX.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000155000000020000000000000000000000000200000064ffffffff000000810000000300000002000001550000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>testMainReg - behavior (E:/pipeline-cpu/CPU/PC/testMainReg.vhd)</CurrentItem>
+      <CurrentItem>testPCEX_MUX - behavior (E:/pipeline-cpu/CPU/PC/testPCEX_MUX.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -102,7 +108,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000113000000010000000100000000000000000000000064ffffffff000000810000000000000001000001130000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -115,7 +121,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000113000000010000000100000000000000000000000064ffffffff000000810000000000000001000001130000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>

@@ -1,0 +1,2 @@
+vhdl work "Addr_MUX.vhd"
+vhdl work "testAddr_MUX.vhd"

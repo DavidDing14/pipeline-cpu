@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/pipeline-cpu/CPU/PC/testMainReg_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="testmainreg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="55" />
+   <wave_markers>
+      <marker time="367725000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/testmainreg/instruction" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction[15:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/rx" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rx[2:0]</obj_property>
+      <obj_property name="ObjectShortName">rx[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/ry" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ry[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ry[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/nd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">nd[2:0]</obj_property>
+      <obj_property name="ObjectShortName">nd[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/ni" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ni[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ni[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/imm" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">imm[15:0]</obj_property>
+      <obj_property name="ObjectShortName">imm[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/regnd_wb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regnd_wb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">regnd_wb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/result_ex" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result_ex[15:0]</obj_property>
+      <obj_property name="ObjectShortName">result_ex[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/result_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result_mem[15:0]</obj_property>
+      <obj_property name="ObjectShortName">result_mem[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/control_ctrl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">control_ctrl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">control_ctrl[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/control_sp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">control_sp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">control_sp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/control_ih" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">control_ih[1:0]</obj_property>
+      <obj_property name="ObjectShortName">control_ih[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/control_imm_ry" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_imm_ry</obj_property>
+      <obj_property name="ObjectShortName">control_imm_ry</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/control_b" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_b</obj_property>
+      <obj_property name="ObjectShortName">control_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/control_wb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_wb</obj_property>
+      <obj_property name="ObjectShortName">control_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/control_xy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_xy</obj_property>
+      <obj_property name="ObjectShortName">control_xy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/reg1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/reg2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/regnd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regnd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">regnd[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/data_ry" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_ry[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_ry[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/control_bj" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_bj</obj_property>
+      <obj_property name="ObjectShortName">control_bj</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/instruction" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction[15:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/rx" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rx[2:0]</obj_property>
+      <obj_property name="ObjectShortName">rx[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/ry" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ry[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ry[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/nd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">nd[2:0]</obj_property>
+      <obj_property name="ObjectShortName">nd[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/ni" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ni[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ni[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/imm" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">imm[15:0]</obj_property>
+      <obj_property name="ObjectShortName">imm[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/reg1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/reg2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/regnd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regnd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">regnd[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/regnd_wb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regnd_wb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">regnd_wb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/data_ry" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_ry[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_ry[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/result_ex" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result_ex[15:0]</obj_property>
+      <obj_property name="ObjectShortName">result_ex[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/result_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result_mem[15:0]</obj_property>
+      <obj_property name="ObjectShortName">result_mem[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/control_ctrl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">control_ctrl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">control_ctrl[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/control_sp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">control_sp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">control_sp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/control_ih" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">control_ih[1:0]</obj_property>
+      <obj_property name="ObjectShortName">control_ih[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/control_imm_ry" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_imm_ry</obj_property>
+      <obj_property name="ObjectShortName">control_imm_ry</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/control_b" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_b</obj_property>
+      <obj_property name="ObjectShortName">control_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/control_wb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_wb</obj_property>
+      <obj_property name="ObjectShortName">control_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/control_xy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_xy</obj_property>
+      <obj_property name="ObjectShortName">control_xy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/control_bj" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control_bj</obj_property>
+      <obj_property name="ObjectShortName">control_bj</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/r0" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r0[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/r1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/r2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/r3" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r3[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/r4" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r4[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r4[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/r5" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r5[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r5[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/r6" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r6[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r6[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/r7" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r7[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r7[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/t" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">t</obj_property>
+      <obj_property name="ObjectShortName">t</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/sp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sp[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sp[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testmainreg/uut/ih" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ih[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ih[15:0]</obj_property>
+   </wvobject>
+</wave_config>

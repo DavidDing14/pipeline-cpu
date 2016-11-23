@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   19:17:53 11/22/2016
+-- Create Date:   22:53:52 11/23/2016
 -- Design Name:   
 -- Module Name:   E:/pipeline-cpu/CPU/PC/testMainReg.vhd
 -- Project Name:  PC
@@ -27,6 +27,8 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_arith.ALL;
+USE ieee.std_logic_unsigned.ALL; 
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -61,6 +63,7 @@ ARCHITECTURE behavior OF testMainReg IS
          Control_imm_ry : IN  std_logic;
          Control_B : IN  std_logic;
          Control_WB : IN  std_logic;
+         Control_XY : IN  std_logic;
          Control_BJ : OUT  std_logic
         );
     END COMPONENT;
@@ -83,6 +86,7 @@ ARCHITECTURE behavior OF testMainReg IS
    signal Control_imm_ry : std_logic := '0';
    signal Control_B : std_logic := '0';
    signal Control_WB : std_logic := '0';
+   signal Control_XY : std_logic := '0';
 
  	--Outputs
    signal Reg1 : std_logic_vector(15 downto 0);
@@ -119,11 +123,12 @@ BEGIN
           Control_imm_ry => Control_imm_ry,
           Control_B => Control_B,
           Control_WB => Control_WB,
+          Control_XY => Control_XY,
           Control_BJ => Control_BJ
         );
 
    -- Clock process definitions
- --  <clock>_process :process
+--   <clock>_process :process
 --   begin
 --		<clock> <= '0';
 --		wait for <clock>_period/2;
@@ -135,9 +140,11 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-	
+		wait for 100 ns;
+		rst<='0';
 		wait for 100 ns;
 		rst<='1';
+		wait for 100 ns;
 		Rx<="001";
 		Ry<="111";
 		ND<="010";
@@ -150,8 +157,15 @@ BEGIN
 		Control_imm_ry<='0';
 		Control_B<='0';
 		Control_WB<='0';
-     -- wait for <clock>_period*10;
+		Control_XY<='0';
+      -- hold reset state for 100 ns.
+      wait for 100 ns;	
 
+      Rx<="101";
+		wait for 100 ns;
+		Control_XY<='1';
+		wait for 100 ns;
+		Control_SP<="01";
       -- insert stimulus here 
 
       wait;

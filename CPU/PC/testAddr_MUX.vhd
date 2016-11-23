@@ -62,7 +62,7 @@ ARCHITECTURE behavior OF testAddr_MUX IS
    -- No clocks detected in port list. Replace clk below with 
    -- appropriate port name 
  
-   constant clk_period : time := 10 ns;
+ --  constant clk_period : time := 10 ns;
  
 BEGIN
  
@@ -94,7 +94,7 @@ BEGIN
       wait for 100 ns;	
 		Control_MEM<='1';
       wait for 100 ns;
-
+		Control_MEM<='0';
       -- insert stimulus here 
 
       wait;

@@ -54,7 +54,7 @@ begin
 			when "0011"=>	-- =reg2
 				outre:=ALU2;
 			when "0100"=>	-- ~
-				outre:=not ALU2;
+				outre:=not ALU1;
 			when "0101"=>	-- |
 				outre:=ALU1 or ALU2;
 			when "0110"=>	-- <<logic
@@ -62,7 +62,7 @@ begin
 					outre:="0000000000000000";
 				else
 					outre:="0000000000000000";
-					outre(15 downto conv_integer(ALU2))<=ALU1((15-conv_integer(ALU2)) downto 0);
+					outre(15 downto conv_integer(ALU2)):=ALU1((15-conv_integer(ALU2)) downto 0);
 				end if;
 			when "0111"=>	-- >>math
 				if(ALU1(15)='0')then
@@ -70,14 +70,14 @@ begin
 						outre:="0000000000000000";
 					else
 						outre:="0000000000000000";
-						outre(15-conv_integer(ALU2) downto 0)<=ALU1(15 downto conv_integer(ALU2));
+						outre(15-conv_integer(ALU2) downto 0):=ALU1(15 downto conv_integer(ALU2));
 					end if;
 				else
 					if(conv_integer(ALU2)>15)then
 						outre:=not "0000000000000000";
 					else
 						outre:=not "0000000000000000";
-						outre(15-conv_integer(ALU2) downto 0)<=ALU1(15 downto conv_integer(ALU2));
+						outre(15-conv_integer(ALU2) downto 0):=ALU1(15 downto conv_integer(ALU2));
 					end if;
 				end if;
 			when "1000"=>	-- >>logic
@@ -85,7 +85,7 @@ begin
 						outre:="0000000000000000";
 				else
 					outre:="0000000000000000";
-					outre(15-conv_integer(ALU2) downto 0)<=ALU1(15 downto conv_integer(ALU2));
+					outre(15-conv_integer(ALU2) downto 0):=ALU1(15 downto conv_integer(ALU2));
 				end if;
 			when "1001"=>	-- -
 				outre:=ALU1-ALU2;

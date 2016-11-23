@@ -1,5 +1,5 @@
 ISim log file
-Running: E:\pipeline-cpu\CPU\PC\testMainReg_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/pipeline-cpu/CPU/PC/testMainReg_isim_beh.wdb 
+Running: E:\pipeline-cpu\CPU\PC\testPCEX_MUX_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/pipeline-cpu/CPU/PC/testPCEX_MUX_isim_beh.wdb 
 ISim O.76xd (signature 0xc3576ebc)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
