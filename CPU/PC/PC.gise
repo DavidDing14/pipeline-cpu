@@ -117,6 +117,9 @@
     <transform xil_pn:end_ts="1479916956" xil_pn:in_ck="-3056491686452055108" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1479916956">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="ALU.vhd"/>
       <outfile xil_pn:name="ALU1_MUX.vhd"/>
       <outfile xil_pn:name="ALU2_MUX.vhd"/>
@@ -159,6 +162,7 @@
     <transform xil_pn:end_ts="1479916956" xil_pn:in_ck="-3056491686452055108" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1479916956">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="ALU.vhd"/>
       <outfile xil_pn:name="ALU1_MUX.vhd"/>
       <outfile xil_pn:name="ALU2_MUX.vhd"/>
@@ -189,6 +193,7 @@
     <transform xil_pn:end_ts="1479916961" xil_pn:in_ck="-3056491686452055108" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="9209997352855137664" xil_pn:start_ts="1479916956">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -201,6 +206,7 @@
     <transform xil_pn:end_ts="1479916963" xil_pn:in_ck="3287697957950093237" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6826268900923850669" xil_pn:start_ts="1479916961">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
@@ -238,6 +244,9 @@
     <transform xil_pn:end_ts="1479916608" xil_pn:in_ck="-5003745866386053261" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="6388849495994434038" xil_pn:start_ts="1479916600">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="ALU1_MUX.lso"/>
       <outfile xil_pn:name="ALU1_MUX.ngc"/>
@@ -272,7 +281,7 @@
     <transform xil_pn:end_ts="1479724422" xil_pn:in_ck="3212064538" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="3188416950630775481" xil_pn:start_ts="1479724410">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -281,7 +290,7 @@
     </transform>
     <transform xil_pn:end_ts="1479724446" xil_pn:in_ck="3811341582402355" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="6268780068511726196" xil_pn:start_ts="1479724422">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -290,7 +299,7 @@
     </transform>
     <transform xil_pn:end_ts="1479724446" xil_pn:in_ck="3212064406" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1479724442">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
