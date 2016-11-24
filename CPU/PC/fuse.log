@@ -1,21 +1,25 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "E:/pipeline-cpu/CPU/PC/testctrl_isim_beh.exe" -prj "E:/pipeline-cpu/CPU/PC/testctrl_beh.prj" "work.testctrl" 
+Running: E:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe -prj E:/pipeline-cpu/CPU/PC/testCPU_beh.prj testCPU 
 ISim O.76xd (signature 0xc3576ebc)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/ctrl.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/testctrl.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC_ALU.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/CPU.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/testCPU.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture behavioral of entity ctrl [ctrl_default]
-Compiling architecture behavior of entity testctrl
+Compiling architecture behavioral of entity PC [pc_default]
+Compiling architecture behavioral of entity PC_ALU [pc_alu_default]
+Compiling architecture behavioral of entity CPU [cpu_default]
+Compiling architecture behavior of entity testcpu
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 7 VHDL Units
-Built simulation executable E:/pipeline-cpu/CPU/PC/testctrl_isim_beh.exe
-Fuse Memory Usage: 32652 KB
-Fuse CPU Usage: 1544 ms
+Compiled 11 VHDL Units
+Built simulation executable E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe
+Fuse Memory Usage: 32760 KB
+Fuse CPU Usage: 670 ms

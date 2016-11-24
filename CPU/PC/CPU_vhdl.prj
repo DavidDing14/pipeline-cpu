@@ -1,1 +1,3 @@
+vhdl work "E:\pipeline-cpu\CPU\PC\PC_ALU.vhd"
+vhdl work "E:\pipeline-cpu\CPU\PC\PC.vhd"
 vhdl work "E:\pipeline-cpu\CPU\PC\CPU.vhd"

@@ -1,0 +1,4 @@
+vhdl work "PC_ALU.vhd"
+vhdl work "PC.vhd"
+vhdl work "CPU.vhd"
+vhdl work "testCPU.vhd"

@@ -1,5 +1,5 @@
 ISim log file
-Running: E:\pipeline-cpu\CPU\PC\testctrl_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/pipeline-cpu/CPU/PC/testctrl_isim_beh.wdb 
+Running: E:\pipeline-cpu\CPU\PC\testCPU_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.wdb 
 ISim O.76xd (signature 0xc3576ebc)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -10,12 +10,5 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim O.76xd (signature 0xc3576ebc)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
+at 0 ps, Instance /testcpu/uut/u2/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 Finished circuit initialization process.

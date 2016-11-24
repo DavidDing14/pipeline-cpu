@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "E:/pipeline-cpu/CPU/PC/testctrl_isim_beh.exe" -prj "E:/pipeline-cpu/CPU/PC/testctrl_beh.prj" "work.testctrl" 
+-intstyle "ise" -incremental -o "E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe" -prj "E:/pipeline-cpu/CPU/PC/testCPU_beh.prj" "testCPU" 
