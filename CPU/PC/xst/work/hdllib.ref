@@ -1,6 +1,6 @@
 AR addr_mux behavioral E:/Xilinx/Project/CPU/PC/Addr_MUX.vhd sub00/vhpl03 1479213922
-AR alu1_mux behavioral E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd sub00/vhpl05 1479916603
+AR alu1_mux behavioral E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd sub00/vhpl05 1479975754
 EN addr_mux NULL E:/Xilinx/Project/CPU/PC/Addr_MUX.vhd sub00/vhpl02 1479213921
 EN pc NULL E:/pipeline-cpu/CPU/PC/PC.vhd sub00/vhpl00 1479911655
-EN alu1_mux NULL E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd sub00/vhpl04 1479916602
+EN alu1_mux NULL E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd sub00/vhpl04 1479975753
 AR pc behavioral E:/pipeline-cpu/CPU/PC/PC.vhd sub00/vhpl01 1479911656

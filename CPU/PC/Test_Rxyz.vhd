@@ -99,6 +99,9 @@ BEGIN
 		wait for 100 ns;
 		Control_r<="10";
       wait for 100 ns;
+		Rx<="001";
+		Ry<="011";
+		Rz<="100";
 		Control_r<="00";
 
       -- insert stimulus here 

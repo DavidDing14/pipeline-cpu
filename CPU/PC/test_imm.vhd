@@ -89,7 +89,16 @@ BEGIN
 		imm<="10101001001";
 		Control_i<="000";
 		Control_e<='0';
-      -- hold reset state for 100 ns.
+      wait for 100 ns;	
+		Control_i<="001";
+		wait for 100 ns;
+		Control_i<="010";
+		wait for 100 ns;
+		Control_i<="011";
+		wait for 100 ns;
+		Control_i<="100";
+		wait for 100 ns;
+		Control_e<='1';
       wait for 100 ns;	
 		Control_i<="001";
 		wait for 100 ns;
@@ -100,7 +109,29 @@ BEGIN
 		Control_i<="100";
 		wait for 100 ns;
  --     wait for <clock>_period*10;
-
+		
+		imm<="10101000101";
+		Control_i<="000";
+		Control_e<='0';
+      wait for 100 ns;	
+		Control_i<="001";
+		wait for 100 ns;
+		Control_i<="010";
+		wait for 100 ns;
+		Control_i<="011";
+		wait for 100 ns;
+		Control_i<="100";
+		wait for 100 ns;
+		Control_e<='1';
+      wait for 100 ns;	
+		Control_i<="001";
+		wait for 100 ns;
+		Control_i<="010";
+		wait for 100 ns;
+		Control_i<="011";
+		wait for 100 ns;
+		Control_i<="100";
+		wait for 100 ns;
       -- insert stimulus here 
 
       wait;

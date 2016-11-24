@@ -33,6 +33,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ctrl is
     Port ( clk : in  STD_LOGIC;
+			  rst : in  STD_LOGIC;
            instruction : in  STD_LOGIC_VECTOR (15 downto 0);
            Control_ctrl_JJ : in  STD_LOGIC;
            Control_PC : out  STD_LOGIC;
@@ -44,15 +45,33 @@ entity ctrl is
 end ctrl;
 
 architecture Behavioral of ctrl is
-
+shared variable ins1, ins2, ins3, ins4: std_logic_vector(15 downto 0):="0000000000000000";		--4个指令，按顺序1~4依次为ID/EX/MEM/WB阶段的指令
+signal ins5: std_logic_vector(15 downto 0);
 begin
-	process(clk)
-	variable c1, c2, c3, c4, c5: std_logic;
-	variable c6: std_logic_vector(1 downto 0);
+	process(clk, rst)
+	variable c1, c2, c3, c4, c5: std_logic:='0';
+	variable c6: std_logic_vector(1 downto 0):="00";
 	begin
-		if(Control_ctrl_JJ='1')then	--跳转指令清空IF/ID
-			c2:='1';
-			c3:='1';
+		if(rst='0')then
+			ins1:="0000000000000000";
+			ins2:="0000000000000000";
+			ins3:="0000000000000000";
+			ins4:="0000000000000000";
+			c1:='0';
+			c2:='0';
+			c3:='0';
+			c4:='0';
+			c5:='0';
+			c6:="00";
+		elsif(clk'event and clk='1')then
+			ins4:=ins3;
+			ins4:=ins2;
+			ins2:=ins1;
+			ins1:=instruction;
+			if(Control_ctrl_JJ='1')then	--跳转指令清空IF/ID
+				c2:='1';
+				c3:='1';
+			end if;
 		end if;
 		Control_PC<=c1;
 		Control_IF<=c2;
@@ -60,6 +79,7 @@ begin
 		Control_EX<=c4;
 		Control_MEM<=c5;
 		Control_Reg<=c6;
+		ins5<=ins2;
 	end process;
 
 end Behavioral;

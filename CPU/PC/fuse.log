@@ -1,21 +1,21 @@
-Running: E:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o E:/pipeline-cpu/CPU/PC/testPCEX_MUX_isim_beh.exe -prj E:/pipeline-cpu/CPU/PC/testPCEX_MUX_beh.prj work.testPCEX_MUX 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "E:/pipeline-cpu/CPU/PC/testctrl_isim_beh.exe" -prj "E:/pipeline-cpu/CPU/PC/testctrl_beh.prj" "work.testctrl" 
 ISim O.76xd (signature 0xc3576ebc)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/testPCEX_MUX.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/ctrl.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/testctrl.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture behavioral of entity PC_EX_MUX [pc_ex_mux_default]
-Compiling architecture behavior of entity testpcex_mux
+Compiling architecture behavioral of entity ctrl [ctrl_default]
+Compiling architecture behavior of entity testctrl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 7 VHDL Units
-Built simulation executable E:/pipeline-cpu/CPU/PC/testPCEX_MUX_isim_beh.exe
-Fuse Memory Usage: 32608 KB
-Fuse CPU Usage: 530 ms
+Built simulation executable E:/pipeline-cpu/CPU/PC/testctrl_isim_beh.exe
+Fuse Memory Usage: 32652 KB
+Fuse CPU Usage: 1544 ms

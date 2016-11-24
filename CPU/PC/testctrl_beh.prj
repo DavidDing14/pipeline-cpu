@@ -1,0 +1,2 @@
+vhdl work "ctrl.vhd"
+vhdl work "testctrl.vhd"
