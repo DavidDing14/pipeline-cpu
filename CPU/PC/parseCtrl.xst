@@ -1,0 +1,5 @@
+set -tmpdir "G:/cpu/pipeline-cpu/CPU/PC/xst/projnav.tmp"
+set -xsthdpdir "G:/cpu/pipeline-cpu/CPU/PC/xst"
+elaborate
+-ifn parseCtrl.prj
+-ifmt mixed

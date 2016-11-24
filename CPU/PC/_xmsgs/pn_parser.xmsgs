@@ -8,7 +8,7 @@
 <!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/cpu/pipeline-cpu/CPU/PC/MEM_WB.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/cpu/pipeline-cpu/CPU/PC/test_IF_ID_Ctrl.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

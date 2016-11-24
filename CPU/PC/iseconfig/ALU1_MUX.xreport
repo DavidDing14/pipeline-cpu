@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-11-24T01:06:11</DateModified>
+  <DateModified>2016-11-24T17:44:17</DateModified>
   <ModuleName>ALU1_MUX</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>G:/cpu/pipeline-cpu/CPU/PC/iseconfig/ALU1_MUX.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>G:/cpu/pipeline-cpu/CPU/PC</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>G:/cpu/pipeline-cpu/CPU/PC\</ImplementationReportsDirectory>
   <DateInitialized>2016-11-24T01:05:49</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

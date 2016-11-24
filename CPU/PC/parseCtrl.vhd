@@ -45,7 +45,7 @@ entity parseCtrl is
            Ctrl_r : out  STD_LOGIC_VECTOR (1 downto 0);
            Ctrl_WB : out  STD_LOGIC;
            Ctrl_op1 : out  STD_LOGIC;
-           Ctrl_op2 : out  STD_LOGIC_VECTOR (1 downto 0);
+           Ctrl_op2 : out  STD_LOGIC;
            Ctrl_op : out  STD_LOGIC_VECTOR (3 downto 0);
            Ctrl_addr : out  STD_LOGIC_VECTOR (1 downto 0);
            Ctrl_PCMEM : out  STD_LOGIC;
@@ -57,10 +57,28 @@ end parseCtrl;
 
 architecture Behavioral of parseCtrl is
 begin
-	process(clk, Break)
+	process(clk, rst, Break)
 	begin
-		if (rst'event and rst='1') then
-		else
+		if (rst='0') then
+			Ctrl_xy<='0';
+			Ctrl_immidiate<="000";
+			Ctrl_extend<='0';
+			Ctrl_SP<="00";
+			Ctrl_CMP<="00";
+			Ctrl_IH<="00";
+			Ctrl_r<="00";
+			Ctrl_WB<='0';
+			Ctrl_op1<='0';
+			Ctrl_op2<='0';
+			Ctrl_op<="0000";
+			Ctrl_addr<="00";
+			Ctrl_PCMEM<='0';
+			Ctrl_DRRE<='0';
+			Ctrl_judge<='0';
+			Ctrl_b<='0';
+			Ctrl_Jump<='0';
+			out_instruction<="0000000000000000";
+		elsif (clk'event and clk='1') then
 			if(Break = '0') then
 				out_instruction<=instruction;
 				case instruction(15 downto 11) is
@@ -77,7 +95,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
@@ -95,7 +113,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='0';
 						Ctrl_b<='1';
@@ -113,7 +131,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='1';
 						Ctrl_b<='1';
@@ -131,7 +149,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='1';
 						Ctrl_b<='1';
@@ -151,7 +169,7 @@ begin
 								Ctrl_op2<='1';
 								Ctrl_op<="0110";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='1';
 								Ctrl_b<='0';
@@ -169,7 +187,7 @@ begin
 								Ctrl_op2<='1';
 								Ctrl_op<="0111";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='1';
 								Ctrl_b<='0';
@@ -187,7 +205,7 @@ begin
 								Ctrl_op2<='1';
 								Ctrl_op<="1000";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='1';
 								Ctrl_b<='0';
@@ -208,7 +226,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
@@ -226,7 +244,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
@@ -244,7 +262,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='1';
 						Ctrl_b<='0';
@@ -264,7 +282,7 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0000";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
@@ -282,7 +300,7 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0000";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='1';
 								Ctrl_b<='1';
@@ -300,7 +318,7 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0010";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
@@ -320,7 +338,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0011";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
@@ -338,7 +356,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="00";
-						Ctrl_PCMEM<="0";
+						Ctrl_PCMEM<='0';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='1';
 						Ctrl_b<='0';
@@ -356,7 +374,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="01";
-						Ctrl_PCMEM<="1";
+						Ctrl_PCMEM<='1';
 						Ctrl_DRRE<='1';
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
@@ -374,7 +392,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="01";
-						Ctrl_PCMEM<="1";
+						Ctrl_PCMEM<='1';
 						Ctrl_DRRE<='1';
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
@@ -392,7 +410,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="11";
-						Ctrl_PCMEM<="1";
+						Ctrl_PCMEM<='1';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
@@ -410,7 +428,7 @@ begin
 						Ctrl_op2<='0';
 						Ctrl_op<="0000";
 						Ctrl_addr<="11";
-						Ctrl_PCMEM<="1";
+						Ctrl_PCMEM<='1';
 						Ctrl_DRRE<='0';
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
@@ -430,12 +448,12 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0000";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
-							when '1' => -- SUBU
+							when others => -- SUBU
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
@@ -471,12 +489,12 @@ begin
 										Ctrl_op2<='0';
 										Ctrl_op<="0010";
 										Ctrl_addr<="00";
-										Ctrl_PCMEM<="0";
+										Ctrl_PCMEM<='0';
 										Ctrl_DRRE<='0';
 										Ctrl_judge<='0';
 										Ctrl_b<='0';
 										Ctrl_Jump<='1';
-									when '1' => -- MFPC
+									when others => -- MFPC
 										Ctrl_xy<='0';
 										Ctrl_immidiate<="000";
 										Ctrl_extend<='0';
@@ -508,7 +526,7 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0001";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
@@ -526,7 +544,7 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0000";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='1';
 								Ctrl_b<='0';
@@ -544,7 +562,7 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0100";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
@@ -562,7 +580,7 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0101";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
@@ -580,7 +598,7 @@ begin
 								Ctrl_op2<='0';
 								Ctrl_op<="0111";
 								Ctrl_addr<="00";
-								Ctrl_PCMEM<="0";
+								Ctrl_PCMEM<='0';
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
@@ -625,9 +643,29 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+							when others =>
 						end case;
 					when others =>						
 				end case;
+			else
+				Ctrl_xy<='0';
+				Ctrl_immidiate<="000";
+				Ctrl_extend<='0';
+				Ctrl_SP<="00";
+				Ctrl_CMP<="00";
+				Ctrl_IH<="00";
+				Ctrl_r<="00";
+				Ctrl_WB<='0';
+				Ctrl_op1<='0';
+				Ctrl_op2<='0';
+				Ctrl_op<="0000";
+				Ctrl_addr<="00";
+				Ctrl_PCMEM<='0';
+				Ctrl_DRRE<='0';
+				Ctrl_judge<='0';
+				Ctrl_b<='0';
+				Ctrl_Jump<='0';
+				out_instruction<="0000000000000000";			
 			end if;
 		end if;
 	end process;

@@ -1,0 +1,2 @@
+vhdl isim_temp "parseCtrl.vhd"
+vhdl isim_temp "test_IF_ID_Ctrl.vhd"

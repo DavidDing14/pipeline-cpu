@@ -1,21 +1,19 @@
-Running: E:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o E:/pipeline-cpu/CPU/PC/testPCEX_MUX_isim_beh.exe -prj E:/pipeline-cpu/CPU/PC/testPCEX_MUX_beh.prj work.testPCEX_MUX 
-ISim O.76xd (signature 0xc3576ebc)
+Running: G:\Xilinx-ISE\13.3\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o G:/cpu/pipeline-cpu/CPU/PC/test_IF_ID_Ctrl_isim_beh.exe -prj G:/cpu/pipeline-cpu/CPU/PC/test_IF_ID_Ctrl_beh.prj work.test_IF_ID_Ctrl 
+ISim O.76xd (signature 0x2f00eba5)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/testPCEX_MUX.vhd" into library work
+WARNING:Simulator:1010 - One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running fuse with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/test_IF_ID_Ctrl.vhd" into library work
 Starting static elaboration
 Completed static elaboration
+Fuse Memory Usage: 157040 KB
+Fuse CPU Usage: 390 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling package std_logic_arith
-Compiling package std_logic_unsigned
-Compiling architecture behavioral of entity PC_EX_MUX [pc_ex_mux_default]
-Compiling architecture behavior of entity testpcex_mux
+Compiling architecture behavioral of entity parseCtrl [parsectrl_default]
+Compiling architecture behavior of entity test_if_id_ctrl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 7 VHDL Units
-Built simulation executable E:/pipeline-cpu/CPU/PC/testPCEX_MUX_isim_beh.exe
-Fuse Memory Usage: 32608 KB
-Fuse CPU Usage: 530 ms
+ERROR:Simulator:861 - Failed to link the design

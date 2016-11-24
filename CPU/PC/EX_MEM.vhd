@@ -53,20 +53,29 @@ architecture Behavioral of EX_MEM is
 begin
 	process(clk, rst, Break)
 	begin
-		if (rst'event and rst='1') then
+		if (rst='0') then
 			out_Ctrl_WB<='0';
 			out_Ctrl_addr<="00";
 			out_Ctrl_PCMEM<='0';
 			out_Ctrl_DRRE<='0';
 			out_Result<="0000000000000000";
 			out_WDATA<="0000000000000000";
-		else
-			out_Ctrl_WB<=Ctrl_WB;
-			out_Ctrl_addr<=Ctrl_addr;
-			out_Ctrl_PCMEM<=Ctrl_PCMEM;
-			out_Ctrl_DRRE<=Ctrl_DRRE;
-			out_Result<=Result;
-			out_WDATA<=WDATA;			
+		elsif (clk'event and clk='1') then
+			if (Break='0') then
+				out_Ctrl_WB<=Ctrl_WB;
+				out_Ctrl_addr<=Ctrl_addr;
+				out_Ctrl_PCMEM<=Ctrl_PCMEM;
+				out_Ctrl_DRRE<=Ctrl_DRRE;
+				out_Result<=Result;
+				out_WDATA<=WDATA;
+			else
+				out_Ctrl_WB<='0';
+				out_Ctrl_addr<="00";
+				out_Ctrl_PCMEM<='0';
+				out_Ctrl_DRRE<='0';
+				out_Result<="0000000000000000";
+				out_WDATA<="0000000000000000";
+			end if;
 		end if;
 	end process;
 

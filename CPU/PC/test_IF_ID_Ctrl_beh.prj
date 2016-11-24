@@ -1,0 +1,2 @@
+vhdl work "parseCtrl.vhd"
+vhdl work "test_IF_ID_Ctrl.vhd"

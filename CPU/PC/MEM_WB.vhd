@@ -45,16 +45,22 @@ end MEM_WB;
 architecture Behavioral of MEM_WB is
 
 begin
-	process (clk,rst, Break)
+	process (clk, rst, Break)
 	begin
-		if (rst'event and rst='1') then
+		if (rst='0') then
 			out_Ctrl_WB <= '0';
 			out_Ctrl_DRRE <= '0';
 			Data_Reg <= "0000000000000000";
-		else
-			out_Ctrl_WB <= Ctrl_WB;
-			out_Ctrl_DRRE <= Ctrl_DRRE;
-			Data_Reg <= Result;
+		elsif (clk'event and clk='1') then
+			if (Break='0') then
+				out_Ctrl_WB <= Ctrl_WB;
+				out_Ctrl_DRRE <= Ctrl_DRRE;
+				Data_Reg <= Result;
+			else
+				out_Ctrl_WB <= '0';
+				out_Ctrl_DRRE <= '0';
+				Data_Reg <= "0000000000000000";
+			end if;
 		end if;
 	end process;
 

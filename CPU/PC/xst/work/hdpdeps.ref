@@ -1,4 +1,4 @@
-V3 10
+V3 13
 FL E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd 2016/11/22.20:00:06 O.76xd
 EN work/ALU1_MUX 1479916602 FL E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
@@ -17,3 +17,8 @@ EN work/Addr_MUX 1479213921 FL E:/Xilinx/Project/CPU/PC/Addr_MUX.vhd \
 AR work/Addr_MUX/Behavioral 1479213922 \
       FL E:/Xilinx/Project/CPU/PC/Addr_MUX.vhd EN work/Addr_MUX 1479213921
 FL E:/Xilinx/Project/CPU/PC/PC.vhd 2016/11/15.20:03:45 O.76xd
+FL G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd 2016/11/24.17:45:51 O.76xd
+EN work/parseCtrl 1479983108 FL G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd \
+      PB ieee/std_logic_1164 1317710503
+AR work/parseCtrl/Behavioral 1479983109 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd EN work/parseCtrl 1479983108
