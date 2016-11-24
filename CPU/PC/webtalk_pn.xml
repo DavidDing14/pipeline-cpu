@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Thu Nov 24 16:22:30 2016">
+<application name="pn" timeStamp="Thu Nov 24 22:15:04 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="0C5CF1D0A8CE40DAA616DC51C34A5427" type="project"/>
 <property name="ProjectIteration" value="2" type="project"/>
@@ -29,7 +29,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
 <property name="PROP_selectedSimRootSourceNode_behav" value="work.testctrl" type="process"/>
-<property name="PROP_AutoTop" value="true" type="design"/>
+<property name="PROP_AutoTop" value="false" type="design"/>
 <property name="PROP_CompxlibEdkSimLib" value="true" type="process"/>
 <property name="PROP_DevFamily" value="Spartan3E" type="design"/>
 <property name="PROP_DevDevice" value="xc3s1200e" type="design"/>
@@ -38,7 +38,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_Synthesis_Tool" value="XST (VHDL/Verilog)" type="design"/>
 <property name="PROP_DevSpeed" value="-4" type="design"/>
 <property name="PROP_PreferredLanguage" value="VHDL" type="design"/>
-<property name="FILE_VHDL" value="29" type="source"/>
+<property name="FILE_VHDL" value="30" type="source"/>
 </section>
 </application>
 </document>
