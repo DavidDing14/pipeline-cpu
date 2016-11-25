@@ -1,10 +1,14 @@
-Running: E:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe -prj E:/pipeline-cpu/CPU/PC/testCPU_beh.prj testCPU 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe" -prj "E:/pipeline-cpu/CPU/PC/testCPU_beh.prj" "work.testCPU" 
 ISim O.76xd (signature 0xc3576ebc)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd" into library work
 Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC_ALU.vhd" into library work
 Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/parseCtrl.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/Memory.vhd" into library work
+Parsing VHDL file "E:/pipeline-cpu/CPU/PC/Addr_MUX.vhd" into library work
 Parsing VHDL file "E:/pipeline-cpu/CPU/PC/CPU.vhd" into library work
 Parsing VHDL file "E:/pipeline-cpu/CPU/PC/testCPU.vhd" into library work
 Starting static elaboration
@@ -15,11 +19,15 @@ Compiling package std_logic_arith
 Compiling package std_logic_unsigned
 Compiling architecture behavioral of entity PC [pc_default]
 Compiling architecture behavioral of entity PC_ALU [pc_alu_default]
+Compiling architecture behavioral of entity PC_EX_MUX [pc_ex_mux_default]
+Compiling architecture behavioral of entity Addr_MUX [addr_mux_default]
+Compiling architecture behavioral of entity Memory [memory_default]
+Compiling architecture behavioral of entity parseCtrl [parsectrl_default]
 Compiling architecture behavioral of entity CPU [cpu_default]
 Compiling architecture behavior of entity testcpu
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 11 VHDL Units
+Waiting for 4 sub-compilation(s) to finish...
+Compiled 19 VHDL Units
 Built simulation executable E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe
-Fuse Memory Usage: 32760 KB
-Fuse CPU Usage: 670 ms
+Fuse Memory Usage: 33580 KB
+Fuse CPU Usage: 686 ms

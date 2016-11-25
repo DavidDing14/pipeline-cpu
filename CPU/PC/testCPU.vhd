@@ -86,15 +86,11 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-		PCin<="0101010101010101";
       wait for 100 ns;	
-		PCin<="1010101010101010";
       wait for 100 ns;
 		rst<='0';
 		wait for 100 ns;
 		rst<='1';
-		wait for 100 ns;
-		PCin<="1111000000001111";
       -- insert stimulus here 
 
       wait;

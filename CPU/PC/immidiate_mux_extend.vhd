@@ -45,10 +45,10 @@ begin
 	variable real_imm: std_logic_vector(15 downto 0):="0000000000000000";
 	begin
 		case Control_i is
-			when "000"=>		--选择7~0作为imm
+			when "001"=>		--选择7~0作为imm
 				real_imm(7 downto 0):=imm(7 downto 0);
 				case Control_e is
-					when '0'=>		--sign_extend
+					when '1'=>		--sign_extend
 						case imm(7) is
 							when '0'=>
 								real_imm(15 downto 8):="00000000";
@@ -57,15 +57,15 @@ begin
 							when others=>
 								null;
 						end case;
-					when '1'=>		--zero_extend
+					when '0'=>		--zero_extend
 						real_imm(15 downto 8):="00000000";
 					when others=>
 						null;
 				end case;
-			when "001"=>		--选择3~0作为imm
+			when "010"=>		--选择3~0作为imm
 				real_imm(3 downto 0):=imm(3 downto 0);
 				case Control_e is
-					when '0'=>		--sign_extend
+					when '1'=>		--sign_extend
 						case imm(3) is
 							when '0'=>
 								real_imm(15 downto 4):="000000000000";
@@ -74,15 +74,15 @@ begin
 							when others=>
 								null;
 						end case;
-					when '1'=>		--zero_extend
+					when '0'=>		--zero_extend
 						real_imm(15 downto 4):="000000000000";
 					when others=>
 						null;
 				end case;
-			when "010"=>		--选择10~0作为imm
+			when "011"=>		--选择10~0作为imm
 				real_imm(10 downto 0):=imm(10 downto 0);
 				case Control_e is
-					when '0'=>		--sign_extend
+					when '1'=>		--sign_extend
 						case imm(10) is
 							when '0'=>
 								real_imm(15 downto 11):="00000";
@@ -91,15 +91,15 @@ begin
 							when others=>
 								null;
 						end case;
-					when '1'=>		--zero_extend
+					when '0'=>		--zero_extend
 						real_imm(15 downto 11):="00000";
 					when others=>
 						null;
 				end case;
-			when "011"=>		--选择4~0作为imm
+			when "100"=>		--选择4~0作为imm
 				real_imm(4 downto 0):=imm(4 downto 0);
 				case Control_e is
-					when '0'=>		--sign_extend
+					when '1'=>		--sign_extend
 						case imm(4) is
 							when '0'=>
 								real_imm(15 downto 5):="00000000000";
@@ -108,15 +108,15 @@ begin
 							when others=>
 								null;
 						end case;
-					when '1'=>		--zero_extend
+					when '0'=>		--zero_extend
 						real_imm(15 downto 5):="00000000000";
 					when others=>
 						null;
 				end case;
-			when others=>		--选择4~2作为imm
+			when "101"=>		--选择4~2作为imm
 				real_imm(2 downto 0):=imm(4 downto 2);
 				case Control_e is
-					when '0'=>		--sign_extend
+					when '1'=>		--sign_extend
 						case imm(4) is
 							when '0'=>
 								real_imm(15 downto 3):="0000000000000";
@@ -125,11 +125,13 @@ begin
 							when others=>
 								null;
 						end case;
-					when '1'=>		--zero_extend
+					when '0'=>		--zero_extend
 						real_imm(15 downto 3):="0000000000000";
 					when others=>
 						null;
 				end case;
+			when others=>
+				null;
 		end case;
 		imm_to_Reg<=real_imm;
 	end process;

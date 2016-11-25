@@ -19,6 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -52,7 +54,13 @@ entity parseCtrl is
            Ctrl_DRRE : out  STD_LOGIC;
            Ctrl_judge : out  STD_LOGIC;
            Ctrl_b : out  STD_LOGIC;
-           Ctrl_Jump : out  STD_LOGIC);
+           Ctrl_Jump : out  STD_LOGIC;
+			  out_Rx1: out std_logic_vector(2 downto 0);
+			  out_Ry1: out std_logic_vector(2 downto 0);
+			  out_Rx2: out std_logic_vector(2 downto 0);
+			  out_Ry2: out std_logic_vector(2 downto 0);
+			  out_Rz: out std_logic_vector(2 downto 0);
+			  out_imm: out std_logic_vector(10 downto 0));
 end parseCtrl;
 
 architecture Behavioral of parseCtrl is
@@ -78,6 +86,12 @@ begin
 			Ctrl_b<='0';
 			Ctrl_Jump<='0';
 			out_instruction<="0000000000000000";
+			out_Rx1<="000";
+			out_Rx2<="000";
+			out_Ry1<="000";
+			out_Ry2<="000";
+			out_Rz<="000";
+			out_imm<="00000000000";
 		elsif (clk'event and clk='1') then
 			if(Break = '0') then
 				out_instruction<=instruction;
@@ -100,6 +114,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<="000";
+						out_Rx2<="000";
+						out_Ry1<="000";
+						out_Ry2<="000";
+						out_Rz<="000";
+						out_imm<="00000000000";
 					when "00010" => -- B
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="011";
@@ -118,6 +138,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='1';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "00100" => -- BEQZ
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -136,6 +162,12 @@ begin
 						Ctrl_judge<='1';
 						Ctrl_b<='1';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "00101" => -- BNEZ
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -154,6 +186,12 @@ begin
 						Ctrl_judge<='1';
 						Ctrl_b<='1';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "00110" =>
 						case instruction(1 downto 0) is
 							when "00" => -- SLL
@@ -174,6 +212,12 @@ begin
 								Ctrl_judge<='1';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when "11" => -- SRA
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="101";
@@ -192,6 +236,12 @@ begin
 								Ctrl_judge<='1';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';	
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when "10" => -- SRL
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="101";
@@ -209,7 +259,13 @@ begin
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='1';
 								Ctrl_b<='0';
-								Ctrl_Jump<='0';							
+								Ctrl_Jump<='0';								
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when others =>
 								
 						end case;
@@ -231,6 +287,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "01001" => -- ADDIU
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -249,6 +311,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "01010" => -- SLTI
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -267,6 +335,12 @@ begin
 						Ctrl_judge<='1';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "01100" =>
 						case instruction(10 downto 9) is
 							when "01" => -- ADDSP
@@ -286,7 +360,13 @@ begin
 								Ctrl_DRRE<='0';
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
-								Ctrl_Jump<='0';                               
+								Ctrl_Jump<='0';      
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when "00" => -- BTEQZ
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="001";
@@ -305,6 +385,12 @@ begin
 								Ctrl_judge<='1';
 								Ctrl_b<='1';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when "10" => -- MTSP
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -323,6 +409,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when others =>
 						end case;
 					when "01101" => -- LI
@@ -343,6 +435,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "01110" => -- CMPI
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -361,6 +459,12 @@ begin
 						Ctrl_judge<='1';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "10010" => -- LW_SP
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -379,6 +483,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "10011" => --LW
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="100";
@@ -397,6 +507,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "11010" => --SW_SP
 						Ctrl_xy<='1';
 						Ctrl_immidiate<="001";
@@ -415,6 +531,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "11011" => -- SW
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="100";
@@ -433,6 +555,12 @@ begin
 						Ctrl_judge<='0';
 						Ctrl_b<='0';
 						Ctrl_Jump<='0';
+						out_Rx1<=instruction(10 downto 8);
+						out_Rx2<=instruction(10 downto 8);
+						out_Ry1<=instruction(7 downto 5);
+						out_Ry2<=instruction(7 downto 5);
+						out_Rz<=instruction(4 downto 2);
+						out_imm<=instruction(10 downto 0);
 					when "11100" =>
 						case instruction(1) is
 							when '0' => -- ADDU
@@ -453,6 +581,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when others => -- SUBU
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -471,6 +605,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 						end case;
 					when "11101" =>
 						case instruction(3 downto 0) is
@@ -494,6 +634,12 @@ begin
 										Ctrl_judge<='0';
 										Ctrl_b<='0';
 										Ctrl_Jump<='1';
+										out_Rx1<=instruction(10 downto 8);
+										out_Rx2<=instruction(10 downto 8);
+										out_Ry1<=instruction(7 downto 5);
+										out_Ry2<=instruction(7 downto 5);
+										out_Rz<=instruction(4 downto 2);
+										out_imm<=instruction(10 downto 0);
 									when others => -- MFPC
 										Ctrl_xy<='0';
 										Ctrl_immidiate<="000";
@@ -511,7 +657,13 @@ begin
 										Ctrl_DRRE<='0';
 										Ctrl_judge<='0';
 										Ctrl_b<='0';
-										Ctrl_Jump<='0';									
+										Ctrl_Jump<='0';	
+										out_Rx1<=instruction(10 downto 8);
+										out_Rx2<=instruction(10 downto 8);
+										out_Ry1<=instruction(7 downto 5);
+										out_Ry2<=instruction(7 downto 5);
+										out_Rz<=instruction(4 downto 2);
+										out_imm<=instruction(10 downto 0);										
 								end case;
 							when "1100" => -- AND
 								Ctrl_xy<='0';
@@ -531,6 +683,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when "1010" => -- CMP
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -549,6 +707,12 @@ begin
 								Ctrl_judge<='1';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when "1111" => -- NOT
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -567,6 +731,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when "1101" => -- OR
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -585,6 +755,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when "0111" => -- SRAV
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -603,6 +779,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when others =>
 						end case;
 					when "11110" =>
@@ -625,6 +807,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when '1' => -- MTIH
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -643,6 +831,12 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
+								out_Rx1<=instruction(10 downto 8);
+								out_Rx2<=instruction(10 downto 8);
+								out_Ry1<=instruction(7 downto 5);
+								out_Ry2<=instruction(7 downto 5);
+								out_Rz<=instruction(4 downto 2);
+								out_imm<=instruction(10 downto 0);
 							when others =>
 						end case;
 					when others =>						
@@ -665,7 +859,13 @@ begin
 				Ctrl_judge<='0';
 				Ctrl_b<='0';
 				Ctrl_Jump<='0';
-				out_instruction<="0000000000000000";			
+				out_instruction<="0000000000000000";	
+				out_Rx1<="000";
+				out_Rx2<="000";
+				out_Ry1<="000";
+				out_Ry2<="000";
+				out_Rz<="000";
+				out_imm<="00000000000";
 			end if;
 		end if;
 	end process;

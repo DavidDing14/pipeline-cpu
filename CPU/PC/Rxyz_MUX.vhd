@@ -46,11 +46,13 @@ begin
 	begin
 		case Control_r is
 			when "00"=>
-				ND<=Rx;
+				ND<=Rz;
 			when "01"=>
 				ND<=Ry;
+			when "10"=>
+				ND<=Rx;
 			when others=>
-				ND<=Rz;
+				null;
 		end case;
 	end process;
 

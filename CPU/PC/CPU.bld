@@ -28,7 +28,7 @@ NGDBUILD Design Results Summary:
 Total memory usage is 161960 kilobytes
 
 Writing NGD file "CPU.ngd" ...
-Total REAL time to NGDBUILD completion:  6 sec
-Total CPU time to NGDBUILD completion:   5 sec
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   3 sec
 
 Writing NGDBUILD log file "CPU.bld"...

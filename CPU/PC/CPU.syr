@@ -3,14 +3,14 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: CPU.prj
 
@@ -108,8 +108,17 @@ Compiling vhdl file "E:/pipeline-cpu/CPU/PC/PC.vhd" in Library work.
 Architecture behavioral of Entity pc is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/PC_ALU.vhd" in Library work.
 Architecture behavioral of Entity pc_alu is up to date.
+Compiling vhdl file "E:/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd" in Library work.
+Architecture behavioral of Entity pc_ex_mux is up to date.
+Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Addr_MUX.vhd" in Library work.
+Architecture behavioral of Entity addr_mux is up to date.
+Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Memory.vhd" in Library work.
+Architecture behavioral of Entity memory is up to date.
+Compiling vhdl file "E:/pipeline-cpu/CPU/PC/parseCtrl.vhd" in Library work.
+Architecture behavioral of Entity parsectrl is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/CPU.vhd" in Library work.
-Architecture behavioral of Entity cpu is up to date.
+Entity <cpu> compiled.
+Entity <cpu> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -119,6 +128,14 @@ Analyzing hierarchy for entity <CPU> in library <work> (architecture <behavioral
 Analyzing hierarchy for entity <PC> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <PC_ALU> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <PC_EX_MUX> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Addr_MUX> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Memory> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <parseCtrl> in library <work> (architecture <behavioral>).
 
 
 =========================================================================
@@ -132,6 +149,20 @@ Entity <PC> analyzed. Unit <PC> generated.
 
 Analyzing Entity <PC_ALU> in library <work> (Architecture <behavioral>).
 Entity <PC_ALU> analyzed. Unit <PC_ALU> generated.
+
+Analyzing Entity <PC_EX_MUX> in library <work> (Architecture <behavioral>).
+Entity <PC_EX_MUX> analyzed. Unit <PC_EX_MUX> generated.
+
+Analyzing Entity <Addr_MUX> in library <work> (Architecture <behavioral>).
+Entity <Addr_MUX> analyzed. Unit <Addr_MUX> generated.
+
+Analyzing Entity <Memory> in library <work> (Architecture <behavioral>).
+INFO:Xst:2679 - Register <RegAddr$mux0000> in unit <Memory> has a constant value of 0000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <RegMEM_Ry$mux0000> in unit <Memory> has a constant value of 0000000000000000 during circuit operation. The register is replaced by logic.
+Entity <Memory> analyzed. Unit <Memory> generated.
+
+Analyzing Entity <parseCtrl> in library <work> (Architecture <behavioral>).
+Entity <parseCtrl> analyzed. Unit <parseCtrl> generated.
 
 
 =========================================================================
@@ -156,10 +187,132 @@ Synthesizing Unit <PC_ALU>.
 Unit <PC_ALU> synthesized.
 
 
+Synthesizing Unit <PC_EX_MUX>.
+    Related source file is "E:/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd".
+Unit <PC_EX_MUX> synthesized.
+
+
+Synthesizing Unit <Addr_MUX>.
+    Related source file is "E:/pipeline-cpu/CPU/PC/Addr_MUX.vhd".
+Unit <Addr_MUX> synthesized.
+
+
+Synthesizing Unit <Memory>.
+    Related source file is "E:/pipeline-cpu/CPU/PC/Memory.vhd".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <instruction> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <MEM_Ry> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <RegMEM_Ry> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RegAddr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 16-bit latch for signal <RegData>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+Unit <Memory> synthesized.
+
+
+Synthesizing Unit <parseCtrl>.
+    Related source file is "E:/pipeline-cpu/CPU/PC/parseCtrl.vhd".
+WARNING:Xst:647 - Input <PC> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Register <Ctrl_op1> equivalent to <Ctrl_b> has been removed
+    Register <out_Rx2> equivalent to <out_Rx1> has been removed
+    Register <out_Ry2> equivalent to <out_Ry1> has been removed
+    Found 2-bit register for signal <Ctrl_addr>.
+    Found 2-bit register for signal <Ctrl_CMP>.
+    Found 1-bit register for signal <Ctrl_DRRE>.
+    Found 1-bit register for signal <Ctrl_xy>.
+    Found 3-bit register for signal <Ctrl_immidiate>.
+    Found 1-bit register for signal <Ctrl_extend>.
+    Found 1-bit register for signal <Ctrl_Jump>.
+    Found 11-bit register for signal <out_imm>.
+    Found 1-bit register for signal <Ctrl_PCMEM>.
+    Found 1-bit register for signal <Ctrl_op2>.
+    Found 1-bit register for signal <Ctrl_judge>.
+    Found 1-bit register for signal <Ctrl_b>.
+    Found 2-bit register for signal <Ctrl_IH>.
+    Found 2-bit register for signal <Ctrl_r>.
+    Found 3-bit register for signal <out_Rz>.
+    Found 3-bit register for signal <out_Rx1>.
+    Found 3-bit register for signal <out_Ry1>.
+    Found 4-bit register for signal <Ctrl_op>.
+    Found 2-bit register for signal <Ctrl_SP>.
+    Found 16-bit register for signal <out_instruction>.
+    Found 1-bit register for signal <Ctrl_WB>.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_addr$mux0001> created at line 196.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_addr$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_b$mux0001> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_b$mux0002> created at line 345.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_CMP$mux0001> created at line 196.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_CMP$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_DRRE$mux0001> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_DRRE$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_extend$mux0001> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_extend$mux0002> created at line 345.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_IH$mux0001> created at line 196.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_IH$mux0002> created at line 345.
+    Found 3-bit 4-to-1 multiplexer for signal <Ctrl_immidiate$mux0001> created at line 196.
+    Found 3-bit 4-to-1 multiplexer for signal <Ctrl_immidiate$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_judge$mux0001> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_judge$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_Jump$mux0002> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_Jump$mux0003> created at line 345.
+    Found 4-bit 4-to-1 multiplexer for signal <Ctrl_op$mux0001> created at line 196.
+    Found 4-bit 4-to-1 multiplexer for signal <Ctrl_op$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_op2$mux0001> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_op2$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_PCMEM$mux0001> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_PCMEM$mux0002> created at line 345.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_r$mux0002> created at line 196.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_r$mux0003> created at line 345.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_SP$mux0001> created at line 196.
+    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_SP$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_WB$mux0002> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_WB$mux0003> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_xy$mux0001> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_xy$mux0002> created at line 345.
+    Found 11-bit 4-to-1 multiplexer for signal <out_imm$mux0001> created at line 196.
+    Found 11-bit 4-to-1 multiplexer for signal <out_imm$mux0002> created at line 345.
+    Found 3-bit 4-to-1 multiplexer for signal <out_Rx1$mux0001> created at line 196.
+    Found 3-bit 4-to-1 multiplexer for signal <out_Rx1$mux0002> created at line 345.
+    Found 3-bit 4-to-1 multiplexer for signal <out_Ry1$mux0001> created at line 196.
+    Found 3-bit 4-to-1 multiplexer for signal <out_Ry1$mux0002> created at line 345.
+    Found 3-bit 4-to-1 multiplexer for signal <out_Rz$mux0001> created at line 196.
+    Found 3-bit 4-to-1 multiplexer for signal <out_Rz$mux0002> created at line 345.
+    Summary:
+	inferred  62 D-type flip-flop(s).
+	inferred  92 Multiplexer(s).
+Unit <parseCtrl> synthesized.
+
+
 Synthesizing Unit <CPU>.
     Related source file is "E:/pipeline-cpu/CPU/PC/CPU.vhd".
-WARNING:Xst:646 - Signal <p3> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:647 - Input <PCin> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <p9> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p8> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p7> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p34> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p33> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p32> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p31> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p30> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p29> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p28> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p27> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p26> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p25> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p24> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p23> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p22> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p21> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p20> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p19> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p18> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p17> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p16> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p15> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p14> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p13> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p12> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <p11> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <CPU> synthesized.
 
 
@@ -169,8 +322,21 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  16-bit adder                                          : 1
-# Registers                                            : 1
- 16-bit register                                       : 1
+# Registers                                            : 22
+ 1-bit register                                        : 9
+ 11-bit register                                       : 1
+ 16-bit register                                       : 2
+ 2-bit register                                        : 5
+ 3-bit register                                        : 4
+ 4-bit register                                        : 1
+# Latches                                              : 1
+ 16-bit latch                                          : 1
+# Multiplexers                                         : 40
+ 1-bit 4-to-1 multiplexer                              : 18
+ 11-bit 4-to-1 multiplexer                             : 2
+ 2-bit 4-to-1 multiplexer                              : 10
+ 3-bit 4-to-1 multiplexer                              : 8
+ 4-bit 4-to-1 multiplexer                              : 2
 
 =========================================================================
 
@@ -178,6 +344,16 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1290 - Hierarchical block <u1> is unconnected in block <CPU>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <u2> is unconnected in block <CPU>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <u3> is unconnected in block <CPU>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <u4> is unconnected in block <CPU>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <u6> is unconnected in block <CPU>.
+   It will be removed from the design.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -185,18 +361,109 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  16-bit adder                                          : 1
-# Registers                                            : 16
- Flip-Flops                                            : 16
+# Registers                                            : 78
+ Flip-Flops                                            : 78
+# Latches                                              : 1
+ 16-bit latch                                          : 1
+# Multiplexers                                         : 40
+ 1-bit 4-to-1 multiplexer                              : 18
+ 11-bit 4-to-1 multiplexer                             : 2
+ 2-bit 4-to-1 multiplexer                              : 10
+ 3-bit 4-to-1 multiplexer                              : 8
+ 4-bit 4-to-1 multiplexer                              : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <15> in Unit <LPM_LATCH_1> is equivalent to the following 15 FFs/Latches, which will be removed : <14> <13> <12> <11> <10> <9> <8> <7> <6> <5> <4> <3> <2> <1> <0> 
+WARNING:Xst:1293 - FF/Latch <15> has a constant value of 0 in block <LPM_LATCH_1>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <CPU> ...
 
 Optimizing unit <PC> ...
+
+Optimizing unit <parseCtrl> ...
+WARNING:Xst:1710 - FF/Latch <Ctrl_CMP_0> (without init value) has a constant value of 0 in block <parseCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Ctrl_CMP_0> (without init value) has a constant value of 0 in block <parseCtrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <u1/var_PC_15> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_14> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_13> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_12> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_11> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_10> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_9> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_8> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_7> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_6> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_5> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_4> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_3> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u1/var_PC_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_10> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_9> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_8> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_7> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_6> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_5> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_4> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_3> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Rx1_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Rx1_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Rx1_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_op2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_judge> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_Jump> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_xy> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_immidiate_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_immidiate_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_immidiate_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_CMP_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_WB> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_SP_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_SP_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_PCMEM> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_r_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_r_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Rz_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Rz_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Rz_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_op_3> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_op_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_op_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_op_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_extend> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_DRRE> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_b> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_15> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_14> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_13> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_12> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_11> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_10> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_9> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_8> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_7> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_6> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_5> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_4> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_3> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_IH_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_IH_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_addr_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_addr_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Ry1_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Ry1_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Ry1_0> of sequential type is unconnected in block <CPU>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -207,10 +474,7 @@ Final Macro Processing ...
 =========================================================================
 Final Register Report
 
-Macro Statistics
-# Registers                                            : 16
- Flip-Flops                                            : 16
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -238,19 +502,10 @@ Design Statistics
 # IOs                              : 34
 
 Cell Usage :
-# BELS                             : 43
+# BELS                             : 1
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 12
-#      MUXCY                       : 13
-#      VCC                         : 1
-#      XORCY                       : 14
-# FlipFlops/Latches                : 16
-#      FDC                         : 16
-# Clock Buffers                    : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 33
-#      IBUF                        : 17
+# IO Buffers                       : 17
+#      IBUF                        : 1
 #      OBUF                        : 16
 =========================================================================
 
@@ -259,12 +514,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                       15  out of   8672     0%  
- Number of 4 input LUTs:                 14  out of  17344     0%  
+ Number of Slices:                        0  out of   8672     0%  
  Number of IOs:                          34
- Number of bonded IOBs:                  34  out of    250    13%  
-    IOB Flip Flops:                      16
- Number of GCLKs:                         1  out of     24     4%  
+ Number of bonded IOBs:                  17  out of    250     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -284,96 +536,54 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 16    |
------------------------------------+------------------------+-------+
+No clock signals found in this design
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------+------------------------+-------+
-Control Signal                     | Buffer(FF name)        | Load  |
------------------------------------+------------------------+-------+
-u1/rst_inv(u1/rst_inv1_INV_0:O)    | NONE(u1/var_PC_0)      | 16    |
------------------------------------+------------------------+-------+
+No asynchronous control signals found in this design
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
    Minimum period: No path found
-   Minimum input arrival time before clock: 1.946ns
-   Maximum output required time after clock: 7.499ns
-   Maximum combinational path delay: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 5.123ns
 
 Timing Detail:
 --------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 16 / 16
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Offset:              1.946ns (Levels of Logic = 1)
-  Source:            PCin<15> (PAD)
-  Destination:       u1/var_PC_15 (FF)
-  Destination Clock: clk rising
+Delay:               5.123ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       PCout<14> (PAD)
 
-  Data Path: PCin<15> to u1/var_PC_15
+  Data Path: rst to PCout<14>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.218   0.420  PCin_15_IBUF (PCin_15_IBUF)
-     FDC:D                     0.308          u1/var_PC_15
+     IBUF:I->O             5   1.218   0.633  rst_IBUF (rst_IBUF)
+     OBUF:I->O                 3.272          PCout_14_OBUF (PCout<14>)
     ----------------------------------------
-    Total                      1.946ns (1.526ns logic, 0.420ns route)
-                                       (78.4% logic, 21.6% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 107 / 16
--------------------------------------------------------------------------
-Offset:              7.499ns (Levels of Logic = 15)
-  Source:            u1/var_PC_3 (FF)
-  Destination:       PCout<15> (PAD)
-  Source Clock:      clk rising
-
-  Data Path: u1/var_PC_3 to PCout<15>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q              1   0.591   0.595  u1/var_PC_3 (u1/var_PC_3)
-     LUT1:I0->O            1   0.704   0.000  u2/Madd_PC_4_cy<3>_rt (u2/Madd_PC_4_cy<3>_rt)
-     MUXCY:S->O            1   0.464   0.000  u2/Madd_PC_4_cy<3> (u2/Madd_PC_4_cy<3>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<4> (u2/Madd_PC_4_cy<4>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<5> (u2/Madd_PC_4_cy<5>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<6> (u2/Madd_PC_4_cy<6>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<7> (u2/Madd_PC_4_cy<7>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<8> (u2/Madd_PC_4_cy<8>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<9> (u2/Madd_PC_4_cy<9>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<10> (u2/Madd_PC_4_cy<10>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<11> (u2/Madd_PC_4_cy<11>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<12> (u2/Madd_PC_4_cy<12>)
-     MUXCY:CI->O           1   0.059   0.000  u2/Madd_PC_4_cy<13> (u2/Madd_PC_4_cy<13>)
-     MUXCY:CI->O           0   0.059   0.000  u2/Madd_PC_4_cy<14> (u2/Madd_PC_4_cy<14>)
-     XORCY:CI->O           1   0.804   0.420  u2/Madd_PC_4_xor<15> (PCout_15_OBUF)
-     OBUF:I->O                 3.272          PCout_15_OBUF (PCout<15>)
-    ----------------------------------------
-    Total                      7.499ns (6.484ns logic, 1.015ns route)
-                                       (86.5% logic, 13.5% route)
+    Total                      5.123ns (4.490ns logic, 0.633ns route)
+                                       (87.6% logic, 12.4% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.85 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.52 secs
  
 --> 
 
-Total memory usage is 249616 kilobytes
+Total memory usage is 265808 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :  122 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 
