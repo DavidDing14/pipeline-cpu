@@ -42,7 +42,7 @@ entity parseCtrl is
            Ctrl_immidiate : out  STD_LOGIC_VECTOR (2 downto 0);
            Ctrl_extend : out  STD_LOGIC;
            Ctrl_SP : out  STD_LOGIC_VECTOR (1 downto 0);
-           Ctrl_CMP : out  STD_LOGIC_VECTOR (1 downto 0);
+           Ctrl_imm_ry : out	STD_LOGIC;
            Ctrl_IH : out  STD_LOGIC_VECTOR (1 downto 0);
            Ctrl_r : out  STD_LOGIC_VECTOR (1 downto 0);
            Ctrl_WB : out  STD_LOGIC;
@@ -72,7 +72,7 @@ begin
 			Ctrl_immidiate<="000";
 			Ctrl_extend<='0';
 			Ctrl_SP<="00";
-			Ctrl_CMP<="00";
+			Ctrl_imm_ry<='0';
 			Ctrl_IH<="00";
 			Ctrl_r<="00";
 			Ctrl_WB<='0';
@@ -101,7 +101,7 @@ begin
 						Ctrl_immidiate<="000";
 						Ctrl_extend<='0';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='0';
 						Ctrl_IH<="00";
 						Ctrl_r<="11";
 						Ctrl_WB<='0';
@@ -125,7 +125,7 @@ begin
 						Ctrl_immidiate<="011";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="11";
 						Ctrl_WB<='0';
@@ -149,7 +149,7 @@ begin
 						Ctrl_immidiate<="001";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="11";
 						Ctrl_WB<='0';
@@ -173,7 +173,7 @@ begin
 						Ctrl_immidiate<="001";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="11";
 						Ctrl_WB<='0';
@@ -199,7 +199,7 @@ begin
 								Ctrl_immidiate<="101";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='1';
 								Ctrl_IH<="00";
 								Ctrl_r<="10";
 								Ctrl_WB<='1';
@@ -223,7 +223,7 @@ begin
 								Ctrl_immidiate<="101";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='1';
 								Ctrl_IH<="00";
 								Ctrl_r<="10";
 								Ctrl_WB<='1';
@@ -247,7 +247,7 @@ begin
 								Ctrl_immidiate<="101";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='1';
 								Ctrl_IH<="00";
 								Ctrl_r<="10";
 								Ctrl_WB<='1';
@@ -274,7 +274,7 @@ begin
 						Ctrl_immidiate<="010";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="01";
 						Ctrl_WB<='1';
@@ -298,7 +298,7 @@ begin
 						Ctrl_immidiate<="001";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="10";
 						Ctrl_WB<='1';
@@ -322,7 +322,7 @@ begin
 						Ctrl_immidiate<="001";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="10";
+						Ctrl_imm_ry<='0';
 						Ctrl_IH<="00";
 						Ctrl_r<="11";
 						Ctrl_WB<='0';
@@ -348,7 +348,7 @@ begin
 								Ctrl_immidiate<="001";
 								Ctrl_extend<='1';
 								Ctrl_SP<="11";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='1';
 								Ctrl_IH<="00";
 								Ctrl_r<="11";
 								Ctrl_WB<='1';
@@ -372,7 +372,7 @@ begin
 								Ctrl_immidiate<="001";
 								Ctrl_extend<='1';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='1';
 								Ctrl_IH<="00";
 								Ctrl_r<="11";
 								Ctrl_WB<='0';
@@ -396,7 +396,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="01";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="00";
 								Ctrl_r<="11";
 								Ctrl_WB<='1';
@@ -409,8 +409,8 @@ begin
 								Ctrl_judge<='0';
 								Ctrl_b<='0';
 								Ctrl_Jump<='0';
-								out_Rx1<=instruction(10 downto 8);
-								out_Rx2<=instruction(10 downto 8);
+								out_Rx1<=instruction(7 downto 5);
+								out_Rx2<=instruction(7 downto 5);
 								out_Ry1<=instruction(7 downto 5);
 								out_Ry2<=instruction(7 downto 5);
 								out_Rz<=instruction(4 downto 2);
@@ -422,7 +422,7 @@ begin
 						Ctrl_immidiate<="001";
 						Ctrl_extend<='0';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="10";
 						Ctrl_WB<='1';
@@ -446,7 +446,7 @@ begin
 						Ctrl_immidiate<="001";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="10";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="11";
 						Ctrl_WB<='0';
@@ -470,7 +470,7 @@ begin
 						Ctrl_immidiate<="001";
 						Ctrl_extend<='1';
 						Ctrl_SP<="10";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="10";
 						Ctrl_WB<='1';
@@ -494,7 +494,7 @@ begin
 						Ctrl_immidiate<="100";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="01";
 						Ctrl_WB<='1';
@@ -518,7 +518,7 @@ begin
 						Ctrl_immidiate<="001";
 						Ctrl_extend<='1';
 						Ctrl_SP<="10";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="11";
 						Ctrl_WB<='0';
@@ -542,7 +542,7 @@ begin
 						Ctrl_immidiate<="100";
 						Ctrl_extend<='1';
 						Ctrl_SP<="00";
-						Ctrl_CMP<="00";
+						Ctrl_imm_ry<='1';
 						Ctrl_IH<="00";
 						Ctrl_r<="11";
 						Ctrl_WB<='0';
@@ -568,7 +568,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="00";
 								Ctrl_r<="00";
 								Ctrl_WB<='1';
@@ -592,7 +592,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="00";
 								Ctrl_r<="00";
 								Ctrl_WB<='1';
@@ -621,7 +621,7 @@ begin
 										Ctrl_immidiate<="000";
 										Ctrl_extend<='0';
 										Ctrl_SP<="00";
-										Ctrl_CMP<="00";
+										Ctrl_imm_ry<='0';
 										Ctrl_IH<="00";
 										Ctrl_r<="11";
 										Ctrl_WB<='0';
@@ -645,7 +645,7 @@ begin
 										Ctrl_immidiate<="000";
 										Ctrl_extend<='0';
 										Ctrl_SP<="00";
-										Ctrl_CMP<="00";
+										Ctrl_imm_ry<='0';
 										Ctrl_IH<="00";
 										Ctrl_r<="10";
 										Ctrl_WB<='1';
@@ -670,7 +670,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="00";
 								Ctrl_r<="10";
 								Ctrl_WB<='1';
@@ -694,7 +694,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="10";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="00";
 								Ctrl_r<="11";
 								Ctrl_WB<='0';
@@ -718,7 +718,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="00";
 								Ctrl_r<="10";
 								Ctrl_WB<='1';
@@ -742,7 +742,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="00";
 								Ctrl_r<="10";
 								Ctrl_WB<='1';
@@ -766,7 +766,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="00";
 								Ctrl_r<="01";
 								Ctrl_WB<='1';
@@ -794,7 +794,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="10";
 								Ctrl_r<="10";
 								Ctrl_WB<='1';
@@ -818,7 +818,7 @@ begin
 								Ctrl_immidiate<="000";
 								Ctrl_extend<='0';
 								Ctrl_SP<="00";
-								Ctrl_CMP<="00";
+								Ctrl_imm_ry<='0';
 								Ctrl_IH<="01";
 								Ctrl_r<="11";
 								Ctrl_WB<='1';
@@ -846,7 +846,7 @@ begin
 				Ctrl_immidiate<="000";
 				Ctrl_extend<='0';
 				Ctrl_SP<="00";
-				Ctrl_CMP<="00";
+				Ctrl_imm_ry<='0';
 				Ctrl_IH<="00";
 				Ctrl_r<="00";
 				Ctrl_WB<='0';

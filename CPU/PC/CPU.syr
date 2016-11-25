@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: CPU.prj
 
@@ -116,9 +116,15 @@ Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Memory.vhd" in Library work.
 Architecture behavioral of Entity memory is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/parseCtrl.vhd" in Library work.
 Architecture behavioral of Entity parsectrl is up to date.
+Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd" in Library work.
+Architecture behavioral of Entity rxyz_mux is up to date.
+Compiling vhdl file "E:/pipeline-cpu/CPU/PC/immidiate_mux_extend.vhd" in Library work.
+Architecture behavioral of Entity immidiate_mux_extend is up to date.
+Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Main_Reg.vhd" in Library work.
+Entity <main_reg> compiled.
+Entity <main_reg> (Architecture <behavioral>) compiled.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/CPU.vhd" in Library work.
-Entity <cpu> compiled.
-Entity <cpu> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity cpu is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -136,6 +142,12 @@ Analyzing hierarchy for entity <Addr_MUX> in library <work> (architecture <behav
 Analyzing hierarchy for entity <Memory> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <parseCtrl> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Rxyz_MUX> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <immidiate_mux_extend> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Main_Reg> in library <work> (architecture <behavioral>).
 
 
 =========================================================================
@@ -163,6 +175,17 @@ Entity <Memory> analyzed. Unit <Memory> generated.
 
 Analyzing Entity <parseCtrl> in library <work> (Architecture <behavioral>).
 Entity <parseCtrl> analyzed. Unit <parseCtrl> generated.
+
+Analyzing Entity <Rxyz_MUX> in library <work> (Architecture <behavioral>).
+Entity <Rxyz_MUX> analyzed. Unit <Rxyz_MUX> generated.
+
+Analyzing Entity <immidiate_mux_extend> in library <work> (Architecture <behavioral>).
+Entity <immidiate_mux_extend> analyzed. Unit <immidiate_mux_extend> generated.
+
+Analyzing Entity <Main_Reg> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "E:/pipeline-cpu/CPU/PC/Main_Reg.vhd" line 66: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <Control_imm_ry>
+Entity <Main_Reg> analyzed. Unit <Main_Reg> generated.
 
 
 =========================================================================
@@ -217,13 +240,13 @@ WARNING:Xst:647 - Input <PC> is never used. This port will be preserved and left
     Register <out_Rx2> equivalent to <out_Rx1> has been removed
     Register <out_Ry2> equivalent to <out_Ry1> has been removed
     Found 2-bit register for signal <Ctrl_addr>.
-    Found 2-bit register for signal <Ctrl_CMP>.
     Found 1-bit register for signal <Ctrl_DRRE>.
     Found 1-bit register for signal <Ctrl_xy>.
     Found 3-bit register for signal <Ctrl_immidiate>.
     Found 1-bit register for signal <Ctrl_extend>.
     Found 1-bit register for signal <Ctrl_Jump>.
     Found 11-bit register for signal <out_imm>.
+    Found 1-bit register for signal <Ctrl_imm_ry>.
     Found 1-bit register for signal <Ctrl_PCMEM>.
     Found 1-bit register for signal <Ctrl_op2>.
     Found 1-bit register for signal <Ctrl_judge>.
@@ -241,14 +264,14 @@ WARNING:Xst:647 - Input <PC> is never used. This port will be preserved and left
     Found 2-bit 4-to-1 multiplexer for signal <Ctrl_addr$mux0002> created at line 345.
     Found 1-bit 4-to-1 multiplexer for signal <Ctrl_b$mux0001> created at line 196.
     Found 1-bit 4-to-1 multiplexer for signal <Ctrl_b$mux0002> created at line 345.
-    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_CMP$mux0001> created at line 196.
-    Found 2-bit 4-to-1 multiplexer for signal <Ctrl_CMP$mux0002> created at line 345.
     Found 1-bit 4-to-1 multiplexer for signal <Ctrl_DRRE$mux0001> created at line 196.
     Found 1-bit 4-to-1 multiplexer for signal <Ctrl_DRRE$mux0002> created at line 345.
     Found 1-bit 4-to-1 multiplexer for signal <Ctrl_extend$mux0001> created at line 196.
     Found 1-bit 4-to-1 multiplexer for signal <Ctrl_extend$mux0002> created at line 345.
     Found 2-bit 4-to-1 multiplexer for signal <Ctrl_IH$mux0001> created at line 196.
     Found 2-bit 4-to-1 multiplexer for signal <Ctrl_IH$mux0002> created at line 345.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_imm_ry$mux0001> created at line 196.
+    Found 1-bit 4-to-1 multiplexer for signal <Ctrl_imm_ry$mux0002> created at line 345.
     Found 3-bit 4-to-1 multiplexer for signal <Ctrl_immidiate$mux0001> created at line 196.
     Found 3-bit 4-to-1 multiplexer for signal <Ctrl_immidiate$mux0002> created at line 345.
     Found 1-bit 4-to-1 multiplexer for signal <Ctrl_judge$mux0001> created at line 196.
@@ -278,25 +301,88 @@ WARNING:Xst:647 - Input <PC> is never used. This port will be preserved and left
     Found 3-bit 4-to-1 multiplexer for signal <out_Rz$mux0001> created at line 196.
     Found 3-bit 4-to-1 multiplexer for signal <out_Rz$mux0002> created at line 345.
     Summary:
-	inferred  62 D-type flip-flop(s).
-	inferred  92 Multiplexer(s).
+	inferred  61 D-type flip-flop(s).
+	inferred  90 Multiplexer(s).
 Unit <parseCtrl> synthesized.
+
+
+Synthesizing Unit <Rxyz_MUX>.
+    Related source file is "E:/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd".
+WARNING:Xst:737 - Found 3-bit latch for signal <ND>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 3-bit 3-to-1 multiplexer for signal <ND$mux0000>.
+    Summary:
+	inferred   3 Multiplexer(s).
+Unit <Rxyz_MUX> synthesized.
+
+
+Synthesizing Unit <immidiate_mux_extend>.
+    Related source file is "E:/pipeline-cpu/CPU/PC/immidiate_mux_extend.vhd".
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_9$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_8$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_7$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_6$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_5$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_4$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_3$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_2$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_1$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_0$mux0000> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_11$mux0001> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <real_imm_10$mux0004> created at line 47. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+Unit <immidiate_mux_extend> synthesized.
+
+
+Synthesizing Unit <Main_Reg>.
+    Related source file is "E:/pipeline-cpu/CPU/PC/Main_Reg.vhd".
+WARNING:Xst:647 - Input <Result_MEM> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <instruction<10:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <g2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 16-bit latch for signal <IH>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <R0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <R1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <R2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <R3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <R4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <R5>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <R6>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <R7>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 16-bit latch for signal <SP>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 16-bit comparator equal for signal <c3$cmp_eq0001> created at line 251.
+    Found 16-bit comparator equal for signal <c3$cmp_eq0003> created at line 257.
+    Found 16-bit comparator less for signal <c3$cmp_lt0000> created at line 271.
+    Found 16-bit 8-to-1 multiplexer for signal <g1$mux0002> created at line 97.
+    Found 16-bit 8-to-1 multiplexer for signal <g2$mux0002> created at line 131.
+    Summary:
+	inferred   3 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <Main_Reg> synthesized.
 
 
 Synthesizing Unit <CPU>.
     Related source file is "E:/pipeline-cpu/CPU/PC/CPU.vhd".
 WARNING:Xst:647 - Input <PCin> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <q7> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <q6> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <q5> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <q4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <q3> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p9> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p8> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p7> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p34> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p33> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p32> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p31> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p30> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p29> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p28> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p27> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p26> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p25> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p24> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -305,14 +391,6 @@ WARNING:Xst:646 - Signal <p22> is assigned but never used. This unconnected sign
 WARNING:Xst:646 - Signal <p21> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p20> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p19> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p18> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p17> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p16> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p15> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p14> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p13> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p12> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <p11> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <CPU> synthesized.
 
 
@@ -323,18 +401,25 @@ Macro Statistics
 # Adders/Subtractors                                   : 1
  16-bit adder                                          : 1
 # Registers                                            : 22
- 1-bit register                                        : 9
+ 1-bit register                                        : 10
  11-bit register                                       : 1
  16-bit register                                       : 2
- 2-bit register                                        : 5
+ 2-bit register                                        : 4
  3-bit register                                        : 4
  4-bit register                                        : 1
-# Latches                                              : 1
- 16-bit latch                                          : 1
-# Multiplexers                                         : 40
- 1-bit 4-to-1 multiplexer                              : 18
+# Latches                                              : 24
+ 1-bit latch                                           : 12
+ 16-bit latch                                          : 11
+ 3-bit latch                                           : 1
+# Comparators                                          : 3
+ 16-bit comparator equal                               : 2
+ 16-bit comparator less                                : 1
+# Multiplexers                                         : 43
+ 1-bit 4-to-1 multiplexer                              : 20
  11-bit 4-to-1 multiplexer                             : 2
- 2-bit 4-to-1 multiplexer                              : 10
+ 16-bit 8-to-1 multiplexer                             : 2
+ 2-bit 4-to-1 multiplexer                              : 8
+ 3-bit 3-to-1 multiplexer                              : 1
  3-bit 4-to-1 multiplexer                              : 8
  4-bit 4-to-1 multiplexer                              : 2
 
@@ -354,6 +439,12 @@ WARNING:Xst:1290 - Hierarchical block <u4> is unconnected in block <CPU>.
    It will be removed from the design.
 WARNING:Xst:1290 - Hierarchical block <u6> is unconnected in block <CPU>.
    It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <u7> is unconnected in block <CPU>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <u8> is unconnected in block <CPU>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <u9> is unconnected in block <CPU>.
+   It will be removed from the design.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -361,14 +452,21 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  16-bit adder                                          : 1
-# Registers                                            : 78
- Flip-Flops                                            : 78
-# Latches                                              : 1
- 16-bit latch                                          : 1
-# Multiplexers                                         : 40
- 1-bit 4-to-1 multiplexer                              : 18
+# Registers                                            : 77
+ Flip-Flops                                            : 77
+# Latches                                              : 24
+ 1-bit latch                                           : 12
+ 16-bit latch                                          : 11
+ 3-bit latch                                           : 1
+# Comparators                                          : 3
+ 16-bit comparator equal                               : 2
+ 16-bit comparator less                                : 1
+# Multiplexers                                         : 43
+ 1-bit 4-to-1 multiplexer                              : 20
  11-bit 4-to-1 multiplexer                             : 2
- 2-bit 4-to-1 multiplexer                              : 10
+ 16-bit 8-to-1 multiplexer                             : 2
+ 2-bit 4-to-1 multiplexer                              : 8
+ 3-bit 3-to-1 multiplexer                              : 1
  3-bit 4-to-1 multiplexer                              : 8
  4-bit 4-to-1 multiplexer                              : 2
 
@@ -378,15 +476,47 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 INFO:Xst:2261 - The FF/Latch <15> in Unit <LPM_LATCH_1> is equivalent to the following 15 FFs/Latches, which will be removed : <14> <13> <12> <11> <10> <9> <8> <7> <6> <5> <4> <3> <2> <1> <0> 
+INFO:Xst:2261 - The FF/Latch <R7_7> in Unit <Main_Reg> is equivalent to the following 7 FFs/Latches, which will be removed : <R6_6> <R5_5> <R4_4> <R3_3> <R2_2> <R1_1> <R0_0> 
+INFO:Xst:2261 - The FF/Latch <R7_0> in Unit <Main_Reg> is equivalent to the following 135 FFs/Latches, which will be removed : <R7_1> <R7_2> <R7_3> <R7_4> <R7_5> <R7_6> <R7_8> <R7_9> <R7_10> <R7_11> <R7_12> <R7_13> <R7_14> <R7_15> <R6_0> <R6_1> <R6_2> <R6_3> <R6_4> <R6_5> <R6_7> <R6_8> <R6_9> <R6_10> <R6_11> <R6_12> <R6_13> <R6_14> <R6_15> <R5_0> <R5_1> <R5_2> <R5_3> <R5_4> <R5_6> <R5_7> <R5_8> <R5_9> <R5_10> <R5_11> <R5_12> <R5_13> <R5_14> <R5_15> <R4_0> <R4_1> <R4_2> <R4_3> <R4_5> <R4_6> <R4_7> <R4_8> <R4_9> <R4_10> <R4_11> <R4_12> <R4_13> <R4_14> <R4_15> <R3_0> <R3_1> <R3_2> <R3_4> <R3_5> <R3_6> <R3_7> <R3_8> <R3_9> <R3_10> <R3_11> <R3_12> <R3_13> <R3_14> <R3_15> <R2_0> <R2_1> <R2_3> <R2_4> <R2_5> <R2_6> <R2_7> <R2_8> <R2_9> <R2_10> <R2_11> <R2_12> <R2_13> <R2_14> <R2_15> <R1_0> <R1_2> <R1_3> <R1_4> <R1_5> <R1_6> <R1_7> <R1_8> <R1_9> <R1_10> <R1_11> <R1_12> <R1_13> <R1_14> <R1_15> <R0_1> <R0_2> <R0_3> <R0_4> <R0_5> <R0_6> <R0_7> <R0_8> <R0_9> <R0_10> <R0_11> <R0_12> <R0_13> <R0_14> <R0_15> <IH_0> <IH_1>
+   <IH_2> <IH_3> <IH_4> <IH_5> <IH_6> <IH_7> <IH_8> <IH_9> <IH_10> <IH_11> <IH_12> <IH_13> <IH_14> <IH_15> 
 WARNING:Xst:1293 - FF/Latch <15> has a constant value of 0 in block <LPM_LATCH_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <R7_0> (without init value) has a constant value of 0 in block <Main_Reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R7_7> (without init value) has a constant value of 1 in block <Main_Reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<0>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<2>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<4>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<8>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<12>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: RegND<0>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: RegND<2>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<7>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<11>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<15>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: c1.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: T.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<1>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<3>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<6>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<10>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<14>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: RegND<1>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: RegND<3>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<5>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<9>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<13>.
 
 Optimizing unit <CPU> ...
 
 Optimizing unit <PC> ...
 
 Optimizing unit <parseCtrl> ...
-WARNING:Xst:1710 - FF/Latch <Ctrl_CMP_0> (without init value) has a constant value of 0 in block <parseCtrl>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Ctrl_CMP_0> (without init value) has a constant value of 0 in block <parseCtrl>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <immidiate_mux_extend> ...
+
+Optimizing unit <Main_Reg> ...
+WARNING:Xst:2677 - Node <u7/ND_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u7/ND_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u7/ND_0> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u1/var_PC_15> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u1/var_PC_14> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u1/var_PC_13> of sequential type is unconnected in block <CPU>.
@@ -424,7 +554,6 @@ WARNING:Xst:2677 - Node <u6/Ctrl_xy> of sequential type is unconnected in block 
 WARNING:Xst:2677 - Node <u6/Ctrl_immidiate_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_immidiate_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_immidiate_0> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/Ctrl_CMP_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_WB> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_SP_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_SP_0> of sequential type is unconnected in block <CPU>.
@@ -434,6 +563,7 @@ WARNING:Xst:2677 - Node <u6/Ctrl_r_0> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <u6/out_Rz_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_Rz_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_Rz_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_imm_ry> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_op_3> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_op_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_op_1> of sequential type is unconnected in block <CPU>.
@@ -464,6 +594,18 @@ WARNING:Xst:2677 - Node <u6/Ctrl_addr_0> of sequential type is unconnected in bl
 WARNING:Xst:2677 - Node <u6/out_Ry1_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_Ry1_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_Ry1_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_9_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_8_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_7_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_6_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_5_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_4_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_3_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_2_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_1_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_0_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_11_mux0001> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_10_mux0004> of sequential type is unconnected in block <CPU>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -549,7 +691,7 @@ Speed Grade: -4
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 5.123ns
+   Maximum combinational path delay: 5.159ns
 
 Timing Detail:
 --------------
@@ -557,9 +699,9 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 5 / 5
+  Total number of paths / destination ports: 6 / 6
 -------------------------------------------------------------------------
-Delay:               5.123ns (Levels of Logic = 2)
+Delay:               5.159ns (Levels of Logic = 2)
   Source:            rst (PAD)
   Destination:       PCout<14> (PAD)
 
@@ -567,23 +709,23 @@ Delay:               5.123ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   1.218   0.633  rst_IBUF (rst_IBUF)
+     IBUF:I->O             6   1.218   0.669  rst_IBUF (rst_IBUF)
      OBUF:I->O                 3.272          PCout_14_OBUF (PCout<14>)
     ----------------------------------------
-    Total                      5.123ns (4.490ns logic, 0.633ns route)
-                                       (87.6% logic, 12.4% route)
+    Total                      5.159ns (4.490ns logic, 0.669ns route)
+                                       (87.0% logic, 13.0% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.52 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.08 secs
  
 --> 
 
 Total memory usage is 265808 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  122 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :  179 (   0 filtered)
+Number of infos    :   18 (   0 filtered)
 

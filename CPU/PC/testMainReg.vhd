@@ -150,7 +150,7 @@ BEGIN
 		ND<="010";
 		NI<="0101010101010101";
 		imm<="0000010101010111";
-		RegND_WB<="1000";
+		RegND_WB<="0101";
 		Control_ctrl<="00";
 		Control_SP<="00";
 		Control_IH<="00";
@@ -161,13 +161,16 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-      Rx<="101";
+      Rx<="010";
 		wait for 100 ns;
 		Control_XY<='1';
 		wait for 100 ns;
-		Control_SP<="01";
+		Control_SP<="00";
       -- insert stimulus here 
-
+		wait for 100 ns;
+		Control_WB<='1';
+		wait for 100 ns;
+		Rx<="101";
       wait;
    end process;
 

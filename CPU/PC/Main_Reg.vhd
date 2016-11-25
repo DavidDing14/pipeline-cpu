@@ -49,7 +49,7 @@ entity Main_Reg is
            Control_ctrl : in  STD_LOGIC_VECTOR (1 downto 0);
            Control_SP : in  STD_LOGIC_VECTOR (1 downto 0);
            Control_IH : in  STD_LOGIC_VECTOR (1 downto 0);
-			  Control_imm_ry:in std_logic;			 
+			  Control_imm_ry : in std_logic;			 
            Control_B : in  STD_LOGIC;
            Control_WB : in  STD_LOGIC;
 			  Control_XY : in  STD_LOGIC;	--写回的数据是Rx还是Ry
@@ -57,17 +57,17 @@ entity Main_Reg is
 end Main_Reg;
 
 architecture Behavioral of Main_Reg is
-shared variable R0, R1, R2, R3, R4, R5, R6, R7: std_logic_vector(15 downto 0):="0000000000010000";
-shared variable T: std_logic:='0';
-shared variable SP: std_logic_vector(15 downto 0):="0000000000000000";
-shared variable IH: std_logic_vector(15 downto 0):="0000000000000000";
+shared variable R0, R1, R2, R3, R4, R5, R6, R7: std_logic_vector(15 downto 0);
+shared variable T: std_logic;
+shared variable SP: std_logic_vector(15 downto 0);
+shared variable IH: std_logic_vector(15 downto 0);
 begin
 --ID阶段
-	process(rst, instruction, Rx, Ry, ND, imm, Result_EX, Result_MEM, Control_ctrl, Control_SP, Control_IH, Control_B, Control_XY)
-	variable g1, g2: std_logic_vector(15 downto 0):="0000000000000000";	--reg1, reg2
-	variable g3: std_logic_vector(3 downto 0):="0000";	--regnd
-	variable g4, g5: std_logic_vector(15 downto 0):="0000000000000000";	--ry, rx
-	variable c1, c3: std_logic:='0';	--Control_BJ, T
+	process(rst, instruction, Rx, Ry, ND, imm, Result_EX, Result_MEM, Control_ctrl, Control_SP, Control_IH, Control_B, Control_XY, NI, RegND_WB, Control_WB)
+	variable g1, g2: std_logic_vector(15 downto 0);	--reg1, reg2
+	variable g3: std_logic_vector(3 downto 0);	--regnd
+	variable g4, g5: std_logic_vector(15 downto 0);	--ry, rx
+	variable c1, c3: std_logic;	--Control_BJ, T
 	begin
 		if(rst='0')then
 			g1:="0000000000000000";
@@ -84,7 +84,7 @@ begin
 			R4:="0000000000010000";
 			R5:="0000000000100000";
 			R6:="0000000001000000";
-			R7:=R7+1;
+			R7:="0000000010000000";
 			T:='0';
 			SP:="0000000000000000";
 			IH:="0000000000000000";
@@ -284,10 +284,10 @@ begin
 		Control_BJ<=c1;
 		Data_Ry<=g4;
 		T:=c3;
-	end process;
-
-	process(NI, RegND_WB, Control_WB)
-	begin
+--	end process;
+--
+--	process(NI, RegND_WB, Control_WB)
+--	begin
 		if(Control_WB='1')then	--写回
 			case RegND_WB is
 				when "0000"=>

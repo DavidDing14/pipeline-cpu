@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity ALU2_MUX is
     Port ( Reg2 : in  STD_LOGIC_VECTOR (15 downto 0);
            ALU2 : out  STD_LOGIC_VECTOR (15 downto 0);
-           Control_op2 : in  STD_LOGIC_VECTOR (1 downto 0));
+           Control_op2 : in  STD_LOGIC);
 end ALU2_MUX;
 
 architecture Behavioral of ALU2_MUX is
@@ -43,12 +43,10 @@ begin
 	process(Reg2, Control_op2)
 	variable out2: std_logic_vector(15 downto 0):="0000000000000000";
 	begin
-		if(Control_op2="00")then
+		if(Control_op2='0')then
 			out2:=Reg2;
-		elsif(Control_op2="01")then
+		elsif(Control_op2='1')then
 			out2:="0000000000001000";
-		else	--第二个操作数为0
-			out2:="0000000000000000";
 		end if;
 		ALU2<=out2;
 	end process;

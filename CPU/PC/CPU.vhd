@@ -88,7 +88,7 @@ architecture Behavioral of CPU is
            Ctrl_immidiate : out  STD_LOGIC_VECTOR (2 downto 0);
            Ctrl_extend : out  STD_LOGIC;
            Ctrl_SP : out  STD_LOGIC_VECTOR (1 downto 0);
-           Ctrl_CMP : out  STD_LOGIC_VECTOR (1 downto 0);
+           Ctrl_imm_ry : out	STD_LOGIC;
            Ctrl_IH : out  STD_LOGIC_VECTOR (1 downto 0);
            Ctrl_r : out  STD_LOGIC_VECTOR (1 downto 0);
            Ctrl_WB : out  STD_LOGIC;
@@ -108,24 +108,69 @@ architecture Behavioral of CPU is
 			  out_Rz: out std_logic_vector(2 downto 0);
 			  out_imm: out std_logic_vector(10 downto 0));
 	end component;
+	component Rxyz_MUX
+		Port ( Rx : in  STD_LOGIC_VECTOR (2 downto 0);
+           Ry : in  STD_LOGIC_VECTOR (2 downto 0);
+           Rz : in  STD_LOGIC_VECTOR (2 downto 0);
+           ND : out  STD_LOGIC_VECTOR (2 downto 0);
+           Control_r : in  STD_LOGIC_VECTOR (1 downto 0));
+	end component;
+	component immidiate_mux_extend
+		Port ( imm : in  STD_LOGIC_VECTOR (10 downto 0);
+           imm_to_Reg : out  STD_LOGIC_VECTOR (15 downto 0);
+           Control_i : in  STD_LOGIC_VECTOR (2 downto 0);
+           Control_e : in  STD_LOGIC);
+	end component;
+	component Main_Reg
+		Port ( instruction : in  STD_LOGIC_VECTOR (15 downto 0);
+			  rst: in STD_LOGIC;
+           Rx : in  STD_LOGIC_VECTOR (2 downto 0);
+           Ry : in  STD_LOGIC_VECTOR (2 downto 0);
+           ND : in  STD_LOGIC_VECTOR (2 downto 0);
+           NI : in  STD_LOGIC_VECTOR (15 downto 0);
+           imm : in  STD_LOGIC_VECTOR (15 downto 0);
+           Reg1 : out  STD_LOGIC_VECTOR (15 downto 0);
+           Reg2 : out  STD_LOGIC_VECTOR (15 downto 0);
+           RegND : out  STD_LOGIC_VECTOR (3 downto 0);
+           RegND_WB : in  STD_LOGIC_VECTOR (3 downto 0);
+           Data_Ry : out  STD_LOGIC_VECTOR (15 downto 0);
+           Result_EX : in  STD_LOGIC_VECTOR (15 downto 0);
+           Result_MEM : in  STD_LOGIC_VECTOR (15 downto 0);
+           Control_ctrl : in  STD_LOGIC_VECTOR (1 downto 0);
+           Control_SP : in  STD_LOGIC_VECTOR (1 downto 0);
+           Control_IH : in  STD_LOGIC_VECTOR (1 downto 0);
+			  Control_imm_ry : in std_logic;			 
+           Control_B : in  STD_LOGIC;
+           Control_WB : in  STD_LOGIC;
+			  Control_XY : in  STD_LOGIC;	--写回的数据是Rx还是Ry
+           Control_BJ : out  STD_LOGIC);
+	end component;
 	signal p1, p2, p3: std_logic_vector(15 downto 0);	--PC的PC_to_add/PC_IF/PC_EX
 	signal p4: std_logic_vector(15 downto 0);	--PC_ALU的PC_4
 	signal p5: std_logic_vector(15 downto 0);	--PC_EX_MUX的result
 	signal p6: std_logic_vector(15 downto 0);	--Addr_MUX的Addr
 	signal p7, p8, p9, p10: std_logic_vector(15 downto 0);	--Memory的outAddr/outData/outMEM_Ry/outinstruction
-	signal p11: std_logic_vector(15 downto 0);	--out_instruction
-	signal p12, p14, p19, p20, p21, p24, p25, p26, p27, p28: std_logic;	--Ctrl_xy/Ctrl_extend/Ctrl_WB/Ctrl_op1/Ctrl_op2/Ctrl_PCMEM/Ctrl_DRRE/Ctrl_judge/Ctrl_b/Ctrl_Jump
+	signal p11: std_logic_vector(15 downto 0);	--parseCtrl的out_instruction
+	signal p12, p14, p16, p19, p20, p21, p24, p25, p26, p27, p28: std_logic;	--Ctrl_xy/Ctrl_extend/Ctrl_imm_ry/Ctrl_WB/Ctrl_op1/Ctrl_op2/Ctrl_PCMEM/Ctrl_DRRE/Ctrl_judge/Ctrl_b/Ctrl_Jump
 	signal p13, p29, p30, p31, p32, p33: std_logic_vector(2 downto 0);	--Ctrl_immidiate/out_Rx1/out_Ry1/out_Rx2/out_Ry2/out_Rz
-	signal p15, p16, p17, p18, p23: std_logic_vector(1 downto 0);	--Ctrl_SP/Ctrl_CMP/Ctrl_IH/Crtl_r/Ctrl_addr
+	signal p15, p17, p18, p23: std_logic_vector(1 downto 0);	--Ctrl_SP/Ctrl_IH/Crtl_r/Ctrl_addr
 	signal p22: std_logic_vector(3 downto 0);	--Ctrl_op
 	signal p34: std_logic_vector(10 downto 0);	--out_imm
+	signal q1: std_logic_vector(2 downto 0);	--Rxyz_MUX的ND
+	signal q2: std_logic_vector(15 downto 0);	--immidiate_mux_extend的imm_to_Reg
+	signal q3, q4, q6: std_logic_vector(15 downto 0);	--Main_Reg的Reg1/Reg2/Data_Ry
+	signal q5: std_logic_vector(3 downto 0);	--RegND
+	signal q7: std_logic;	--Control_BJ
 begin
 	u1:PC PORT MAP(clk, rst, '0', p5, p1, p2, p3);	--break
 	u2:PC_ALU PORT MAP(p1, p4);
 	u3:PC_EX_MUX PORT MAP(p4, "0000000000000000", p5, '0');	--EX_result/Control_EX
 	u4:Addr_MUX PORT MAP(p2, "0000000000000000", p6, '0');	--MEM/Control_MEM
-	u5:Memory PORT MAP(clk, rst, p6, "0000000000000000", "0000000000000000", "0000000000000000", p7, p8, p9, p10, "00");	--Data/MEM_Ry/instruction
+	u5:Memory PORT MAP(clk, rst, p6, "0000000000000000", "0000000000000000", "0000000000000000", p7, p8, p9, p10, "00");	--Data/MEM_Ry/instruction/Control_MEM
 	u6:parseCtrl PORT MAP(clk, rst, p10, p3, '0', p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34);	--break
+	u7:Rxyz_MUX PORT MAP(p31, p32, p33, q1, p18);
+	u8:immidiate_mux_extend PORT MAP(p34, q2, p13, p14);
+	u9:Main_Reg PORT MAP(p11, rst, p29, p30, q1, "0000000000000000", q2, q3, q4, q5, "0000", q6, "0000000000000000", "0000000000000000", "00", p15, p17, p16, p27, '0', p12, q7);	--NI/RegND_WB/Result_EX/Result_MEM/Control_ctrl/Ctrl_WB
 	PCout<=p10;
 end Behavioral;
 

@@ -1,0 +1,29 @@
+Command line:
+   parseCtrl_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50307
+
+Fri Nov 25 23:15:55 2016
+
+
+ Elaboration Time: 0.0312 sec
+
+ Current Memory Usage: 505.545 Meg
+
+ Total Signals          : 29
+ Total Nets             : 104
+ Total Signal Drivers   : 24
+ Total Blocks           : 4
+ Total Primitive Blocks : 4
+ Total Processes        : 1
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 482
+Total Line Count : 748
+
+ Total Simulation Time: 0.0468 sec
+
+ Current Memory Usage: 505.545 Meg
+
+Fri Nov 25 23:16:05 2016
+
