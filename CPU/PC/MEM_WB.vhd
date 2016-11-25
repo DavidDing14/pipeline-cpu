@@ -36,9 +36,11 @@ entity MEM_WB is
 			  Result : in  STD_LOGIC_VECTOR (15 DOWNTO 0); -- ALU计算结果
            Ctrl_WB : in  STD_LOGIC;
            Ctrl_DRRE : in  STD_LOGIC;
+			  RegND : in  STD_LOGIC_VECTOR (3 DOWNTO 0);
            out_Ctrl_WB : out  STD_LOGIC;
            out_Ctrl_DRRE : out  STD_LOGIC;
-           Data_Reg : out  STD_LOGIC_VECTOR (15 downto 0) -- 输出给寄存器堆
+           Data_Reg : out  STD_LOGIC_VECTOR (15 downto 0); -- 输出给寄存器堆
+			  out_RegND : out  STD_LOGIC_VECTOR (3 DOWNTO 0)
 			);
 end MEM_WB;
 
@@ -51,15 +53,18 @@ begin
 			out_Ctrl_WB <= '0';
 			out_Ctrl_DRRE <= '0';
 			Data_Reg <= "0000000000000000";
+			out_RegND<="0000";
 		elsif (clk'event and clk='1') then
 			if (Break='0') then
 				out_Ctrl_WB <= Ctrl_WB;
 				out_Ctrl_DRRE <= Ctrl_DRRE;
 				Data_Reg <= Result;
+				out_RegND<=RegND;
 			else
 				out_Ctrl_WB <= '0';
 				out_Ctrl_DRRE <= '0';
 				Data_Reg <= "0000000000000000";
+				out_RegND<="0000";
 			end if;
 		end if;
 	end process;

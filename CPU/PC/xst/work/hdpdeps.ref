@@ -1,4 +1,4 @@
-V3 18
+V3 27
 FL E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd 2016/11/22.20:00:06 O.76xd
 EN work/ALU1_MUX 1479975753 FL E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
@@ -10,6 +10,22 @@ EN work/CPU 1479999525 FL E:/pipeline-cpu/CPU/PC/CPU.vhd PB ieee/std_logic_1164 
       PB ieee/std_logic_arith 1317710504 PB ieee/STD_LOGIC_UNSIGNED 1317710506
 AR work/CPU/Behavioral 1479999526 \
       FL E:/pipeline-cpu/CPU/PC/CPU.vhd EN work/CPU 1479999525 CP PC CP PC_ALU
+FL E:/pipeline-cpu/CPU/PC/EX_MEM.vhd 2016/11/25.19:11:23 O.76xd
+EN work/EX_MEM 1480072298 FL E:/pipeline-cpu/CPU/PC/EX_MEM.vhd \
+      PB ieee/std_logic_1164 1317710503
+AR work/EX_MEM/Behavioral 1480072299 \
+      FL E:/pipeline-cpu/CPU/PC/EX_MEM.vhd EN work/EX_MEM 1480072298
+FL E:/pipeline-cpu/CPU/PC/IDEX_Reg.vhd 2016/11/24.22:21:40 O.76xd
+EN work/IDEX_Reg 1480072097 FL E:/pipeline-cpu/CPU/PC/IDEX_Reg.vhd \
+      PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
+      PB ieee/STD_LOGIC_UNSIGNED 1317710506
+AR work/IDEX_Reg/Behavioral 1480072098 \
+      FL E:/pipeline-cpu/CPU/PC/IDEX_Reg.vhd EN work/IDEX_Reg 1480072097
+FL E:/pipeline-cpu/CPU/PC/MEM_WB.vhd 2016/11/25.19:11:18 O.76xd
+EN work/MEM_WB 1480072288 FL E:/pipeline-cpu/CPU/PC/MEM_WB.vhd \
+      PB ieee/std_logic_1164 1317710503
+AR work/MEM_WB/Behavioral 1480072289 \
+      FL E:/pipeline-cpu/CPU/PC/MEM_WB.vhd EN work/MEM_WB 1480072288
 FL E:/pipeline-cpu/CPU/PC/PC.vhd 2016/11/24.22:21:40 O.76xd
 EN work/PC 1479999521 FL E:/pipeline-cpu/CPU/PC/PC.vhd PB ieee/std_logic_1164 1317710503 \
       PB ieee/std_logic_arith 1317710504 PB ieee/STD_LOGIC_UNSIGNED 1317710506

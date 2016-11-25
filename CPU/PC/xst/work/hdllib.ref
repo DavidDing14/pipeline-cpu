@@ -1,10 +1,16 @@
 AR addr_mux behavioral E:/Xilinx/Project/CPU/PC/Addr_MUX.vhd sub00/vhpl03 1479213922
+AR mem_wb behavioral E:/pipeline-cpu/CPU/PC/MEM_WB.vhd sub00/vhpl13 1480072289
 AR alu1_mux behavioral E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd sub00/vhpl05 1479975754
 EN cpu NULL E:/pipeline-cpu/CPU/PC/CPU.vhd sub00/vhpl06 1479999525
 EN addr_mux NULL E:/Xilinx/Project/CPU/PC/Addr_MUX.vhd sub00/vhpl02 1479213921
 AR pc_alu behavioral E:/pipeline-cpu/CPU/PC/PC_ALU.vhd sub00/vhpl09 1479999524
 EN pc NULL E:/pipeline-cpu/CPU/PC/PC.vhd sub00/vhpl00 1479999521
 AR cpu behavioral E:/pipeline-cpu/CPU/PC/CPU.vhd sub00/vhpl07 1479999526
+EN mem_wb NULL E:/pipeline-cpu/CPU/PC/MEM_WB.vhd sub00/vhpl12 1480072288
+EN idex_reg NULL E:/pipeline-cpu/CPU/PC/IDEX_Reg.vhd sub00/vhpl10 1480072097
 EN pc_alu NULL E:/pipeline-cpu/CPU/PC/PC_ALU.vhd sub00/vhpl08 1479999523
+EN ex_mem NULL E:/pipeline-cpu/CPU/PC/EX_MEM.vhd sub00/vhpl14 1480072298
+AR idex_reg behavioral E:/pipeline-cpu/CPU/PC/IDEX_Reg.vhd sub00/vhpl11 1480072098
 EN alu1_mux NULL E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd sub00/vhpl04 1479975753
 AR pc behavioral E:/pipeline-cpu/CPU/PC/PC.vhd sub00/vhpl01 1479999522
+AR ex_mem behavioral E:/pipeline-cpu/CPU/PC/EX_MEM.vhd sub00/vhpl15 1480072299

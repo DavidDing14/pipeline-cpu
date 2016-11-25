@@ -1,0 +1,5 @@
+set -tmpdir "E:/pipeline-cpu/CPU/PC/xst/projnav.tmp"
+set -xsthdpdir "E:/pipeline-cpu/CPU/PC/xst"
+elaborate
+-ifn IDEX_Reg.prj
+-ifmt mixed

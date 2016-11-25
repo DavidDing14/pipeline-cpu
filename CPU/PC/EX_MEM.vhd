@@ -39,12 +39,14 @@ entity EX_MEM is
            Ctrl_addr : in  STD_LOGIC_VECTOR (1 downto 0);
            Ctrl_PCMEM : in  STD_LOGIC;
            Ctrl_DRRE : in  STD_LOGIC;
+			  RegND : in  STD_LOGIC_VECTOR (3 DOWNTO 0);
 			  out_WDATA : out  STD_LOGIC_VECTOR (15 downto 0); -- 写入内存的数据
            out_Result : out  STD_LOGIC_VECTOR (15 downto 0);
            out_Ctrl_WB : out  STD_LOGIC;
            out_Ctrl_addr : out  STD_LOGIC_VECTOR (1 downto 0);
            out_Ctrl_PCMEM : out  STD_LOGIC;
-           out_Ctrl_DRRE : out  STD_LOGIC
+           out_Ctrl_DRRE : out  STD_LOGIC;
+			  out_RegND : out  STD_LOGIC_VECTOR (3 DOWNTO 0)
 			);
 end EX_MEM;
 
@@ -60,6 +62,7 @@ begin
 			out_Ctrl_DRRE<='0';
 			out_Result<="0000000000000000";
 			out_WDATA<="0000000000000000";
+			out_RegND<="0000";
 		elsif (clk'event and clk='1') then
 			if (Break='0') then
 				out_Ctrl_WB<=Ctrl_WB;
@@ -68,6 +71,7 @@ begin
 				out_Ctrl_DRRE<=Ctrl_DRRE;
 				out_Result<=Result;
 				out_WDATA<=WDATA;
+				out_RegND<=RegND;
 			else
 				out_Ctrl_WB<='0';
 				out_Ctrl_addr<="00";
@@ -75,6 +79,7 @@ begin
 				out_Ctrl_DRRE<='0';
 				out_Result<="0000000000000000";
 				out_WDATA<="0000000000000000";
+				out_RegND<="0000";
 			end if;
 		end if;
 	end process;
