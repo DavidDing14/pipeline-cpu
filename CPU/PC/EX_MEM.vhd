@@ -46,7 +46,8 @@ entity EX_MEM is
            out_Ctrl_addr : out  STD_LOGIC_VECTOR (1 downto 0);
            out_Ctrl_PCMEM : out  STD_LOGIC;
            out_Ctrl_DRRE : out  STD_LOGIC;
-			  out_RegND : out  STD_LOGIC_VECTOR (3 DOWNTO 0)
+			  out_RegND : out  STD_LOGIC_VECTOR (3 DOWNTO 0);
+			  out_Result_Reg : out STD_LOGIC_VECTOR(15 downto 0)
 			);
 end EX_MEM;
 
@@ -61,6 +62,7 @@ begin
 			out_Ctrl_PCMEM<='0';
 			out_Ctrl_DRRE<='0';
 			out_Result<="0000000000000000";
+			out_Result_Reg<="0000000000000000";
 			out_WDATA<="0000000000000000";
 			out_RegND<="0000";
 		elsif (clk'event and clk='1') then
@@ -70,6 +72,7 @@ begin
 				out_Ctrl_PCMEM<=Ctrl_PCMEM;
 				out_Ctrl_DRRE<=Ctrl_DRRE;
 				out_Result<=Result;
+				out_Result_Reg<=Result;
 				out_WDATA<=WDATA;
 				out_RegND<=RegND;
 			else
@@ -78,6 +81,7 @@ begin
 				out_Ctrl_PCMEM<='0';
 				out_Ctrl_DRRE<='0';
 				out_Result<="0000000000000000";
+				out_Result_Reg<="0000000000000000";
 				out_WDATA<="0000000000000000";
 				out_RegND<="0000";
 			end if;

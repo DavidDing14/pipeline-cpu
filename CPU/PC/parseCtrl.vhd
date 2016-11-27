@@ -60,7 +60,8 @@ entity parseCtrl is
 			  out_Rx2: out std_logic_vector(2 downto 0);
 			  out_Ry2: out std_logic_vector(2 downto 0);
 			  out_Rz: out std_logic_vector(2 downto 0);
-			  out_imm: out std_logic_vector(10 downto 0));
+			  out_imm: out std_logic_vector(10 downto 0);
+			  out_PC:out std_logic_vector(15 downto 0));
 end parseCtrl;
 
 architecture Behavioral of parseCtrl is
@@ -92,9 +93,11 @@ begin
 			out_Ry2<="000";
 			out_Rz<="000";
 			out_imm<="00000000000";
+			out_PC<="0000000000000000";
 		elsif (clk'event and clk='1') then
 			if(Break = '0') then
 				out_instruction<=instruction;
+				out_PC<=PC;
 				case instruction(15 downto 11) is
 					when "00001" => -- NOP
 						Ctrl_xy<='0';

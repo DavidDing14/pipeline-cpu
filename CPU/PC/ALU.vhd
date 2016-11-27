@@ -35,6 +35,8 @@ entity ALU is
     Port ( ALU1 : in  STD_LOGIC_VECTOR (15 downto 0);
            ALU2 : in  STD_LOGIC_VECTOR (15 downto 0);
            result : out  STD_LOGIC_VECTOR (15 downto 0);
+			  result_to_PC : out STD_LOGIC_VECTOR(15 downto 0);
+			  result_to_Reg : out STD_LOGIC_VECTOR(15 downto 0);
            Control_op : in  STD_LOGIC_VECTOR (3 downto 0));
 end ALU;
 
@@ -93,6 +95,8 @@ begin
 				null;
 		end case;
 		result<=outre;
+		result_to_PC<=outre;
+		result_to_Reg<=outre;
 	end process;
 
 end Behavioral;

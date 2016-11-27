@@ -43,7 +43,7 @@ entity IDEX_Reg is
            Data_Ry : in  STD_LOGIC_VECTOR (15 downto 0);
            Control_WB : in  STD_LOGIC;
            Control_op1 : in  STD_LOGIC;
-           Control_op2 : in  STD_LOGIC_VECTOR (1 downto 0);
+           Control_op2 : in  STD_LOGIC;
            Control_op : in  STD_LOGIC_VECTOR (3 downto 0);
            Control_addr : in  STD_LOGIC_VECTOR (1 downto 0);
            Control_PCMEM : in  STD_LOGIC;
@@ -54,7 +54,7 @@ entity IDEX_Reg is
            outData_Ry : out  STD_LOGIC_VECTOR (15 downto 0);
            outControl_WB : out  STD_LOGIC;
            outControl_op1 : out  STD_LOGIC;
-           outControl_op2 : out  STD_LOGIC_VECTOR (1 downto 0);
+           outControl_op2 : out  STD_LOGIC;
            outControl_op : out  STD_LOGIC_VECTOR (3 downto 0);
            outControl_addr : out  STD_LOGIC_VECTOR (1 downto 0);
            outControl_PCMEM : out  STD_LOGIC;
@@ -75,7 +75,7 @@ begin
 	variable RegData_Ry : STD_LOGIC_VECTOR (15 downto 0):="0000000000000000";
 	variable RegControl_WB : STD_LOGIC:='0';
 	variable RegControl_op1 : STD_LOGIC:='0';
-	variable RegControl_op2 : STD_LOGIC_VECTOR (1 downto 0):="00";
+	variable RegControl_op2 : STD_LOGIC:='0';
 	variable RegControl_op : STD_LOGIC_VECTOR (3 downto 0):="0000";
 	variable RegControl_addr : STD_LOGIC_VECTOR (1 downto 0):="00";
 	variable RegControl_PCMEM : STD_LOGIC:='0';
@@ -90,7 +90,7 @@ begin
 			RegRegND:="1111";
 			RegControl_WB:='0';
 			RegControl_op1:='0';
-			RegControl_op2:="00";
+			RegControl_op2:='0';
 			RegControl_op:="0000";
 			RegControl_addr:="00";
 			RegControl_PCMEM:='0';
@@ -106,7 +106,7 @@ begin
 				RegRegND:="1111";
 				RegControl_WB:='0';
 				RegControl_op1:='0';
-				RegControl_op2:="00";
+				RegControl_op2:='0';
 				RegControl_op:="0000";
 				RegControl_addr:="00";
 				RegControl_PCMEM:='0';
