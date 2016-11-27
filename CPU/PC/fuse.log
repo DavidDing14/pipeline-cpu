@@ -48,8 +48,8 @@ Compiling architecture behavioral of entity ctrl [ctrl_default]
 Compiling architecture behavioral of entity CPU [cpu_default]
 Compiling architecture behavior of entity testcpu
 Time Resolution for simulation is 1ps.
-Waiting for 15 sub-compilation(s) to finish...
+Waiting for 16 sub-compilation(s) to finish...
 Compiled 41 VHDL Units
 Built simulation executable E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe
-Fuse Memory Usage: 34548 KB
-Fuse CPU Usage: 810 ms
+Fuse Memory Usage: 34516 KB
+Fuse CPU Usage: 779 ms

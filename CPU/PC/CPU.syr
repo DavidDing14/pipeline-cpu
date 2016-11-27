@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: CPU.prj
 
@@ -113,7 +113,8 @@ Architecture behavioral of Entity pc_ex_mux is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Addr_MUX.vhd" in Library work.
 Architecture behavioral of Entity addr_mux is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Memory.vhd" in Library work.
-Architecture behavioral of Entity memory is up to date.
+Entity <memory> compiled.
+Entity <memory> (Architecture <behavioral>) compiled.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/parseCtrl.vhd" in Library work.
 Architecture behavioral of Entity parsectrl is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd" in Library work.
@@ -129,11 +130,9 @@ Architecture behavioral of Entity alu1_mux is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/ALU2_MUX.vhd" in Library work.
 Architecture behavioral of Entity alu2_mux is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/ALU.vhd" in Library work.
-Entity <alu> compiled.
-Entity <alu> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity alu is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/EX_MEM.vhd" in Library work.
-Entity <ex_mem> compiled.
-Entity <ex_mem> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity ex_mem is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/MEM_WB.vhd" in Library work.
 Architecture behavioral of Entity mem_wb is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd" in Library work.
@@ -141,8 +140,7 @@ Architecture behavioral of Entity wb_reg_mux is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/ctrl.vhd" in Library work.
 Architecture behavioral of Entity ctrl is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/CPU.vhd" in Library work.
-Entity <cpu> compiled.
-Entity <cpu> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity cpu is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -584,7 +582,6 @@ Unit <ctrl> synthesized.
 Synthesizing Unit <CPU>.
     Related source file is "E:/pipeline-cpu/CPU/PC/CPU.vhd".
 WARNING:Xst:647 - Input <PCin> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:646 - Signal <y2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p9> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p7> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <p26> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -653,7 +650,6 @@ WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 i
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <3>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <4>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <4>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <5>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <6>. This FF/Latch will be trimmed during the optimization process.
@@ -678,7 +674,6 @@ WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 i
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <3>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <4>. This FF/Latch will be trimmed during the optimization process.
@@ -693,16 +688,16 @@ WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 i
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <13>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <14>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <RegControl_op1> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <RegControl_op2> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <RegControl_op_0> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <RegControl_op_1> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <RegControl_DRRE> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <RegControl_op_2> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <RegControl_op_3> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <RegControl_addr_0> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <RegControl_addr_1> has a constant value of 0 in block <u10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_Ctrl_addr_0> (without init value) has a constant value of 0 in block <u14>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_Ctrl_addr_1> (without init value) has a constant value of 0 in block <u14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_Ctrl_DRRE> (without init value) has a constant value of 0 in block <u14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_Ctrl_DRRE> (without init value) has a constant value of 0 in block <u15>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
@@ -727,42 +722,41 @@ WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 i
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <13>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <14>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Ctrl_op_0> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Ctrl_op_1> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_instruction_12> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Ctrl_DRRE> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_op_2> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_op_3> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Ctrl_b> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <out_Rz_0> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <out_Rz_1> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_SP_0> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_SP_1> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_Rz_2> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_immidiate_2> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Ctrl_xy> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Ctrl_Jump> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_op2> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Ctrl_xy> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_Rx1_0> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_Rx1_1> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_Rx1_2> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_imm_0> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <out_imm_2> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <out_imm_3> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_imm_1> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_imm_4> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_imm_5> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_imm_6> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_imm_7> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_imm_8> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_imm_9> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_imm_10> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <real_imm_5_mux0000>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <real_imm_3_mux0000>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <real_imm_1_mux0000>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <real_imm_0_mux0000>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <4>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <13>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <4>. This FF/Latch will be trimmed during the optimization process.
@@ -774,12 +768,10 @@ WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <15>. This FF
 WARNING:Xst:1710 - FF/Latch <Ctrl_addr_0> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_addr_1> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <out_Ry1_0> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_Ry1_1> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_Ry1_2> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_IH_0> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ctrl_IH_1> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <out_instruction_12> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <out_instruction_13> (without init value) has a constant value of 0 in block <u6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
@@ -803,8 +795,7 @@ WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 i
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <real_imm_2_mux0000>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <real_imm_0_mux0000>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
@@ -828,6 +819,8 @@ WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 i
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <5>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <6>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <out_instruction_0> of sequential type is unconnected in block <u6>.
 WARNING:Xst:2677 - Node <out_instruction_1> of sequential type is unconnected in block <u6>.
 WARNING:Xst:2677 - Node <out_instruction_2> of sequential type is unconnected in block <u6>.
@@ -855,65 +848,6 @@ WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <12>.
 WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <13>.
 WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <14>.
 WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <15>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_15_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_14_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_13_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_12_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_9_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_11_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_8_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_10_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_7_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_6_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_5_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_4_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_3_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_2_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_1_mux0005>.
-WARNING:Xst:1294 - Latch <0> is equivalent to a wire in block <outre_0_mux0005>.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <14>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <out_PC_0> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_1> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_2> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_3> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_4> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_5> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_6> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_7> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_8> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_9> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_10> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_11> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_12> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_13> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_14> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_PC_15> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_instruction_11> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_instruction_14> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <out_instruction_15> of sequential type is unconnected in block <u6>.
-WARNING:Xst:2677 - Node <RegPC_0> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_1> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_2> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_3> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_4> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_5> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_6> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_7> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_8> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_9> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_10> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_11> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_12> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_13> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_14> of sequential type is unconnected in block <u10>.
-WARNING:Xst:2677 - Node <RegPC_15> of sequential type is unconnected in block <u10>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -947,14 +881,15 @@ Macro Statistics
 =========================================================================
 INFO:Xst:2261 - The FF/Latch <14> in Unit <LPM_LATCH_18> is equivalent to the following 7 FFs/Latches, which will be removed : <12> <10> <8> <7> <5> <3> <1> 
 INFO:Xst:2261 - The FF/Latch <15> in Unit <LPM_LATCH_18> is equivalent to the following 7 FFs/Latches, which will be removed : <13> <11> <9> <6> <4> <2> <0> 
-INFO:Xst:2261 - The FF/Latch <15> in Unit <LPM_LATCH_1> is equivalent to the following 9 FFs/Latches, which will be removed : <13> <12> <10> <9> <8> <5> <3> <2> <0> 
-INFO:Xst:2261 - The FF/Latch <14> in Unit <LPM_LATCH_1> is equivalent to the following 5 FFs/Latches, which will be removed : <11> <7> <6> <4> <1> 
-INFO:Xst:2261 - The FF/Latch <R7_mux0002_7> in Unit <Main_Reg> is equivalent to the following 6 FFs/Latches, which will be removed : <R6_mux0002_6> <R5_mux0002_5> <R4_mux0002_4> <R3_mux0002_3> <R2_mux0002_2> <R1_mux0002_1> 
-INFO:Xst:2261 - The FF/Latch <R7_mux0002_0> in Unit <Main_Reg> is equivalent to the following 120 FFs/Latches, which will be removed : <R7_mux0002_1> <R7_mux0002_2> <R7_mux0002_3> <R7_mux0002_4> <R7_mux0002_5> <R7_mux0002_6> <R7_mux0002_8> <R7_mux0002_9> <R7_mux0002_10> <R7_mux0002_11> <R7_mux0002_12> <R7_mux0002_13> <R7_mux0002_14> <R7_mux0002_15> <R6_mux0002_0> <R6_mux0002_1> <R6_mux0002_2> <R6_mux0002_3> <R6_mux0002_4> <R6_mux0002_5> <R6_mux0002_7> <R6_mux0002_8> <R6_mux0002_9> <R6_mux0002_10> <R6_mux0002_11> <R6_mux0002_12> <R6_mux0002_13> <R6_mux0002_14> <R6_mux0002_15> <R5_mux0002_0> <R5_mux0002_1> <R5_mux0002_2> <R5_mux0002_3> <R5_mux0002_4> <R5_mux0002_6> <R5_mux0002_7> <R5_mux0002_8> <R5_mux0002_9> <R5_mux0002_10> <R5_mux0002_11> <R5_mux0002_12> <R5_mux0002_13> <R5_mux0002_14> <R5_mux0002_15> <R4_mux0002_0> <R4_mux0002_1> <R4_mux0002_2> <R4_mux0002_3> <R4_mux0002_5> <R4_mux0002_6> <R4_mux0002_7> <R4_mux0002_8> <R4_mux0002_9> <R4_mux0002_10> <R4_mux0002_11> <R4_mux0002_12> <R4_mux0002_13>
-   <R4_mux0002_14> <R4_mux0002_15> <R3_mux0002_0> <R3_mux0002_1> <R3_mux0002_2> <R3_mux0002_4> <R3_mux0002_5> <R3_mux0002_6> <R3_mux0002_7> <R3_mux0002_8> <R3_mux0002_9> <R3_mux0002_10> <R3_mux0002_11> <R3_mux0002_12> <R3_mux0002_13> <R3_mux0002_14> <R3_mux0002_15> <R2_mux0002_0> <R2_mux0002_1> <R2_mux0002_3> <R2_mux0002_4> <R2_mux0002_5> <R2_mux0002_6> <R2_mux0002_7> <R2_mux0002_8> <R2_mux0002_9> <R2_mux0002_10> <R2_mux0002_11> <R2_mux0002_12> <R2_mux0002_13> <R2_mux0002_14> <R2_mux0002_15> <R1_mux0002_0> <R1_mux0002_2> <R1_mux0002_3> <R1_mux0002_4> <R1_mux0002_5> <R1_mux0002_6> <R1_mux0002_7> <R1_mux0002_8> <R1_mux0002_9> <R1_mux0002_10> <R1_mux0002_11> <R1_mux0002_12> <R1_mux0002_13> <R1_mux0002_14> <R1_mux0002_15> <IH_mux0002_0> <IH_mux0002_1> <IH_mux0002_2> <IH_mux0002_3> <IH_mux0002_4> <IH_mux0002_5> <IH_mux0002_6> <IH_mux0002_7> <IH_mux0002_8> <IH_mux0002_9> <IH_mux0002_10> <IH_mux0002_11> <IH_mux0002_12> <IH_mux0002_13> <IH_mux0002_14> <IH_mux0002_15> 
+INFO:Xst:2261 - The FF/Latch <12> in Unit <LPM_LATCH_1> is equivalent to the following 9 FFs/Latches, which will be removed : <10> <9> <8> <7> <6> <5> <4> <1> <0> 
+INFO:Xst:2261 - The FF/Latch <15> in Unit <LPM_LATCH_1> is equivalent to the following 5 FFs/Latches, which will be removed : <14> <13> <11> <3> <2> 
+INFO:Xst:2261 - The FF/Latch <SP_mux0002_0> in Unit <Main_Reg> is equivalent to the following 7 FFs/Latches, which will be removed : <R7_mux0002_7> <R6_mux0002_6> <R5_mux0002_5> <R4_mux0002_4> <R3_mux0002_3> <R2_mux0002_2> <R1_mux0002_1> 
+INFO:Xst:2261 - The FF/Latch <SP_mux0002_1> in Unit <Main_Reg> is equivalent to the following 135 FFs/Latches, which will be removed : <SP_mux0002_2> <SP_mux0002_3> <SP_mux0002_4> <SP_mux0002_5> <SP_mux0002_6> <SP_mux0002_7> <SP_mux0002_8> <SP_mux0002_9> <SP_mux0002_10> <SP_mux0002_11> <SP_mux0002_12> <SP_mux0002_13> <SP_mux0002_14> <SP_mux0002_15> <R7_mux0002_0> <R7_mux0002_1> <R7_mux0002_2> <R7_mux0002_3> <R7_mux0002_4> <R7_mux0002_5> <R7_mux0002_6> <R7_mux0002_8> <R7_mux0002_9> <R7_mux0002_10> <R7_mux0002_11> <R7_mux0002_12> <R7_mux0002_13> <R7_mux0002_14> <R7_mux0002_15> <R6_mux0002_0> <R6_mux0002_1> <R6_mux0002_2> <R6_mux0002_3> <R6_mux0002_4> <R6_mux0002_5> <R6_mux0002_7> <R6_mux0002_8> <R6_mux0002_9> <R6_mux0002_10> <R6_mux0002_11> <R6_mux0002_12> <R6_mux0002_13> <R6_mux0002_14> <R6_mux0002_15> <R5_mux0002_0> <R5_mux0002_1> <R5_mux0002_2> <R5_mux0002_3> <R5_mux0002_4> <R5_mux0002_6> <R5_mux0002_7> <R5_mux0002_8> <R5_mux0002_9> <R5_mux0002_10> <R5_mux0002_11> <R5_mux0002_12> <R5_mux0002_13>
+   <R5_mux0002_14> <R5_mux0002_15> <R4_mux0002_0> <R4_mux0002_1> <R4_mux0002_2> <R4_mux0002_3> <R4_mux0002_5> <R4_mux0002_6> <R4_mux0002_7> <R4_mux0002_8> <R4_mux0002_9> <R4_mux0002_10> <R4_mux0002_11> <R4_mux0002_12> <R4_mux0002_13> <R4_mux0002_14> <R4_mux0002_15> <R3_mux0002_0> <R3_mux0002_1> <R3_mux0002_2> <R3_mux0002_4> <R3_mux0002_5> <R3_mux0002_6> <R3_mux0002_7> <R3_mux0002_8> <R3_mux0002_9> <R3_mux0002_10> <R3_mux0002_11> <R3_mux0002_12> <R3_mux0002_13> <R3_mux0002_14> <R3_mux0002_15> <R2_mux0002_0> <R2_mux0002_1> <R2_mux0002_3> <R2_mux0002_4> <R2_mux0002_5> <R2_mux0002_6> <R2_mux0002_7> <R2_mux0002_8> <R2_mux0002_9> <R2_mux0002_10> <R2_mux0002_11> <R2_mux0002_12> <R2_mux0002_13> <R2_mux0002_14> <R2_mux0002_15> <R1_mux0002_0> <R1_mux0002_2> <R1_mux0002_3> <R1_mux0002_4> <R1_mux0002_5> <R1_mux0002_6> <R1_mux0002_7> <R1_mux0002_8> <R1_mux0002_9> <R1_mux0002_10> <R1_mux0002_11> <R1_mux0002_12> <R1_mux0002_13> <R1_mux0002_14> <R1_mux0002_15> <IH_mux0002_0> <IH_mux0002_1> <IH_mux0002_2> <IH_mux0002_3>
+   <IH_mux0002_4> <IH_mux0002_5> <IH_mux0002_6> <IH_mux0002_7> <IH_mux0002_8> <IH_mux0002_9> <IH_mux0002_10> <IH_mux0002_11> <IH_mux0002_12> <IH_mux0002_13> <IH_mux0002_14> <IH_mux0002_15> 
 WARNING:Xst:1293 - FF/Latch <15> has a constant value of 0 in block <LPM_LATCH_18>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <15> has a constant value of 0 in block <LPM_LATCH_1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <R7_mux0002_0> (without init value) has a constant value of 0 in block <Main_Reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <12> has a constant value of 0 in block <LPM_LATCH_1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <SP_mux0002_1> (without init value) has a constant value of 0 in block <Main_Reg>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1294 - Latch <g1_0> is equivalent to a wire in block <Main_Reg>.
 WARNING:Xst:1294 - Latch <g1_1> is equivalent to a wire in block <Main_Reg>.
 WARNING:Xst:1294 - Latch <g1_2> is equivalent to a wire in block <Main_Reg>.
@@ -973,25 +908,25 @@ WARNING:Xst:1294 - Latch <g1_14> is equivalent to a wire in block <Main_Reg>.
 WARNING:Xst:1294 - Latch <g1_15> is equivalent to a wire in block <Main_Reg>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<15>, Reg1<15>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<14>, Reg1<14>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<13>, g1_mux0008<13>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<13>, Reg1<13>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<12>, Reg1<12>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<11>, g1_mux0008<11>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<11>, Reg1<11>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<10>, Reg1<10>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<9>, g1_mux0008<9>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<9>, Reg1<9>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<8>, Reg1<8>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<7>, g1_mux0008<7>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<7>, Reg1<7>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<6>, Reg1<6>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<5>, g1_mux0008<5>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<5>, Reg1<5>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<4>, Reg1<4>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<3>, g1_mux0008<3>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<3>, Reg1<3>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<2>, Reg1<2>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Reg1<1>, g1_mux0008<1>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<1>, Reg1<1>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0008<0>, Reg1<0>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: RegND<2>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: c1.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: T.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: RegND<1>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: RegND<3>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: c1.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: T.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: RegND<2>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g3_mux0005<3>.
 
 Optimizing unit <CPU> ...
@@ -1013,55 +948,50 @@ Optimizing unit <MEM_WB> ...
 Optimizing unit <Memory> ...
 
 Optimizing unit <Main_Reg> ...
-WARNING:Xst:1710 - FF/Latch <u8/real_imm_5_mux0000> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <u8/real_imm_3_mux0000> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <u8/real_imm_2_mux0000> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <u7/ND_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <u8/real_imm_0_mux0000> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <u7/ND_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_instruction_15> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_instruction_13> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <u8/real_imm_1_mux0000> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_op_3> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_op_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_instruction_12> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_IH_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_IH_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_b> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Ry1_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Ry1_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Ry1_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_addr_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_addr_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_op1> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_op2> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_op_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_addr_1> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_addr_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_op_3> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_op_2> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_op_1> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_op2> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u10/RegControl_DRRE> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_10> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_9> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_8> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_7> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_6> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_5> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_3> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_4> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_imm_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Rx1_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Rx1_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Rx1_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_Jump> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_op2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_immidiate_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_xy> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_SP_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_SP_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Rz_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Rz_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_op_3> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_op_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_op_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_op_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/out_Rz_2> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u6/Ctrl_DRRE> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u14/out_Ctrl_DRRE> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u14/out_Ctrl_addr_1> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u14/out_Ctrl_addr_0> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u15/out_Ctrl_DRRE> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <u6/Ctrl_judge> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_PCMEM> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/Ctrl_DRRE> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_10> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_9> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_8> of sequential type is unconnected in block <CPU>.
@@ -1090,7 +1020,6 @@ WARNING:Xst:2677 - Node <u10/RegData_Ry_2> of sequential type is unconnected in 
 WARNING:Xst:2677 - Node <u10/RegData_Ry_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegData_Ry_0> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegControl_PCMEM> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u10/RegControl_DRRE> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u14/out_WDATA_15> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u14/out_WDATA_14> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u14/out_WDATA_13> of sequential type is unconnected in block <CPU>.
@@ -1108,8 +1037,6 @@ WARNING:Xst:2677 - Node <u14/out_WDATA_2> of sequential type is unconnected in b
 WARNING:Xst:2677 - Node <u14/out_WDATA_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u14/out_WDATA_0> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u14/out_Ctrl_PCMEM> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u14/out_Ctrl_DRRE> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u15/out_Ctrl_DRRE> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:1294 - Latch <u13/outre_15_mux0005> is equivalent to a wire in block <CPU>.
 WARNING:Xst:1294 - Latch <u13/outre_14_mux0005> is equivalent to a wire in block <CPU>.
 WARNING:Xst:1294 - Latch <u13/outre_13_mux0005> is equivalent to a wire in block <CPU>.
@@ -1127,8 +1054,8 @@ WARNING:Xst:1294 - Latch <u13/outre_2_mux0005> is equivalent to a wire in block 
 WARNING:Xst:1294 - Latch <u13/outre_1_mux0005> is equivalent to a wire in block <CPU>.
 WARNING:Xst:1294 - Latch <u13/outre_0_mux0005> is equivalent to a wire in block <CPU>.
 WARNING:Xst:2677 - Node <u17/c2> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u7/ND_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u7/ND_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u7/ND_0> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u1/var_PC_15> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u1/var_PC_14> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u1/var_PC_13> of sequential type is unconnected in block <CPU>.
@@ -1145,20 +1072,25 @@ WARNING:Xst:2677 - Node <u1/var_PC_3> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <u1/var_PC_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u1/var_PC_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u1/var_PC_0> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/out_imm_7> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/out_imm_6> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/out_imm_4> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/out_imm_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_3> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_imm_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_Jump> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_immidiate_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_immidiate_0> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_WB> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_r_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_r_0> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/out_Rz_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Rz_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_Rz_0> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_imm_ry> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_extend> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_op_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_op_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_15> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_14> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/out_instruction_13> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_11> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u6/Ctrl_b> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_PC_15> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_PC_14> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_PC_13> of sequential type is unconnected in block <CPU>.
@@ -1175,14 +1107,14 @@ WARNING:Xst:2677 - Node <u6/out_PC_3> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <u6/out_PC_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_PC_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_PC_0> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/out_Ry1_2> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u6/out_Ry1_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u8/real_imm_9_mux0000> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u8/real_imm_8_mux0000> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u8/real_imm_7_mux0000> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u8/real_imm_6_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_5_mux0000> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u8/real_imm_4_mux0000> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u8/real_imm_1_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_3_mux0000> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u8/real_imm_2_mux0000> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u8/real_imm_11_mux0001> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u8/real_imm_10_mux0004> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/c7> of sequential type is unconnected in block <CPU>.
@@ -1219,6 +1151,8 @@ WARNING:Xst:2677 - Node <u10/RegReg2_3> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <u10/RegReg2_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegReg2_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegReg2_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u10/RegControl_op_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u10/RegControl_op_0> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegRegND_3> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegRegND_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegRegND_1> of sequential type is unconnected in block <CPU>.
@@ -1239,6 +1173,7 @@ WARNING:Xst:2677 - Node <u10/RegReg1_3> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <u10/RegReg1_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegReg1_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u10/RegReg1_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u10/RegControl_op1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u14/out_RegND_3> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u14/out_RegND_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u14/out_RegND_1> of sequential type is unconnected in block <CPU>.
@@ -1281,7 +1216,7 @@ WARNING:Xst:2677 - Node <u15/Data_Reg_3> of sequential type is unconnected in bl
 WARNING:Xst:2677 - Node <u15/Data_Reg_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u15/Data_Reg_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u15/Data_Reg_0> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u5/Reginstruction_14> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u5/Reginstruction_15> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u5/RegData_14> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u9/IH_15> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u9/IH_14> of sequential type is unconnected in block <CPU>.
@@ -1443,7 +1378,7 @@ WARNING:Xst:2677 - Node <u9/SP_3> of sequential type is unconnected in block <CP
 WARNING:Xst:2677 - Node <u9/SP_2> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u9/SP_1> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u9/SP_0> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u9/R7_mux0002_7> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u9/SP_mux0002_0> of sequential type is unconnected in block <CPU>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -1541,14 +1476,14 @@ Timing constraint: Default path analysis
 -------------------------------------------------------------------------
 Delay:               5.159ns (Levels of Logic = 2)
   Source:            rst (PAD)
-  Destination:       PCout<14> (PAD)
+  Destination:       PCout<15> (PAD)
 
-  Data Path: rst to PCout<14>
+  Data Path: rst to PCout<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             6   1.218   0.669  rst_IBUF (PCout_11_OBUF)
-     OBUF:I->O                 3.272          PCout_14_OBUF (PCout<14>)
+     OBUF:I->O                 3.272          PCout_15_OBUF (PCout<15>)
     ----------------------------------------
     Total                      5.159ns (4.490ns logic, 0.669ns route)
                                        (87.0% logic, 13.0% route)
@@ -1556,14 +1491,14 @@ Delay:               5.159ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.95 secs
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.41 secs
  
 --> 
 
 Total memory usage is 298192 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  832 (   0 filtered)
+Number of warnings :  768 (   0 filtered)
 Number of infos    :   63 (   0 filtered)
 

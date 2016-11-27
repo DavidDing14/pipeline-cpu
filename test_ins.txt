@@ -1,0 +1,7 @@
+Instructions that we have tested:
+	ADDIU
+	ADDIU3
+	ADDSP
+	ADDU
+	AND
+	

@@ -288,7 +288,7 @@ begin
 	u1:PC PORT MAP(clk, rst, x1, p5, p1, p2, p3);
 	u2:PC_ALU PORT MAP(p1, p4);
 	u3:PC_EX_MUX PORT MAP(p4, e4, p5, w14);
-	u4:Addr_MUX PORT MAP(p2, t1, p6, t5);
+	u4:Addr_MUX PORT MAP(p2, t1, p6, t5);	--p2=PC,t1=MEM不需要选择，直接给Memory，去掉这个选择器
 	u5:Memory PORT MAP(clk, rst, p6, "0000000000000000", "0000000000000000", "0000000000000000", p7, p8, p9, p10, t4);	--Data/MEM_Ry/instruction
 	u6:parseCtrl PORT MAP(clk, rst, p10, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35);
 	u7:Rxyz_MUX PORT MAP(p31, p32, p33, q1, p18);
@@ -300,7 +300,7 @@ begin
 	u13:ALU PORT MAP(e1, e2, e3, e4, e5, w9);
 	u14:EX_MEM PORT MAP(clk, rst, x4, w5, e3, w6, w10, w11, w12, w4, t1, t2, t3, t4, t5, t6, t7, t8);
 	u15:MEM_WB PORT MAP(clk, x5, rst, t2, t3, t6, t7, y1, y2, y3, y4);
-	u16:WB_Reg_MUX PORT MAP(p8, y3, z1, y1);
+	u16:WB_Reg_MUX PORT MAP(p8, y3, z1, y2);
 	u17:ctrl PORT MAP(clk, rst, p11, w13, x1, x2, x3, x4, x5, x6);
 	PCout<=p10;
 end Behavioral;

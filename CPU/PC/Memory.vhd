@@ -59,7 +59,7 @@ begin
 			RegMEM_Ry:="0000000000000000";
 		else
 			if(Control_MEM="00")then	--访问IR，读取指令
-				Reginstruction:="0100100011010010";	--ADDIU指令
+				Reginstruction:="1110100000001100";	--ADDIU指令
 			elsif(Control_MEM="11")then	--访问DR,SW类型指令，数据写入内存
 				null;
 			elsif(Control_MEM="01")then	--访问DR,LW类型指令，数据写回寄存器

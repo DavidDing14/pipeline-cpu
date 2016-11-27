@@ -43,7 +43,7 @@ architecture Behavioral of WB_Reg_MUX is
 begin
 	process(Data_DR, Data_WB, Control_WB)
 	begin
-		if(Control_WB='0')then
+		if(Control_WB='1')then
 			Data_NI<=Data_DR;
 		else
 			Data_NI<=Data_WB;
