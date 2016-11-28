@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: CPU.prj
 
@@ -113,8 +113,7 @@ Architecture behavioral of Entity pc_ex_mux is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Addr_MUX.vhd" in Library work.
 Architecture behavioral of Entity addr_mux is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Memory.vhd" in Library work.
-Entity <memory> compiled.
-Entity <memory> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity memory is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/parseCtrl.vhd" in Library work.
 Architecture behavioral of Entity parsectrl is up to date.
 Compiling vhdl file "E:/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd" in Library work.
@@ -894,22 +893,22 @@ WARNING:Xst:2677 - Node <g1_13> of sequential type is unconnected in block <Main
 WARNING:Xst:2677 - Node <g1_14> of sequential type is unconnected in block <Main_Reg>.
 WARNING:Xst:2677 - Node <g1_15> of sequential type is unconnected in block <Main_Reg>.
 INFO:Xst:2261 - The FF/Latch <RegData_1> in Unit <Memory> is equivalent to the following 7 FFs/Latches, which will be removed : <RegData_3> <RegData_5> <RegData_7> <RegData_8> <RegData_10> <RegData_12> <RegData_14> 
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_4, R7_mux0003<15>, g1_mux0000<0>, Mmux_g1_mux0000_3_f5, c1_cmp_eq0001, c1, R7<0>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_46, Mmux_g1_mux0000_3_f56, g1_mux0002<15>, R7_mux0003<0>, g1_mux0000<15>, R7<15>, Reg1<15>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_45, g1_mux0002<14>, R7_mux0003<1>, g1_mux0000<14>, R7<14>, Reg1<14>, Mmux_g1_mux0000_3_f55.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f54, g1_mux0002<13>, R7_mux0003<2>, g1_mux0000<13>, Mmux_g1_mux0000_44, R7<13>, Reg1<13>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f53, Mmux_g1_mux0000_43, g1_mux0002<12>, R7_mux0003<3>, g1_mux0000<12>, R7<12>, Reg1<12>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f52, Mmux_g1_mux0000_42, g1_mux0002<11>, R7_mux0003<4>, g1_mux0000<11>, R7<11>, Reg1<11>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0002<10>, R7_mux0003<5>, g1_mux0000<10>, R7<10>, Reg1<10>, Mmux_g1_mux0000_3_f51, Mmux_g1_mux0000_41.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f515, g1_mux0002<9>, R7_mux0003<6>, g1_mux0000<9>, Mmux_g1_mux0000_415, R7<9>, Reg1<9>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0002<8>, R7_mux0003<7>, g1_mux0000<8>, R7<8>, Reg1<8>, Mmux_g1_mux0000_414, Mmux_g1_mux0000_3_f514.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0002<7>, Mmux_g1_mux0000_413, R7_mux0003<8>, g1_mux0000<7>, Mmux_g1_mux0000_3_f513, R7<7>, Reg1<7>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f512, g1_mux0002<6>, R7_mux0003<9>, g1_mux0000<6>, R7<6>, Reg1<6>, Mmux_g1_mux0000_412.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_411, R7<5>, g1_mux0002<5>, R7_mux0003<10>, g1_mux0000<5>, Mmux_g1_mux0000_3_f511, Reg1<5>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_410, g1_mux0002<4>, R7_mux0003<11>, g1_mux0000<4>, Mmux_g1_mux0000_3_f510, Reg1<4>, R7<4>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: R7<3>, Mmux_g1_mux0000_49, g1_mux0002<3>, R7_mux0003<12>, g1_mux0000<3>, Mmux_g1_mux0000_3_f59, Reg1<3>.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0002<2>, R7_mux0003<13>, Mmux_g1_mux0000_3_f58, g1_mux0000<2>, Reg1<2>, R7<2>, Mmux_g1_mux0000_48.
-WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: R7<1>, g1_mux0002<1>, R7_mux0003<14>, g1_mux0000<1>, Mmux_g1_mux0000_47, Mmux_g1_mux0000_3_f57, Reg1<1>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f5, Mmux_g1_mux0000_4, R7_mux0003<15>, c1_cmp_eq0001, c1, R7<0>, g1_mux0000<0>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f56, g1_mux0002<15>, R7_mux0003<0>, Reg1<15>, g1_mux0000<15>, R7<15>, Mmux_g1_mux0000_46.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f55, g1_mux0002<14>, R7_mux0003<1>, Mmux_g1_mux0000_45, R7<14>, g1_mux0000<14>, Reg1<14>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0000<13>, Mmux_g1_mux0000_3_f54, Reg1<13>, g1_mux0002<13>, R7_mux0003<2>, Mmux_g1_mux0000_44, R7<13>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0002<12>, R7_mux0003<3>, Mmux_g1_mux0000_3_f53, R7<12>, g1_mux0000<12>, Reg1<12>, Mmux_g1_mux0000_43.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0000<11>, Mmux_g1_mux0000_42, Reg1<11>, g1_mux0002<11>, R7_mux0003<4>, R7<11>, Mmux_g1_mux0000_3_f52.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0002<10>, R7_mux0003<5>, R7<10>, Mmux_g1_mux0000_3_f51, Mmux_g1_mux0000_41, g1_mux0000<10>, Reg1<10>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0000<9>, Mmux_g1_mux0000_415, Reg1<9>, R7<9>, g1_mux0002<9>, Mmux_g1_mux0000_3_f515, R7_mux0003<6>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_3_f514, g1_mux0002<8>, R7_mux0003<7>, Mmux_g1_mux0000_414, R7<8>, g1_mux0000<8>, Reg1<8>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_413, R7<7>, g1_mux0000<7>, Mmux_g1_mux0000_3_f513, Reg1<7>, g1_mux0002<7>, R7_mux0003<8>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Mmux_g1_mux0000_412, g1_mux0002<6>, R7_mux0003<9>, R7<6>, g1_mux0000<6>, Mmux_g1_mux0000_3_f512, Reg1<6>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: R7<5>, g1_mux0000<5>, Mmux_g1_mux0000_3_f511, Reg1<5>, g1_mux0002<5>, Mmux_g1_mux0000_411, R7_mux0003<10>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0002<4>, R7_mux0003<11>, Mmux_g1_mux0000_3_f510, Mmux_g1_mux0000_410, R7<4>, g1_mux0000<4>, Reg1<4>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: R7<3>, g1_mux0000<3>, Reg1<3>, Mmux_g1_mux0000_3_f59, g1_mux0002<3>, R7_mux0003<12>, Mmux_g1_mux0000_49.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: g1_mux0002<2>, R7_mux0003<13>, R7<2>, g1_mux0000<2>, Mmux_g1_mux0000_3_f58, Mmux_g1_mux0000_48, Reg1<2>.
+WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: R7<1>, g1_mux0000<1>, Mmux_g1_mux0000_47, Reg1<1>, Mmux_g1_mux0000_3_f57, g1_mux0002<1>, R7_mux0003<14>.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: Control_op2_reg.
 WARNING:Xst:2170 - Unit Main_Reg : the following signal(s) form a combinatorial loop: c1.
 
@@ -1463,8 +1462,8 @@ Delay:               5.310ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 15.85 secs
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.94 secs
  
 --> 
 

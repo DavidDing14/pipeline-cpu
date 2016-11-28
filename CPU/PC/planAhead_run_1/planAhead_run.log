@@ -1,0 +1,64 @@
+
+****** PlanAhead v13.3 (64-bit)
+  **** Build 147507 by hdbuild on Tue Oct  4 19:13:50 MDT 2011
+    ** Copyright 1986-1999, 2001-2011 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common-78] Attempting to get a license: PlanAhead
+INFO: [Common-82] Got a license: PlanAhead
+INFO: [Device-25] Loading parts and site information from E:/Xilinx/ISE_DS/PlanAhead\parts\arch.xmlParsing RTL primitives file [E:/Xilinx/ISE_DS/PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml]
+Finished parsing RTL primitives file [E:/Xilinx/ISE_DS/PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml]
+start_gui
+starting gui ...
+source E:/pipeline-cpu/CPU/PC/pa.fromNetlist.tcl
+# create_project -name PC -dir "E:/pipeline-cpu/CPU/PC/planAhead_run_1" -part xc3s1200efg320-4
+Parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\verilog.xml].
+Finished parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\verilog.xml].
+Parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
+Finished parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
+Parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\ucf.xml].
+Finished parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\ucf.xml].
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "E:/pipeline-cpu/CPU/PC/testSRAM.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {E:/pipeline-cpu/CPU/PC} }
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "testSRAM.ucf" [current_fileset -constrset]
+Adding file 'E:\pipeline-cpu\CPU\PC\testSRAM.ucf' to fileset 'constrs_1'
+# add_files [list {testSRAM.ucf}] -fileset [get_property constrset [current_run]]
+# open_netlist_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to part: xc3s1200efg320-4
+Release 13.3 - ngc2edif O.76xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Reading design testSRAM.ngc ...
+WARNING:NetListWriters:298 - No output is written to testSRAM.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file testSRAM.edif ...
+ngc2edif: Total memory usage is 77340 kilobytes
+
+Parsing EDIF File [.\planAhead_run_1\PC.data\cache\testSRAM_ngc_725505de.edif]
+Finished Parsing EDIF File [.\planAhead_run_1\PC.data\cache\testSRAM_ngc_725505de.edif]
+INFO: [PlanAhead-430] Reading macro library E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
+Parsing EDIF File [E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Finished Parsing EDIF File [E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Loading clock regions from E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/ClockRegion.xml
+Loading clock buffers from E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/ClockBuffers.xml
+Loading package from E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/fg320/Package.xml
+Loading io standards from E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/IOStandards.xml
+INFO: [Device-19] Loading pkg sso from E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/fg320/SSORules.xml
+Loading list of drcs for the architecture : E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/drc.xml
+INFO: [Timing-77] Reading timing library E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+INFO: [Timing-34] Done reading timing library E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+Parsing UCF File [E:\pipeline-cpu\CPU\PC\testSRAM.ucf]
+Finished Parsing UCF File [E:\pipeline-cpu\CPU\PC\testSRAM.ucf]
+INFO: [PlanAhead-566] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  BUFGP => BUFGP (HD_IBUFG, HD_BUFG): 1 instances
+open_netlist_design: Time (s): 19.399w.  Memory (MB): 635.777p 131.652g
+exit
+stop_gui
+INFO: [PlanAhead-261] Exiting PlanAhead...
+INFO: [Common-83] Releasing license: PlanAhead

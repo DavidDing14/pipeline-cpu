@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# PlanAhead v13.3 (64-bit)
+# Build 147507 by hdbuild on Tue Oct  4 19:13:50 MDT 2011
+# Start of session at: Mon Nov 28 22:22:42 2016
+# Process ID: 5728
+# Log file: E:/pipeline-cpu/CPU/PC/planAhead_run_1/planAhead.log
+# Journal file: E:/pipeline-cpu/CPU/PC/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source E:/pipeline-cpu/CPU/PC/pa.fromNetlist.tcl
+exit
+stop_gui

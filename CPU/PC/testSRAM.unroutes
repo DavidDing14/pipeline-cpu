@@ -1,0 +1,28 @@
+Release 13.3 - par O.76xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Mon Nov 28 22:24:50 2016
+
+All signals are completely routed.
+
+WARNING:ParHelpers:361 - There are 16 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   MEM_Ry<0>_IBUF
+   MEM_Ry<10>_IBUF
+   MEM_Ry<11>_IBUF
+   MEM_Ry<12>_IBUF
+   MEM_Ry<13>_IBUF
+   MEM_Ry<14>_IBUF
+   MEM_Ry<15>_IBUF
+   MEM_Ry<1>_IBUF
+   MEM_Ry<2>_IBUF
+   MEM_Ry<3>_IBUF
+   MEM_Ry<4>_IBUF
+   MEM_Ry<5>_IBUF
+   MEM_Ry<6>_IBUF
+   MEM_Ry<7>_IBUF
+   MEM_Ry<8>_IBUF
+   MEM_Ry<9>_IBUF
+
+

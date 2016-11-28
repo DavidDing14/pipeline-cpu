@@ -1,0 +1,2 @@
+vhdl work "MEM.vhd"
+vhdl work "testSRAM.vhd"

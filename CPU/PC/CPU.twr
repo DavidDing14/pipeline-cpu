@@ -38,54 +38,23 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock clk
-------------+------------+------------+------------------+--------+
-            |Max Setup to|Max Hold to |                  | Clock  |
-Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
-------------+------------+------------+------------------+--------+
-PCin<0>     |    3.236(R)|   -0.102(R)|clk_BUFGP         |   0.000|
-PCin<1>     |    3.237(R)|   -0.103(R)|clk_BUFGP         |   0.000|
-PCin<2>     |    3.232(R)|   -0.097(R)|clk_BUFGP         |   0.000|
-PCin<3>     |    3.297(R)|   -0.174(R)|clk_BUFGP         |   0.000|
-PCin<4>     |    3.306(R)|   -0.185(R)|clk_BUFGP         |   0.000|
-PCin<5>     |    3.306(R)|   -0.185(R)|clk_BUFGP         |   0.000|
-PCin<6>     |    3.306(R)|   -0.185(R)|clk_BUFGP         |   0.000|
-PCin<7>     |    3.301(R)|   -0.179(R)|clk_BUFGP         |   0.000|
-PCin<8>     |    3.244(R)|   -0.112(R)|clk_BUFGP         |   0.000|
-PCin<9>     |    3.299(R)|   -0.176(R)|clk_BUFGP         |   0.000|
-PCin<10>    |    3.297(R)|   -0.173(R)|clk_BUFGP         |   0.000|
-PCin<11>    |    3.297(R)|   -0.173(R)|clk_BUFGP         |   0.000|
-PCin<12>    |    3.235(R)|   -0.101(R)|clk_BUFGP         |   0.000|
-PCin<13>    |    3.294(R)|   -0.170(R)|clk_BUFGP         |   0.000|
-PCin<14>    |    3.294(R)|   -0.170(R)|clk_BUFGP         |   0.000|
-PCin<15>    |    3.295(R)|   -0.172(R)|clk_BUFGP         |   0.000|
-------------+------------+------------+------------------+--------+
-
-Clock clk to Pad
-------------+------------+------------------+--------+
-            | clk (edge) |                  | Clock  |
-Destination |   to PAD   |Internal Clock(s) | Phase  |
-------------+------------+------------------+--------+
-PCout<0>    |    7.692(R)|clk_BUFGP         |   0.000|
-PCout<1>    |    8.043(R)|clk_BUFGP         |   0.000|
-PCout<2>    |    9.420(R)|clk_BUFGP         |   0.000|
-PCout<3>    |   10.500(R)|clk_BUFGP         |   0.000|
-PCout<4>    |   11.504(R)|clk_BUFGP         |   0.000|
-PCout<5>    |   11.970(R)|clk_BUFGP         |   0.000|
-PCout<6>    |   10.984(R)|clk_BUFGP         |   0.000|
-PCout<7>    |   11.196(R)|clk_BUFGP         |   0.000|
-PCout<8>    |   11.091(R)|clk_BUFGP         |   0.000|
-PCout<9>    |   10.877(R)|clk_BUFGP         |   0.000|
-PCout<10>   |   10.338(R)|clk_BUFGP         |   0.000|
-PCout<11>   |   10.745(R)|clk_BUFGP         |   0.000|
-PCout<12>   |   10.751(R)|clk_BUFGP         |   0.000|
-PCout<13>   |   11.484(R)|clk_BUFGP         |   0.000|
-PCout<14>   |   10.896(R)|clk_BUFGP         |   0.000|
-PCout<15>   |   12.401(R)|clk_BUFGP         |   0.000|
-------------+------------+------------------+--------+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+rst            |PCout<0>       |    4.881|
+rst            |PCout<1>       |    4.889|
+rst            |PCout<2>       |    5.167|
+rst            |PCout<3>       |    5.447|
+rst            |PCout<4>       |    5.448|
+rst            |PCout<5>       |    6.020|
+rst            |PCout<13>      |    6.883|
+rst            |PCout<14>      |    7.664|
+rst            |PCout<15>      |    6.876|
+---------------+---------------+---------+
 
 
-Analysis completed Fri Nov 25 21:22:22 2016 
+Analysis completed Mon Nov 28 22:20:51 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
