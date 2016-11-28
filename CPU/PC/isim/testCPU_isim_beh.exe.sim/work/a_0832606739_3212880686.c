@@ -225,9 +225,9 @@ LAB6:    xsi_set_current_line(57, ng0);
     goto LAB2;
 
 LAB7:    xsi_set_current_line(59, ng0);
-    t1 = (t0 + 1032U);
+    t1 = (t0 + 1192U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5412U);
+    t1 = (t0 + 5428U);
     t3 = ieee_p_2592010699_sub_1837678034_503743352(IEEE_P_2592010699, t32, t2, t1);
     t5 = (t0 + 2128U);
     t6 = *((char **)t5);

@@ -45,10 +45,10 @@ entity Memory is
 end Memory;
 
 architecture Behavioral of Memory is
-shared variable Reginstruction: std_logic_vector(15 downto 0):="0000000000000000";
-shared variable RegAddr: std_logic_vector(15 downto 0):="0000000000000000";
-shared variable RegData: std_logic_vector(15 downto 0):="0000000000000000";
-shared variable RegMEM_Ry: std_logic_vector(15 downto 0):="0000000000000000";
+shared variable Reginstruction: std_logic_vector(15 downto 0);
+shared variable RegAddr: std_logic_vector(15 downto 0);
+shared variable RegData: std_logic_vector(15 downto 0);
+shared variable RegMEM_Ry: std_logic_vector(15 downto 0);
 begin
 	process(clk, rst, Addr, Data, MEM_Ry, instruction, Control_MEM)
 	begin
@@ -59,7 +59,7 @@ begin
 			RegMEM_Ry:="0000000000000000";
 		else
 			if(Control_MEM="00")then	--访问IR，读取指令
-				Reginstruction:="1110100000001100";	--ADDIU指令
+				Reginstruction:="1110000000111111";	--ADDIU指令
 			elsif(Control_MEM="11")then	--访问DR,SW类型指令，数据写入内存
 				null;
 			elsif(Control_MEM="01")then	--访问DR,LW类型指令，数据写回寄存器

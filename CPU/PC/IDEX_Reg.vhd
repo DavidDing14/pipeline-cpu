@@ -62,7 +62,8 @@ entity IDEX_Reg is
            Control_BJ : in  STD_LOGIC;
            Control_Jump : in  STD_LOGIC;
 			  Control_ctrl_JJ:out STD_LOGIC;
-           Control_JJ : out  STD_LOGIC);
+           Control_JJ : out  STD_LOGIC;
+			  Control_op2_reg : in STD_LOGIC);
 end IDEX_Reg;
 
 architecture Behavioral of IDEX_Reg is
@@ -80,6 +81,7 @@ begin
 	variable RegControl_addr : STD_LOGIC_VECTOR (1 downto 0):="00";
 	variable RegControl_PCMEM : STD_LOGIC:='0';
 	variable RegControl_DRRE : STD_LOGIC:='0';
+	variable Control_wait : INTEGER:=0;	--防止连续的B/J指令带来的影响
 	variable c7, c8:std_logic:='0';	--Control_JJ, Control_ctrl_JJ
 	begin
 		if(rst='0')then
@@ -95,10 +97,11 @@ begin
 			RegControl_addr:="00";
 			RegControl_PCMEM:='0';
 			RegControl_DRRE:='0';
+			Control_wait:=0;
 			c7:='0';
 			c8:='0';
 		elsif(clk'event and clk='1')then
-			if(break='1')then	--暂停信号为1，清空数据
+			if(break='1' or Control_wait=1)then	--暂停信号为1，清空数据
 				RegPC:="0000000000000000";
 				RegReg1:="0000000000000000";
 				RegReg2:="0000000000000000";
@@ -111,6 +114,7 @@ begin
 				RegControl_addr:="00";
 				RegControl_PCMEM:='0';
 				RegControl_DRRE:='0';
+				Control_wait:=0;
 				c7:='0';
 				c8:='0';
 			else
@@ -121,7 +125,11 @@ begin
 				RegRegND:=RegND;
 				RegControl_WB:=Control_WB;
 				RegControl_op1:=Control_op1;
-				RegControl_op2:=Control_op2;
+				if(Control_op2_reg='0')then
+					RegControl_op2:=Control_op2;
+				else
+					RegControl_op2:='0';
+				end if;
 				RegControl_op:=Control_op;
 				RegControl_addr:=Control_addr;
 				RegControl_PCMEM:=Control_PCMEM;
@@ -130,6 +138,7 @@ begin
 				if(Control_BJ='1' or Control_Jump='1')then
 					c7:='1';
 					c8:='1';
+					Control_wait:=1;
 				else
 					c7:='0';
 					c8:='0';

@@ -107,7 +107,9 @@ architecture Behavioral of CPU is
 			  out_Ry2: out std_logic_vector(2 downto 0);
 			  out_Rz: out std_logic_vector(2 downto 0);
 			  out_imm: out std_logic_vector(10 downto 0);
-			  out_PC: out std_logic_vector(15 downto 0));
+			  out_PC: out std_logic_vector(15 downto 0);
+			  out_Ry_x: out std_logic;
+			  out_Rx_y: out std_logic);
 	end component;
 	component Rxyz_MUX
 		Port ( Rx : in  STD_LOGIC_VECTOR (2 downto 0);
@@ -144,7 +146,11 @@ architecture Behavioral of CPU is
            Control_B : in  STD_LOGIC;
            Control_WB : in  STD_LOGIC;
 			  Control_XY : in  STD_LOGIC;	--写回的数据是Rx还是Ry
-           Control_BJ : out  STD_LOGIC);
+           Control_BJ : out  STD_LOGIC;
+			  Control_judge : in STD_LOGIC;
+			  Ry_x : in STD_LOGIC;
+			  Rx_y : in STD_LOGIC;
+			  Control_op2_reg : out STD_LOGIC);
 	end component;
 	component IDEX_Reg
 		Port ( clk : in  STD_LOGIC;
@@ -177,7 +183,8 @@ architecture Behavioral of CPU is
            Control_BJ : in  STD_LOGIC;
            Control_Jump : in  STD_LOGIC;
 			  Control_ctrl_JJ:out STD_LOGIC;
-           Control_JJ : out  STD_LOGIC);
+           Control_JJ : out  STD_LOGIC;
+			  Control_op2_reg : in STD_LOGIC);
 	end component;
 	component ALU1_MUX
 		Port ( PC : in  STD_LOGIC_VECTOR (15 downto 0);
@@ -257,7 +264,7 @@ architecture Behavioral of CPU is
 	signal p6: std_logic_vector(15 downto 0);	--Addr_MUX的Addr
 	signal p7, p8, p9, p10: std_logic_vector(15 downto 0);	--Memory的outAddr/outData/outMEM_Ry/outinstruction
 	signal p11, p35: std_logic_vector(15 downto 0);	--parseCtrl的out_instruction/out_PC
-	signal p12, p14, p16, p19, p20, p21, p24, p25, p26, p27, p28: std_logic;	--Ctrl_xy/Ctrl_extend/Ctrl_imm_ry/Ctrl_WB/Ctrl_op1/Ctrl_op2/Ctrl_PCMEM/Ctrl_DRRE/Ctrl_judge/Ctrl_b/Ctrl_Jump
+	signal p12, p14, p16, p19, p20, p21, p24, p25, p26, p27, p28, p36, p37: std_logic;	--Ctrl_xy/Ctrl_extend/Ctrl_imm_ry/Ctrl_WB/Ctrl_op1/Ctrl_op2/Ctrl_PCMEM/Ctrl_DRRE/Ctrl_judge/Ctrl_b/Ctrl_Jump/out_Ry_x/out_Rx_y
 	signal p13, p29, p30, p31, p32, p33: std_logic_vector(2 downto 0);	--Ctrl_immidiate/out_Rx1/out_Ry1/out_Rx2/out_Ry2/out_Rz
 	signal p15, p17, p18, p23: std_logic_vector(1 downto 0);	--Ctrl_SP/Ctrl_IH/Crtl_r/Ctrl_addr
 	signal p22: std_logic_vector(3 downto 0);	--Ctrl_op
@@ -266,7 +273,7 @@ architecture Behavioral of CPU is
 	signal q2: std_logic_vector(15 downto 0);	--immidiate_mux_extend的imm_to_Reg
 	signal q3, q4, q6: std_logic_vector(15 downto 0);	--Main_Reg的Reg1/Reg2/Data_Ry
 	signal q5: std_logic_vector(3 downto 0);	--RegND
-	signal q7: std_logic;	--Control_BJ
+	signal q7, q8: std_logic;	--Control_BJ, Control_op2_reg
 	signal w1, w2, w3, w5: std_logic_vector(15 downto 0);	--IDEX_Reg的outPC/outReg1/outReg2/outData_Ry
 	signal w4, w9: std_logic_vector(3 downto 0);	--outRegND/outControl_op/
 	signal w6, w7, w8, w11, w12, w13, w14: std_logic;	--outControl_WB/outControl_op1/outControl_op2/outControl_PCMEM/outControl_DRRE/Control_ctrl_JJ/Control_JJ
@@ -290,11 +297,11 @@ begin
 	u3:PC_EX_MUX PORT MAP(p4, e4, p5, w14);
 	u4:Addr_MUX PORT MAP(p2, t1, p6, t5);	--p2=PC,t1=MEM不需要选择，直接给Memory，去掉这个选择器
 	u5:Memory PORT MAP(clk, rst, p6, "0000000000000000", "0000000000000000", "0000000000000000", p7, p8, p9, p10, t4);	--Data/MEM_Ry/instruction
-	u6:parseCtrl PORT MAP(clk, rst, p10, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35);
+	u6:parseCtrl PORT MAP(clk, rst, p10, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37);
 	u7:Rxyz_MUX PORT MAP(p31, p32, p33, q1, p18);
 	u8:immidiate_mux_extend PORT MAP(p34, q2, p13, p14);
-	u9:Main_Reg PORT MAP(p11, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, e5, t8, x6, p15, p17, p16, p27, y1, p12, q7);
-	u10:IDEX_Reg PORT MAP(clk, rst, p35, w1, x3, q3, q4, q5, q6, p19, p20, p21, p22, p23, p24, p25, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, q7, p28, w13, w14);
+	u9:Main_Reg PORT MAP(p11, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, e5, t8, x6, p15, p17, p16, p27, y1, p12, q7, p26, p36, p37, q8);
+	u10:IDEX_Reg PORT MAP(clk, rst, p35, w1, x3, q3, q4, q5, q6, p19, p20, p21, p22, p23, p24, p25, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, q7, p28, w13, w14, q8);
 	u11:ALU1_MUX PORT MAP(w1, w2, e1, w7);
 	u12:ALU2_MUX PORT MAP(w3, e2, w8);
 	u13:ALU PORT MAP(e1, e2, e3, e4, e5, w9);

@@ -4,4 +4,29 @@ Instructions that we have tested:
 	ADDSP
 	ADDU
 	AND
+	B
+	BEQZ
+	BENZ
+	BTEQZ
+	CMP
+	CMPI
+	JR
+	LI
+	LW
+	LW_SP
+	MFIH
+	MFPC
+	MTIH
+	MTSP
+	NOT
+	NOP
+	OR
+	SLL
+	SLTI
+	SRA
+	SRAV
+	SRL
+	SUBU
 	
+SW
+SW_SP can not be tested.

@@ -56,7 +56,7 @@ begin
 			when "0011"=>	-- =reg2
 				outre:=ALU2;
 			when "0100"=>	-- ~
-				outre:=not ALU1;
+				outre:=not ALU2;
 			when "0101"=>	-- |
 				outre:=ALU1 or ALU2;
 			when "0110"=>	-- <<logic
