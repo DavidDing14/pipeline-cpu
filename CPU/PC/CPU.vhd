@@ -33,9 +33,20 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity CPU is
     Port ( clk : in  STD_LOGIC;
-			  PCout : out STD_LOGIC_VECTOR(15 downto 0);
-			  PCin : in STD_LOGIC_VECTOR(15 downto 0);
-           rst : in  STD_LOGIC);
+           rst : in  STD_LOGIC;
+			  
+			  ram1data : inout  STD_LOGIC_VECTOR (15 downto 0);
+			ram2data : inout  STD_LOGIC_VECTOR (15 downto 0);
+			ram1addr : out  STD_LOGIC_VECTOR (17 downto 0);
+			ram2addr : out  STD_LOGIC_VECTOR (17 downto 0);
+			
+			ram1oe : out  STD_LOGIC;
+			ram1we : out  STD_LOGIC;
+			ram1en : out  STD_LOGIC;
+			
+			ram2oe : out  STD_LOGIC;
+			ram2we : out  STD_LOGIC;
+			ram2en : out  STD_LOGIC);
 end CPU;
 
 architecture Behavioral of CPU is
@@ -224,7 +235,8 @@ architecture Behavioral of CPU is
            out_Ctrl_PCMEM : out  STD_LOGIC;
            out_Ctrl_DRRE : out  STD_LOGIC;
 			  out_RegND : out  STD_LOGIC_VECTOR (3 DOWNTO 0);
-			  out_Result_Reg : out STD_LOGIC_VECTOR(15 downto 0)
+			  out_Result_Reg : out STD_LOGIC_VECTOR(15 downto 0);
+			  out_Result_MEM : out STD_LOGIC_VECTOR(15 downto 0)
 			);
 	end component;
 	component MEM_WB
@@ -260,6 +272,39 @@ architecture Behavioral of CPU is
            Control_Reg : out  STD_LOGIC_VECTOR (1 downto 0);
 			  Control_Reg1 : out STD_LOGIC_VECTOR (1 downto 0));
 	end component;
+	component frediv4
+		Port ( clk_in : in  STD_LOGIC;
+           clk_out : out  STD_LOGIC);
+	end component;
+	component MEM
+		Port ( 
+		clk	: in	STD_LOGIC;	--时钟信号，访问读写
+		rst: in std_logic;
+		
+		PC : in  STD_LOGIC_VECTOR (15 downto 0);	--指令地址
+		MEMAddr : in  STD_LOGIC_VECTOR (15 downto 0);	--访存地址
+		
+		MEM_Ry : in  STD_LOGIC_VECTOR (15 downto 0);	--MEM阶段送来的Ry的值，可能写回MEM[Addr]
+		
+		Control_MEM : in  STD_LOGIC_VECTOR (1 downto 0);	--控制访问IR/DR以及访问DR的读/写
+		
+		outData : out  STD_LOGIC_VECTOR (15 downto 0);	--从RAM1那条线读出来的数据作为数据传给寄存器堆
+		outinstruction : out  STD_LOGIC_VECTOR (15 downto 0);	--从RAM2读出来的数据作为指令
+		
+		ram1data : inout  STD_LOGIC_VECTOR (15 downto 0);
+		ram2data : inout  STD_LOGIC_VECTOR (15 downto 0);
+		ram1addr : out  STD_LOGIC_VECTOR (17 downto 0);
+		ram2addr : out  STD_LOGIC_VECTOR (17 downto 0);
+		
+		ram1oe : out  STD_LOGIC;
+		ram1we : out  STD_LOGIC;
+		ram1en : out  STD_LOGIC;
+		
+		ram2oe : out  STD_LOGIC;
+		ram2we : out  STD_LOGIC;
+		ram2en : out  STD_LOGIC 
+	);
+	end component;
 	signal p1, p2, p3: std_logic_vector(15 downto 0);	--PC的PC_to_add/PC_IF/PC_EX
 	signal p4: std_logic_vector(15 downto 0);	--PC_ALU的PC_4
 	signal p5: std_logic_vector(15 downto 0);	--PC_EX_MUX的result
@@ -283,7 +328,7 @@ architecture Behavioral of CPU is
 	signal e1: std_logic_vector(15 downto 0);	--ALU1_MUX的ALU1
 	signal e2: std_logic_vector(15 downto 0);	--ALU2_MUX的ALU2
 	signal e3, e4, e5: std_logic_vector(15 downto 0);	--ALU的result/result_to_PC/result_to_Reg
-	signal t1, t2, t8: std_logic_vector(15 downto 0);	--EX_MEM的out_WDATA/out_Result/out_Result_Reg
+	signal t1, t2, t8, t9: std_logic_vector(15 downto 0);	--EX_MEM的out_WDATA/out_Result/out_Result_Reg/out_Result_MEM
 	signal t3, t5, t6: std_logic;	--out_Ctrl_WB/out_Ctrl_PCMEM/out_Ctrl_DRRE
 	signal t4: std_logic_vector(1 downto 0);	--out_Ctrl_addr
 	signal t7: std_logic_vector(3 downto 0);	--out_RegND
@@ -293,24 +338,27 @@ architecture Behavioral of CPU is
 	signal z1: std_logic_vector(15 downto 0);	--WB_Reg_MUX的Data_NI
 	signal x1, x2, x3, x4, x5: std_logic;	--ctrl的control_PC/control_IF/control_ID/control_EX/control_MEM
 	signal x6, x7: std_logic_vector(1 downto 0);	--Control_Reg/Control_Reg1
+	signal clk2: std_logic;	--frediv4的clk_out
+	signal v1, v2: std_logic_vector(15 downto 0);	--MEM的outData/outinstruction
 begin
-	u1:PC PORT MAP(clk, rst, x1, p5, p1, p2, p3);
+	u1:PC PORT MAP(clk2, rst, x1, p5, p1, p2, p3);
 	u2:PC_ALU PORT MAP(p1, p4);
 	u3:PC_EX_MUX PORT MAP(p4, e4, p5, w14);
-	u4:Addr_MUX PORT MAP(p2, t1, p6, t5);	--p2=PC,t1=MEM不需要选择，直接给Memory，去掉这个选择器
-	u5:Memory PORT MAP(clk, rst, p6, "0000000000000000", "0000000000000000", "0000000000000000", p7, p8, p9, p10, t4);	--Data/MEM_Ry/instruction
-	u6:parseCtrl PORT MAP(clk, rst, p10, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37);
+	--u4:Addr_MUX PORT MAP(p2, t1, p6, t5);	--p2=PC,t1=MEM不需要选择，直接给Memory，去掉这个选择器
+	u5:MEM PORT MAP(clk, rst, p2, t9, t1, t4, v1, v2, ram1data, ram2data, ram1addr, ram2addr, ram1oe, ram1we, ram1en, ram2oe, ram2we, ram2en);
+	--u5:Memory PORT MAP(clk, rst, p6, "0000000000000000", "0000000000000000", "0000000000000000", p7, p8, p9, p10, t4);	--Data/MEM_Ry/instruction
+	u6:parseCtrl PORT MAP(clk2, rst, p10, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37);
 	u7:Rxyz_MUX PORT MAP(p31, p32, p33, q1, p18);
 	u8:immidiate_mux_extend PORT MAP(p34, q2, p13, p14);
 	u9:Main_Reg PORT MAP(p11, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, e5, t8, x6, p15, p17, p16, p27, y1, p12, q7, p26, p36, p37, q8, x7);
-	u10:IDEX_Reg PORT MAP(clk, rst, p35, w1, x3, q3, q4, q5, q6, p19, p20, p21, p22, p23, p24, p25, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, q7, p28, w13, w14, q8);
+	u10:IDEX_Reg PORT MAP(clk2, rst, p35, w1, x3, q3, q4, q5, q6, p19, p20, p21, p22, p23, p24, p25, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, q7, p28, w13, w14, q8);
 	u11:ALU1_MUX PORT MAP(w1, w2, e1, w7);
 	u12:ALU2_MUX PORT MAP(w3, e2, w8);
 	u13:ALU PORT MAP(e1, e2, e3, e4, e5, w9);
-	u14:EX_MEM PORT MAP(clk, rst, x4, w5, e3, w6, w10, w11, w12, w4, t1, t2, t3, t4, t5, t6, t7, t8);
-	u15:MEM_WB PORT MAP(clk, x5, rst, t2, t3, t6, t7, y1, y2, y3, y4);
+	u14:EX_MEM PORT MAP(clk2, rst, x4, w5, e3, w6, w10, w11, w12, w4, t1, t2, t3, t4, t5, t6, t7, t8, t9);
+	u15:MEM_WB PORT MAP(clk2, x5, rst, t2, t3, t6, t7, y1, y2, y3, y4);
 	u16:WB_Reg_MUX PORT MAP(p8, y3, z1, y2);
-	u17:ctrl PORT MAP(clk, rst, p11, w13, x1, x2, x3, x4, x5, x6, x7);
-	PCout<=p10;
+	u17:ctrl PORT MAP(clk2, rst, p11, w13, x1, x2, x3, x4, x5, x6, x7);
+	u18:frediv4 PORT MAP(clk, clk2);
 end Behavioral;
 

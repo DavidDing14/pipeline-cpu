@@ -47,7 +47,8 @@ entity EX_MEM is
            out_Ctrl_PCMEM : out  STD_LOGIC;
            out_Ctrl_DRRE : out  STD_LOGIC;
 			  out_RegND : out  STD_LOGIC_VECTOR (3 DOWNTO 0);
-			  out_Result_Reg : out STD_LOGIC_VECTOR(15 downto 0)
+			  out_Result_Reg : out STD_LOGIC_VECTOR(15 downto 0);
+			  out_Result_MEM : out STD_LOGIC_VECTOR(15 downto 0)
 			);
 end EX_MEM;
 
