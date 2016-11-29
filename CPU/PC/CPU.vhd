@@ -150,7 +150,8 @@ architecture Behavioral of CPU is
 			  Control_judge : in STD_LOGIC;
 			  Ry_x : in STD_LOGIC;
 			  Rx_y : in STD_LOGIC;
-			  Control_op2_reg : out STD_LOGIC);
+			  Control_op2_reg : out STD_LOGIC;
+			  Control_ctrl1 : in STD_LOGIC_VECTOR(1 downto 0));
 	end component;
 	component IDEX_Reg
 		Port ( clk : in  STD_LOGIC;
@@ -256,7 +257,8 @@ architecture Behavioral of CPU is
            Control_ID : out  STD_LOGIC;
            Control_EX : out  STD_LOGIC;
            Control_MEM : out  STD_LOGIC;
-           Control_Reg : out  STD_LOGIC_VECTOR (1 downto 0));
+           Control_Reg : out  STD_LOGIC_VECTOR (1 downto 0);
+			  Control_Reg1 : out STD_LOGIC_VECTOR (1 downto 0));
 	end component;
 	signal p1, p2, p3: std_logic_vector(15 downto 0);	--PC的PC_to_add/PC_IF/PC_EX
 	signal p4: std_logic_vector(15 downto 0);	--PC_ALU的PC_4
@@ -290,7 +292,7 @@ architecture Behavioral of CPU is
 	signal y4: std_logic_vector(3 downto 0);	--out_RegND
 	signal z1: std_logic_vector(15 downto 0);	--WB_Reg_MUX的Data_NI
 	signal x1, x2, x3, x4, x5: std_logic;	--ctrl的control_PC/control_IF/control_ID/control_EX/control_MEM
-	signal x6: std_logic_vector(1 downto 0);	--Control_Reg
+	signal x6, x7: std_logic_vector(1 downto 0);	--Control_Reg/Control_Reg1
 begin
 	u1:PC PORT MAP(clk, rst, x1, p5, p1, p2, p3);
 	u2:PC_ALU PORT MAP(p1, p4);
@@ -300,7 +302,7 @@ begin
 	u6:parseCtrl PORT MAP(clk, rst, p10, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37);
 	u7:Rxyz_MUX PORT MAP(p31, p32, p33, q1, p18);
 	u8:immidiate_mux_extend PORT MAP(p34, q2, p13, p14);
-	u9:Main_Reg PORT MAP(p11, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, e5, t8, x6, p15, p17, p16, p27, y1, p12, q7, p26, p36, p37, q8);
+	u9:Main_Reg PORT MAP(p11, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, e5, t8, x6, p15, p17, p16, p27, y1, p12, q7, p26, p36, p37, q8, x7);
 	u10:IDEX_Reg PORT MAP(clk, rst, p35, w1, x3, q3, q4, q5, q6, p19, p20, p21, p22, p23, p24, p25, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, q7, p28, w13, w14, q8);
 	u11:ALU1_MUX PORT MAP(w1, w2, e1, w7);
 	u12:ALU2_MUX PORT MAP(w3, e2, w8);
@@ -308,7 +310,7 @@ begin
 	u14:EX_MEM PORT MAP(clk, rst, x4, w5, e3, w6, w10, w11, w12, w4, t1, t2, t3, t4, t5, t6, t7, t8);
 	u15:MEM_WB PORT MAP(clk, x5, rst, t2, t3, t6, t7, y1, y2, y3, y4);
 	u16:WB_Reg_MUX PORT MAP(p8, y3, z1, y2);
-	u17:ctrl PORT MAP(clk, rst, p11, w13, x1, x2, x3, x4, x5, x6);
+	u17:ctrl PORT MAP(clk, rst, p11, w13, x1, x2, x3, x4, x5, x6, x7);
 	PCout<=p10;
 end Behavioral;
 

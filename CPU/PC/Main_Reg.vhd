@@ -57,7 +57,8 @@ entity Main_Reg is
 			  Control_judge : in STD_LOGIC;
 			  Ry_x : in STD_LOGIC;
 			  Rx_y : in STD_LOGIC;
-			  Control_op2_reg : out STD_LOGIC);
+			  Control_op2_reg : out STD_LOGIC;
+			  Control_ctrl1 : in STD_LOGIC_VECTOR(1 downto 0));
 end Main_Reg;
 
 architecture Behavioral of Main_Reg is
@@ -96,6 +97,32 @@ begin
 			SP:="0000000000000001";
 			IH:="0000100000000000";
 		else
+			if(Control_WB='1')then	--写回
+				case RegND_WB is
+					when "0000"=>
+						R0:=NI;
+					when "0001"=>
+						R1:=NI;
+					when "0010"=>
+						R2:=NI;
+					when "0011"=>
+						R3:=NI;
+					when "0100"=>
+						R4:=NI;
+					when "0101"=>
+						R5:=NI;
+					when "0110"=>
+						R6:=NI;
+					when "0111"=>
+						R7:=NI;
+					when "1000"=>
+						SP:=NI;
+					when "1001"=>
+						IH:=NI;
+					when others=>
+						null;
+				end case;
+			end if;
 			--	--SP在LW_SP和SW_SP中用作Rx,在ADDSP中用作Rx和RegND，在MTSP中用作RegND
 --	--IH在MFIH中用作Rx，在MTIH中用作RegND
 --	--T在BTEQZ中用作判断，在CMP、SLTI和CMPI中被赋值（在寄存器组完成）
@@ -201,52 +228,58 @@ begin
 			g1:=Result_MEM;
 		end if;
 -- --extend(imm)在许多指令中用作Ry
-		if(Control_imm_ry='0')then
-			if(Rx_y='0')then
-				case Ry is
-					when "000"=>
-						g2:=R0;
-					when "001"=>
-						g2:=R1;
-					when "010"=>
-						g2:=R2;
-					when "011"=>
-						g2:=R3;
-					when "100"=>
-						g2:=R4;
-					when "101"=>
-						g2:=R5;
-					when "110"=>
-						g2:=R6;
-					when "111"=>
-						g2:=R7;
-					when others=>
-						null;
-				end case;
+		if(Control_ctrl1="00")then
+			if(Control_imm_ry='0')then
+				if(Rx_y='0')then
+					case Ry is
+						when "000"=>
+							g2:=R0;
+						when "001"=>
+							g2:=R1;
+						when "010"=>
+							g2:=R2;
+						when "011"=>
+							g2:=R3;
+						when "100"=>
+							g2:=R4;
+						when "101"=>
+							g2:=R5;
+						when "110"=>
+							g2:=R6;
+						when "111"=>
+							g2:=R7;
+						when others=>
+							null;
+					end case;
+				else
+					case Rx is
+						when "000"=>
+							g2:=R0;
+						when "001"=>
+							g2:=R1;
+						when "010"=>
+							g2:=R2;
+						when "011"=>
+							g2:=R3;
+						when "100"=>
+							g2:=R4;
+						when "101"=>
+							g2:=R5;
+						when "110"=>
+							g2:=R6;
+						when "111"=>
+							g2:=R7;
+						when others=>
+							null;
+					end case;
+				end if;
 			else
-				case Rx is
-					when "000"=>
-						g2:=R0;
-					when "001"=>
-						g2:=R1;
-					when "010"=>
-						g2:=R2;
-					when "011"=>
-						g2:=R3;
-					when "100"=>
-						g2:=R4;
-					when "101"=>
-						g2:=R5;
-					when "110"=>
-						g2:=R6;
-					when "111"=>
-						g2:=R7;
-					when others=>
-						null;
-				end case;
+				g2:=imm;
 			end if;
-		else
-			g2:=imm;
+		elsif(Control_ctrl1="01")then
+			g2:=Result_EX;
+		elsif(Control_ctrl1="10")then
+			g2:=Result_MEM;
 		end if;
 -- --RegND
 		if(Control_SP="00" and Control_IH="00")then
@@ -399,32 +432,7 @@ begin
 --
 --	process(NI, RegND_WB, Control_WB)
 --	begin
-		if(Control_WB='1')then	--写回
-			case RegND_WB is
-				when "0000"=>
-					R0:=NI;
-				when "0001"=>
-					R1:=NI;
-				when "0010"=>
-					R2:=NI;
-				when "0011"=>
-					R3:=NI;
-				when "0100"=>
-					R4:=NI;
-				when "0101"=>
-					R5:=NI;
-				when "0110"=>
-					R6:=NI;
-				when "0111"=>
-					R7:=NI;
-				when "1000"=>
-					SP:=NI;
-				when "1001"=>
-					IH:=NI;
-				when others=>
-					null;
-			end case;
-		end if;
+
 	Reg1<=g1;
 	Reg2<=g2;
 	RegND<=g3;
