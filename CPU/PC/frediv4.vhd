@@ -31,12 +31,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity frediv4 is
     Port ( clk_in : in  STD_LOGIC;
-           clk_out : out  STD_LOGIC);
+           clk_out : out  STD_LOGIC;
+			  clk_2_out : out STD_LOGIC);
 end frediv4;
 
 architecture Behavioral of frediv4 is
 signal status: integer range 0 to 2 := 0;
+signal status2 : integer range 0 to 1 := 0;
 signal q: std_logic;
+signal q2: std_logic;
 begin
 	process (clk_in)
 	begin
@@ -50,8 +53,16 @@ begin
 			else
 				status <= status+1;
 			end if;
+			if(status2 = 0)then
+				q2<='1';
+				status2<=1;
+			else
+				q2<='0';
+				status2<=0;
+			end if;
 		end if;
 	end process;
 	clk_out <= q;
+	clk_2_out <= q2;
 end Behavioral;
 

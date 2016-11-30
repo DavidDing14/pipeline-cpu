@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "E:/pipeline-cpu/CPU/PC/PC.vhd";
+static const char *ng0 = "G:/cpu/pipeline-cpu/CPU/PC/PC.vhd";
 
 
 
@@ -94,7 +94,7 @@ LAB3:    xsi_set_current_line(59, ng0);
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(51, ng0);
-    t1 = (t0 + 5619);
+    t1 = (t0 + 5663);
     t6 = (t0 + 2288U);
     t7 = *((char **)t6);
     t6 = (t7 + 0);

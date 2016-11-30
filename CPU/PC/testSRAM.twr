@@ -2,9 +2,9 @@
 Release 13.3 Trace  (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-E:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n 3
--fastpaths -xml testSRAM.twx testSRAM.ncd -o testSRAM.twr testSRAM.pcf -ucf
-testSRAM.ucf
+G:\Xilinx-ISE\13.3\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s
+4 -n 3 -fastpaths -xml testSRAM.twx testSRAM.ncd -o testSRAM.twr testSRAM.pcf
+-ucf testSRAM.ucf
 
 Design file:              testSRAM.ncd
 Physical constraint file: testSRAM.pcf
@@ -97,14 +97,14 @@ clk            |    2.616|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Nov 28 22:24:54 2016 
+Analysis completed Tue Nov 29 20:35:47 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 175 MB
+Peak Memory Usage: 198 MB
 
 
 

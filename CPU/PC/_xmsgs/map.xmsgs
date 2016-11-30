@@ -5,15 +5,12 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">MEM_Ry&lt;15&gt;_IBUF</arg> has no load.
+<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">data_ready_IBUF</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">15</arg> more times for the following (max. 5 shown):
-<arg fmt="%s" index="3">MEM_Ry&lt;14&gt;_IBUF,
-MEM_Ry&lt;13&gt;_IBUF,
-MEM_Ry&lt;12&gt;_IBUF,
-MEM_Ry&lt;11&gt;_IBUF,
-MEM_Ry&lt;10&gt;_IBUF</arg>
+<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">2</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">tbre_IBUF,
+tsre_IBUF</arg>
 To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
 </msg>
 
@@ -44,79 +41,37 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;8&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;8&gt;</arg> has been removed.
 </msg>
 
-<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;7&gt;</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;6&gt;</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;5&gt;</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;4&gt;</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;3&gt;</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;2&gt;</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;1&gt;</arg> has been removed.
-</msg>
-
-<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">ram1data&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">ram1data&lt;0&gt;</arg> has been removed.
-</msg>
-
 <msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;12&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">u13/Mmux_outre_1_mux0007_10</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">u13/Mmux_outre_9_mux0007_5_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;13&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">u13/Mmux_outre_1_mux0007_7</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">u13/Mmux_outre_3_mux0008_6_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;14&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">u13/Mmux_outre_0_mux0007_6</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">u13/Mmux_outre_8_mux0007_3_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the GYMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;15&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">u13/Mmux_outre_5_mux0007_6</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">u13/Mmux_outre_13_mux0007_9_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;0&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">u7/ND_cmp_eq0000</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;1&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">u13/outre_15_or0001</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;2&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">u8/real_imm_9_or0000</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;3&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">tbre_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;4&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">tsre_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;5&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;6&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;7&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;8&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;9&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;10&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">MEM_Ry&lt;11&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">data_ready_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 </messages>

@@ -41,10 +41,9 @@ entity ALU is
 end ALU;
 
 architecture Behavioral of ALU is
-
+shared variable outre: std_logic_vector(15 downto 0):="0000000000000000";
 begin
 	process(ALU1, ALU2, Control_op)
-	variable outre: std_logic_vector(15 downto 0):="0000000000000000";
 	begin
 		case Control_op is
 			when "0000"=>	-- +

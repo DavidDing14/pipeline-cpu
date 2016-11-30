@@ -58,7 +58,7 @@ begin
 		end if;
 		PC_to_add<=var_PC;
 		PC_IF<=var_PC;
-		PC_EX<=var_PC;
+		PC_EX<=var_PC+1;
 	end process;
 end Behavioral;
 

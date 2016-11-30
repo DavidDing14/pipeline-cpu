@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=E:\pipeline-cpu\CPU\PC\testSRAM.ncd
-OUTFILE=E:\pipeline-cpu\CPU\PC\testSRAM.bit
+INFILE=G:\cpu\pipeline-cpu\CPU\PC\testSRAM.ncd
+OUTFILE=G:\cpu\pipeline-cpu\CPU\PC\testSRAM.bit
 FAMILY=Spartan3E
 PART=xc3s1200e-4fg320
-WORKINGDIR=E:\pipeline-cpu\CPU\PC
+WORKINGDIR=G:\cpu\pipeline-cpu\CPU\PC
 LICENSE=WebPack
-USER_INFO=211257609_0_0_617
+USER_INFO=135256_15690819_173552794_661

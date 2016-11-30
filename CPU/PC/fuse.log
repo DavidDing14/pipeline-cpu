@@ -1,27 +1,29 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe" -prj "E:/pipeline-cpu/CPU/PC/testCPU_beh.prj" "work.testCPU" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "G:/cpu/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe" -prj "G:/cpu/pipeline-cpu/CPU/PC/testCPU_beh.prj" "work.testCPU" 
 ISim O.76xd (signature 0xc3576ebc)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC_ALU.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/PC.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/parseCtrl.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/MEM_WB.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/Memory.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/Main_Reg.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/immidiate_mux_extend.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/IDEX_Reg.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/EX_MEM.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/ctrl.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/ALU2_MUX.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/ALU1_MUX.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/ALU.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/Addr_MUX.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/CPU.vhd" into library work
-Parsing VHDL file "E:/pipeline-cpu/CPU/PC/testCPU.vhd" into library work
+WARNING:Simulator:1010 - One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running fuse with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/PC_ALU.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/PC.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/MEM_WB.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/Memory.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/Main_Reg.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/immidiate_mux_extend.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/IDEX_Reg.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/frediv4.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/EX_MEM.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/ctrl.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/ALU2_MUX.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/ALU1_MUX.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/ALU.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/Addr_MUX.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd" into library work
+Parsing VHDL file "G:/cpu/pipeline-cpu/CPU/PC/testCPU.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -45,11 +47,12 @@ Compiling architecture behavioral of entity EX_MEM [ex_mem_default]
 Compiling architecture behavioral of entity MEM_WB [mem_wb_default]
 Compiling architecture behavioral of entity WB_Reg_MUX [wb_reg_mux_default]
 Compiling architecture behavioral of entity ctrl [ctrl_default]
+Compiling architecture behavioral of entity frediv4 [frediv4_default]
 Compiling architecture behavioral of entity CPU [cpu_default]
 Compiling architecture behavior of entity testcpu
 Time Resolution for simulation is 1ps.
-Waiting for 14 sub-compilation(s) to finish...
-Compiled 41 VHDL Units
-Built simulation executable E:/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe
-Fuse Memory Usage: 34772 KB
-Fuse CPU Usage: 1357 ms
+Waiting for 16 sub-compilation(s) to finish...
+Compiled 43 VHDL Units
+Built simulation executable G:/cpu/pipeline-cpu/CPU/PC/testCPU_isim_beh.exe
+Fuse Memory Usage: 35732 KB
+Fuse CPU Usage: 906 ms

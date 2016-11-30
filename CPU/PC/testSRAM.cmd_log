@@ -9,3 +9,16 @@ map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o testSR
 par -w -intstyle ise -ol high -t 1 testSRAM_map.ncd testSRAM.ncd testSRAM.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml testSRAM.twx testSRAM.ncd -o testSRAM.twr testSRAM.pcf -ucf testSRAM.ucf 
 bitgen -intstyle ise -f testSRAM.ut testSRAM.ncd 
+xst -intstyle ise -ifn "G:/cpu/pipeline-cpu/CPU/PC/testSRAM.xst" -ofn "G:/cpu/pipeline-cpu/CPU/PC/testSRAM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc testSRAM.ucf -p xc3s1200e-fg320-4 testSRAM.ngc testSRAM.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o testSRAM_map.ncd testSRAM.ngd testSRAM.pcf 
+par -w -intstyle ise -ol high -t 1 testSRAM_map.ncd testSRAM.ncd testSRAM.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml testSRAM.twx testSRAM.ncd -o testSRAM.twr testSRAM.pcf -ucf testSRAM.ucf 
+bitgen -intstyle ise -f testSRAM.ut testSRAM.ncd 
+xst -intstyle ise -ifn "G:/cpu/pipeline-cpu/CPU/PC/testSRAM.xst" -ofn "G:/cpu/pipeline-cpu/CPU/PC/testSRAM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc testSRAM.ucf -uc TestMemoryUnit2.ucf -p xc3s1200e-fg320-4 testSRAM.ngc testSRAM.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc testSRAM.ucf -p xc3s1200e-fg320-4 testSRAM.ngc testSRAM.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o testSRAM_map.ncd testSRAM.ngd testSRAM.pcf 
+par -w -intstyle ise -ol high -t 1 testSRAM_map.ncd testSRAM.ncd testSRAM.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml testSRAM.twx testSRAM.ncd -o testSRAM.twr testSRAM.pcf -ucf testSRAM.ucf 
+bitgen -intstyle ise -f testSRAM.ut testSRAM.ncd 

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-11-29T12:54:57</DateModified>
+  <DateModified>2016-11-29T18:13:24</DateModified>
   <ModuleName>CPU</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/pipeline-cpu/CPU/PC/iseconfig/testSRAM.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/pipeline-cpu/CPU/PC</ImplementationReportsDirectory>
-  <DateInitialized>2016-11-29T12:54:56</DateInitialized>
+  <SummaryTimeStamp>2016-11-29T18:10:42</SummaryTimeStamp>
+  <SavedFilePath>G:/cpu/pipeline-cpu/CPU/PC/iseconfig/testSRAM.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>G:/cpu/pipeline-cpu/CPU/PC\</ImplementationReportsDirectory>
+  <DateInitialized>2016-11-29T17:16:23</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

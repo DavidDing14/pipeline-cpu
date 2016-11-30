@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# PlanAhead v13.3 (64-bit)
+# Build 147507 by hdbuild on Tue Oct  4 19:13:50 MDT 2011
+# Start of session at: Tue Nov 29 16:52:29 2016
+# Process ID: 8664
+# Log file: G:/cpu/pipeline-cpu/CPU/PC/planAhead_run_2/planAhead.log
+# Journal file: G:/cpu/pipeline-cpu/CPU/PC/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common-78] Attempting to get a license: PlanAhead
+INFO: [Common-82] Got a license: PlanAhead
+INFO: [Device-25] Loading parts and site information from G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts\arch.xmlParsing RTL primitives file [G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml]
+Finished parsing RTL primitives file [G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml]
+start_gui
+source G:/cpu/pipeline-cpu/CPU/PC/pa.fromNetlist.tcl
+# create_project -name PC -dir "G:/cpu/pipeline-cpu/CPU/PC/planAhead_run_2" -part xc3s1200efg320-4
+ERROR: [Common-53] User Exception: Project already exists on disk, please use '-force' option to overwrite: 
+     G:\cpu\pipeline-cpu\CPU\PC\planAhead_run_2\PC.ppr
+     G:\cpu\pipeline-cpu\CPU\PC\planAhead_run_2\PC.data
+Qt: Untested Windows version 6.2 detected!
+exit
+stop_gui
+INFO: [PlanAhead-261] Exiting PlanAhead...
+INFO: [Common-83] Releasing license: PlanAhead

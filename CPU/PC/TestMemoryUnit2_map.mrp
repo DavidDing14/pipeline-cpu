@@ -1,0 +1,343 @@
+Release 13.3 Map O.76xd (nt64)
+Xilinx Mapping Report File for Design 'TestMemoryUnit2'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off
+-c 100 -o TestMemoryUnit2_map.ncd TestMemoryUnit2.ngd TestMemoryUnit2.pcf 
+Target Device  : xc3s1200e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Tue Nov 29 22:00:59 2016
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   19
+Logic Utilization:
+  Number of Slice Flip Flops:            16 out of  17,344    1%
+  Number of 4 input LUTs:                13 out of  17,344    1%
+Logic Distribution:
+  Number of occupied Slices:             10 out of   8,672    1%
+    Number of Slices containing only related logic:      10 out of      10 100%
+    Number of Slices containing unrelated logic:          0 out of      10   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:          13 out of  17,344    1%
+  Number of bonded IOBs:                 81 out of     250   32%
+    IOB Flip Flops:                      16
+  Number of BUFGMUXs:                     1 out of      24    4%
+
+Average Fanout of Non-Clock Nets:                2.87
+
+Peak Memory Usage:  307 MB
+Total REAL time to MAP completion:  1 secs 
+Total CPU time to MAP completion:   1 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:MapLib:701 - Signal ram1_data<15> connected to top level port
+   ram1_data<15> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<14> connected to top level port
+   ram1_data<14> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<13> connected to top level port
+   ram1_data<13> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<12> connected to top level port
+   ram1_data<12> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<11> connected to top level port
+   ram1_data<11> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<10> connected to top level port
+   ram1_data<10> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<9> connected to top level port
+   ram1_data<9> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<8> connected to top level port
+   ram1_data<8> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<7> connected to top level port
+   ram1_data<7> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<6> connected to top level port
+   ram1_data<6> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<5> connected to top level port
+   ram1_data<5> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<4> connected to top level port
+   ram1_data<4> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<3> connected to top level port
+   ram1_data<3> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<2> connected to top level port
+   ram1_data<2> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<1> connected to top level port
+   ram1_data<1> has been removed.
+WARNING:MapLib:701 - Signal ram1_data<0> connected to top level port
+   ram1_data<0> has been removed.
+WARNING:PhysDesignRules:367 - The signal <tsre_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tbre_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <data_ready_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network data_ready_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 2 more times for the following
+   (max. 5 shown):
+   tbre_IBUF,
+   tsre_IBUF
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  48 block(s) removed
+   2 block(s) optimized away
+  16 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "ram1_data<0>" is unused and has been removed.
+ Unused block "ram1_data_0_OBUFT" (TRI) removed.
+The signal "ram1_data<10>" is unused and has been removed.
+ Unused block "ram1_data_10_OBUFT" (TRI) removed.
+The signal "ram1_data<11>" is unused and has been removed.
+ Unused block "ram1_data_11_OBUFT" (TRI) removed.
+The signal "ram1_data<12>" is unused and has been removed.
+ Unused block "ram1_data_12_OBUFT" (TRI) removed.
+The signal "ram1_data<13>" is unused and has been removed.
+ Unused block "ram1_data_13_OBUFT" (TRI) removed.
+The signal "ram1_data<14>" is unused and has been removed.
+ Unused block "ram1_data_14_OBUFT" (TRI) removed.
+The signal "ram1_data<15>" is unused and has been removed.
+ Unused block "ram1_data_15_OBUFT" (TRI) removed.
+The signal "ram1_data<1>" is unused and has been removed.
+ Unused block "ram1_data_1_OBUFT" (TRI) removed.
+The signal "ram1_data<2>" is unused and has been removed.
+ Unused block "ram1_data_2_OBUFT" (TRI) removed.
+The signal "ram1_data<3>" is unused and has been removed.
+ Unused block "ram1_data_3_OBUFT" (TRI) removed.
+The signal "ram1_data<4>" is unused and has been removed.
+ Unused block "ram1_data_4_OBUFT" (TRI) removed.
+The signal "ram1_data<5>" is unused and has been removed.
+ Unused block "ram1_data_5_OBUFT" (TRI) removed.
+The signal "ram1_data<6>" is unused and has been removed.
+ Unused block "ram1_data_6_OBUFT" (TRI) removed.
+The signal "ram1_data<7>" is unused and has been removed.
+ Unused block "ram1_data_7_OBUFT" (TRI) removed.
+The signal "ram1_data<8>" is unused and has been removed.
+ Unused block "ram1_data_8_OBUFT" (TRI) removed.
+The signal "ram1_data<9>" is unused and has been removed.
+ Unused block "ram1_data_9_OBUFT" (TRI) removed.
+Unused block "ram1_data<0>" (PAD) removed.
+Unused block "ram1_data<10>" (PAD) removed.
+Unused block "ram1_data<11>" (PAD) removed.
+Unused block "ram1_data<12>" (PAD) removed.
+Unused block "ram1_data<13>" (PAD) removed.
+Unused block "ram1_data<14>" (PAD) removed.
+Unused block "ram1_data<15>" (PAD) removed.
+Unused block "ram1_data<1>" (PAD) removed.
+Unused block "ram1_data<2>" (PAD) removed.
+Unused block "ram1_data<3>" (PAD) removed.
+Unused block "ram1_data<4>" (PAD) removed.
+Unused block "ram1_data<5>" (PAD) removed.
+Unused block "ram1_data<6>" (PAD) removed.
+Unused block "ram1_data<7>" (PAD) removed.
+Unused block "ram1_data<8>" (PAD) removed.
+Unused block "ram1_data<9>" (PAD) removed.
+Unused block "ram2_data_0_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_10_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_11_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_12_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_13_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_14_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_15_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_1_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_2_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_3_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_4_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_5_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_6_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_7_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_8_IOBUF/OBUFT" (TRI) removed.
+Unused block "ram2_data_9_IOBUF/OBUFT" (TRI) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| data_ready                         | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| insOut<0>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| insOut<1>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| insOut<2>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| insOut<3>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| insOut<4>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| insOut<5>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| insOut<6>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<7>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<8>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<9>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<10>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<11>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<12>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<13>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<14>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| insOut<15>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<0>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<2>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<3>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<4>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<5>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<6>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<7>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<8>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<9>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<10>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<11>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<12>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<13>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<14>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<15>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<16>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_addr<17>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_en                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_oe                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1_we                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<0>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<2>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<3>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<4>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<5>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<6>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<7>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<8>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<9>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<10>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<11>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<12>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<13>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<14>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<15>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<16>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_addr<17>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_data<0>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| ram2_data<1>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| ram2_data<2>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| ram2_data<3>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| ram2_data<4>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| ram2_data<5>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| ram2_data<6>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<7>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<8>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<9>                       | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<10>                      | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<11>                      | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<12>                      | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<13>                      | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<14>                      | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_data<15>                      | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| ram2_en                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_oe                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram2_we                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rdn                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rst                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| tbre                               | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| tsre                               | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| wrn                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

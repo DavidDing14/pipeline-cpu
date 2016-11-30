@@ -1,0 +1,644 @@
+Release 13.3 - xst O.76xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: TestMemoryUnit2.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TestMemoryUnit2.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TestMemoryUnit2"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-4-fg320
+
+---- Source Options
+Top Module Name                    : TestMemoryUnit2
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd" in Library work.
+Architecture behavioral of Entity memoryunit is up to date.
+Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/TestMemoryUnit2.vhd" in Library work.
+Entity <testmemoryunit2> compiled.
+Entity <testmemoryunit2> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <TestMemoryUnit2> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <MemoryUnit> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <TestMemoryUnit2> in library <work> (Architecture <behavioral>).
+Entity <TestMemoryUnit2> analyzed. Unit <TestMemoryUnit2> generated.
+
+Analyzing Entity <MemoryUnit> in library <work> (Architecture <behavioral>).
+INFO:Xst:1561 - "G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd" line 173: Mux is complete : default of case is discarded
+INFO:Xst:2679 - Register <ram1_addr> in unit <MemoryUnit> has a constant value of 000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram2_addr<17>> in unit <MemoryUnit> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram2_addr<16>> in unit <MemoryUnit> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram1_data<15>> in unit <MemoryUnit> has a constant value of Z during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram1_data<14>> in unit <MemoryUnit> has a constant value of Z during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram1_data<13>> in unit <MemoryUnit> has a constant value of Z during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram1_data<12>> in unit <MemoryUnit> has a constant value of Z during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram1_data<11>> in unit <MemoryUnit> has a constant value of Z during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram1_data<10>> in unit <MemoryUnit> has a constant value of Z during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram1_data<9>> in unit <MemoryUnit> has a constant value of Z during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ram1_data<8>> in unit <MemoryUnit> has a constant value of Z during circuit operation. The register is replaced by logic.
+Entity <MemoryUnit> analyzed. Unit <MemoryUnit> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <MemoryUnit> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <MemoryUnit> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <MemoryUnit> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <MemoryUnit> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <MemoryUnit> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <MemoryUnit> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <MemoryUnit> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <MemoryUnit> is removed.
+
+Synthesizing Unit <MemoryUnit>.
+    Related source file is "G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd".
+WARNING:Xst:2563 - Inout <ram1_data<10>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ram1_data<11>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ram1_data<12>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ram1_data<13>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ram1_data<14>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ram1_data<15>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ram1_data<8>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ram1_data<9>> is never assigned. Tied to value Z.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <ram2_oe>.
+    Found 16-bit tristate buffer for signal <ram2_data>.
+    Found 16-bit register for signal <ram2_addr<15:0>>.
+    Found 1-bit register for signal <ram2_we>.
+    Found 1-bit register for signal <rdn>.
+    Found 1-bit register for signal <wrn>.
+    Found 1-bit tristate buffer for signal <ram1_data<15>>.
+    Found 1-bit tristate buffer for signal <ram1_data<14>>.
+    Found 1-bit tristate buffer for signal <ram1_data<13>>.
+    Found 1-bit tristate buffer for signal <ram1_data<12>>.
+    Found 1-bit tristate buffer for signal <ram1_data<11>>.
+    Found 1-bit tristate buffer for signal <ram1_data<10>>.
+    Found 1-bit tristate buffer for signal <ram1_data<9>>.
+    Found 1-bit tristate buffer for signal <ram1_data<8>>.
+    Found 1-bit tristate buffer for signal <ram1_data<7>>.
+    Found 1-bit tristate buffer for signal <ram1_data<6>>.
+    Found 1-bit tristate buffer for signal <ram1_data<5>>.
+    Found 1-bit tristate buffer for signal <ram1_data<4>>.
+    Found 1-bit tristate buffer for signal <ram1_data<3>>.
+    Found 1-bit tristate buffer for signal <ram1_data<2>>.
+    Found 1-bit tristate buffer for signal <ram1_data<1>>.
+    Found 1-bit tristate buffer for signal <ram1_data<0>>.
+    Found 1-bit register for signal <Mtridata_ram1_data<0>>.
+    Found 1-bit register for signal <Mtridata_ram1_data<1>>.
+    Found 1-bit register for signal <Mtridata_ram1_data<2>>.
+    Found 1-bit register for signal <Mtridata_ram1_data<3>>.
+    Found 1-bit register for signal <Mtridata_ram1_data<4>>.
+    Found 1-bit register for signal <Mtridata_ram1_data<5>>.
+    Found 1-bit register for signal <Mtridata_ram1_data<6>>.
+    Found 1-bit register for signal <Mtridata_ram1_data<7>>.
+    Found 16-bit register for signal <Mtridata_ram2_data> created at line 114.
+    Found 1-bit register for signal <Mtrien_ram1_data<0>>.
+    Found 1-bit register for signal <Mtrien_ram1_data<1>>.
+    Found 1-bit register for signal <Mtrien_ram1_data<2>>.
+    Found 1-bit register for signal <Mtrien_ram1_data<3>>.
+    Found 1-bit register for signal <Mtrien_ram1_data<4>>.
+    Found 1-bit register for signal <Mtrien_ram1_data<5>>.
+    Found 1-bit register for signal <Mtrien_ram1_data<6>>.
+    Found 1-bit register for signal <Mtrien_ram1_data<7>>.
+    Found 1-bit register for signal <Mtrien_ram2_data> created at line 114.
+    Found 16-bit register for signal <RegData>.
+    Found 16-bit register for signal <RegIns>.
+    Found 1-bit register for signal <rflag>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  86 D-type flip-flop(s).
+	inferred  32 Tristate(s).
+Unit <MemoryUnit> synthesized.
+
+
+Synthesizing Unit <TestMemoryUnit2>.
+    Related source file is "G:/cpu/pipeline-cpu/CPU/PC/TestMemoryUnit2.vhd".
+WARNING:Xst:653 - Signal <myramAddr> is used but never assigned. This sourceless signal will be automatically connected to value 0000010001111011.
+WARNING:Xst:646 - Signal <mydataOut> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <mydataIn> is used but never assigned. This sourceless signal will be automatically connected to value 1010101010101010.
+WARNING:Xst:653 - Signal <myPC> is used but never assigned. This sourceless signal will be automatically connected to value 0000000001111010.
+WARNING:Xst:653 - Signal <myControl> is used but never assigned. This sourceless signal will be automatically connected to value 01.
+Unit <TestMemoryUnit2> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 56
+ 1-bit register                                        : 54
+ 16-bit register                                       : 2
+# Tristates                                            : 17
+ 1-bit tristate buffer                                 : 16
+ 16-bit tristate buffer                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <uut/state/FSM> on signal <state[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0001
+ 01    | 0010
+ 10    | 0100
+ 11    | 1000
+-------------------
+WARNING:Xst:1710 - FF/Latch <ram2_addr_13> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram2_addr_7> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<2>> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<3>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram2_addr_14> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram2_addr_8> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram2_addr_15> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram2_addr_9> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<4>> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<5>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<6>> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<7>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram2_data> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<0>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<3>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<1>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<2>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<4>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<5>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<6>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<7>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_0> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_1> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_2> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_3> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_4> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_5> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_6> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_7> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_8> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_9> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_10> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_11> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_12> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_13> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_14> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram2_data_15> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram2_addr_2> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram2_addr_11> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<0>> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram2_addr_12> (without init value) has a constant value of 0 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<1>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<2> Mtridata_ram2_data<2> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<3> Mtridata_ram2_data<3> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<4> Mtridata_ram2_data<4> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<5> Mtridata_ram2_data<5> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<6> Mtridata_ram2_data<6> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<7> Mtridata_ram2_data<7> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<8> Mtridata_ram2_data<8> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<9> Mtridata_ram2_data<9> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<10> Mtridata_ram2_data<10> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<11> Mtridata_ram2_data<11> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<12> Mtridata_ram2_data<12> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<11> and Mtridata_ram2_data<13> Mtridata_ram2_data<13> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<14> Mtridata_ram2_data<14> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<11> and Mtridata_ram2_data<15> Mtridata_ram2_data<15> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram1_data<0> Mtridata_ram1_data<0> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram2_data<11> and Mtridata_ram1_data<1> Mtridata_ram1_data<1> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<2> Mtridata_ram1_data<2> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtridata_ram1_data<3> Mtridata_ram1_data<3> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<4> Mtridata_ram1_data<4> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtridata_ram1_data<5> Mtridata_ram1_data<5> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<6> Mtridata_ram1_data<6> signal will be lost.
+WARNING:Xst:638 - in unit uut Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtridata_ram1_data<7> Mtridata_ram1_data<7> signal will be lost.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram2_data> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<0>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<3>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<1>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<2>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<4>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<5>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<6>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<7>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram2_data> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<0>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<3>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<1>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<2>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<4>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<5>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<6>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<7>> (without init value) has a constant value of 1 in block <uut>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Registers                                            : 86
+ Flip-Flops                                            : 86
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <Mtridata_ram1_data<1>> in Unit <MemoryUnit> is equivalent to the following 3 FFs/Latches, which will be removed : <Mtridata_ram1_data<3>> <Mtridata_ram1_data<5>> <Mtridata_ram1_data<7>> 
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtridata_ram1_data<3> Mtridata_ram1_data<3> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtridata_ram1_data<5> Mtridata_ram1_data<5> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtridata_ram1_data<7> Mtridata_ram1_data<7> signal will be lost.
+INFO:Xst:2261 - The FF/Latch <Mtridata_ram2_data_1> in Unit <MemoryUnit> is equivalent to the following 7 FFs/Latches, which will be removed : <Mtridata_ram2_data_3> <Mtridata_ram2_data_5> <Mtridata_ram2_data_7> <Mtridata_ram2_data_9> <Mtridata_ram2_data_11> <Mtridata_ram2_data_13> <Mtridata_ram2_data_15> 
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<3> Mtridata_ram2_data<3> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<5> Mtridata_ram2_data<5> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<7> Mtridata_ram2_data<7> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<9> Mtridata_ram2_data<9> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<1> and Mtridata_ram2_data<11> Mtridata_ram2_data<11> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<11> and Mtridata_ram2_data<13> Mtridata_ram2_data<13> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<11> and Mtridata_ram2_data<15> Mtridata_ram2_data<15> signal will be lost.
+INFO:Xst:2261 - The FF/Latch <Mtridata_ram1_data<0>> in Unit <MemoryUnit> is equivalent to the following 3 FFs/Latches, which will be removed : <Mtridata_ram1_data<2>> <Mtridata_ram1_data<4>> <Mtridata_ram1_data<6>> 
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<2> Mtridata_ram1_data<2> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<4> Mtridata_ram1_data<4> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<6> Mtridata_ram1_data<6> signal will be lost.
+INFO:Xst:2261 - The FF/Latch <Mtridata_ram2_data_0> in Unit <MemoryUnit> is equivalent to the following 7 FFs/Latches, which will be removed : <Mtridata_ram2_data_2> <Mtridata_ram2_data_4> <Mtridata_ram2_data_6> <Mtridata_ram2_data_8> <Mtridata_ram2_data_10> <Mtridata_ram2_data_12> <Mtridata_ram2_data_14> 
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<2> Mtridata_ram2_data<2> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<4> Mtridata_ram2_data<4> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<6> Mtridata_ram2_data<6> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<8> Mtridata_ram2_data<8> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<10> Mtridata_ram2_data<10> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<12> Mtridata_ram2_data<12> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram2_data<14> Mtridata_ram2_data<14> signal will be lost.
+WARNING:Xst:1293 - FF/Latch <rflag> has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtrien_ram1_data<7>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtrien_ram1_data<6>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtrien_ram1_data<5>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtrien_ram1_data<4>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtrien_ram1_data<3>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtrien_ram1_data<2>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtrien_ram1_data<1>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtrien_ram1_data<0>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_9> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_15> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_8> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_14> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_7> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_13> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_ram1_data<1>> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_12> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_ram1_data<0>> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_11> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ram2_addr_2> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_ram2_data_1> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Mtridata_ram2_data_0> (without init value) has a constant value of 0 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<0> and Mtridata_ram1_data<0> Mtridata_ram1_data<0> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram2_data<11> and Mtridata_ram1_data<1> Mtridata_ram1_data<1> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram1_data<0> Mtrien_ram1_data<0> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram1_data<1> Mtrien_ram1_data<1> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram1_data<2> Mtrien_ram1_data<2> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram1_data<3> Mtrien_ram1_data<3> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram1_data<4> Mtrien_ram1_data<4> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram1_data<5> Mtrien_ram1_data<5> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram1_data<6> Mtrien_ram1_data<6> signal will be lost.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram1_data<7> Mtrien_ram1_data<7> signal will be lost.
+WARNING:Xst:1710 - FF/Latch <Mtrien_ram2_data> (without init value) has a constant value of 1 in block <MemoryUnit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Mtrien_ram1_data<0>> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:2677 - Node <Mtrien_ram1_data<1>> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:2677 - Node <Mtrien_ram1_data<2>> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:2677 - Node <Mtrien_ram1_data<3>> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:2677 - Node <Mtrien_ram1_data<4>> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:2677 - Node <Mtrien_ram1_data<5>> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:2677 - Node <Mtrien_ram1_data<6>> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:2677 - Node <Mtrien_ram1_data<7>> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:638 - in unit MemoryUnit Conflict on KEEP property on signal Mtridata_ram1_data<1> and Mtrien_ram2_data Mtrien_ram2_data signal will be lost.
+WARNING:Xst:2677 - Node <Mtrien_ram2_data> of sequential type is unconnected in block <MemoryUnit>.
+WARNING:Xst:2677 - Node <uut/RegData_9> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_8> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_7> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_6> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_4> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_5> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_3> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_2> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_15> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_1> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_14> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_0> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_13> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_12> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_11> of sequential type is unconnected in block <TestMemoryUnit2>.
+WARNING:Xst:2677 - Node <uut/RegData_10> of sequential type is unconnected in block <TestMemoryUnit2>.
+
+Optimizing unit <TestMemoryUnit2> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TestMemoryUnit2, actual ratio is 0.
+FlipFlop uut/state_FSM_FFd2 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 32
+ Flip-Flops                                            : 32
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : TestMemoryUnit2.ngr
+Top Level Output File Name         : TestMemoryUnit2
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 97
+
+Cell Usage :
+# BELS                             : 16
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2_D                      : 1
+#      LUT3                        : 4
+#      LUT3_D                      : 1
+#      LUT4                        : 7
+#      VCC                         : 1
+# FlipFlops/Latches                : 32
+#      FDC                         : 11
+#      FDCE                        : 16
+#      FDP                         : 5
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 93
+#      IBUF                        : 1
+#      IOBUF                       : 16
+#      OBUF                        : 60
+#      OBUFT                       : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                       10  out of   8672     0%  
+ Number of Slice Flip Flops:             16  out of  17344     0%  
+ Number of 4 input LUTs:                 14  out of  17344     0%  
+ Number of IOs:                          97
+ Number of bonded IOBs:                  94  out of    250    37%  
+    IOB Flip Flops:                      16
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 32    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+uut/rst_inv(uut/rst_inv1_INV_0:O)  | NONE(uut/RegIns_0)     | 32    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 3.875ns (Maximum Frequency: 258.065MHz)
+   Minimum input arrival time before clock: 1.946ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.875ns (frequency: 258.065MHz)
+  Total number of paths / destination ports: 72 / 32
+-------------------------------------------------------------------------
+Delay:               3.875ns (Levels of Logic = 2)
+  Source:            uut/state_FSM_FFd2_1 (FF)
+  Destination:       uut/rdn (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: uut/state_FSM_FFd2_1 to uut/rdn
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             17   0.591   1.086  uut/state_FSM_FFd2_1 (uut/state_FSM_FFd2_1)
+     LUT3_D:I2->O          2   0.704   0.482  uut/rdn_mux000011 (N11)
+     LUT3:I2->O            1   0.704   0.000  uut/rdn_mux00001 (uut/rdn_mux0000)
+     FDP:D                     0.308          uut/rdn
+    ----------------------------------------
+    Total                      3.875ns (2.307ns logic, 1.568ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              1.946ns (Levels of Logic = 1)
+  Source:            ram2_data<15> (PAD)
+  Destination:       uut/RegIns_15 (FF)
+  Destination Clock: clk rising
+
+  Data Path: ram2_data<15> to uut/RegIns_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           1   1.218   0.420  ram2_data_15_IOBUF (N3)
+     FDCE:D                    0.308          uut/RegIns_15
+    ----------------------------------------
+    Total                      1.946ns (1.526ns logic, 0.420ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 27 / 27
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            uut/ram2_oe (FF)
+  Destination:       ram2_oe (PAD)
+  Source Clock:      clk rising
+
+  Data Path: uut/ram2_oe to ram2_oe
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              2   0.591   0.447  uut/ram2_oe (uut/ram2_oe)
+     OBUF:I->O                 3.272          ram2_oe_OBUF (ram2_oe)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.18 secs
+ 
+--> 
+
+Total memory usage is 301164 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  174 (   0 filtered)
+Number of infos    :   24 (   0 filtered)
+

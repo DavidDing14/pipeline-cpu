@@ -1,0 +1,15 @@
+Release 13.3 Drc O.76xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Tue Nov 29 22:01:36 2016
+
+drc -z TestMemoryUnit2.ncd TestMemoryUnit2.pcf
+
+WARNING:PhysDesignRules:367 - The signal <tsre_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <tbre_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <data_ready_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+DRC detected 0 errors and 3 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=G:\cpu\pipeline-cpu\CPU\PC\CPU.ncd
+OUTFILE=G:\cpu\pipeline-cpu\CPU\PC\CPU.bit
+FAMILY=Spartan3E
+PART=xc3s1200e-4fg320
+WORKINGDIR=G:\cpu\pipeline-cpu\CPU\PC
+LICENSE=WebPack
+USER_INFO=135256_15690819_173552794_661

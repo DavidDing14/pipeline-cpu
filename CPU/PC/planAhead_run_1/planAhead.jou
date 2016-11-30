@@ -1,12 +1,35 @@
 #-----------------------------------------------------------
 # PlanAhead v13.3 (64-bit)
 # Build 147507 by hdbuild on Tue Oct  4 19:13:50 MDT 2011
-# Start of session at: Mon Nov 28 22:22:42 2016
-# Process ID: 5728
-# Log file: E:/pipeline-cpu/CPU/PC/planAhead_run_1/planAhead.log
-# Journal file: E:/pipeline-cpu/CPU/PC/planAhead_run_1/planAhead.jou
+# Start of session at: Wed Nov 30 14:39:30 2016
+# Process ID: 11688
+# Log file: G:/cpu/pipeline-cpu/CPU/PC/planAhead_run_1/planAhead.log
+# Journal file: G:/cpu/pipeline-cpu/CPU/PC/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 start_gui
-source E:/pipeline-cpu/CPU/PC/pa.fromNetlist.tcl
+source G:/cpu/pipeline-cpu/CPU/PC/pa.fromNetlist.tcl
+startgroup
+set_property loc PAD27 [get_ports {outD[0]}]
+endgroup
+startgroup
+set_property loc PAD26 [get_ports {outD[1]}]
+endgroup
+startgroup
+set_property loc PAD21 [get_ports {outD[2]}]
+endgroup
+startgroup
+set_property loc PAD22 [get_ports {outD[3]}]
+endgroup
+startgroup
+set_property loc PAD28 [get_ports {outD[4]}]
+endgroup
+set_property loc "" [get_ports [list  {outD[6]}]]
+startgroup
+set_property loc PAD30 [get_ports {outD[5]}]
+endgroup
+startgroup
+set_property loc PAD29 [get_ports {outD[6]}]
+endgroup
+save_design
 exit
 stop_gui

@@ -48,12 +48,12 @@ end ctrl;
 architecture Behavioral of ctrl is
 shared variable ins1, ins2, ins3, ins4: std_logic_vector(15 downto 0):="0000000000000000";		--4个指令，按顺序1~4依次为ID/EX/MEM/WB阶段的指令
 signal ins5, ins6, ins7, ins8: std_logic_vector(15 downto 0);
+shared variable c1, c2, c3, c4, c5: std_logic;
+shared variable c6, c7: std_logic_vector(1 downto 0);
+shared variable i11, i12, i13, i21, i22, i23, i31, i32, i33: std_logic_vector(3 downto 0);
+shared variable flag1, flag2: integer;
 begin
 	process(clk, rst, instruction)
-	variable c1, c2, c3, c4, c5: std_logic:='0';
-	variable c6, c7: std_logic_vector(1 downto 0):="00";
-	variable i11, i12, i13, i21, i22, i23, i31, i32, i33: std_logic_vector(3 downto 0);
-	variable flag1, flag2: integer:=0;
 	begin
 		if(rst='0')then
 			ins1:="0000000000000000";
@@ -69,13 +69,14 @@ begin
 			c7:="00";
 			flag1:=0;
 			flag2:=0;
-		elsif(clk='1')then
+		elsif(clk'event and clk='0')then
 			if(Control_ctrl_JJ='1')then	--上升沿跳转指令清空ID
+				c2:='1';
 				c3:='1';
 			else
+				c2:='0';
 				c3:='0';
 			end if;
-		elsif(clk='0')then	--下降沿进指令并分析
 			ins4:=ins3;
 			ins3:=ins2;
 			ins2:=ins1;

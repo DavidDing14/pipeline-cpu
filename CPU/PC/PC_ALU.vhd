@@ -39,7 +39,7 @@ end PC_ALU;
 architecture Behavioral of PC_ALU is
 
 begin
-	PC_4<=PC+4;
+	PC_4<=PC+1;
 
 end Behavioral;
 

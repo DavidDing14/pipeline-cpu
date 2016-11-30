@@ -1,0 +1,2 @@
+vhdl work "MemoryUnit2.vhd"
+vhdl work "TestMemoryUnit2.vhd"

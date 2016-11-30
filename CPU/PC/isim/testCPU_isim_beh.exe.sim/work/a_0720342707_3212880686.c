@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "E:/pipeline-cpu/CPU/PC/MEM_WB.vhd";
+static const char *ng0 = "G:/cpu/pipeline-cpu/CPU/PC/MEM_WB.vhd";
 
 
 
@@ -84,7 +84,7 @@ LAB2:    xsi_set_current_line(53, ng0);
     *((unsigned char *)t7) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(55, ng0);
-    t1 = (t0 + 6353);
+    t1 = (t0 + 6409);
     t5 = (t0 + 4320);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);
@@ -93,7 +93,7 @@ LAB2:    xsi_set_current_line(53, ng0);
     memcpy(t9, t1, 16U);
     xsi_driver_first_trans_fast_port(t5);
     xsi_set_current_line(56, ng0);
-    t1 = (t0 + 6369);
+    t1 = (t0 + 6425);
     t5 = (t0 + 4384);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);
@@ -128,7 +128,7 @@ LAB12:    xsi_set_current_line(64, ng0);
     *((unsigned char *)t7) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(66, ng0);
-    t1 = (t0 + 6373);
+    t1 = (t0 + 6429);
     t5 = (t0 + 4320);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);
@@ -137,7 +137,7 @@ LAB12:    xsi_set_current_line(64, ng0);
     memcpy(t9, t1, 16U);
     xsi_driver_first_trans_fast_port(t5);
     xsi_set_current_line(67, ng0);
-    t1 = (t0 + 6389);
+    t1 = (t0 + 6445);
     t5 = (t0 + 4384);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);

@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "E:/pipeline-cpu/CPU/PC/Addr_MUX.vhd";
+static const char *ng0 = "G:/cpu/pipeline-cpu/CPU/PC/Addr_MUX.vhd";
 
 
 

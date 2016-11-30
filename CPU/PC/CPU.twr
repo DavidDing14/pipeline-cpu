@@ -2,8 +2,8 @@
 Release 13.3 Trace  (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-E:\Xilinx\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n 3
--fastpaths -xml CPU.twx CPU.ncd -o CPU.twr CPU.pcf
+G:\Xilinx-ISE\13.3\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s
+4 -n 3 -fastpaths -xml CPU.twx CPU.ncd -o CPU.twr CPU.pcf -ucf CPU.ucf
 
 Design file:              CPU.ncd
 Physical constraint file: CPU.pcf
@@ -38,30 +38,114 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-rst            |PCout<0>       |    4.881|
-rst            |PCout<1>       |    4.889|
-rst            |PCout<2>       |    5.167|
-rst            |PCout<3>       |    5.447|
-rst            |PCout<4>       |    5.448|
-rst            |PCout<5>       |    6.020|
-rst            |PCout<13>      |    6.883|
-rst            |PCout<14>      |    7.664|
-rst            |PCout<15>      |    6.876|
----------------+---------------+---------+
+Setup/Hold to clock clk
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+ram2data<0> |    0.648(R)|    0.749(R)|clk_IBUF          |   0.000|
+ram2data<1> |    1.258(R)|    0.332(R)|clk_IBUF          |   0.000|
+ram2data<2> |    1.490(R)|    0.407(R)|clk_IBUF          |   0.000|
+ram2data<3> |    1.695(R)|    0.178(R)|clk_IBUF          |   0.000|
+ram2data<4> |    1.808(R)|    0.640(R)|clk_IBUF          |   0.000|
+ram2data<5> |    1.297(R)|    0.204(R)|clk_IBUF          |   0.000|
+ram2data<6> |    1.443(R)|    0.383(R)|clk_IBUF          |   0.000|
+ram2data<7> |    1.000(R)|    0.677(R)|clk_IBUF          |   0.000|
+ram2data<8> |    0.742(R)|    0.659(R)|clk_IBUF          |   0.000|
+ram2data<9> |    1.320(R)|    0.640(R)|clk_IBUF          |   0.000|
+ram2data<10>|    1.789(R)|    0.548(R)|clk_IBUF          |   0.000|
+ram2data<11>|    1.431(R)|    0.819(R)|clk_IBUF          |   0.000|
+ram2data<12>|    1.369(R)|    0.561(R)|clk_IBUF          |   0.000|
+ram2data<13>|    1.048(R)|    0.606(R)|clk_IBUF          |   0.000|
+ram2data<14>|    1.412(R)|    0.519(R)|clk_IBUF          |   0.000|
+ram2data<15>|    1.429(R)|    0.520(R)|clk_IBUF          |   0.000|
+rst         |    4.529(R)|   -1.512(R)|clk_IBUF          |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+outL<0>     |   10.243(R)|clk_IBUF          |   0.000|
+outL<1>     |   12.694(R)|clk_IBUF          |   0.000|
+outL<2>     |   10.066(R)|clk_IBUF          |   0.000|
+outL<3>     |   11.291(R)|clk_IBUF          |   0.000|
+outL<4>     |   10.428(R)|clk_IBUF          |   0.000|
+outL<5>     |    9.489(R)|clk_IBUF          |   0.000|
+outL<6>     |    9.538(R)|clk_IBUF          |   0.000|
+outL<7>     |   10.845(R)|clk_IBUF          |   0.000|
+outL<8>     |   10.504(R)|clk_IBUF          |   0.000|
+outL<9>     |   10.874(R)|clk_IBUF          |   0.000|
+outL<10>    |   10.361(R)|clk_IBUF          |   0.000|
+outL<11>    |   10.117(R)|clk_IBUF          |   0.000|
+outL<12>    |   10.807(R)|clk_IBUF          |   0.000|
+outL<13>    |   10.829(R)|clk_IBUF          |   0.000|
+outL<14>    |   12.630(R)|clk_IBUF          |   0.000|
+outL<15>    |   12.073(R)|clk_IBUF          |   0.000|
+ram2addr<0> |    8.628(R)|clk_IBUF          |   0.000|
+ram2addr<1> |    8.587(R)|clk_IBUF          |   0.000|
+ram2addr<2> |    7.866(R)|clk_IBUF          |   0.000|
+ram2addr<3> |    9.166(R)|clk_IBUF          |   0.000|
+ram2addr<4> |    8.159(R)|clk_IBUF          |   0.000|
+ram2addr<5> |    8.569(R)|clk_IBUF          |   0.000|
+ram2addr<6> |    8.522(R)|clk_IBUF          |   0.000|
+ram2addr<7> |    8.687(R)|clk_IBUF          |   0.000|
+ram2addr<8> |    9.203(R)|clk_IBUF          |   0.000|
+ram2addr<9> |    9.484(R)|clk_IBUF          |   0.000|
+ram2addr<10>|    8.400(R)|clk_IBUF          |   0.000|
+ram2addr<11>|    8.661(R)|clk_IBUF          |   0.000|
+ram2addr<12>|    9.503(R)|clk_IBUF          |   0.000|
+ram2addr<13>|    8.418(R)|clk_IBUF          |   0.000|
+ram2addr<14>|    9.072(R)|clk_IBUF          |   0.000|
+ram2addr<15>|    9.079(R)|clk_IBUF          |   0.000|
+ram2data<0> |    9.009(R)|clk_IBUF          |   0.000|
+ram2data<1> |   10.428(R)|clk_IBUF          |   0.000|
+ram2data<2> |   10.153(R)|clk_IBUF          |   0.000|
+ram2data<3> |    9.872(R)|clk_IBUF          |   0.000|
+ram2data<4> |    9.269(R)|clk_IBUF          |   0.000|
+ram2data<5> |    9.559(R)|clk_IBUF          |   0.000|
+ram2data<6> |   10.128(R)|clk_IBUF          |   0.000|
+ram2data<7> |    8.964(R)|clk_IBUF          |   0.000|
+ram2data<8> |    8.962(R)|clk_IBUF          |   0.000|
+ram2data<9> |    9.876(R)|clk_IBUF          |   0.000|
+ram2data<10>|    9.288(R)|clk_IBUF          |   0.000|
+ram2data<11>|    9.269(R)|clk_IBUF          |   0.000|
+ram2data<12>|    9.255(R)|clk_IBUF          |   0.000|
+ram2data<13>|   10.412(R)|clk_IBUF          |   0.000|
+ram2data<14>|    9.010(R)|clk_IBUF          |   0.000|
+ram2data<15>|    8.996(R)|clk_IBUF          |   0.000|
+ram2oe      |    8.515(R)|clk_IBUF          |   0.000|
+ram2we      |    8.849(R)|clk_IBUF          |   0.000|
+rdn         |   10.739(R)|clk_IBUF          |   0.000|
+wrn         |    9.249(R)|clk_IBUF          |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   10.249|    2.091|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk0           |    2.224|         |         |         |
+---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Nov 28 22:20:51 2016 
+Analysis completed Thu Dec 01 00:55:55 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 175 MB
+Peak Memory Usage: 215 MB
 
 
 

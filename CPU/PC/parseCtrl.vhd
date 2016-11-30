@@ -63,7 +63,8 @@ entity parseCtrl is
 			  out_imm: out std_logic_vector(10 downto 0);
 			  out_PC:out std_logic_vector(15 downto 0);
 			  out_Ry_x: out std_logic;
-			  out_Rx_y: out std_logic);
+			  out_Rx_y: out std_logic;
+			  out_instruction_2 : out std_logic_vector(15 downto 0));
 end parseCtrl;
 
 architecture Behavioral of parseCtrl is
@@ -88,7 +89,7 @@ begin
 			Ctrl_judge<='0';
 			Ctrl_b<='0';
 			Ctrl_Jump<='0';
-			out_instruction<="0000000000000000";
+			out_instruction<="0000111111111111";
 			out_Rx1<="000";
 			out_Rx2<="000";
 			out_Ry1<="000";
@@ -98,8 +99,10 @@ begin
 			out_PC<="0000000000000000";
 			out_Ry_x<='0';	--为'1'时Ry用作操作数1
 			out_Rx_y<='0';	--为'1'时Rx用作操作数2
+			out_instruction_2<="0000000000000000";
 		elsif (clk'event and clk='1') then
 			if(Break = '0') then
+				out_instruction_2<=instruction;
 				out_PC<=PC;
 				case instruction(15 downto 11) is
 					when "00001" => -- NOP
@@ -109,7 +112,7 @@ begin
 						Ctrl_SP<="00";
 						Ctrl_imm_ry<='0';
 						Ctrl_IH<="00";
-						Ctrl_r<="11";
+						Ctrl_r<="00";
 						Ctrl_WB<='0';
 						Ctrl_op1<='0';
 						Ctrl_op2<='0';
@@ -905,7 +908,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="0000111111110"&instruction(10 downto 8);
+								out_instruction<="0000100111110"&instruction(10 downto 8);
 							when '1' => -- MTIH
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -913,7 +916,7 @@ begin
 								Ctrl_SP<="00";
 								Ctrl_imm_ry<='0';
 								Ctrl_IH<="01";
-								Ctrl_r<="11";
+								Ctrl_r<="00";
 								Ctrl_WB<='1';
 								Ctrl_op1<='0';
 								Ctrl_op2<='0';
@@ -932,10 +935,38 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(10 downto 8)&"11111111";
+								out_instruction<="00000"&instruction(10 downto 8)&"11111001";
 							when others =>
 						end case;
-					when others =>						
+					when others =>		
+						Ctrl_xy<='0';
+						Ctrl_immidiate<="000";
+						Ctrl_extend<='0';
+						Ctrl_SP<="00";
+						Ctrl_imm_ry<='0';
+						Ctrl_IH<="00";
+						Ctrl_r<="00";
+						Ctrl_WB<='0';
+						Ctrl_op1<='0';
+						Ctrl_op2<='0';
+						Ctrl_op<="0000";
+						Ctrl_addr<="00";
+						Ctrl_PCMEM<='0';
+						Ctrl_DRRE<='0';
+						Ctrl_judge<='0';
+						Ctrl_b<='0';
+						Ctrl_Jump<='0';
+						out_instruction_2<="0000000000000000";	
+						out_Rx1<="000";
+						out_Rx2<="000";
+						out_Ry1<="000";
+						out_Ry2<="000";
+						out_Rz<="000";
+						out_imm<="00000000000";
+						out_PC<="0000000000000000";
+						out_Ry_x<='0';	--为'1'时Ry用作操作数1
+						out_Rx_y<='0';	--为'1'时Rx用作操作数2
+						out_instruction<="0000111111111111";				
 				end case;
 			else
 				Ctrl_xy<='0';
@@ -955,7 +986,7 @@ begin
 				Ctrl_judge<='0';
 				Ctrl_b<='0';
 				Ctrl_Jump<='0';
-				out_instruction<="0000000000000000";	
+				out_instruction_2<="0000000000000000";	
 				out_Rx1<="000";
 				out_Rx2<="000";
 				out_Ry1<="000";

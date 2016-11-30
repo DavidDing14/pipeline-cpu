@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   22:57:48 11/24/2016
+-- Create Date:   18:11:56 11/29/2016
 -- Design Name:   
--- Module Name:   E:/pipeline-cpu/CPU/PC/testCPU.vhd
+-- Module Name:   G:/cpu/pipeline-cpu/CPU/PC/testCPU.vhd
 -- Project Name:  PC
 -- Target Device:  
 -- Tool versions:  
@@ -27,8 +27,6 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE ieee.std_logic_arith.ALL;
-USE ieee.std_logic_unsigned.ALL;
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -44,20 +42,40 @@ ARCHITECTURE behavior OF testCPU IS
     COMPONENT CPU
     PORT(
          clk : IN  std_logic;
-         PCout : OUT  std_logic_vector(15 downto 0);
-         PCin : IN  std_logic_vector(15 downto 0);
-         rst : IN  std_logic
+         rst : IN  std_logic;
+         outL : OUT  std_logic_vector(15 downto 0);
+         ram1data : INOUT  std_logic_vector(15 downto 0);
+         ram2data : INOUT  std_logic_vector(15 downto 0);
+         ram1addr : OUT  std_logic_vector(17 downto 0);
+         ram2addr : OUT  std_logic_vector(17 downto 0);
+         ram1oe : OUT  std_logic;
+         ram1we : OUT  std_logic;
+         ram1en : OUT  std_logic;
+         ram2oe : OUT  std_logic;
+         ram2we : OUT  std_logic;
+         ram2en : OUT  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
-   signal clk : std_logic := '1';
-   signal PCin : std_logic_vector(15 downto 0) := (others => '0');
-   signal rst : std_logic := '1';
+   signal clk : std_logic := '0';
+   signal rst : std_logic := '0';
+
+	--BiDirs
+   signal ram1data : std_logic_vector(15 downto 0);
+   signal ram2data : std_logic_vector(15 downto 0);
 
  	--Outputs
-   signal PCout : std_logic_vector(15 downto 0);
+   signal outL : std_logic_vector(15 downto 0);
+   signal ram1addr : std_logic_vector(17 downto 0);
+   signal ram2addr : std_logic_vector(17 downto 0);
+   signal ram1oe : std_logic;
+   signal ram1we : std_logic;
+   signal ram1en : std_logic;
+   signal ram2oe : std_logic;
+   signal ram2we : std_logic;
+   signal ram2en : std_logic;
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -67,9 +85,18 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: CPU PORT MAP (
           clk => clk,
-          PCout => PCout,
-          PCin => PCin,
-          rst => rst
+          rst => rst,
+          outL => outL,
+          ram1data => ram1data,
+          ram2data => ram2data,
+          ram1addr => ram1addr,
+          ram2addr => ram2addr,
+          ram1oe => ram1oe,
+          ram1we => ram1we,
+          ram1en => ram1en,
+          ram2oe => ram2oe,
+          ram2we => ram2we,
+          ram2en => ram2en
         );
 
    -- Clock process definitions
@@ -87,10 +114,9 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-      wait for 100 ns;
-		rst<='0';
-		wait for 100 ns;
 		rst<='1';
+      wait for clk_period*10;
+
       -- insert stimulus here 
 
       wait;

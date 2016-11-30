@@ -1,2 +1,2 @@
-vhdl work "E:\pipeline-cpu\CPU\PC\MEM.vhd"
-vhdl work "E:\pipeline-cpu\CPU\PC\testSRAM.vhd"
+vhdl work "G:\cpu\pipeline-cpu\CPU\PC\MEM.vhd"
+vhdl work "G:\cpu\pipeline-cpu\CPU\PC\testSRAM.vhd"

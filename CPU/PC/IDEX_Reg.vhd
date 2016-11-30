@@ -67,22 +67,22 @@ entity IDEX_Reg is
 end IDEX_Reg;
 
 architecture Behavioral of IDEX_Reg is
+shared variable RegPC: std_logic_vector(15 downto 0);
+shared variable RegReg1 : STD_LOGIC_VECTOR (15 downto 0);
+shared variable RegReg2 : STD_LOGIC_VECTOR (15 downto 0);
+shared variable RegRegND : STD_LOGIC_VECTOR (3 downto 0);
+shared variable RegData_Ry : STD_LOGIC_VECTOR (15 downto 0);
+shared variable RegControl_WB : STD_LOGIC;
+shared variable RegControl_op1 : STD_LOGIC;
+shared variable RegControl_op2 : STD_LOGIC;
+shared variable RegControl_op : STD_LOGIC_VECTOR (3 downto 0);
+shared variable RegControl_addr : STD_LOGIC_VECTOR (1 downto 0);
+shared variable RegControl_PCMEM : STD_LOGIC;
+shared variable RegControl_DRRE : STD_LOGIC;
+--variable Control_wait : INTEGER:=0;	--防止连续的B/J指令带来的影响
+shared variable c7, c8:std_logic;	--Control_JJ, Control_ctrl_JJ
 begin
 	process(clk, rst)
-	variable RegPC: std_logic_vector(15 downto 0):="0000000000000000";
-	variable RegReg1 : STD_LOGIC_VECTOR (15 downto 0):="0000000000000000";
-	variable RegReg2 : STD_LOGIC_VECTOR (15 downto 0):="0000000000000000";
-	variable RegRegND : STD_LOGIC_VECTOR (3 downto 0):="1111";
-	variable RegData_Ry : STD_LOGIC_VECTOR (15 downto 0):="0000000000000000";
-	variable RegControl_WB : STD_LOGIC:='0';
-	variable RegControl_op1 : STD_LOGIC:='0';
-	variable RegControl_op2 : STD_LOGIC:='0';
-	variable RegControl_op : STD_LOGIC_VECTOR (3 downto 0):="0000";
-	variable RegControl_addr : STD_LOGIC_VECTOR (1 downto 0):="00";
-	variable RegControl_PCMEM : STD_LOGIC:='0';
-	variable RegControl_DRRE : STD_LOGIC:='0';
-	variable Control_wait : INTEGER:=0;	--防止连续的B/J指令带来的影响
-	variable c7, c8:std_logic:='0';	--Control_JJ, Control_ctrl_JJ
 	begin
 		if(rst='0')then
 			RegPC:="0000000000000000";
@@ -97,11 +97,11 @@ begin
 			RegControl_addr:="00";
 			RegControl_PCMEM:='0';
 			RegControl_DRRE:='0';
-			Control_wait:=0;
+			--Control_wait:=0;
 			c7:='0';
 			c8:='0';
 		elsif(clk'event and clk='1')then
-			if(break='1' or Control_wait=1)then	--暂停信号为1，清空数据
+			if(break='1')then	--暂停信号为1，清空数据
 				RegPC:="0000000000000000";
 				RegReg1:="0000000000000000";
 				RegReg2:="0000000000000000";
@@ -114,7 +114,7 @@ begin
 				RegControl_addr:="00";
 				RegControl_PCMEM:='0';
 				RegControl_DRRE:='0';
-				Control_wait:=0;
+				--Control_wait:=0;
 				c7:='0';
 				c8:='0';
 			else
@@ -138,7 +138,7 @@ begin
 				if(Control_BJ='1' or Control_Jump='1')then
 					c7:='1';
 					c8:='1';
-					Control_wait:=1;
+					--Control_wait:=1;
 				else
 					c7:='0';
 					c8:='0';

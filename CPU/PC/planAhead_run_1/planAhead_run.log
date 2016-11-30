@@ -5,59 +5,110 @@
 
 INFO: [Common-78] Attempting to get a license: PlanAhead
 INFO: [Common-82] Got a license: PlanAhead
-INFO: [Device-25] Loading parts and site information from E:/Xilinx/ISE_DS/PlanAhead\parts\arch.xmlParsing RTL primitives file [E:/Xilinx/ISE_DS/PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml]
-Finished parsing RTL primitives file [E:/Xilinx/ISE_DS/PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml]
+INFO: [Common-86] Your PlanAhead license expires in 30 day(s)
+INFO: [Device-25] Loading parts and site information from G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts\arch.xmlParsing RTL primitives file [G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml]
+Finished parsing RTL primitives file [G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml]
 start_gui
 starting gui ...
-source E:/pipeline-cpu/CPU/PC/pa.fromNetlist.tcl
-# create_project -name PC -dir "E:/pipeline-cpu/CPU/PC/planAhead_run_1" -part xc3s1200efg320-4
-Parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\verilog.xml].
-Finished parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\verilog.xml].
-Parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
-Finished parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
-Parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\ucf.xml].
-Finished parsing template File [E:/Xilinx/ISE_DS/ISE\data\projnav\templates\ucf.xml].
+source G:/cpu/pipeline-cpu/CPU/PC/pa.fromNetlist.tcl
+# create_project -name PC -dir "G:/cpu/pipeline-cpu/CPU/PC/planAhead_run_1" -part xc3s1200efg320-4
+Parsing template File [G:/Xilinx-ISE/13.3/ISE_DS/ISE\data\projnav\templates\verilog.xml].
+Finished parsing template File [G:/Xilinx-ISE/13.3/ISE_DS/ISE\data\projnav\templates\verilog.xml].
+Parsing template File [G:/Xilinx-ISE/13.3/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
+Finished parsing template File [G:/Xilinx-ISE/13.3/ISE_DS/ISE\data\projnav\templates\vhdl.xml].
+Parsing template File [G:/Xilinx-ISE/13.3/ISE_DS/ISE\data\projnav\templates\ucf.xml].
+Finished parsing template File [G:/Xilinx-ISE/13.3/ISE_DS/ISE\data\projnav\templates\ucf.xml].
+create_project: Time (s): 7.687w.  Memory (MB): 515.590p 20.582g
 # set_property design_mode GateLvl [get_property srcset [current_run -impl]]
-# set_property edif_top_file "E:/pipeline-cpu/CPU/PC/testSRAM.ngc" [ get_property srcset [ current_run ] ]
-# add_files -norecurse { {E:/pipeline-cpu/CPU/PC} }
+Qt: Untested Windows version 6.2 detected!
+# set_property edif_top_file "G:/cpu/pipeline-cpu/CPU/PC/CPU.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {G:/cpu/pipeline-cpu/CPU/PC} }
 # set_param project.pinAheadLayout  yes
-# set_property target_constrs_file "testSRAM.ucf" [current_fileset -constrset]
-Adding file 'E:\pipeline-cpu\CPU\PC\testSRAM.ucf' to fileset 'constrs_1'
-# add_files [list {testSRAM.ucf}] -fileset [get_property constrset [current_run]]
+# set_property target_constrs_file "CPU.ucf" [current_fileset -constrset]
+Adding file 'G:\cpu\pipeline-cpu\CPU\PC\CPU.ucf' to fileset 'constrs_1'
+# add_files [list {CPU.ucf}] -fileset [get_property constrset [current_run]]
 # open_netlist_design
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 Design is defaulting to part: xc3s1200efg320-4
 Release 13.3 - ngc2edif O.76xd (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
-Reading design testSRAM.ngc ...
-WARNING:NetListWriters:298 - No output is written to testSRAM.xncf, ignored.
+Reading design CPU.ngc ...
+WARNING:NetListWriters:298 - No output is written to CPU.xncf, ignored.
 Processing design ...
    Preping design's networks ...
    Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus u6/out_instruction_2<15 : 0> on block
+   CPU is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus u6/out_instruction_2_mux0002<15 : 0> on
+   block CPU is not reconstructed, because there are some missing bus signals.
   finished :Prep
-Writing EDIF netlist file testSRAM.edif ...
-ngc2edif: Total memory usage is 77340 kilobytes
+Writing EDIF netlist file CPU.edif ...
+ngc2edif: Total memory usage is 95472 kilobytes
 
-Parsing EDIF File [.\planAhead_run_1\PC.data\cache\testSRAM_ngc_725505de.edif]
-Finished Parsing EDIF File [.\planAhead_run_1\PC.data\cache\testSRAM_ngc_725505de.edif]
-INFO: [PlanAhead-430] Reading macro library E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
-Parsing EDIF File [E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
-Finished Parsing EDIF File [E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
-Loading clock regions from E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/ClockRegion.xml
-Loading clock buffers from E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/ClockBuffers.xml
-Loading package from E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/fg320/Package.xml
-Loading io standards from E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/IOStandards.xml
-INFO: [Device-19] Loading pkg sso from E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/fg320/SSORules.xml
-Loading list of drcs for the architecture : E:/Xilinx/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/drc.xml
-INFO: [Timing-77] Reading timing library E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
-INFO: [Timing-34] Done reading timing library E:/Xilinx/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
-Parsing UCF File [E:\pipeline-cpu\CPU\PC\testSRAM.ucf]
-Finished Parsing UCF File [E:\pipeline-cpu\CPU\PC\testSRAM.ucf]
+Parsing EDIF File [.\planAhead_run_1\PC.data\cache\CPU_ngc_311a2e56.edif]
+Finished Parsing EDIF File [.\planAhead_run_1\PC.data\cache\CPU_ngc_311a2e56.edif]
+INFO: [PlanAhead-430] Reading macro library G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
+Parsing EDIF File [G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Finished Parsing EDIF File [G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+WARNING: [Netlist-43] Netlist 'CPU' is not ideal for floorplanning, since the cellview 'CPU' defined in file 'CPU.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Loading clock regions from G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/ClockRegion.xml
+Loading clock buffers from G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/ClockBuffers.xml
+Loading package from G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/fg320/Package.xml
+Loading io standards from G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/IOStandards.xml
+INFO: [Device-19] Loading pkg sso from G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/xc3s1200e/fg320/SSORules.xml
+Loading list of drcs for the architecture : G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\./parts/xilinx/spartan3e/spartan3e/drc.xml
+INFO: [Timing-77] Reading timing library G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+INFO: [Timing-34] Done reading timing library G:/Xilinx-ISE/13.3/ISE_DS/PlanAhead\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+Parsing UCF File [G:\cpu\pipeline-cpu\CPU\PC\CPU.ucf]
+Finished Parsing UCF File [G:\cpu\pipeline-cpu\CPU\PC\CPU.ucf]
 INFO: [PlanAhead-566] Unisim Transformation Summary:
-  A total of 1 instances were transformed.
-  BUFGP => BUFGP (HD_IBUFG, HD_BUFG): 1 instances
-open_netlist_design: Time (s): 19.399w.  Memory (MB): 635.777p 131.652g
+No Unisim elements were transformed.open_netlist_design: Time (s): 14.177w.  Memory (MB): 649.422p 133.832g
+startgroup
+startgroup
+set_property loc PAD27 [get_ports {outD[0]}]
+set_property loc PAD27 [get_ports {outD[0]}]
+endgroup
+endgroup
+startgroup
+startgroup
+set_property loc PAD26 [get_ports {outD[1]}]
+set_property loc PAD26 [get_ports {outD[1]}]
+endgroup
+endgroup
+startgroup
+startgroup
+set_property loc PAD21 [get_ports {outD[2]}]
+set_property loc PAD21 [get_ports {outD[2]}]
+endgroup
+endgroup
+startgroup
+startgroup
+set_property loc PAD22 [get_ports {outD[3]}]
+set_property loc PAD22 [get_ports {outD[3]}]
+endgroup
+endgroup
+startgroup
+startgroup
+set_property loc PAD28 [get_ports {outD[4]}]
+set_property loc PAD28 [get_ports {outD[4]}]
+endgroup
+endgroup
+set_property loc "" [get_ports [list  {outD[6]}]]
+set_property loc "" [get_ports [list  {outD[6]}]]
+startgroup
+startgroup
+set_property loc PAD30 [get_ports {outD[5]}]
+set_property loc PAD30 [get_ports {outD[5]}]
+endgroup
+endgroup
+startgroup
+startgroup
+set_property loc PAD29 [get_ports {outD[6]}]
+set_property loc PAD29 [get_ports {outD[6]}]
+endgroup
+endgroup
+save_design
 exit
 stop_gui
 INFO: [PlanAhead-261] Exiting PlanAhead...

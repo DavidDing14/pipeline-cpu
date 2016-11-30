@@ -1,0 +1,118 @@
+--------------------------------------------------------------------------------
+Release 13.3 Trace  (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+G:\Xilinx-ISE\13.3\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s
+4 -n 3 -fastpaths -xml TestMemoryUnit2.twx TestMemoryUnit2.ncd -o
+TestMemoryUnit2.twr TestMemoryUnit2.pcf -ucf TestMemoryUnit2.ucf
+
+Design file:              TestMemoryUnit2.ncd
+Physical constraint file: TestMemoryUnit2.pcf
+Device,package,speed:     xc3s1200e,fg320,-4 (PRODUCTION 1.27 2011-10-03)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+-------------+------------+------------+------------------+--------+
+             |Max Setup to|Max Hold to |                  | Clock  |
+Source       | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+-------------+------------+------------+------------------+--------+
+ram2_data<0> |    3.909(R)|   -1.762(R)|clk_BUFGP         |   0.000|
+ram2_data<1> |    4.542(R)|   -2.267(R)|clk_BUFGP         |   0.000|
+ram2_data<2> |    4.246(R)|   -2.036(R)|clk_BUFGP         |   0.000|
+ram2_data<3> |    4.455(R)|   -2.197(R)|clk_BUFGP         |   0.000|
+ram2_data<4> |    3.626(R)|   -1.537(R)|clk_BUFGP         |   0.000|
+ram2_data<5> |    4.539(R)|   -2.268(R)|clk_BUFGP         |   0.000|
+ram2_data<6> |    3.261(R)|   -0.132(R)|clk_BUFGP         |   0.000|
+ram2_data<7> |    3.327(R)|   -0.209(R)|clk_BUFGP         |   0.000|
+ram2_data<8> |    3.328(R)|   -0.211(R)|clk_BUFGP         |   0.000|
+ram2_data<9> |    3.305(R)|   -0.183(R)|clk_BUFGP         |   0.000|
+ram2_data<10>|    3.288(R)|   -0.163(R)|clk_BUFGP         |   0.000|
+ram2_data<11>|    3.310(R)|   -0.189(R)|clk_BUFGP         |   0.000|
+ram2_data<12>|    3.321(R)|   -0.202(R)|clk_BUFGP         |   0.000|
+ram2_data<13>|    3.305(R)|   -0.183(R)|clk_BUFGP         |   0.000|
+ram2_data<14>|    3.310(R)|   -0.189(R)|clk_BUFGP         |   0.000|
+ram2_data<15>|    3.321(R)|   -0.202(R)|clk_BUFGP         |   0.000|
+-------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+-------------+------------+------------------+--------+
+             | clk (edge) |                  | Clock  |
+Destination  |   to PAD   |Internal Clock(s) | Phase  |
+-------------+------------+------------------+--------+
+insOut<0>    |    6.269(R)|clk_BUFGP         |   0.000|
+insOut<1>    |    6.269(R)|clk_BUFGP         |   0.000|
+insOut<2>    |    6.253(R)|clk_BUFGP         |   0.000|
+insOut<3>    |    6.272(R)|clk_BUFGP         |   0.000|
+insOut<4>    |    6.260(R)|clk_BUFGP         |   0.000|
+insOut<5>    |    6.260(R)|clk_BUFGP         |   0.000|
+insOut<6>    |   11.246(R)|clk_BUFGP         |   0.000|
+insOut<7>    |   11.409(R)|clk_BUFGP         |   0.000|
+insOut<8>    |   11.299(R)|clk_BUFGP         |   0.000|
+insOut<9>    |   11.697(R)|clk_BUFGP         |   0.000|
+insOut<10>   |   11.246(R)|clk_BUFGP         |   0.000|
+insOut<11>   |   12.124(R)|clk_BUFGP         |   0.000|
+insOut<12>   |   11.629(R)|clk_BUFGP         |   0.000|
+insOut<13>   |   11.742(R)|clk_BUFGP         |   0.000|
+insOut<14>   |   11.664(R)|clk_BUFGP         |   0.000|
+insOut<15>   |   12.745(R)|clk_BUFGP         |   0.000|
+ram2_addr<0> |    8.082(R)|clk_BUFGP         |   0.000|
+ram2_addr<1> |    8.474(R)|clk_BUFGP         |   0.000|
+ram2_addr<3> |    8.038(R)|clk_BUFGP         |   0.000|
+ram2_addr<4> |    8.816(R)|clk_BUFGP         |   0.000|
+ram2_addr<5> |    8.439(R)|clk_BUFGP         |   0.000|
+ram2_addr<6> |    8.330(R)|clk_BUFGP         |   0.000|
+ram2_addr<10>|    8.459(R)|clk_BUFGP         |   0.000|
+ram2_oe      |    9.207(R)|clk_BUFGP         |   0.000|
+ram2_we      |    9.426(R)|clk_BUFGP         |   0.000|
+rdn          |   11.506(R)|clk_BUFGP         |   0.000|
+wrn          |    9.427(R)|clk_BUFGP         |   0.000|
+-------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.061|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Tue Nov 29 22:01:33 2016 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 198 MB
+
+
+

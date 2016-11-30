@@ -9,7 +9,7 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Mon Nov 28 22:24:27 2016
+Mapped Date    : Tue Nov 29 20:35:27 2016
 
 Mapping design into LUTs...
 WARNING:MapLib:701 - Signal ram1data<15> connected to top level port
@@ -101,9 +101,9 @@ Logic Distribution:
 
 Average Fanout of Non-Clock Nets:                1.47
 
-Peak Memory Usage:  269 MB
-Total REAL time to MAP completion:  4 secs 
-Total CPU time to MAP completion:   2 secs 
+Peak Memory Usage:  307 MB
+Total REAL time to MAP completion:  1 secs 
+Total CPU time to MAP completion:   1 secs 
 
 NOTES:
 

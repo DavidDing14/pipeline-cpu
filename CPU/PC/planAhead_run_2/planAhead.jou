@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# PlanAhead v13.3 (64-bit)
+# Build 147507 by hdbuild on Tue Oct  4 19:13:50 MDT 2011
+# Start of session at: Tue Nov 29 16:52:29 2016
+# Process ID: 8664
+# Log file: G:/cpu/pipeline-cpu/CPU/PC/planAhead_run_2/planAhead.log
+# Journal file: G:/cpu/pipeline-cpu/CPU/PC/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source G:/cpu/pipeline-cpu/CPU/PC/pa.fromNetlist.tcl
+exit
+stop_gui

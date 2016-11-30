@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=G:\cpu\pipeline-cpu\CPU\PC\impact.xsl
+OUTFILE=G:\cpu\pipeline-cpu\CPU\PC\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=G:\cpu\pipeline-cpu\CPU\PC
+LICENSE=iMPACT
+USER_INFO=iMPACT

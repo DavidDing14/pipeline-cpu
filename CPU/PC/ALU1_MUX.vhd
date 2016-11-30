@@ -39,10 +39,9 @@ entity ALU1_MUX is
 end ALU1_MUX;
 
 architecture Behavioral of ALU1_MUX is
-
+shared variable out1: std_logic_vector(15 downto 0);
 begin
 	process(Control_op1, PC, Reg1)
-	variable out1: std_logic_vector(15 downto 0):="0000000000000000";
 	begin
 		if(Control_op1='0')then
 			out1:=Reg1;

@@ -3,14 +3,14 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: testSRAM.prj
 
@@ -104,28 +104,26 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "E:/pipeline-cpu/CPU/PC/MEM.vhd" in Library work.
-Entity <MEM> compiled.
-Entity <MEM> (Architecture <Behavioral>) compiled.
-Compiling vhdl file "E:/pipeline-cpu/CPU/PC/testSRAM.vhd" in Library work.
-Entity <testSRAM> compiled.
-Entity <testSRAM> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/MEM.vhd" in Library work.
+Architecture behavioral of Entity mem is up to date.
+Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/testSRAM.vhd" in Library work.
+Architecture behavioral of Entity testsram is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <testSRAM> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <testSRAM> in library <work> (architecture <behavioral>).
 
-Analyzing hierarchy for entity <MEM> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <MEM> in library <work> (architecture <behavioral>).
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <testSRAM> in library <work> (Architecture <Behavioral>).
+Analyzing Entity <testSRAM> in library <work> (Architecture <behavioral>).
 Entity <testSRAM> analyzed. Unit <testSRAM> generated.
 
-Analyzing Entity <MEM> in library <work> (Architecture <Behavioral>).
+Analyzing Entity <MEM> in library <work> (Architecture <behavioral>).
 INFO:Xst:2679 - Register <ram2we> in unit <MEM> has a constant value of 1 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ram2addr<17>> in unit <MEM> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ram2addr<16>> in unit <MEM> has a constant value of 0 during circuit operation. The register is replaced by logic.
@@ -143,7 +141,7 @@ Performing bidirectional port resolution...
 INFO:Xst:2561 - Always blocking tristate driving signal <ram2data> in unit <MEM> is removed.
 
 Synthesizing Unit <MEM>.
-    Related source file is "E:/pipeline-cpu/CPU/PC/MEM.vhd".
+    Related source file is "G:/cpu/pipeline-cpu/CPU/PC/MEM.vhd".
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
@@ -176,7 +174,7 @@ Unit <MEM> synthesized.
 
 
 Synthesizing Unit <testSRAM>.
-    Related source file is "E:/pipeline-cpu/CPU/PC/testSRAM.vhd".
+    Related source file is "G:/cpu/pipeline-cpu/CPU/PC/testSRAM.vhd".
 WARNING:Xst:646 - Signal <myoutData> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <myPC> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000011.
 WARNING:Xst:653 - Signal <myMEMAddr> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000001.
@@ -538,12 +536,12 @@ Offset:              4.310ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.96 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.90 secs
  
 --> 
 
-Total memory usage is 265808 kilobytes
+Total memory usage is 301176 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  136 (   0 filtered)
