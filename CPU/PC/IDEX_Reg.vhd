@@ -63,7 +63,11 @@ entity IDEX_Reg is
            Control_Jump : in  STD_LOGIC;
 			  Control_ctrl_JJ:out STD_LOGIC;
            Control_JJ : out  STD_LOGIC;
-			  Control_op2_reg : in STD_LOGIC);
+			  Control_op2_reg : in STD_LOGIC;
+			  Control_ctrl1 : in STD_LOGIC_VECTOR(1 downto 0);
+			  Control_ctrl2 : in STD_LOGIC_VECTOR(1 DOWNTO 0);
+			  result_ex : in STD_LOGIC_VECTOR(15 downto 0);
+			  result_mem : in STD_LOGIC_VECTOR(15 downto 0));
 end IDEX_Reg;
 
 architecture Behavioral of IDEX_Reg is
@@ -119,8 +123,20 @@ begin
 				c8:='0';
 			else
 				RegPC:=PC;
-				RegReg1:=Reg1;
-				RegReg2:=Reg2;
+				if(Control_ctrl1="00")then
+					RegReg1:=Reg1;
+				elsif(Control_ctrl1="01")then
+					RegReg1:=result_ex;
+				elsif(Control_ctrl2="10")then
+					RegReg1:=result_mem;
+				end if;
+				if(Control_ctrl2="00")then
+					RegReg2:=Reg2;
+				elsif(Control_ctrl2="01")then
+					RegReg2:=result_ex;
+				elsif(Control_ctrl2="10")then
+					RegReg2:=result_mem;
+				end if;
 				RegData_Ry:=Data_Ry;
 				RegRegND:=RegND;
 				RegControl_WB:=Control_WB;

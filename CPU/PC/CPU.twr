@@ -43,23 +43,23 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-ram2data<0> |    0.648(R)|    0.749(R)|clk_IBUF          |   0.000|
-ram2data<1> |    1.258(R)|    0.332(R)|clk_IBUF          |   0.000|
-ram2data<2> |    1.490(R)|    0.407(R)|clk_IBUF          |   0.000|
-ram2data<3> |    1.695(R)|    0.178(R)|clk_IBUF          |   0.000|
-ram2data<4> |    1.808(R)|    0.640(R)|clk_IBUF          |   0.000|
-ram2data<5> |    1.297(R)|    0.204(R)|clk_IBUF          |   0.000|
-ram2data<6> |    1.443(R)|    0.383(R)|clk_IBUF          |   0.000|
-ram2data<7> |    1.000(R)|    0.677(R)|clk_IBUF          |   0.000|
-ram2data<8> |    0.742(R)|    0.659(R)|clk_IBUF          |   0.000|
-ram2data<9> |    1.320(R)|    0.640(R)|clk_IBUF          |   0.000|
-ram2data<10>|    1.789(R)|    0.548(R)|clk_IBUF          |   0.000|
-ram2data<11>|    1.431(R)|    0.819(R)|clk_IBUF          |   0.000|
-ram2data<12>|    1.369(R)|    0.561(R)|clk_IBUF          |   0.000|
-ram2data<13>|    1.048(R)|    0.606(R)|clk_IBUF          |   0.000|
-ram2data<14>|    1.412(R)|    0.519(R)|clk_IBUF          |   0.000|
-ram2data<15>|    1.429(R)|    0.520(R)|clk_IBUF          |   0.000|
-rst         |    4.529(R)|   -1.512(R)|clk_IBUF          |   0.000|
+ram2data<0> |    1.007(R)|    0.445(R)|clk_IBUF          |   0.000|
+ram2data<1> |    1.273(R)|    0.310(R)|clk_IBUF          |   0.000|
+ram2data<2> |    1.483(R)|    0.265(R)|clk_IBUF          |   0.000|
+ram2data<3> |    1.606(R)|    0.459(R)|clk_IBUF          |   0.000|
+ram2data<4> |    1.545(R)|    0.373(R)|clk_IBUF          |   0.000|
+ram2data<5> |    1.407(R)|    0.382(R)|clk_IBUF          |   0.000|
+ram2data<6> |    1.709(R)|    0.101(R)|clk_IBUF          |   0.000|
+ram2data<7> |    1.087(R)|    0.406(R)|clk_IBUF          |   0.000|
+ram2data<8> |    0.547(R)|    0.945(R)|clk_IBUF          |   0.000|
+ram2data<9> |    0.751(R)|    0.775(R)|clk_IBUF          |   0.000|
+ram2data<10>|    1.174(R)|    0.783(R)|clk_IBUF          |   0.000|
+ram2data<11>|    1.407(R)|    0.383(R)|clk_IBUF          |   0.000|
+ram2data<12>|    1.174(R)|    1.012(R)|clk_IBUF          |   0.000|
+ram2data<13>|    1.624(R)|    0.439(R)|clk_IBUF          |   0.000|
+ram2data<14>|    1.066(R)|    0.773(R)|clk_IBUF          |   0.000|
+ram2data<15>|    0.783(R)|    0.797(R)|clk_IBUF          |   0.000|
+rst         |    5.501(R)|   -1.914(R)|clk_IBUF          |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -67,58 +67,58 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-outL<0>     |   10.243(R)|clk_IBUF          |   0.000|
-outL<1>     |   12.694(R)|clk_IBUF          |   0.000|
-outL<2>     |   10.066(R)|clk_IBUF          |   0.000|
-outL<3>     |   11.291(R)|clk_IBUF          |   0.000|
-outL<4>     |   10.428(R)|clk_IBUF          |   0.000|
-outL<5>     |    9.489(R)|clk_IBUF          |   0.000|
-outL<6>     |    9.538(R)|clk_IBUF          |   0.000|
-outL<7>     |   10.845(R)|clk_IBUF          |   0.000|
-outL<8>     |   10.504(R)|clk_IBUF          |   0.000|
-outL<9>     |   10.874(R)|clk_IBUF          |   0.000|
-outL<10>    |   10.361(R)|clk_IBUF          |   0.000|
-outL<11>    |   10.117(R)|clk_IBUF          |   0.000|
-outL<12>    |   10.807(R)|clk_IBUF          |   0.000|
-outL<13>    |   10.829(R)|clk_IBUF          |   0.000|
-outL<14>    |   12.630(R)|clk_IBUF          |   0.000|
-outL<15>    |   12.073(R)|clk_IBUF          |   0.000|
-ram2addr<0> |    8.628(R)|clk_IBUF          |   0.000|
-ram2addr<1> |    8.587(R)|clk_IBUF          |   0.000|
-ram2addr<2> |    7.866(R)|clk_IBUF          |   0.000|
-ram2addr<3> |    9.166(R)|clk_IBUF          |   0.000|
-ram2addr<4> |    8.159(R)|clk_IBUF          |   0.000|
-ram2addr<5> |    8.569(R)|clk_IBUF          |   0.000|
-ram2addr<6> |    8.522(R)|clk_IBUF          |   0.000|
-ram2addr<7> |    8.687(R)|clk_IBUF          |   0.000|
-ram2addr<8> |    9.203(R)|clk_IBUF          |   0.000|
-ram2addr<9> |    9.484(R)|clk_IBUF          |   0.000|
-ram2addr<10>|    8.400(R)|clk_IBUF          |   0.000|
-ram2addr<11>|    8.661(R)|clk_IBUF          |   0.000|
-ram2addr<12>|    9.503(R)|clk_IBUF          |   0.000|
-ram2addr<13>|    8.418(R)|clk_IBUF          |   0.000|
-ram2addr<14>|    9.072(R)|clk_IBUF          |   0.000|
-ram2addr<15>|    9.079(R)|clk_IBUF          |   0.000|
-ram2data<0> |    9.009(R)|clk_IBUF          |   0.000|
-ram2data<1> |   10.428(R)|clk_IBUF          |   0.000|
-ram2data<2> |   10.153(R)|clk_IBUF          |   0.000|
-ram2data<3> |    9.872(R)|clk_IBUF          |   0.000|
-ram2data<4> |    9.269(R)|clk_IBUF          |   0.000|
-ram2data<5> |    9.559(R)|clk_IBUF          |   0.000|
-ram2data<6> |   10.128(R)|clk_IBUF          |   0.000|
-ram2data<7> |    8.964(R)|clk_IBUF          |   0.000|
-ram2data<8> |    8.962(R)|clk_IBUF          |   0.000|
-ram2data<9> |    9.876(R)|clk_IBUF          |   0.000|
-ram2data<10>|    9.288(R)|clk_IBUF          |   0.000|
-ram2data<11>|    9.269(R)|clk_IBUF          |   0.000|
-ram2data<12>|    9.255(R)|clk_IBUF          |   0.000|
-ram2data<13>|   10.412(R)|clk_IBUF          |   0.000|
-ram2data<14>|    9.010(R)|clk_IBUF          |   0.000|
-ram2data<15>|    8.996(R)|clk_IBUF          |   0.000|
-ram2oe      |    8.515(R)|clk_IBUF          |   0.000|
-ram2we      |    8.849(R)|clk_IBUF          |   0.000|
-rdn         |   10.739(R)|clk_IBUF          |   0.000|
-wrn         |    9.249(R)|clk_IBUF          |   0.000|
+outL<0>     |    9.703(R)|clk_IBUF          |   0.000|
+outL<1>     |   11.630(R)|clk_IBUF          |   0.000|
+outL<2>     |   11.404(R)|clk_IBUF          |   0.000|
+outL<3>     |   11.487(R)|clk_IBUF          |   0.000|
+outL<4>     |   10.327(R)|clk_IBUF          |   0.000|
+outL<5>     |    9.379(R)|clk_IBUF          |   0.000|
+outL<6>     |    9.394(R)|clk_IBUF          |   0.000|
+outL<7>     |   10.541(R)|clk_IBUF          |   0.000|
+outL<8>     |   10.859(R)|clk_IBUF          |   0.000|
+outL<9>     |   11.235(R)|clk_IBUF          |   0.000|
+outL<10>    |   10.986(R)|clk_IBUF          |   0.000|
+outL<11>    |   11.384(R)|clk_IBUF          |   0.000|
+outL<12>    |   11.009(R)|clk_IBUF          |   0.000|
+outL<13>    |   11.188(R)|clk_IBUF          |   0.000|
+outL<14>    |   13.667(R)|clk_IBUF          |   0.000|
+outL<15>    |   10.528(R)|clk_IBUF          |   0.000|
+ram2addr<0> |    8.392(R)|clk_IBUF          |   0.000|
+ram2addr<1> |    8.403(R)|clk_IBUF          |   0.000|
+ram2addr<2> |    7.931(R)|clk_IBUF          |   0.000|
+ram2addr<3> |    9.167(R)|clk_IBUF          |   0.000|
+ram2addr<4> |    8.153(R)|clk_IBUF          |   0.000|
+ram2addr<5> |    8.138(R)|clk_IBUF          |   0.000|
+ram2addr<6> |    8.792(R)|clk_IBUF          |   0.000|
+ram2addr<7> |    9.009(R)|clk_IBUF          |   0.000|
+ram2addr<8> |    9.028(R)|clk_IBUF          |   0.000|
+ram2addr<9> |    8.711(R)|clk_IBUF          |   0.000|
+ram2addr<10>|    8.779(R)|clk_IBUF          |   0.000|
+ram2addr<11>|    9.012(R)|clk_IBUF          |   0.000|
+ram2addr<12>|    9.498(R)|clk_IBUF          |   0.000|
+ram2addr<13>|    8.451(R)|clk_IBUF          |   0.000|
+ram2addr<14>|    8.503(R)|clk_IBUF          |   0.000|
+ram2addr<15>|    8.864(R)|clk_IBUF          |   0.000|
+ram2data<0> |    8.191(R)|clk_IBUF          |   0.000|
+ram2data<1> |    9.946(R)|clk_IBUF          |   0.000|
+ram2data<2> |    9.919(R)|clk_IBUF          |   0.000|
+ram2data<3> |    9.644(R)|clk_IBUF          |   0.000|
+ram2data<4> |    8.175(R)|clk_IBUF          |   0.000|
+ram2data<5> |    8.855(R)|clk_IBUF          |   0.000|
+ram2data<6> |    9.900(R)|clk_IBUF          |   0.000|
+ram2data<7> |    8.296(R)|clk_IBUF          |   0.000|
+ram2data<8> |    8.512(R)|clk_IBUF          |   0.000|
+ram2data<9> |    9.179(R)|clk_IBUF          |   0.000|
+ram2data<10>|    9.026(R)|clk_IBUF          |   0.000|
+ram2data<11>|    8.572(R)|clk_IBUF          |   0.000|
+ram2data<12>|    8.519(R)|clk_IBUF          |   0.000|
+ram2data<13>|    9.602(R)|clk_IBUF          |   0.000|
+ram2data<14>|    8.744(R)|clk_IBUF          |   0.000|
+ram2data<15>|    8.761(R)|clk_IBUF          |   0.000|
+ram2oe      |    8.444(R)|clk_IBUF          |   0.000|
+ram2we      |    9.278(R)|clk_IBUF          |   0.000|
+rdn         |   10.368(R)|clk_IBUF          |   0.000|
+wrn         |    9.377(R)|clk_IBUF          |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -126,7 +126,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   10.249|    2.091|         |         |
+clk            |   10.012|    1.554|         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk0
@@ -138,7 +138,7 @@ clk0           |    2.224|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Dec 01 00:55:55 2016 
+Analysis completed Thu Dec 01 01:51:13 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:

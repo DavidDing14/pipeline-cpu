@@ -76,6 +76,7 @@ NET "ram2we" LOC = M9;
 
 NET "clk0" LOC = B9;
 NET "clk" LOC = U9;
+#NET "clk" LOC = B8;
 NET "rst" LOC = U10;
 
 

@@ -167,9 +167,9 @@ architecture Behavioral of CPU is
            RegND : out  STD_LOGIC_VECTOR (3 downto 0);
            RegND_WB : in  STD_LOGIC_VECTOR (3 downto 0);
            Data_Ry : out  STD_LOGIC_VECTOR (15 downto 0);
-           Result_EX : in  STD_LOGIC_VECTOR (15 downto 0);
-           Result_MEM : in  STD_LOGIC_VECTOR (15 downto 0);
-           Control_ctrl : in  STD_LOGIC_VECTOR (1 downto 0);
+          -- Result_EX : in  STD_LOGIC_VECTOR (15 downto 0);
+          -- Result_MEM : in  STD_LOGIC_VECTOR (15 downto 0);
+          -- Control_ctrl : in  STD_LOGIC_VECTOR (1 downto 0);
            Control_SP : in  STD_LOGIC_VECTOR (1 downto 0);
            Control_IH : in  STD_LOGIC_VECTOR (1 downto 0);
 			  Control_imm_ry : in std_logic;			 
@@ -181,7 +181,7 @@ architecture Behavioral of CPU is
 			  Ry_x : in STD_LOGIC;
 			  Rx_y : in STD_LOGIC;
 			  Control_op2_reg : out STD_LOGIC;
-			  Control_ctrl1 : in STD_LOGIC_VECTOR(1 downto 0);
+			 -- Control_ctrl1 : in STD_LOGIC_VECTOR(1 downto 0);
 			  regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7: out std_logic_vector(15 downto 0);
 			  regSP: out std_logic_vector(15 downto 0);
 			  regT: out std_logic;
@@ -221,7 +221,11 @@ architecture Behavioral of CPU is
            Control_Jump : in  STD_LOGIC;
 			  Control_ctrl_JJ:out STD_LOGIC;
            Control_JJ : out  STD_LOGIC;
-			  Control_op2_reg : in STD_LOGIC);
+			  Control_op2_reg : in STD_LOGIC;
+			  Control_ctrl1 : in STD_LOGIC_VECTOR(1 downto 0);
+			  Control_ctrl2 : in STD_LOGIC_VECTOR(1 DOWNTO 0);
+			  result_ex : in STD_LOGIC_VECTOR(15 downto 0);
+			  result_mem : in STD_LOGIC_VECTOR(15 downto 0));
 	end component;
 	component ALU1_MUX
 		Port ( PC : in  STD_LOGIC_VECTOR (15 downto 0);
@@ -448,8 +452,8 @@ begin
 	--u6:parseCtrl PORT MAP(clk2, rst, p10, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p40);
 	u7:Rxyz_MUX PORT MAP(p31, p32, p33, q1, p18);
 	u8:immidiate_mux_extend PORT MAP(p34, q2, p13, p14);
-	u9:Main_Reg PORT MAP(p40, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, e5, t8, x6, p15, p17, p16, p27, y1, p12, q7, p26, p36, p37, q8, x7, regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7, regSP, regT, regIH, clk);
-	u10:IDEX_Reg PORT MAP(clk2, rst, p35, w1, x3, q3, q4, q5, q6, p19, p20, p21, p22, p23, p24, p25, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, q7, p28, w13, w14, q8);
+	u9:Main_Reg PORT MAP(p40, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, p15, p17, p16, p27, y1, p12, q7, p26, p36, p37, q8, regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7, regSP, regT, regIH, clk);
+	u10:IDEX_Reg PORT MAP(clk2, rst, p35, w1, x3, q3, q4, q5, q6, p19, p20, p21, p22, p23, p24, p25, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, q7, p28, w13, w14, q8, x6, x7, e5, t8);
 	u11:ALU1_MUX PORT MAP(w1, w2, e1, w7);
 	u12:ALU2_MUX PORT MAP(w3, e2, w8);
 	u13:ALU PORT MAP(e1, e2, e3, e4, e5, w9);
@@ -482,7 +486,7 @@ begin
 	end process;
 	process(w9)
 	begin
-		ww9<="00000000"&x6&x7&w9;
+		ww9<=t4&"000000"&x6&x7&w9;
 	end process;
 end Behavioral;
 

@@ -44,9 +44,6 @@ entity Main_Reg is
            RegND : out  STD_LOGIC_VECTOR (3 downto 0);
            RegND_WB : in  STD_LOGIC_VECTOR (3 downto 0);
            Data_Ry : out  STD_LOGIC_VECTOR (15 downto 0);
-           Result_EX : in  STD_LOGIC_VECTOR (15 downto 0);
-           Result_MEM : in  STD_LOGIC_VECTOR (15 downto 0);
-           Control_ctrl : in  STD_LOGIC_VECTOR (1 downto 0);
            Control_SP : in  STD_LOGIC_VECTOR (1 downto 0);
            Control_IH : in  STD_LOGIC_VECTOR (1 downto 0);
 			  Control_imm_ry : in std_logic;			 
@@ -58,7 +55,6 @@ entity Main_Reg is
 			  Ry_x : in STD_LOGIC;
 			  Rx_y : in STD_LOGIC;
 			  Control_op2_reg : out STD_LOGIC;
-			  Control_ctrl1 : in STD_LOGIC_VECTOR(1 downto 0);
 			  regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7: out std_logic_vector(15 downto 0);
 			  regSP: out std_logic_vector(15 downto 0);
 			  regT: out std_logic;
@@ -138,32 +134,13 @@ begin
 --	--IH在MFIH中用作Rx，在MTIH中用作RegND
 --	--T在BTEQZ中用作判断，在CMP、SLTI和CMPI中被赋值（在寄存器组完成）
 					if(Control_SP="10")then	--SP用作Rx
-						if(Control_ctrl="00")then
-							g1:=SP;
-						elsif(Control_ctrl="01")then
-							g1:=Result_EX;
-						elsif(Control_ctrl="10")then
-							g1:=Result_MEM;
-						end if;
+						g1:=SP;
 					elsif(Control_SP="11")then	--SP用作Rx和RegND
-						if(Control_ctrl="00")then
-							g1:=SP;
-						elsif(Control_ctrl="01")then
-							g1:=Result_EX;
-						elsif(Control_ctrl="10")then
-							g1:=Result_MEM;
-						end if;
+						g1:=SP;
 					elsif(Control_IH="10")then	--IH用作Rx
-						if(Control_ctrl="00")then
-							g1:=IH;
-						elsif(Control_ctrl="01")then
-							g1:=Result_EX;
-						elsif(Control_ctrl="10")then
-							g1:=Result_MEM;
-						end if;
+						g1:=IH;
 					else
 						if(Ry_x='0')then
-							if(Control_ctrl="00")then
 								case Rx is
 									when "000"=>
 										g1:=R0;
@@ -184,13 +161,7 @@ begin
 									when others=>
 										null;
 								end case;
-							elsif(Control_ctrl="01")then
-								g1:=Result_EX;
-							elsif(Control_ctrl="10")then
-								g1:=Result_MEM;
-							end if;
 						else
-							if(Control_ctrl1="00")then
 								case Ry is
 									when "000"=>
 										g1:=R0;
@@ -211,11 +182,6 @@ begin
 									when others=>
 										null;
 								end case;
-							elsif(Control_ctrl1="01")then
-								g1:=Result_EX;
-							elsif(Control_ctrl1="10")then
-								g1:=Result_MEM;
-							end if;
 						end if;
 					end if;
 
@@ -223,7 +189,6 @@ begin
 			--		if(Control_ctrl1="00")then
 					if(Control_imm_ry='0')then
 						if(Rx_y='0')then
-							if(Control_ctrl1="00")then
 								case Ry is
 									when "000"=>
 										g2:=R0;
@@ -244,13 +209,7 @@ begin
 									when others=>
 										null;
 								end case;
-							elsif(Control_ctrl1="01")then
-								g2:=Result_EX;
-							elsif(Control_ctrl1="10")then
-								g2:=Result_MEM;
-							end if;
 						else
-							if(Control_ctrl="00")then
 								case Rx is
 									when "000"=>
 										g2:=R0;
@@ -271,11 +230,6 @@ begin
 									when others=>
 										null;
 								end case;
-							elsif(Control_ctrl="01")then
-								g2:=Result_EX;
-							elsif(Control_ctrl="10")then
-								g2:=Result_MEM;
-							end if;
 						end if;
 					else
 						g2:=imm;
@@ -294,7 +248,6 @@ begin
 					end if;
 			--Data_ry
 					if(Control_XY='0')then	--传递Ry的值
-						if(Control_ctrl1="00")then
 							case Ry is
 								when "000"=>
 									g4:=R0;
@@ -315,13 +268,7 @@ begin
 								when others=>
 									null;
 							end case;
-						elsif(Control_ctrl1="01")then
-							g4:=Result_EX;
-						elsif(Control_ctrl1="10")then
-							g4:=Result_MEM;
-						end if;
 					else
-						if(Control_ctrl="00")then
 							case Rx is
 								when "000"=>
 									g4:=R0;
@@ -342,14 +289,8 @@ begin
 								when others=>
 									null;
 							end case;
-						elsif(Control_ctrl="01")then
-							g4:=Result_EX;
-						elsif(Control_ctrl="10")then
-							g4:=Result_MEM;
-						end if;
 					end if;
 			--Rx	
-					if(Control_ctrl="00")then
 						case Rx is
 							when "000"=>
 								g5:=R0;
@@ -370,11 +311,6 @@ begin
 							when others=>
 								null;
 						end case;
-					elsif(Control_ctrl="01")then
-						g5:=Result_EX;
-					elsif(Control_ctrl="10")then
-						g5:=Result_MEM;
-					end if;
 			--判断
 					if(Control_judge='1')then	--需要判断
 						case instruction(15 downto 11) is	--判断是什么指令

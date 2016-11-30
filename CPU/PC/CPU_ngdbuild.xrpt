@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Thu Dec 01 00:55:00 2016">
+  <application stringID="NgdBuild" timeStamp="Thu Dec 01 01:48:32 2016">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -70,7 +70,7 @@
         <item dataType="int" stringID="NGDBUILD_NUM_BUFGP" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FD" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="257"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="272"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="252"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDCE_1" value="6"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDC_1" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDE" value="17"/>
@@ -79,23 +79,23 @@
         <item dataType="int" stringID="NGDBUILD_NUM_FDR" value="3"/>
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="2"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="10"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IOBUF" value="16"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LD" value="28"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LD_1" value="3"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="47"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="198"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_D" value="7"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_L" value="5"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="523"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="169"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_D" value="4"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_L" value="6"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="445"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT3_D" value="8"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_L" value="11"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="992"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_D" value="35"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_L" value="27"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_L" value="9"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="863"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_D" value="34"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_L" value="33"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="112"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXF5" value="296"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXF6" value="85"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXF5" value="281"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXF6" value="84"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="86"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUFT" value="8"/>
@@ -106,7 +106,7 @@
         <item dataType="int" stringID="NGDBUILD_NUM_BUFG" value="4"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FD" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="257"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="272"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="252"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDCE_1" value="6"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDC_1" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDE" value="17"/>
@@ -116,22 +116,22 @@
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="21"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUFG" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="10"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LD" value="28"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LD_1" value="3"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="47"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="198"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_D" value="7"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_L" value="5"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="523"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="169"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_D" value="4"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_L" value="6"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="445"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT3_D" value="8"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_L" value="11"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="992"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_D" value="35"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_L" value="27"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_L" value="9"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="863"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_D" value="34"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_L" value="33"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="112"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXF5" value="296"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXF6" value="85"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXF5" value="281"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXF6" value="84"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="9"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="86"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUFT" value="24"/>
