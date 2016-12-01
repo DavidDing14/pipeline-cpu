@@ -89,7 +89,7 @@ begin
 			Ctrl_judge<='0';
 			Ctrl_b<='0';
 			Ctrl_Jump<='0';
-			out_instruction<="0000111111111111";
+			out_instruction<="1111111111111111";
 			out_Rx1<="000";
 			out_Rx2<="000";
 			out_Ry1<="000";
@@ -131,7 +131,7 @@ begin
 						out_imm<="00000000000";
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000111111111111";
+						out_instruction<="1111111111111111";
 					when "00010" => -- B
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="011";
@@ -158,7 +158,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000111111111111";
+						out_instruction<="1111111111111111";
 					when "00100" => -- BEQZ
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -185,7 +185,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000111111111111";
+						out_instruction<="1111111111111111";
 					when "00101" => -- BNEZ
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -212,7 +212,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000111111111111";
+						out_instruction<="1111111111111111";
 					when "00110" =>
 						case instruction(1 downto 0) is
 							when "00" => -- SLL
@@ -241,7 +241,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='1';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(7 downto 5)&"11110"&instruction(10 downto 8);
+								out_instruction<="11110"&instruction(7 downto 5)&"11110"&instruction(10 downto 8);
 							when "11" => -- SRA
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="101";
@@ -268,7 +268,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='1';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(7 downto 5)&"11110"&instruction(10 downto 8);
+								out_instruction<="11110"&instruction(7 downto 5)&"11110"&instruction(10 downto 8);
 							when "10" => -- SRL
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="101";
@@ -295,7 +295,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='1';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(7 downto 5)&"11110"&instruction(10 downto 8);
+								out_instruction<="11110"&instruction(7 downto 5)&"11110"&instruction(10 downto 8);
 							when others =>
 								
 						end case;
@@ -325,7 +325,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="00000"&instruction(10 downto 8)&"11110"&instruction(7 downto 5);
+						out_instruction<="11110"&instruction(10 downto 8)&"11110"&instruction(7 downto 5);
 					when "01001" => -- ADDIU
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -352,7 +352,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="00000"&instruction(10 downto 8)&"11110"&instruction(10 downto 8);
+						out_instruction<="11110"&instruction(10 downto 8)&"11110"&instruction(10 downto 8);
 					when "01010" => -- SLTI
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -379,7 +379,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000111111111111";
+						out_instruction<="1111111111111111";
 					when "01100" =>
 						case instruction(10 downto 9) is
 							when "01" => -- ADDSP
@@ -408,7 +408,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="0000100011111000";
+								out_instruction<="1111100011111000";
 							when "00" => -- BTEQZ
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="001";
@@ -435,7 +435,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="0000111111111111";
+								out_instruction<="1111111111111111";
 							when "10" => -- MTSP
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -462,7 +462,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="000011110"&instruction(7 downto 5)&"1000";
+								out_instruction<="111111110"&instruction(7 downto 5)&"1000";
 							when others =>
 						end case;
 					when "01101" => -- LI
@@ -491,7 +491,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000111111110"&instruction(10 downto 8);
+						out_instruction<="1111111111110"&instruction(10 downto 8);
 					when "01110" => -- CMPI
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -518,7 +518,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000111111111111";
+						out_instruction<="1111111111111111";
 					when "10010" => -- LW_SP
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="001";
@@ -545,7 +545,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000100011110"&instruction(10 downto 8);
+						out_instruction<="1111100011110"&instruction(10 downto 8);
 					when "10011" => --LW
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="100";
@@ -572,7 +572,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="00000"&instruction(10 downto 8)&"11110"&instruction(7 downto 5);
+						out_instruction<="11110"&instruction(10 downto 8)&"11110"&instruction(7 downto 5);
 					when "11010" => --SW_SP
 						Ctrl_xy<='1';
 						Ctrl_immidiate<="001";
@@ -599,7 +599,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000100011111111";
+						out_instruction<='0'&instruction(10 downto 8)&"100011111111";	--15 downto 12 = 1111表示需要判断data_r不要旁路,编号即为需要旁路寄存器的编号
 					when "11011" => -- SW
 						Ctrl_xy<='0';
 						Ctrl_immidiate<="100";
@@ -626,7 +626,7 @@ begin
 						out_imm<=instruction(10 downto 0);
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="00000"&instruction(10 downto 8)&"11111111";
+						out_instruction<='0'&instruction(7 downto 5)&'0'&instruction(10 downto 8)&"11111111";
 					when "11100" =>
 						case instruction(1) is
 							when '0' => -- ADDU
@@ -655,7 +655,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(10 downto 8)&'0'&instruction(7 downto 5)&'0'&instruction(4 downto 2);
+								out_instruction<="11110"&instruction(10 downto 8)&'0'&instruction(7 downto 5)&'0'&instruction(4 downto 2);
 							when others => -- SUBU
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -682,7 +682,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(10 downto 8)&'0'&instruction(7 downto 5)&'0'&instruction(4 downto 2);
+								out_instruction<="11110"&instruction(10 downto 8)&'0'&instruction(7 downto 5)&'0'&instruction(4 downto 2);
 						end case;
 					when "11101" =>
 						case instruction(3 downto 0) is
@@ -714,7 +714,7 @@ begin
 										out_imm<=instruction(10 downto 0);
 										out_Ry_x<='0';	--为'1'时Ry用作操作数1
 										out_Rx_y<='0';	--为'1'时Rx用作操作数2
-										out_instruction<="00000"&instruction(10 downto 8)&"11111111";
+										out_instruction<="11110"&instruction(10 downto 8)&"11111111";
 									when others => -- MFPC
 										Ctrl_xy<='0';
 										Ctrl_immidiate<="000";
@@ -741,7 +741,7 @@ begin
 										out_imm<=instruction(10 downto 0);
 										out_Ry_x<='0';	--为'1'时Ry用作操作数1
 										out_Rx_y<='0';	--为'1'时Rx用作操作数2
-										out_instruction<="0000111111110"&instruction(10 downto 8);
+										out_instruction<="1111111111110"&instruction(10 downto 8);
 								end case;
 							when "1100" => -- AND
 								Ctrl_xy<='0';
@@ -769,7 +769,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(10 downto 8)&'0'&instruction(7 downto 5)&'0'&instruction(10 downto 8);
+								out_instruction<="11110"&instruction(10 downto 8)&'0'&instruction(7 downto 5)&'0'&instruction(10 downto 8);
 							when "1010" => -- CMP
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -796,7 +796,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="0000111111111111";
+								out_instruction<="1111111111111111";
 							when "1111" => -- NOT
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -823,7 +823,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="000011110"&instruction(7 downto 5)&'0'&instruction(10 downto 8);
+								out_instruction<="111111110"&instruction(7 downto 5)&'0'&instruction(10 downto 8);
 							when "1101" => -- OR
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -850,7 +850,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(10 downto 8)&'0'&instruction(7 downto 5)&'0'&instruction(10 downto 8);
+								out_instruction<="11110"&instruction(10 downto 8)&'0'&instruction(7 downto 5)&'0'&instruction(10 downto 8);
 							when "0111" => -- SRAV
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -877,7 +877,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='1';	--为'1'时Ry用作操作数1
 								out_Rx_y<='1';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(7 downto 5)&'0'&instruction(10 downto 8)&'0'&instruction(7 downto 5);
+								out_instruction<="11110"&instruction(7 downto 5)&'0'&instruction(10 downto 8)&'0'&instruction(7 downto 5);
 							when others =>
 						end case;
 					when "11110" =>
@@ -908,7 +908,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="0000100111110"&instruction(10 downto 8);
+								out_instruction<="1111100111110"&instruction(10 downto 8);
 							when '1' => -- MTIH
 								Ctrl_xy<='0';
 								Ctrl_immidiate<="000";
@@ -935,7 +935,7 @@ begin
 								out_imm<=instruction(10 downto 0);
 								out_Ry_x<='0';	--为'1'时Ry用作操作数1
 								out_Rx_y<='0';	--为'1'时Rx用作操作数2
-								out_instruction<="00000"&instruction(10 downto 8)&"11111001";
+								out_instruction<="11110"&instruction(10 downto 8)&"11111001";
 							when others =>
 						end case;
 					when others =>		
@@ -966,7 +966,7 @@ begin
 						out_PC<="0000000000000000";
 						out_Ry_x<='0';	--为'1'时Ry用作操作数1
 						out_Rx_y<='0';	--为'1'时Rx用作操作数2
-						out_instruction<="0000111111111111";				
+						out_instruction<="1111111111111111";				
 				end case;
 			else
 				Ctrl_xy<='0';
@@ -996,7 +996,7 @@ begin
 				out_PC<="0000000000000000";
 				out_Ry_x<='0';	--为'1'时Ry用作操作数1
 				out_Rx_y<='0';	--为'1'时Rx用作操作数2
-				out_instruction<="0000111111111111";
+				out_instruction<="1111111111111111";
 			end if;
 		end if;
 	end process;

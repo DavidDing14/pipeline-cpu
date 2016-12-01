@@ -9,25 +9,25 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Thu Dec 01 01:48:35 2016
+Mapped Date    : Thu Dec 01 23:59:19 2016
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:   18
+Number of warnings:   16
 Logic Utilization:
-  Total Number Slice Registers:         603 out of  17,344    3%
-    Number used as Flip Flops:          572
+  Total Number Slice Registers:         636 out of  17,344    3%
+    Number used as Flip Flops:          605
     Number used as Latches:              31
-  Number of 4 input LUTs:             1,579 out of  17,344    9%
+  Number of 4 input LUTs:             1,653 out of  17,344    9%
 Logic Distribution:
-  Number of occupied Slices:            974 out of   8,672   11%
-    Number of Slices containing only related logic:     974 out of     974 100%
-    Number of Slices containing unrelated logic:          0 out of     974   0%
+  Number of occupied Slices:          1,030 out of   8,672   11%
+    Number of Slices containing only related logic:   1,030 out of   1,030 100%
+    Number of Slices containing unrelated logic:          0 out of   1,030   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,641 out of  17,344    9%
-    Number used as logic:             1,579
-    Number used as a route-thru:         62
+  Total Number of 4 input LUTs:       1,716 out of  17,344    9%
+    Number used as logic:             1,653
+    Number used as a route-thru:         63
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -35,11 +35,11 @@ Logic Distribution:
   Number of bonded IOBs:                108 out of     250   43%
   Number of BUFGMUXs:                     4 out of      24   16%
 
-Average Fanout of Non-Clock Nets:                4.10
+Average Fanout of Non-Clock Nets:                4.16
 
 Peak Memory Usage:  322 MB
-Total REAL time to MAP completion:  4 secs 
-Total CPU time to MAP completion:   4 secs 
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   3 secs 
 
 NOTES:
 
@@ -96,6 +96,9 @@ WARNING:MapLib:701 - Signal ram1data<9> connected to top level port ram1data<9>
    has been removed.
 WARNING:MapLib:701 - Signal ram1data<8> connected to top level port ram1data<8>
    has been removed.
+WARNING:Pack:266 - The function generator u19/g_signal_mux0058<0>205 failed to
+   merge with F5 multiplexer u19/g_signal_mux0058<0>340_SW1.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
 WARNING:Pack:266 - The function generator u13/Mmux_outre_1_mux0007_10 failed to
    merge with F5 multiplexer u13/Mmux_outre_9_mux0007_5_f5.  There is a conflict
    for the FXMUX.  The design will exhibit suboptimal timing.
@@ -117,21 +120,9 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net u13/outre_15_or0001 is
 WARNING:PhysDesignRules:372 - Gated clock. Clock net u8/real_imm_9_or0000 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:367 - The signal <tbre_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <tsre_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <data_ready_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network data_ready_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 2 more times for the following
-   (max. 5 shown):
-   tbre_IBUF,
-   tsre_IBUF
-   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -246,14 +237,14 @@ Section 6 - IOB Properties
 | ram1addr<15>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | ram1addr<16>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | ram1addr<17>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| ram1data<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| ram1data<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| ram1data<2>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| ram1data<3>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| ram1data<4>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| ram1data<5>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| ram1data<6>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| ram1data<7>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1data<0>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1data<1>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1data<2>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1data<3>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1data<4>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1data<5>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1data<6>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| ram1data<7>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | ram1en                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | ram1oe                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | ram1we                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |

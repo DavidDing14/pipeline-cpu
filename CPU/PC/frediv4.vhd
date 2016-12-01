@@ -36,7 +36,7 @@ entity frediv4 is
 end frediv4;
 
 architecture Behavioral of frediv4 is
-signal status: integer range 0 to 2 := 0;
+signal status: integer range 0 to 3 := 0;
 signal status2 : integer range 0 to 1 := 0;
 signal q: std_logic;
 signal q2: std_logic;
@@ -47,7 +47,7 @@ begin
 			if (status = 0) then
 				status<=1;
 				q<=clk_in;
-			elsif (status = 2) then
+			elsif (status = 3) then
 				q <= not q;
 				status <= 1;
 			else

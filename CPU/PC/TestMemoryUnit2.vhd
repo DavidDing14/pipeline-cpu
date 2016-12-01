@@ -111,9 +111,9 @@ component MemoryUnit
 end component;
 
 signal mydataOut : std_logic_vector(15 downto 0);
-signal myControl : std_logic_vector(1 downto 0) := "01";
-signal mydataIn : std_logic_vector(15 downto 0) := "1010101010101010";
-signal myramAddr : std_logic_vector(15 downto 0) := "0000010001111011";
+signal myControl : std_logic_vector(1 downto 0) := "11";
+signal mydataIn : std_logic_vector(15 downto 0) := "0000000001001111";
+signal myramAddr : std_logic_vector(15 downto 0) := "1011111100000000";
 signal myPC : std_logic_vector(15 downto 0) := "0000000001111010";
 begin
 	uut : MemoryUnit PORT MAP(clk, rst, data_ready, tbre, tsre, wrn, rdn, 

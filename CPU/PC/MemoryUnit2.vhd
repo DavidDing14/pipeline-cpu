@@ -73,7 +73,8 @@ end MemoryUnit;
 architecture Behavioral of MemoryUnit is
 	shared variable RegIns: std_logic_vector(15 downto 0):="0000000000000000";
 	shared variable RegData: std_logic_vector(15 downto 0):="0000000000000000";
-	signal state : std_logic_vector(1 downto 0) := "00";
+	--signal state : std_logic_vector(1 downto 0) := "00";
+	signal state : integer range 0 to 5 := 0;
 	signal rflag : std_logic := '0';		--是什么？黑科技般的存在
 begin
 	
@@ -102,23 +103,23 @@ begin
 			RegIns := "0000000000000000";
 			RegData := "0000000000000000";
 			
-			state <= "00";
+			state <= 0;
 			
 		elsif clk'event and clk = '1' then 
 			
 			case state is 
-				when "00" =>
-					state <= "01";
+				when 0 =>
+					state <= 1;
 					
-				when "01" =>		--准备读指令
+				when 1 =>		--准备读指令
 					ram2_data <= (others => 'Z');
 					ram2_addr(15 downto 0) <= PC;
 					wrn <= '1';
 					rdn <= '1';
 					ram2_oe <= '0';
-					state <= "10";
+					state <= 2;
 					
-				when "10" =>		--读出指令，准备读/写 串口/内存
+				when 2 =>		--读出指令，准备读/写 串口/内存
 					ram2_oe <= '1';
 					RegIns := ram2_data;
 					if (Control_MEM = "11") then	--如果要写
@@ -149,9 +150,9 @@ begin
 							ram2_oe <= '0';
 						end if;
 					end if;	
-					state <= "11";
+					state <= 3;
 					
-				when "11" =>		--读/写 串口/内存
+				when 3 =>		--读/写 串口/内存
 					if(Control_MEM = "11") then		--写
 						if (ramAddr = x"BF00") then		--写串口
 							wrn <= '1';
@@ -170,10 +171,19 @@ begin
 							RegData := ram2_data;
 						end if;
 					end if;
-					state <= "00";
+					state <= 4;
+				when 4 =>
+					state <= 5;
 					
+				when 5 =>		--准备读指令
+					ram2_data <= (others => 'Z');
+					ram2_addr(15 downto 0) <= PC;
+					wrn <= '1';
+					rdn <= '1';
+					ram2_oe <= '0';
+					state <= 0;	
 				when others =>
-					state <= "00";
+					state <= 0;
 					
 			end case;
 		end if;

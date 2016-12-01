@@ -1,11 +1,11 @@
 //! **************************************************************************
-// Written by: Map O.76xd on Thu Dec 01 01:48:38 2016
+// Written by: Map O.76xd on Thu Dec 01 23:59:22 2016
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "Hs" LOCATE = SITE "D6" LEVEL 1;
 COMP "Vs" LOCATE = SITE "E6" LEVEL 1;
-COMP "clk" LOCATE = SITE "U9" LEVEL 1;
+COMP "clk" LOCATE = SITE "B8" LEVEL 1;
 COMP "rdn" LOCATE = SITE "C14" LEVEL 1;
 COMP "rst" LOCATE = SITE "U10" LEVEL 1;
 COMP "wrn" LOCATE = SITE "U5" LEVEL 1;

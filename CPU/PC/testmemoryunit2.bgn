@@ -6,7 +6,7 @@ G:\Xilinx-ISE\13.3\ISE_DS\ISE\.
 speed -4
 Opened constraints file TestMemoryUnit2.pcf.
 
-Tue Nov 29 22:01:36 2016
+Thu Dec 01 18:27:47 2016
 
 G:\Xilinx-ISE\13.3\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:No -g DriveDone:No TestMemoryUnit2.ncd 
 

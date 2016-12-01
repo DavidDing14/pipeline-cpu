@@ -46,3 +46,9 @@ map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o TestMe
 par -w -intstyle ise -ol high -t 1 TestMemoryUnit2_map.ncd TestMemoryUnit2.ncd TestMemoryUnit2.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TestMemoryUnit2.twx TestMemoryUnit2.ncd -o TestMemoryUnit2.twr TestMemoryUnit2.pcf -ucf TestMemoryUnit2.ucf 
 bitgen -intstyle ise -f TestMemoryUnit2.ut TestMemoryUnit2.ncd 
+xst -intstyle ise -ifn "G:/cpu/pipeline-cpu/CPU/PC/TestMemoryUnit2.xst" -ofn "G:/cpu/pipeline-cpu/CPU/PC/TestMemoryUnit2.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc TestMemoryUnit2.ucf -p xc3s1200e-fg320-4 TestMemoryUnit2.ngc TestMemoryUnit2.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o TestMemoryUnit2_map.ncd TestMemoryUnit2.ngd TestMemoryUnit2.pcf 
+par -w -intstyle ise -ol high -t 1 TestMemoryUnit2_map.ncd TestMemoryUnit2.ncd TestMemoryUnit2.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TestMemoryUnit2.twx TestMemoryUnit2.ncd -o TestMemoryUnit2.twr TestMemoryUnit2.pcf -ucf TestMemoryUnit2.ucf 
+bitgen -intstyle ise -f TestMemoryUnit2.ut TestMemoryUnit2.ncd 

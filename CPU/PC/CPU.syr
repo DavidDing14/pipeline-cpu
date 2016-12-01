@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: CPU.prj
 
@@ -113,7 +113,8 @@ Architecture behavioral of Entity pc_ex_mux is up to date.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/Addr_MUX.vhd" in Library work.
 Architecture behavioral of Entity addr_mux is up to date.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd" in Library work.
-Architecture behavioral of Entity memoryunit is up to date.
+Entity <memoryunit> compiled.
+Entity <memoryunit> (Architecture <behavioral>) compiled.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd" in Library work.
 Architecture behavioral of Entity parsectrl is up to date.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd" in Library work.
@@ -143,8 +144,7 @@ Architecture behavioral of Entity frediv4 is up to date.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/vga.vhd" in Library work.
 Architecture behavioral of Entity vga is up to date.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd" in Library work.
-Entity <cpu> compiled.
-Entity <cpu> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity cpu is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -194,9 +194,9 @@ Analyzing hierarchy for entity <vga> in library <work> (architecture <behavioral
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <CPU> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd" line 477: Mux is complete : default of case is discarded
-WARNING:Xst:819 - "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd" line 487: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <t4>, <x6>, <x7>
+INFO:Xst:1561 - "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd" line 479: Mux is complete : default of case is discarded
+WARNING:Xst:819 - "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd" line 489: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <x8>
 Entity <CPU> analyzed. Unit <CPU> generated.
 
 Analyzing Entity <PC> in library <work> (Architecture <behavioral>).
@@ -212,7 +212,6 @@ Analyzing Entity <Addr_MUX> in library <work> (Architecture <behavioral>).
 Entity <Addr_MUX> analyzed. Unit <Addr_MUX> generated.
 
 Analyzing Entity <MemoryUnit> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd" line 173: Mux is complete : default of case is discarded
 INFO:Xst:2679 - Register <ram1_addr> in unit <MemoryUnit> has a constant value of 000000000000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ram2_addr<17>> in unit <MemoryUnit> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ram2_addr<16>> in unit <MemoryUnit> has a constant value of 0 during circuit operation. The register is replaced by logic.
@@ -331,15 +330,15 @@ WARNING:Xst:2563 - Inout <ram1_data<8>> is never assigned. Tied to value Z.
 WARNING:Xst:2563 - Inout <ram1_data<9>> is never assigned. Tied to value Z.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 4                                              |
-    | Transitions        | 4                                              |
+    | States             | 6                                              |
+    | Transitions        | 6                                              |
     | Inputs             | 0                                              |
     | Outputs            | 6                                              |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | rst                       (negative)           |
     | Reset type         | asynchronous                                   |
-    | Reset State        | 00                                             |
-    | Power Up State     | 00                                             |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
@@ -373,7 +372,7 @@ WARNING:Xst:2563 - Inout <ram1_data<9>> is never assigned. Tied to value Z.
     Found 1-bit register for signal <Mtridata_ram1_data<5>>.
     Found 1-bit register for signal <Mtridata_ram1_data<6>>.
     Found 1-bit register for signal <Mtridata_ram1_data<7>>.
-    Found 16-bit register for signal <Mtridata_ram2_data> created at line 114.
+    Found 16-bit register for signal <Mtridata_ram2_data> created at line 115.
     Found 1-bit register for signal <Mtrien_ram1_data<0>>.
     Found 1-bit register for signal <Mtrien_ram1_data<1>>.
     Found 1-bit register for signal <Mtrien_ram1_data<2>>.
@@ -382,7 +381,7 @@ WARNING:Xst:2563 - Inout <ram1_data<9>> is never assigned. Tied to value Z.
     Found 1-bit register for signal <Mtrien_ram1_data<5>>.
     Found 1-bit register for signal <Mtrien_ram1_data<6>>.
     Found 1-bit register for signal <Mtrien_ram1_data<7>>.
-    Found 1-bit register for signal <Mtrien_ram2_data> created at line 114.
+    Found 1-bit register for signal <Mtrien_ram2_data> created at line 115.
     Found 16-bit register for signal <RegData>.
     Found 16-bit register for signal <RegIns>.
     Found 1-bit register for signal <rflag>.
@@ -424,7 +423,7 @@ Synthesizing Unit <parseCtrl>.
     Found 16-bit register for signal <out_instruction>.
     Found 1-bit register for signal <Ctrl_WB>.
     Summary:
-	inferred  80 D-type flip-flop(s).
+	inferred  96 D-type flip-flop(s).
 Unit <parseCtrl> synthesized.
 
 
@@ -615,7 +614,7 @@ Unit <ALU> synthesized.
 
 Synthesizing Unit <EX_MEM>.
     Related source file is "G:/cpu/pipeline-cpu/CPU/PC/EX_MEM.vhd".
-WARNING:Xst:1305 - Output <out_Result_MEM> is never assigned. Tied to value 0000000000000000.
+    Register <out_Result_MEM> equivalent to <out_Result> has been removed
     Register <out_Result_Reg> equivalent to <out_Result> has been removed
     Found 1-bit register for signal <out_Ctrl_PCMEM>.
     Found 4-bit register for signal <out_RegND>.
@@ -647,43 +646,50 @@ Unit <WB_Reg_MUX> synthesized.
 
 Synthesizing Unit <ctrl>.
     Related source file is "G:/cpu/pipeline-cpu/CPU/PC/ctrl.vhd".
-WARNING:Xst:646 - Signal <ins8> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <ins7> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <ins6> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <ins5> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ins4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i33> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i32> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i31> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <i30> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i23> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i22> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i21> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <i20> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i13> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i12> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i11> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <i10> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <c5> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <c4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <c1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Register <c3> equivalent to <c2> has been removed
     Using one-hot encoding for signal <flag1$mux0000>.
     Using one-hot encoding for signal <flag2$mux0000>.
+    Using one-hot encoding for signal <flag3$mux0000>.
     Found 1-bit register for signal <c2>.
     Found 2-bit register for signal <c6>.
     Found 2-bit register for signal <c7>.
+    Found 2-bit register for signal <c8>.
     Found 2-bit register for signal <flag1>.
-    Found 4-bit comparator equal for signal <flag1$cmp_eq0000> created at line 104.
-    Found 4-bit comparator equal for signal <flag1$cmp_eq0001> created at line 96.
-    Found 4-bit comparator not equal for signal <flag1$cmp_ne0000> created at line 96.
-    Found 4-bit comparator not equal for signal <flag1$cmp_ne0001> created at line 104.
+    Found 4-bit comparator equal for signal <flag1$cmp_eq0000> created at line 113.
+    Found 4-bit comparator equal for signal <flag1$cmp_eq0001> created at line 101.
+    Found 4-bit comparator not equal for signal <flag1$cmp_ne0000> created at line 101.
+    Found 4-bit comparator not equal for signal <flag1$cmp_ne0001> created at line 113.
     Found 2-bit register for signal <flag2>.
-    Found 4-bit comparator equal for signal <flag2$cmp_eq0000> created at line 108.
-    Found 4-bit comparator equal for signal <flag2$cmp_eq0001> created at line 100.
-    Found 4-bit comparator not equal for signal <flag2$cmp_ne0002> created at line 100.
-    Found 4-bit comparator not equal for signal <flag2$cmp_ne0003> created at line 108.
+    Found 4-bit comparator equal for signal <flag2$cmp_eq0000> created at line 117.
+    Found 4-bit comparator equal for signal <flag2$cmp_eq0001> created at line 105.
+    Found 4-bit comparator not equal for signal <flag2$cmp_ne0000> created at line 105.
+    Found 4-bit comparator not equal for signal <flag2$cmp_ne0001> created at line 117.
+    Found 2-bit register for signal <flag3>.
+    Found 4-bit comparator equal for signal <flag3$cmp_eq0000> created at line 121.
+    Found 4-bit comparator equal for signal <flag3$cmp_eq0001> created at line 109.
+    Found 4-bit comparator not equal for signal <flag3$cmp_ne0002> created at line 109.
+    Found 4-bit comparator not equal for signal <flag3$cmp_ne0003> created at line 121.
     Found 16-bit register for signal <ins1>.
     Found 16-bit register for signal <ins2>.
     Summary:
-	inferred  37 D-type flip-flop(s).
-	inferred   8 Comparator(s).
+	inferred  39 D-type flip-flop(s).
+	inferred  12 Comparator(s).
 Unit <ctrl> synthesized.
 
 
@@ -691,13 +697,16 @@ Synthesizing Unit <frediv4>.
     Related source file is "G:/cpu/pipeline-cpu/CPU/PC/frediv4.vhd".
 WARNING:Xst:2110 - Clock of register <q> seems to be also used in the data or control logic of that element.
     Found 1-bit register for signal <q>.
+    Found 1-bit 4-to-1 multiplexer for signal <q$mux0000>.
     Found 1-bit register for signal <q2>.
     Found 2-bit register for signal <status>.
     Found 2-bit adder for signal <status$addsub0000> created at line 54.
+    Found 2-bit 4-to-1 multiplexer for signal <status$mux0002>.
     Found 1-bit register for signal <status2<0>>.
     Summary:
 	inferred   5 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
+	inferred   3 Multiplexer(s).
 Unit <frediv4> synthesized.
 
 
@@ -813,12 +822,14 @@ Unit <vga> synthesized.
 
 Synthesizing Unit <CPU>.
     Related source file is "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd".
+WARNING:Xst:646 - Signal <vga_regT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR6> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR5> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR3> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <regIH> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <p9> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <p8> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <p7> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -846,17 +857,17 @@ Macro Statistics
 # Counters                                             : 2
  10-bit up counter                                     : 1
  9-bit up counter                                      : 1
-# Registers                                            : 143
+# Registers                                            : 145
  1-bit register                                        : 91
  11-bit register                                       : 1
  16-bit register                                       : 28
- 2-bit register                                        : 11
+ 2-bit register                                        : 13
  3-bit register                                        : 6
  4-bit register                                        : 6
 # Latches                                              : 29
  1-bit latch                                           : 28
  3-bit latch                                           : 1
-# Comparators                                          : 50
+# Comparators                                          : 54
  10-bit comparator greatequal                          : 1
  10-bit comparator greater                             : 13
  10-bit comparator less                                : 15
@@ -866,14 +877,15 @@ Macro Statistics
  16-bit comparator equal                               : 2
  16-bit comparator greater                             : 1
  16-bit comparator less                                : 1
- 4-bit comparator equal                                : 4
- 4-bit comparator not equal                            : 4
-# Multiplexers                                         : 65
+ 4-bit comparator equal                                : 6
+ 4-bit comparator not equal                            : 6
+# Multiplexers                                         : 67
  1-bit 10-to-1 multiplexer                             : 16
  1-bit 16-to-1 multiplexer                             : 37
- 1-bit 4-to-1 multiplexer                              : 4
+ 1-bit 4-to-1 multiplexer                              : 5
  1-bit 8-to-1 multiplexer                              : 5
  16-bit 8-to-1 multiplexer                             : 2
+ 2-bit 4-to-1 multiplexer                              : 1
  3-bit 3-to-1 multiplexer                              : 1
 # Tristates                                            : 17
  1-bit tristate buffer                                 : 16
@@ -886,36 +898,18 @@ Macro Statistics
 =========================================================================
 
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <u5/state/FSM> on signal <state[1:4]> with one-hot encoding.
+Optimizing FSM <u5/state/FSM> on signal <state[1:6]> with one-hot encoding.
 -------------------
  State | Encoding
 -------------------
- 00    | 0001
- 01    | 0010
- 10    | 0100
- 11    | 1000
+ 000   | 000001
+ 001   | 000010
+ 010   | 000100
+ 011   | 001000
+ 100   | 010000
+ 101   | 100000
 -------------------
 INFO:Xst:2261 - The FF/Latch <r_signal_0> in Unit <u19> is equivalent to the following 2 FFs/Latches, which will be removed : <r_signal_1> <r_signal_2> 
-WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<0>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<1>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<2>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<3>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<4>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<5>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<7>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtridata_ram1_data<6>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<0>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<1>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<2>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<3>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<4>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<5>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<6>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<7>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <12> of sequential type is unconnected in block <out_instruction>.
-WARNING:Xst:2677 - Node <13> of sequential type is unconnected in block <out_instruction>.
-WARNING:Xst:2677 - Node <14> of sequential type is unconnected in block <out_instruction>.
-WARNING:Xst:2677 - Node <15> of sequential type is unconnected in block <out_instruction>.
 WARNING:Xst:2677 - Node <out_instruction_2_2> of sequential type is unconnected in block <u6>.
 WARNING:Xst:2677 - Node <out_instruction_2_3> of sequential type is unconnected in block <u6>.
 WARNING:Xst:2677 - Node <out_instruction_2_4> of sequential type is unconnected in block <u6>.
@@ -949,29 +943,6 @@ WARNING:Xst:2677 - Node <ins2_12> of sequential type is unconnected in block <u1
 WARNING:Xst:2677 - Node <ins2_13> of sequential type is unconnected in block <u17>.
 WARNING:Xst:2677 - Node <ins2_14> of sequential type is unconnected in block <u17>.
 WARNING:Xst:2677 - Node <ins2_15> of sequential type is unconnected in block <u17>.
-WARNING:Xst:638 - in unit u5 Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<1> Mtridata_ram1_data<1> signal will be lost.
-WARNING:Xst:638 - in unit u5 Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<2> Mtridata_ram1_data<2> signal will be lost.
-WARNING:Xst:638 - in unit u5 Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<3> Mtridata_ram1_data<3> signal will be lost.
-WARNING:Xst:638 - in unit u5 Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<4> Mtridata_ram1_data<4> signal will be lost.
-WARNING:Xst:638 - in unit u5 Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<5> Mtridata_ram1_data<5> signal will be lost.
-WARNING:Xst:638 - in unit u5 Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<7> Mtridata_ram1_data<7> signal will be lost.
-WARNING:Xst:638 - in unit u5 Conflict on KEEP property on signal Mtridata_ram1_data<0> and Mtridata_ram1_data<6> Mtridata_ram1_data<6> signal will be lost.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<0>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<1>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<2>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<3>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<4>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<5>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<6>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<7>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<0>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<1>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<2>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<3>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<4>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<5>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<6>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Mtrien_ram1_data<7>> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <ins1_4> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <ins1_5> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <ins1_6> of sequential type is unconnected in block <ctrl>.
@@ -1014,12 +985,12 @@ Macro Statistics
 # Counters                                             : 2
  10-bit up counter                                     : 1
  9-bit up counter                                      : 1
-# Registers                                            : 590
- Flip-Flops                                            : 590
+# Registers                                            : 594
+ Flip-Flops                                            : 594
 # Latches                                              : 29
  1-bit latch                                           : 28
  3-bit latch                                           : 1
-# Comparators                                          : 50
+# Comparators                                          : 54
  10-bit comparator greatequal                          : 1
  10-bit comparator greater                             : 13
  10-bit comparator less                                : 15
@@ -1029,14 +1000,15 @@ Macro Statistics
  16-bit comparator equal                               : 2
  16-bit comparator greater                             : 1
  16-bit comparator less                                : 1
- 4-bit comparator equal                                : 4
- 4-bit comparator not equal                            : 4
-# Multiplexers                                         : 65
+ 4-bit comparator equal                                : 6
+ 4-bit comparator not equal                            : 6
+# Multiplexers                                         : 67
  1-bit 10-to-1 multiplexer                             : 16
  1-bit 16-to-1 multiplexer                             : 37
- 1-bit 4-to-1 multiplexer                              : 4
+ 1-bit 4-to-1 multiplexer                              : 5
  1-bit 8-to-1 multiplexer                              : 5
  16-bit 8-to-1 multiplexer                             : 2
+ 2-bit 4-to-1 multiplexer                              : 1
  3-bit 3-to-1 multiplexer                              : 1
 
 =========================================================================
@@ -1046,16 +1018,15 @@ Macro Statistics
 =========================================================================
 INFO:Xst:2261 - The FF/Latch <status2_0> in Unit <frediv4> is equivalent to the following FF/Latch, which will be removed : <q2> 
 INFO:Xst:2261 - The FF/Latch <r_signal_0> in Unit <vga> is equivalent to the following 2 FFs/Latches, which will be removed : <r_signal_1> <r_signal_2> 
+WARNING:Xst:2677 - Node <flag3_0> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <flag2_0> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <flag1_0> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:1710 - FF/Latch <out_instruction_15> (without init value) has a constant value of 0 in block <parseCtrl>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_instruction_14> (without init value) has a constant value of 0 in block <parseCtrl>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_instruction_13> (without init value) has a constant value of 0 in block <parseCtrl>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_instruction_12> (without init value) has a constant value of 0 in block <parseCtrl>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <CPU> ...
 
 Optimizing unit <PC> ...
+
+Optimizing unit <parseCtrl> ...
 
 Optimizing unit <immidiate_mux_extend> ...
 
@@ -1077,29 +1048,7 @@ INFO:Xst:2261 - The FF/Latch <b_signal_0> in Unit <vga> is equivalent to the fol
 INFO:Xst:2261 - The FF/Latch <b_signal_0> in Unit <vga> is equivalent to the following 2 FFs/Latches, which will be removed : <b_signal_1> <b_signal_2> 
 INFO:Xst:2261 - The FF/Latch <b_signal_0> in Unit <vga> is equivalent to the following 2 FFs/Latches, which will be removed : <b_signal_1> <b_signal_2> 
 
-Optimizing unit <parseCtrl> ...
-
 Optimizing unit <ctrl> ...
-WARNING:Xst:1710 - FF/Latch <u5/Mtridata_ram1_data<0>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtridata_ram1_data<1>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtridata_ram1_data<2>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtridata_ram1_data<3>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtridata_ram1_data<4>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtridata_ram1_data<5>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtridata_ram1_data<6>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtridata_ram1_data<7>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtrien_ram1_data<0>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtrien_ram1_data<1>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtrien_ram1_data<2>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtrien_ram1_data<3>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtrien_ram1_data<4>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtrien_ram1_data<5>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtrien_ram1_data<6>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u5/Mtrien_ram1_data<7>> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u5/rflag> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <u10/RegControl_PCMEM> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u14/out_Ctrl_PCMEM> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u18/status2_0> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/Ctrl_PCMEM> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_2_10> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_2_9> of sequential type is unconnected in block <CPU>.
@@ -1110,33 +1059,20 @@ WARNING:Xst:2677 - Node <u6/out_instruction_2_5> of sequential type is unconnect
 WARNING:Xst:2677 - Node <u6/out_instruction_2_4> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_2_3> of sequential type is unconnected in block <CPU>.
 WARNING:Xst:2677 - Node <u6/out_instruction_2_2> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtrien_ram1_data<7> and u5/Mtrien_ram1_data<6> u5/Mtrien_ram1_data<6> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtrien_ram1_data<6> and u5/Mtrien_ram1_data<5> u5/Mtrien_ram1_data<5> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtrien_ram1_data<5> and u5/Mtrien_ram1_data<4> u5/Mtrien_ram1_data<4> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtrien_ram1_data<4> and u5/Mtrien_ram1_data<3> u5/Mtrien_ram1_data<3> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtrien_ram1_data<3> and u5/Mtrien_ram1_data<2> u5/Mtrien_ram1_data<2> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtrien_ram1_data<2> and u5/Mtrien_ram1_data<1> u5/Mtrien_ram1_data<1> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtrien_ram1_data<1> and u5/Mtrien_ram1_data<0> u5/Mtrien_ram1_data<0> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtrien_ram1_data<0> and u5/Mtridata_ram1_data<7> u5/Mtridata_ram1_data<7> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtridata_ram1_data<7> and u5/Mtridata_ram1_data<6> u5/Mtridata_ram1_data<6> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtridata_ram1_data<6> and u5/Mtridata_ram1_data<5> u5/Mtridata_ram1_data<5> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtridata_ram1_data<5> and u5/Mtridata_ram1_data<4> u5/Mtridata_ram1_data<4> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtridata_ram1_data<4> and u5/Mtridata_ram1_data<3> u5/Mtridata_ram1_data<3> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtridata_ram1_data<3> and u5/Mtridata_ram1_data<2> u5/Mtridata_ram1_data<2> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtridata_ram1_data<2> and u5/Mtridata_ram1_data<1> u5/Mtridata_ram1_data<1> signal will be lost.
-WARNING:Xst:638 - in unit CPU Conflict on KEEP property on signal u5/Mtridata_ram1_data<1> and u5/Mtridata_ram1_data<0> u5/Mtridata_ram1_data<0> signal will be lost.
-WARNING:Xst:2677 - Node <u5/Mtrien_ram1_data<7>> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u5/Mtrien_ram1_data<6>> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u5/Mtrien_ram1_data<5>> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u5/Mtrien_ram1_data<4>> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u5/Mtrien_ram1_data<3>> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u5/Mtrien_ram1_data<2>> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u5/Mtrien_ram1_data<1>> of sequential type is unconnected in block <CPU>.
-WARNING:Xst:2677 - Node <u5/Mtrien_ram1_data<0>> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u10/RegControl_PCMEM> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u14/out_Ctrl_PCMEM> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u18/status2_0> of sequential type is unconnected in block <CPU>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block CPU, actual ratio is 11.
+FlipFlop u19/vector_x_0 has been replicated 1 time(s)
+FlipFlop u19/vector_x_1 has been replicated 1 time(s)
+FlipFlop u19/vector_x_2 has been replicated 1 time(s)
+FlipFlop u19/vector_y_0 has been replicated 1 time(s)
+FlipFlop u19/vector_y_1 has been replicated 1 time(s)
+FlipFlop u19/vector_y_2 has been replicated 1 time(s)
+FlipFlop u19/vector_y_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -1144,8 +1080,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 572
- Flip-Flops                                            : 572
+# Registers                                            : 605
+ Flip-Flops                                            : 605
 
 =========================================================================
 
@@ -1174,44 +1110,45 @@ Design Statistics
 # IOs                              : 116
 
 Cell Usage :
-# BELS                             : 2198
+# BELS                             : 2317
 #      GND                         : 1
-#      INV                         : 9
+#      INV                         : 12
 #      LUT1                        : 47
-#      LUT2                        : 169
-#      LUT2_D                      : 4
-#      LUT2_L                      : 6
-#      LUT3                        : 445
-#      LUT3_D                      : 8
-#      LUT3_L                      : 9
-#      LUT4                        : 863
-#      LUT4_D                      : 34
-#      LUT4_L                      : 33
+#      LUT2                        : 140
+#      LUT2_D                      : 7
+#      LUT2_L                      : 7
+#      LUT3                        : 476
+#      LUT3_D                      : 9
+#      LUT3_L                      : 5
+#      LUT4                        : 938
+#      LUT4_D                      : 31
+#      LUT4_L                      : 32
 #      MUXCY                       : 112
-#      MUXF5                       : 281
-#      MUXF6                       : 84
-#      MUXF7                       : 9
+#      MUXF5                       : 319
+#      MUXF6                       : 87
+#      MUXF7                       : 10
 #      VCC                         : 1
 #      XORCY                       : 83
-# FlipFlops/Latches                : 603
-#      FD                          : 1
-#      FDC                         : 257
+# FlipFlops/Latches                : 636
+#      FD                          : 2
+#      FDC                         : 262
 #      FDC_1                       : 9
-#      FDCE                        : 252
-#      FDCE_1                      : 6
-#      FDE                         : 17
-#      FDP                         : 23
+#      FDCE                        : 257
+#      FDCE_1                      : 9
+#      FDE                         : 33
+#      FDP                         : 27
 #      FDPE                        : 4
-#      FDR                         : 3
+#      FDR                         : 1
+#      FDS                         : 1
 #      LD                          : 28
 #      LD_1                        : 3
 # Clock Buffers                    : 4
 #      BUFG                        : 3
 #      BUFGP                       : 1
-# IO Buffers                       : 112
-#      IBUF                        : 2
-#      IOBUF                       : 16
-#      OBUF                        : 86
+# IO Buffers                       : 115
+#      IBUF                        : 5
+#      IOBUF                       : 24
+#      OBUF                        : 78
 #      OBUFT                       : 8
 =========================================================================
 
@@ -1220,11 +1157,11 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      877  out of   8672    10%  
- Number of Slice Flip Flops:            603  out of  17344     3%  
- Number of 4 input LUTs:               1627  out of  17344     9%  
+ Number of Slices:                      912  out of   8672    10%  
+ Number of Slice Flip Flops:            636  out of  17344     3%  
+ Number of 4 input LUTs:               1704  out of  17344     9%  
  Number of IOs:                         116
- Number of bonded IOBs:                 113  out of    250    45%  
+ Number of bonded IOBs:                 116  out of    250    46%  
  Number of GCLKs:                         4  out of     24    16%  
 
 ---------------------------
@@ -1249,11 +1186,11 @@ Clock Information:
 Clock Signal                                 | Clock buffer(FF name)         | Load  |
 ---------------------------------------------+-------------------------------+-------+
 u7/ND_cmp_eq0000(u7/ND_cmp_eq00001:O)        | NONE(*)(u7/ND_2)              | 3     |
-clk                                          | IBUF+BUFG                     | 292   |
-u18/q1                                       | BUFG                          | 254   |
+clk                                          | IBUF+BUFG                     | 311   |
+u18/q1                                       | BUFG                          | 261   |
 u8/real_imm_9_or0000(u8/real_imm_9_or00001:O)| NONE(*)(u8/real_imm_9_mux0000)| 12    |
 u13/outre_15_or0001(u13/outre_15_or00011:O)  | NONE(*)(u13/outre_15_mux0005) | 16    |
-u19/clk_signal1                              | BUFG                          | 25    |
+u19/clk_signal1                              | BUFG                          | 32    |
 clk0                                         | BUFGP                         | 1     |
 ---------------------------------------------+-------------------------------+-------+
 (*) These 3 clock signal(s) are generated by combinatorial logic,
@@ -1266,16 +1203,16 @@ Asynchronous Control Signals Information:
 ------------------------------------------+------------------------+-------+
 Control Signal                            | Buffer(FF name)        | Load  |
 ------------------------------------------+------------------------+-------+
-u1/rst_inv(u9/rst_inv1_INV_0:O)           | NONE(u1/var_PC_0)      | 276   |
-u9/rst_inv1_INV_0_1(u9/rst_inv1_INV_0_1:O)| NONE(u6/Ctrl_WB)       | 275   |
+u1/rst_inv(u9/rst_inv1_INV_0:O)           | NONE(u1/var_PC_0)      | 284   |
+u9/rst_inv1_INV_0_1(u9/rst_inv1_INV_0_1:O)| NONE(u6/Ctrl_SP_0)     | 284   |
 ------------------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 13.406ns (Maximum Frequency: 74.592MHz)
-   Minimum input arrival time before clock: 4.459ns
+   Minimum period: 13.394ns (Maximum Frequency: 74.660MHz)
+   Minimum input arrival time before clock: 5.355ns
    Maximum output required time after clock: 6.222ns
    Maximum combinational path delay: No path found
 
@@ -1285,10 +1222,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 10.368ns (frequency: 96.451MHz)
-  Total number of paths / destination ports: 2608 / 505
+  Clock period: 10.197ns (frequency: 98.068MHz)
+  Total number of paths / destination ports: 2633 / 525
 -------------------------------------------------------------------------
-Delay:               10.368ns (Levels of Logic = 16)
+Delay:               10.197ns (Levels of Logic = 16)
   Source:            u9/R0_0 (FF)
   Destination:       u9/T (FF)
   Source Clock:      clk rising
@@ -1312,69 +1249,69 @@ Delay:               10.368ns (Levels of Logic = 16)
      MUXCY:CI->O           1   0.059   0.000  u9/Mcompar_T_cmp_eq0005_cy<5> (u9/Mcompar_T_cmp_eq0005_cy<5>)
      MUXCY:CI->O           1   0.059   0.000  u9/Mcompar_T_cmp_eq0005_cy<6> (u9/Mcompar_T_cmp_eq0005_cy<6>)
      MUXCY:CI->O           1   0.459   0.499  u9/Mcompar_T_cmp_eq0005_cy<7> (u9/Mcompar_T_cmp_eq0005_cy<7>)
-     LUT4:I1->O            1   0.704   0.424  u9/T_mux000081 (u9/T_mux000081)
-     LUT4_L:I3->LO         1   0.704   0.275  u9/T_mux0000105_SW0 (N678)
-     LUT4:I0->O            1   0.704   0.000  u9/T_mux0000105 (u9/T_mux0000)
+     LUT4_L:I1->LO         1   0.704   0.104  u9/T_mux000081 (u9/T_mux000081)
+     LUT4:I3->O            1   0.704   0.424  u9/T_mux000094 (u9/T_mux000094)
+     LUT4:I3->O            1   0.704   0.000  u9/T_mux0000105 (u9/T_mux0000)
      FDCE:D                    0.308          u9/T
     ----------------------------------------
-    Total                     10.368ns (7.242ns logic, 3.126ns route)
-                                       (69.8% logic, 30.2% route)
+    Total                     10.197ns (7.242ns logic, 2.955ns route)
+                                       (71.0% logic, 29.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'u18/q1'
-  Clock period: 11.658ns (frequency: 85.776MHz)
-  Total number of paths / destination ports: 1203 / 244
+  Clock period: 12.312ns (frequency: 81.222MHz)
+  Total number of paths / destination ports: 1534 / 254
 -------------------------------------------------------------------------
-Delay:               5.829ns (Levels of Logic = 3)
-  Source:            u17/c7_0 (FF)
-  Destination:       u10/RegReg1_15 (FF)
-  Source Clock:      u18/q1 falling
-  Destination Clock: u18/q1 rising
+Delay:               6.156ns (Levels of Logic = 4)
+  Source:            u6/out_instruction_7 (FF)
+  Destination:       u17/c7_1 (FF)
+  Source Clock:      u18/q1 rising
+  Destination Clock: u18/q1 falling
 
-  Data Path: u17/c7_0 to u10/RegReg1_15
+  Data Path: u6/out_instruction_7 to u17/c7_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE_1:C->Q          35   0.591   1.298  u17/c7_0 (u17/c7_0)
-     LUT4_D:I2->O         15   0.704   1.096  u10/RegReg1_mux0000<0>41 (u10/N4)
-     LUT2:I1->O            1   0.704   0.424  u10/RegReg1_mux0000<8>29 (u10/RegReg1_mux0000<8>29)
-     LUT4:I3->O            1   0.704   0.000  u10/RegReg1_mux0000<8>32 (u10/RegReg1_mux0000<8>)
-     FDC:D                     0.308          u10/RegReg1_7
+     FDP:C->Q              3   0.591   0.566  u6/out_instruction_7 (u6/out_instruction_7)
+     LUT4:I2->O            1   0.704   0.455  u17/flag2_cmp_eq0001453 (u17/flag2_cmp_eq0001453)
+     LUT4:I2->O            4   0.704   0.622  u17/flag2_cmp_eq0001454 (u17/flag2_cmp_eq0001)
+     LUT4_L:I2->LO         1   0.704   0.104  u17/c7_not0001_SW0 (N427)
+     LUT4:I3->O            2   0.704   0.447  u17/c7_not0001 (u17/c7_not0001)
+     FDCE_1:CE                 0.555          u17/c7_0
     ----------------------------------------
-    Total                      5.829ns (3.011ns logic, 2.818ns route)
-                                       (51.7% logic, 48.3% route)
+    Total                      6.156ns (3.962ns logic, 2.194ns route)
+                                       (64.4% logic, 35.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'u19/clk_signal1'
-  Clock period: 13.406ns (frequency: 74.592MHz)
-  Total number of paths / destination ports: 7788 / 34
+  Clock period: 13.394ns (frequency: 74.660MHz)
+  Total number of paths / destination ports: 6777 / 45
 -------------------------------------------------------------------------
-Delay:               13.406ns (Levels of Logic = 11)
-  Source:            u19/vector_x_4 (FF)
+Delay:               13.394ns (Levels of Logic = 10)
+  Source:            u19/vector_x_3 (FF)
   Destination:       u19/b_signal_0 (FF)
   Source Clock:      u19/clk_signal1 rising
   Destination Clock: u19/clk_signal1 rising
 
-  Data Path: u19/vector_x_4 to u19/b_signal_0
+  Data Path: u19/vector_x_3 to u19/b_signal_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             13   0.591   1.158  u19/vector_x_4 (u19/vector_x_4)
-     LUT3:I0->O            1   0.704   0.455  u19/r0_i_mux0000<1>29_SW0 (N359)
-     LUT4:I2->O            2   0.704   0.482  u19/r0_i_mux0000<1>29 (u19/r0_i_mux0000<1>29)
-     LUT4:I2->O           32   0.704   1.262  u19/r0_i_mux0000<1>62_1 (u19/r0_i_mux0000<1>62)
-     MUXF5:S->O            1   0.739   0.000  u19/Mmux_r7_i_mux0000_6_f5 (u19/Mmux_r7_i_mux0000_6_f5)
-     MUXF6:I0->O           1   0.521   0.455  u19/Mmux_r7_i_mux0000_4_f6 (u19/Mmux_r7_i_mux0000_4_f6)
+     FDC:C->Q             19   0.591   1.089  u19/vector_x_3 (u19/vector_x_3)
+     LUT4:I3->O           10   0.704   0.886  u19/r0_i_mux0000<3>111 (u19/N2)
+     LUT4:I3->O            3   0.704   0.535  u19/r0_i_mux0000<2>21 (u19/N63)
+     LUT4:I3->O           14   0.704   1.000  u19/r0_i_mux0000<2>_1 (u19/r0_i_mux0000<2>1)
+     MUXF6:S->O            1   0.850   0.455  u19/Mmux_r7_i_mux0000_3_f6 (u19/Mmux_r7_i_mux0000_3_f6)
      LUT4:I2->O            1   0.704   0.424  u19/g_signal_mux0058<0>1122 (u19/g_signal_mux0058<0>1122)
-     LUT4:I3->O            1   0.704   0.000  u19/g_signal_mux0058<0>112109_SW0_F (N466)
-     MUXF5:I0->O           1   0.321   0.455  u19/g_signal_mux0058<0>112109_SW0 (N383)
-     LUT4:I2->O            1   0.704   0.499  u19/g_signal_mux0058<0>112155 (u19/N20)
-     LUT4_L:I1->LO         1   0.704   0.104  u19/g_signal_mux0058<0>2768 (u19/g_signal_mux0058<0>2768)
-     LUT4:I3->O            1   0.704   0.000  u19/g_signal_mux0058<0>2902 (u19/N94)
+     LUT4:I3->O            1   0.704   0.000  u19/g_signal_mux0058<0>11285_SW0_F (N631)
+     MUXF5:I0->O           1   0.321   0.455  u19/g_signal_mux0058<0>11285_SW0 (N538)
+     LUT4:I2->O            1   0.704   0.424  u19/g_signal_mux0058<0>112131 (u19/N20)
+     LUT4:I3->O            1   0.704   0.424  u19/g_signal_mux0058<0>753 (u19/g_signal_mux0058<0>753)
+     LUT4:I3->O            1   0.704   0.000  u19/g_signal_mux0058<0>884 (u19/g_signal_mux0058<0>)
      FDC:D                     0.308          u19/b_signal_0
     ----------------------------------------
-    Total                     13.406ns (8.112ns logic, 5.294ns route)
-                                       (60.5% logic, 39.5% route)
+    Total                     13.394ns (7.702ns logic, 5.692ns route)
+                                       (57.5% logic, 42.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk0'
@@ -1399,9 +1336,9 @@ Delay:               1.949ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 50 / 50
+  Total number of paths / destination ports: 78 / 66
 -------------------------------------------------------------------------
-Offset:              4.459ns (Levels of Logic = 3)
+Offset:              5.355ns (Levels of Logic = 3)
   Source:            rst (PAD)
   Destination:       u5/Mtrien_ram2_data (FF)
   Destination Clock: clk rising
@@ -1410,19 +1347,19 @@ Offset:              4.459ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   1.218   0.610  rst_IBUF (rst_IBUF)
-     LUT4:I1->O            1   0.704   0.000  u5/Mtridata_ram2_data_and00001 (u5/Mtridata_ram2_data_and00001)
-     MUXF5:I0->O          17   0.321   1.051  u5/Mtridata_ram2_data_and0000_f5 (u5/Mtridata_ram2_data_and0000)
-     FDE:CE                    0.555          u5/Mtridata_ram2_data_0
+     IBUF:I->O             5   1.218   0.668  rst_IBUF (rst_IBUF)
+     LUT4:I2->O           17   0.704   1.086  u5/Mtridata_ram2_data_and00001 (u5/Mtridata_ram2_data_and0000)
+     LUT3:I2->O            1   0.704   0.420  u5/Mtrien_ram2_data_and00001 (u5/Mtrien_ram2_data_and0000)
+     FDE:CE                    0.555          u5/Mtrien_ram2_data
     ----------------------------------------
-    Total                      4.459ns (2.798ns logic, 1.661ns route)
-                                       (62.7% logic, 37.3% route)
+    Total                      5.355ns (3.181ns logic, 2.174ns route)
+                                       (59.4% logic, 40.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 68 / 52
+  Total number of paths / destination ports: 84 / 60
 -------------------------------------------------------------------------
-Offset:              5.132ns (Levels of Logic = 1)
+Offset:              5.131ns (Levels of Logic = 1)
   Source:            u5/RegIns_13 (FF)
   Destination:       outL<13> (PAD)
   Source Clock:      clk rising
@@ -1431,17 +1368,17 @@ Offset:              5.132ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            52   0.591   1.269  u5/RegIns_13 (u5/RegIns_13)
+     FDCE:C->Q            49   0.591   1.268  u5/RegIns_13 (u5/RegIns_13)
      OBUF:I->O                 3.272          outL_13_OBUF (outL<13>)
     ----------------------------------------
-    Total                      5.132ns (3.863ns logic, 1.269ns route)
+    Total                      5.131ns (3.863ns logic, 1.268ns route)
                                        (75.3% logic, 24.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'u19/clk_signal1'
   Total number of paths / destination ports: 29 / 11
 -------------------------------------------------------------------------
-Offset:              5.942ns (Levels of Logic = 2)
+Offset:              5.846ns (Levels of Logic = 2)
   Source:            u19/hs_signal (FF)
   Destination:       B<2> (PAD)
   Source Clock:      u19/clk_signal1 rising
@@ -1450,12 +1387,12 @@ Offset:              5.942ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDP:C->Q              3   0.591   0.706  u19/hs_signal (u19/hs_signal)
-     LUT3:I0->O            6   0.704   0.669  u19/G<0>1 (B_0_OBUF)
+     FDP:C->Q              3   0.591   0.610  u19/hs_signal (u19/hs_signal)
+     LUT3:I1->O            6   0.704   0.669  u19/G<0>11 (B_0_OBUF)
      OBUF:I->O                 3.272          B_2_OBUF (B<2>)
     ----------------------------------------
-    Total                      5.942ns (4.567ns logic, 1.375ns route)
-                                       (76.9% logic, 23.1% route)
+    Total                      5.846ns (4.567ns logic, 1.279ns route)
+                                       (78.1% logic, 21.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'u18/q1'
@@ -1480,14 +1417,14 @@ Offset:              6.222ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 26.00 secs
-Total CPU time to Xst completion: 26.34 secs
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 23.53 secs
  
 --> 
 
-Total memory usage is 351820 kilobytes
+Total memory usage is 351840 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  253 (   0 filtered)
-Number of infos    :   62 (   0 filtered)
+Number of warnings :  168 (   0 filtered)
+Number of infos    :   61 (   0 filtered)
 
