@@ -23,74 +23,74 @@ FL E:/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd 2016/11/27.22:04:04 O.76xd
 FL E:/Xilinx/Project/CPU/PC/Addr_MUX.vhd 2016/11/15.20:45:17 O.76xd
 FL E:/Xilinx/Project/CPU/PC/PC.vhd 2016/11/15.20:03:45 O.76xd
 FL G:/cpu/pipeline-cpu/CPU/PC/Addr_MUX.vhd 2016/11/25.18:53:41 O.76xd
-EN work/Addr_MUX 1480674612 FL G:/cpu/pipeline-cpu/CPU/PC/Addr_MUX.vhd \
+EN work/Addr_MUX 1480679189 FL G:/cpu/pipeline-cpu/CPU/PC/Addr_MUX.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/Addr_MUX/Behavioral 1480674613 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/Addr_MUX.vhd EN work/Addr_MUX 1480674612
+AR work/Addr_MUX/Behavioral 1480679190 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/Addr_MUX.vhd EN work/Addr_MUX 1480679189
 FL G:/cpu/pipeline-cpu/CPU/PC/ALU.vhd 2016/12/01.00:10:21 O.76xd
-EN work/ALU 1480674630 FL G:/cpu/pipeline-cpu/CPU/PC/ALU.vhd \
+EN work/ALU 1480679207 FL G:/cpu/pipeline-cpu/CPU/PC/ALU.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/ALU/Behavioral 1480674631 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/ALU.vhd EN work/ALU 1480674630
+AR work/ALU/Behavioral 1480679208 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/ALU.vhd EN work/ALU 1480679207
 FL G:/cpu/pipeline-cpu/CPU/PC/ALU1_MUX.vhd 2016/12/01.00:54:07 O.76xd
-EN work/ALU1_MUX 1480674626 FL G:/cpu/pipeline-cpu/CPU/PC/ALU1_MUX.vhd \
+EN work/ALU1_MUX 1480679203 FL G:/cpu/pipeline-cpu/CPU/PC/ALU1_MUX.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/ALU1_MUX/Behavioral 1480674627 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/ALU1_MUX.vhd EN work/ALU1_MUX 1480674626
+AR work/ALU1_MUX/Behavioral 1480679204 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/ALU1_MUX.vhd EN work/ALU1_MUX 1480679203
 FL G:/cpu/pipeline-cpu/CPU/PC/ALU2_MUX.vhd 2016/11/29.07:51:57 O.76xd
-EN work/ALU2_MUX 1480674628 FL G:/cpu/pipeline-cpu/CPU/PC/ALU2_MUX.vhd \
+EN work/ALU2_MUX 1480679205 FL G:/cpu/pipeline-cpu/CPU/PC/ALU2_MUX.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/ALU2_MUX/Behavioral 1480674629 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/ALU2_MUX.vhd EN work/ALU2_MUX 1480674628
+AR work/ALU2_MUX/Behavioral 1480679206 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/ALU2_MUX.vhd EN work/ALU2_MUX 1480679205
 FL G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd 2016/12/02.18:30:00 O.76xd
-EN work/CPU 1480674644 FL G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd \
+EN work/CPU 1480679221 FL G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/CPU/Behavioral 1480674645 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd EN work/CPU 1480674644 CP PC CP PC_ALU \
+AR work/CPU/Behavioral 1480679222 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd EN work/CPU 1480679221 CP PC CP PC_ALU \
       CP PC_EX_MUX CP Addr_MUX CP MemoryUnit CP parseCtrl CP Rxyz_MUX \
       CP immidiate_mux_extend CP Main_Reg CP IDEX_Reg CP ALU1_MUX CP ALU2_MUX CP ALU \
       CP EX_MEM CP MEM_WB CP WB_Reg_MUX CP ctrl CP frediv4 CP vga
 FL G:/cpu/pipeline-cpu/CPU/PC/ctrl.vhd 2016/12/02.18:09:19 O.76xd
-EN work/ctrl 1480674638 FL G:/cpu/pipeline-cpu/CPU/PC/ctrl.vhd \
+EN work/ctrl 1480679215 FL G:/cpu/pipeline-cpu/CPU/PC/ctrl.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/ctrl/Behavioral 1480674639 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/ctrl.vhd EN work/ctrl 1480674638
+AR work/ctrl/Behavioral 1480679216 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/ctrl.vhd EN work/ctrl 1480679215
 FL G:/cpu/pipeline-cpu/CPU/PC/EX_MEM.vhd 2016/12/01.22:53:27 O.76xd
-EN work/EX_MEM 1480674632 FL G:/cpu/pipeline-cpu/CPU/PC/EX_MEM.vhd \
+EN work/EX_MEM 1480679209 FL G:/cpu/pipeline-cpu/CPU/PC/EX_MEM.vhd \
       PB ieee/std_logic_1164 1317710503
-AR work/EX_MEM/Behavioral 1480674633 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/EX_MEM.vhd EN work/EX_MEM 1480674632
+AR work/EX_MEM/Behavioral 1480679210 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/EX_MEM.vhd EN work/EX_MEM 1480679209
 FL G:/cpu/pipeline-cpu/CPU/PC/frediv4.vhd 2016/12/01.23:34:29 O.76xd
-EN work/frediv4 1480674640 FL G:/cpu/pipeline-cpu/CPU/PC/frediv4.vhd \
+EN work/frediv4 1480679217 FL G:/cpu/pipeline-cpu/CPU/PC/frediv4.vhd \
       PB ieee/std_logic_1164 1317710503
-AR work/frediv4/Behavioral 1480674641 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/frediv4.vhd EN work/frediv4 1480674640
+AR work/frediv4/Behavioral 1480679218 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/frediv4.vhd EN work/frediv4 1480679217
 FL G:/cpu/pipeline-cpu/CPU/PC/IDEX_Reg.vhd 2016/12/01.23:08:16 O.76xd
-EN work/IDEX_Reg 1480674624 FL G:/cpu/pipeline-cpu/CPU/PC/IDEX_Reg.vhd \
+EN work/IDEX_Reg 1480679201 FL G:/cpu/pipeline-cpu/CPU/PC/IDEX_Reg.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/IDEX_Reg/Behavioral 1480674625 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/IDEX_Reg.vhd EN work/IDEX_Reg 1480674624
+AR work/IDEX_Reg/Behavioral 1480679202 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/IDEX_Reg.vhd EN work/IDEX_Reg 1480679201
 FL G:/cpu/pipeline-cpu/CPU/PC/immidiate_mux_extend.vhd 2016/11/29.07:51:57 O.76xd
-EN work/immidiate_mux_extend 1480674620 \
+EN work/immidiate_mux_extend 1480679197 \
       FL G:/cpu/pipeline-cpu/CPU/PC/immidiate_mux_extend.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/immidiate_mux_extend/Behavioral 1480674621 \
+AR work/immidiate_mux_extend/Behavioral 1480679198 \
       FL G:/cpu/pipeline-cpu/CPU/PC/immidiate_mux_extend.vhd \
-      EN work/immidiate_mux_extend 1480674620
+      EN work/immidiate_mux_extend 1480679197
 FL G:/cpu/pipeline-cpu/CPU/PC/Main_Reg.vhd 2016/12/02.14:52:32 O.76xd
-EN work/Main_Reg 1480674622 FL G:/cpu/pipeline-cpu/CPU/PC/Main_Reg.vhd \
+EN work/Main_Reg 1480679199 FL G:/cpu/pipeline-cpu/CPU/PC/Main_Reg.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/Main_Reg/Behavioral 1480674623 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/Main_Reg.vhd EN work/Main_Reg 1480674622
+AR work/Main_Reg/Behavioral 1480679200 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/Main_Reg.vhd EN work/Main_Reg 1480679199
 FL G:/cpu/pipeline-cpu/CPU/PC/MEM.vhd 2016/11/29.07:51:57 O.76xd
 EN work/MEM 1480422869 FL G:/cpu/pipeline-cpu/CPU/PC/MEM.vhd \
       PB ieee/std_logic_1164 1317710503
@@ -103,44 +103,44 @@ EN work/Memory 1480436415 FL G:/cpu/pipeline-cpu/CPU/PC/Memory.vhd \
 AR work/Memory/Behavioral 1480436416 \
       FL G:/cpu/pipeline-cpu/CPU/PC/Memory.vhd EN work/Memory 1480436415
 FL G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd 2016/12/01.23:50:50 O.76xd
-EN work/MemoryUnit 1480674614 FL G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd \
+EN work/MemoryUnit 1480679191 FL G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd \
       PB ieee/std_logic_1164 1317710503
-AR work/MemoryUnit/Behavioral 1480674615 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd EN work/MemoryUnit 1480674614
+AR work/MemoryUnit/Behavioral 1480679192 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/MemoryUnit2.vhd EN work/MemoryUnit 1480679191
 FL G:/cpu/pipeline-cpu/CPU/PC/MEM_WB.vhd 2016/12/01.22:54:02 O.76xd
-EN work/MEM_WB 1480674634 FL G:/cpu/pipeline-cpu/CPU/PC/MEM_WB.vhd \
+EN work/MEM_WB 1480679211 FL G:/cpu/pipeline-cpu/CPU/PC/MEM_WB.vhd \
       PB ieee/std_logic_1164 1317710503
-AR work/MEM_WB/Behavioral 1480674635 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/MEM_WB.vhd EN work/MEM_WB 1480674634
+AR work/MEM_WB/Behavioral 1480679212 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/MEM_WB.vhd EN work/MEM_WB 1480679211
 FL G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd 2016/12/02.17:12:27 O.76xd
-EN work/parseCtrl 1480674616 FL G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd \
+EN work/parseCtrl 1480679193 FL G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/parseCtrl/Behavioral 1480674617 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd EN work/parseCtrl 1480674616
+AR work/parseCtrl/Behavioral 1480679194 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/parseCtrl.vhd EN work/parseCtrl 1480679193
 FL G:/cpu/pipeline-cpu/CPU/PC/PC.vhd 2016/12/02.14:18:09 O.76xd
-EN work/PC 1480674606 FL G:/cpu/pipeline-cpu/CPU/PC/PC.vhd PB ieee/std_logic_1164 1317710503 \
+EN work/PC 1480679183 FL G:/cpu/pipeline-cpu/CPU/PC/PC.vhd PB ieee/std_logic_1164 1317710503 \
       PB ieee/std_logic_arith 1317710504 PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/PC/Behavioral 1480674607 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/PC.vhd EN work/PC 1480674606
+AR work/PC/Behavioral 1480679184 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/PC.vhd EN work/PC 1480679183
 FL G:/cpu/pipeline-cpu/CPU/PC/PC_ALU.vhd 2016/11/29.07:58:23 O.76xd
-EN work/PC_ALU 1480674608 FL G:/cpu/pipeline-cpu/CPU/PC/PC_ALU.vhd \
+EN work/PC_ALU 1480679185 FL G:/cpu/pipeline-cpu/CPU/PC/PC_ALU.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/PC_ALU/Behavioral 1480674609 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/PC_ALU.vhd EN work/PC_ALU 1480674608
+AR work/PC_ALU/Behavioral 1480679186 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/PC_ALU.vhd EN work/PC_ALU 1480679185
 FL G:/cpu/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd 2016/11/25.18:53:41 O.76xd
-EN work/PC_EX_MUX 1480674610 FL G:/cpu/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd \
+EN work/PC_EX_MUX 1480679187 FL G:/cpu/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/PC_EX_MUX/Behavioral 1480674611 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd EN work/PC_EX_MUX 1480674610
+AR work/PC_EX_MUX/Behavioral 1480679188 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/PC_EX_MUX.vhd EN work/PC_EX_MUX 1480679187
 FL G:/cpu/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd 2016/11/29.07:51:57 O.76xd
-EN work/Rxyz_MUX 1480674618 FL G:/cpu/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd \
+EN work/Rxyz_MUX 1480679195 FL G:/cpu/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/Rxyz_MUX/Behavioral 1480674619 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd EN work/Rxyz_MUX 1480674618
+AR work/Rxyz_MUX/Behavioral 1480679196 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/Rxyz_MUX.vhd EN work/Rxyz_MUX 1480679195
 FL G:/cpu/pipeline-cpu/CPU/PC/TestMemoryUnit2.vhd 2016/12/01.18:26:47 O.76xd
 EN work/TestMemoryUnit2 1480588020 \
       FL G:/cpu/pipeline-cpu/CPU/PC/TestMemoryUnit2.vhd PB ieee/std_logic_1164 1317710503
@@ -153,15 +153,15 @@ EN work/testSRAM 1480422871 FL G:/cpu/pipeline-cpu/CPU/PC/testSRAM.vhd \
 AR work/testSRAM/Behavioral 1480422872 \
       FL G:/cpu/pipeline-cpu/CPU/PC/testSRAM.vhd EN work/testSRAM 1480422871 \
       CP MEM
-FL G:/cpu/pipeline-cpu/CPU/PC/vga.vhd 2016/11/30.19:56:53 O.76xd
-EN work/vga 1480674642 FL G:/cpu/pipeline-cpu/CPU/PC/vga.vhd \
+FL G:/cpu/pipeline-cpu/CPU/PC/vga.vhd 2016/12/02.19:46:20 O.76xd
+EN work/vga 1480679219 FL G:/cpu/pipeline-cpu/CPU/PC/vga.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/vga/Behavioral 1480674643 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/vga.vhd EN work/vga 1480674642
+AR work/vga/Behavioral 1480679220 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/vga.vhd EN work/vga 1480679219
 FL G:/cpu/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd 2016/11/29.07:51:57 O.76xd
-EN work/WB_Reg_MUX 1480674636 FL G:/cpu/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd \
+EN work/WB_Reg_MUX 1480679213 FL G:/cpu/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd \
       PB ieee/std_logic_1164 1317710503 PB ieee/std_logic_arith 1317710504 \
       PB ieee/STD_LOGIC_UNSIGNED 1317710506
-AR work/WB_Reg_MUX/Behavioral 1480674637 \
-      FL G:/cpu/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd EN work/WB_Reg_MUX 1480674636
+AR work/WB_Reg_MUX/Behavioral 1480679214 \
+      FL G:/cpu/pipeline-cpu/CPU/PC/WB_Reg_MUX.vhd EN work/WB_Reg_MUX 1480679213

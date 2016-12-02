@@ -1,14 +1,14 @@
 Release 13.3 Drc O.76xd (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-Fri Dec 02 18:31:36 2016
+Fri Dec 02 19:47:53 2016
 
 drc -z CPU.ncd CPU.pcf
 
-WARNING:PhysDesignRules:372 - Gated clock. Clock net u8/real_imm_9_or0000 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net u13/outre_15_or0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net u13/outre_15_or0001 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net u8/real_imm_9_or0000 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net u7/ND_cmp_eq0000 is sourced
