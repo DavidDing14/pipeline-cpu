@@ -75,7 +75,8 @@ architecture Behavioral of CPU is
            next_PC : in  STD_LOGIC_VECTOR (15 downto 0);
            PC_to_add : out  STD_LOGIC_VECTOR (15 downto 0);
            PC_IF : out  STD_LOGIC_VECTOR (15 downto 0);
-           PC_EX : out  STD_LOGIC_VECTOR (15 downto 0));
+           PC_EX : out  STD_LOGIC_VECTOR (15 downto 0);
+			  pause : in STD_LOGIC);
 	end component;
 	component PC_ALU
 		Port ( PC : in  STD_LOGIC_VECTOR (15 downto 0);
@@ -139,7 +140,8 @@ architecture Behavioral of CPU is
 			  out_PC: out std_logic_vector(15 downto 0);
 			  out_Ry_x: out std_logic;
 			  out_Rx_y: out std_logic;
-			  out_instruction_2 : out std_logic_vector(15 downto 0));
+			  out_instruction_2 : out std_logic_vector(15 downto 0);
+			  pause : in STD_LOGIC);
 	end component;
 	component Rxyz_MUX
 		Port ( Rx : in  STD_LOGIC_VECTOR (2 downto 0);
@@ -301,7 +303,12 @@ architecture Behavioral of CPU is
            Control_MEM : out  STD_LOGIC;
            Control_Reg : out  STD_LOGIC_VECTOR (1 downto 0);
 			  Control_Reg1 : out STD_LOGIC_VECTOR (1 downto 0);
-			  Control_data : out STD_LOGIC_VECTOR (1 downto 0));
+			  Control_data : out STD_LOGIC_VECTOR (1 downto 0);
+			  pause_pc : out STD_LOGIC;
+			  pause_if : out STD_LOGIC;
+			  pause_id : out STD_LOGIC;
+			  pause_ex : out STD_LOGIC;
+			  pause_mem : out STD_LOGIC);
 	end component;
 	component frediv4
 		Port ( clk_in : in  STD_LOGIC;
@@ -434,6 +441,7 @@ architecture Behavioral of CPU is
 	signal z1: std_logic_vector(15 downto 0);	--WB_Reg_MUX的Data_NI
 	signal x1, x2, x3, x4, x5: std_logic;	--ctrl的control_PC/control_IF/control_ID/control_EX/control_MEM
 	signal x6, x7, x8: std_logic_vector(1 downto 0);	--Control_Reg/Control_Reg1
+	signal x9, x10, x11, x12, x13: std_logic;	--pause_pc, pause_if, pause_id, pause_ex, pause_mem
 	signal clk2, clk3: std_logic;	--frediv4的clk_out(1\4)/clk_2_out(1\2)
 	signal v1, v2: std_logic_vector(15 downto 0);	--MEM的outData/outinstruction
 	signal regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7 : std_logic_vector(15 downto 0):="0000000000000000";
@@ -443,18 +451,18 @@ architecture Behavioral of CPU is
 	signal vga_regT : std_logic_vector(15 downto 0);
 	signal ww9 : std_logic_vector(15 downto 0);
 begin
-	u1:PC PORT MAP(clk2, rst, x1, p5, p1, p2, p3);
+	u1:PC PORT MAP(clk2, rst, x1, p5, p1, p2, p3, x9);
 	u2:PC_ALU PORT MAP(p1, p4);
 	u3:PC_EX_MUX PORT MAP(p4, e4, p5, w14);
 	u4:Addr_MUX PORT MAP(p2, t1, p6, t5);	--p2=PC,t1=MEM不需要选择，直接给Memory，去掉这个选择器
-	u5:MemoryUnit PORT MAP(clk, rst, data_ready, tbre, tsre, wrn, rdn, t4, t1, t9, p2, v1, v2, ram1addr, ram2addr, ram1data, ram2data, ram1en, ram1oe, ram1we, ram2en, ram2oe, ram2we);
+	u5:MemoryUnit PORT MAP(clk0, rst, data_ready, tbre, tsre, wrn, rdn, t4, t1, t9, p2, v1, v2, ram1addr, ram2addr, ram1data, ram2data, ram1en, ram1oe, ram1we, ram2en, ram2oe, ram2we);
 	--u5:MEM PORT MAP(clk, rst, p2, t9, t1, t4, v1, v2, ram1data, ram2data, ram1addr, ram2addr, ram1oe, ram1we, ram1en, ram2oe, ram2we, ram2en);
 	--u5:Memory PORT MAP(clk2, rst, p6, "0000000000000000", "0000000000000000", "0000000000000000", p7, p8, p9, p10, t4);	--Data/MEM_Ry/instruction
-	u6:parseCtrl PORT MAP(clk2, rst, v2, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p40);
+	u6:parseCtrl PORT MAP(clk2, rst, v2, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p40, x10);
 	--u6:parseCtrl PORT MAP(clk2, rst, p10, p3, x2, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p40);
 	u7:Rxyz_MUX PORT MAP(p31, p32, p33, q1, p18);
 	u8:immidiate_mux_extend PORT MAP(p34, q2, p13, p14);
-	u9:Main_Reg PORT MAP(p40, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, p15, p17, p16, p27, y1, p12, q7, p26, p36, p37, q8, regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7, regSP, regT, regIH, clk);
+	u9:Main_Reg PORT MAP(p40, rst, p29, p30, q1, z1, q2, q3, q4, q5, y4, q6, p15, p17, p16, p27, y1, p12, q7, p26, p36, p37, q8, regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7, regSP, regT, regIH, clk0);
 	u10:IDEX_Reg PORT MAP(clk2, rst, p35, w1, x3, q3, q4, q5, q6, p19, p20, p21, p22, p23, p24, p25, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, q7, p28, w13, w14, q8, x6, x7, e5, t8, x8);
 	u11:ALU1_MUX PORT MAP(w1, w2, e1, w7);
 	u12:ALU2_MUX PORT MAP(w3, e2, w8);
@@ -463,10 +471,10 @@ begin
 	u15:MEM_WB PORT MAP(clk2, x5, rst, t2, t3, t6, t7, y1, y2, y3, y4);
 	u16:WB_Reg_MUX PORT MAP(v1, y3, z1, y2);
 	--u16:WB_Reg_MUX PORT MAP(p8, y3, z1, y2);
-	u17:ctrl PORT MAP(clk2, rst, p11, w13, x1, x2, x3, x4, x5, x6, x7, x8);
-	u18:frediv4 PORT MAP(clk, clk2, clk3);
+	u17:ctrl PORT MAP(clk2, rst, p11, w13, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13);
+	u18:frediv4 PORT MAP(clk0, clk2, clk3);
 	--u19:vga PORT MAP(clk0, rst, regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7, vga_regT, regIH, regSP, p1, R, G, B, Hs, Vs);
-	u19:vga PORT MAP(clk0, rst, regR0, v1, ww9, e1, e2, e3, t9, regR7, e4, w5, regSP, p1, R, G, B, Hs, Vs);
+	u19:vga PORT MAP(clk0, rst, regR0, v1, ww9, e1, e2, e3, t9, regR7, vga_regT, w5, regSP, p1, R, G, B, Hs, Vs);
 	--outL(1 downto 0) <= t4;
 	outL <= v2;
 --	outL <= p1;
@@ -486,9 +494,9 @@ begin
 	begin
 		vga_regT <= "000000000000000"&regT;
 	end process;
-	process(w9, t4, x6, x7)
+	process(w9, t4, x6, x7, x13)
 	begin
-		ww9<=t4&"0000"&x8&x6&x7&w9;
+		ww9<=t4&x13&x12&"00"&x8&x6&x7&w9;
 	end process;
 end Behavioral;
 

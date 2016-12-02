@@ -70,7 +70,7 @@ shared variable SP: std_logic_vector(15 downto 0);
 shared variable IH: std_logic_vector(15 downto 0);
 shared variable g1, g2: std_logic_vector(15 downto 0);	--reg1, reg2
 shared variable g3: std_logic_vector(3 downto 0);	--regnd
-shared variable g4, g5: std_logic_vector(15 downto 0);	--ry, rx
+shared variable g4, g5, g6: std_logic_vector(15 downto 0);	--data_ry, rx, ry
 shared variable c1, c2, c4: std_logic;	--Control_BJ, Control_judge, T, Control_op2_reg
 signal state : integer range 0 to 1:=0;
 begin
@@ -311,6 +311,27 @@ begin
 							when others=>
 								null;
 						end case;
+			--Ry
+						case Ry is
+								when "000"=>
+									g6:=R0;
+								when "001"=>
+									g6:=R1;
+								when "010"=>
+									g6:=R2;
+								when "011"=>
+									g6:=R3;
+								when "100"=>
+									g6:=R4;
+								when "101"=>
+									g6:=R5;
+								when "110"=>
+									g6:=R6;
+								when "111"=>
+									g6:=R7;
+								when others=>
+									null;
+							end case;
 			--判断
 					if(Control_judge='1')then	--需要判断
 						case instruction(15 downto 11) is	--判断是什么指令
@@ -339,19 +360,23 @@ begin
 									c4:='0';
 								end if;
 							when "11101"=>	--CMP
-								if(g5=g4)then
+								if(g5=g6)then
 									T:='0';
+									c1:='0';
 									c4:='0';
 								else
 									T:='1';
+									c1:='0';
 									c4:='0';
 								end if;
 							when "01110"=>	--CMPI
 								if(g5=imm)then
 									T:='0';
+									c1:='0';
 									c4:='0';
 								else
 									T:='1';
+									c1:='0';
 									c4:='0';
 								end if;
 							when "00110"=>	--S系列
@@ -398,7 +423,7 @@ begin
 								c1:='0';
 								c4:='0';
 						end case;
-					elsif(Control_B='1')then	--B
+					elsif(Control_B='1' and Control_judge/='1')then	--B
 						c1:='1';
 					else
 						c1:='0';

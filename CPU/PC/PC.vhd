@@ -38,7 +38,8 @@ entity PC is
            next_PC : in  STD_LOGIC_VECTOR (15 downto 0);
            PC_to_add : out  STD_LOGIC_VECTOR (15 downto 0);
            PC_IF : out  STD_LOGIC_VECTOR (15 downto 0);
-           PC_EX : out  STD_LOGIC_VECTOR (15 downto 0));
+           PC_EX : out  STD_LOGIC_VECTOR (15 downto 0);
+			  pause : in STD_LOGIC);
 end PC;
 
 architecture Behavioral of PC is
@@ -50,7 +51,9 @@ begin
 		if(rst='0')then
 			var_PC:="0000000000000000";
 		elsif(clk'event and clk='1')then	--时钟上升沿触发下一条指令地址的读入
-			if(break='1')then	--中断信号为1则中断操作一次
+			if(pause='1')then
+				null;
+			elsif(break='1')then	--中断信号为1则中断操作一次
 				null;	--break变0由控制模块主导
 			else
 				var_PC:=next_PC;	--将PC的值输入

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.76xd on Thu Dec 01 23:59:22 2016
+// Written by: Map O.76xd on Fri Dec 02 18:30:43 2016
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -111,6 +111,5 @@ COMP "outL<12>" LOCATE = SITE "B13" LEVEL 1;
 COMP "outL<13>" LOCATE = SITE "D13" LEVEL 1;
 COMP "outL<14>" LOCATE = SITE "E13" LEVEL 1;
 COMP "outL<15>" LOCATE = SITE "A14" LEVEL 1;
-NET "clk0_BUFGP/IBUFG" BEL "clk0_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
 SCHEMATIC END;
 
