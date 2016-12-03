@@ -474,7 +474,7 @@ begin
 	u17:ctrl PORT MAP(clk2, rst, p11, w13, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13);
 	u18:frediv4 PORT MAP(clk0, clk2, clk3);
 	--u19:vga PORT MAP(clk0, rst, regR0, regR1, regR2, regR3, regR4, regR5, regR6, regR7, vga_regT, regIH, regSP, p1, R, G, B, Hs, Vs);
-	u19:vga PORT MAP(clk0, rst, regR0, v1, ww9, e1, e2, e3, t9, regR7, vga_regT, w5, regSP, p1, R, G, B, Hs, Vs);
+	u19:vga PORT MAP(clk0, rst, regR0, v1, ww9, e1, e2, e3, t9, regR7, v2, t9, regSP, p1, R, G, B, Hs, Vs);
 	--outL(1 downto 0) <= t4;
 	outL <= v2;
 --	outL <= p1;

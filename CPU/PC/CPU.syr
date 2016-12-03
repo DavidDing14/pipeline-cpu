@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: CPU.prj
 
@@ -141,10 +141,10 @@ Architecture behavioral of Entity ctrl is up to date.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/frediv4.vhd" in Library work.
 Architecture behavioral of Entity frediv4 is up to date.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/vga.vhd" in Library work.
-Entity <vga> compiled.
-Entity <vga> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity vga is up to date.
 Compiling vhdl file "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd" in Library work.
-Architecture behavioral of Entity cpu is up to date.
+Entity <cpu> compiled.
+Entity <cpu> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -668,6 +668,8 @@ WARNING:Xst:646 - Signal <i13> is assigned but never used. This unconnected sign
 WARNING:Xst:646 - Signal <i12> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i11> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <i10> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <flag5<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <flag4<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <c5> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <c4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <c1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -680,36 +682,35 @@ WARNING:Xst:646 - Signal <c1> is assigned but never used. This unconnected signa
     Found 2-bit register for signal <c7>.
     Found 2-bit register for signal <c8>.
     Found 32-bit down counter for signal <ctrl_ins>.
-    Found 32-bit subtractor for signal <ctrl_ins$addsub0000> created at line 103.
+    Found 32-bit subtractor for signal <ctrl_ins$addsub0000> created at line 110.
     Found 2-bit register for signal <flag1>.
-    Found 4-bit comparator equal for signal <flag1$cmp_eq0000> created at line 161.
-    Found 4-bit comparator equal for signal <flag1$cmp_eq0001> created at line 149.
-    Found 4-bit comparator not equal for signal <flag1$cmp_ne0000> created at line 149.
-    Found 4-bit comparator not equal for signal <flag1$cmp_ne0001> created at line 161.
+    Found 4-bit comparator equal for signal <flag1$cmp_eq0000> created at line 203.
+    Found 4-bit comparator equal for signal <flag1$cmp_eq0001> created at line 191.
+    Found 4-bit comparator not equal for signal <flag1$cmp_ne0000> created at line 191.
+    Found 4-bit comparator not equal for signal <flag1$cmp_ne0001> created at line 203.
     Found 2-bit register for signal <flag2>.
-    Found 4-bit comparator equal for signal <flag2$cmp_eq0000> created at line 165.
-    Found 4-bit comparator equal for signal <flag2$cmp_eq0001> created at line 153.
-    Found 4-bit comparator not equal for signal <flag2$cmp_ne0000> created at line 153.
-    Found 4-bit comparator not equal for signal <flag2$cmp_ne0001> created at line 165.
+    Found 4-bit comparator equal for signal <flag2$cmp_eq0000> created at line 207.
+    Found 4-bit comparator equal for signal <flag2$cmp_eq0001> created at line 195.
+    Found 4-bit comparator not equal for signal <flag2$cmp_ne0000> created at line 195.
+    Found 4-bit comparator not equal for signal <flag2$cmp_ne0001> created at line 207.
     Found 2-bit register for signal <flag3>.
-    Found 4-bit comparator equal for signal <flag3$cmp_eq0000> created at line 169.
-    Found 4-bit comparator equal for signal <flag3$cmp_eq0001> created at line 157.
-    Found 4-bit comparator not equal for signal <flag3$cmp_ne0002> created at line 157.
-    Found 4-bit comparator not equal for signal <flag3$cmp_ne0003> created at line 169.
+    Found 4-bit comparator equal for signal <flag3$cmp_eq0000> created at line 211.
+    Found 4-bit comparator equal for signal <flag3$cmp_eq0001> created at line 199.
+    Found 4-bit comparator not equal for signal <flag3$cmp_ne0002> created at line 199.
+    Found 4-bit comparator not equal for signal <flag3$cmp_ne0003> created at line 211.
+    Found 32-bit comparator greater for signal <flag4$cmp_gt0000> created at line 156.
     Found 16-bit register for signal <ins1>.
     Found 16-bit register for signal <ins2>.
-    Found 16-bit register for signal <ins3>.
     Found 32-bit down counter for signal <num>.
-    Found 32-bit comparator lessequal for signal <num$cmp_le0000> created at line 132.
+    Found 32-bit comparator lessequal for signal <num$cmp_le0000> created at line 156.
     Found 32-bit down counter for signal <num2>.
-    Found 32-bit comparator lessequal for signal <num2$cmp_le0000> created at line 129.
+    Found 32-bit comparator lessequal for signal <num2$cmp_le0000> created at line 175.
     Found 1-bit register for signal <p1>.
     Found 1-bit register for signal <p2>.
-    Found 32-bit comparator greater for signal <pause_ex$cmp_gt0000> created at line 234.
-    Found 32-bit comparator greater for signal <pause_mem$cmp_gt0000> created at line 239.
+    Found 32-bit comparator greater for signal <pause_ex$cmp_gt0000> created at line 275.
     Summary:
 	inferred   3 Counter(s).
-	inferred  58 D-type flip-flop(s).
+	inferred  42 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
 	inferred  16 Comparator(s).
 Unit <ctrl> synthesized.
@@ -844,6 +845,7 @@ Synthesizing Unit <CPU>.
     Related source file is "G:/cpu/pipeline-cpu/CPU/PC/CPU.vhd".
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <x11> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <vga_regT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR6> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR5> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <regR4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -880,10 +882,10 @@ Macro Statistics
  10-bit up counter                                     : 1
  32-bit down counter                                   : 3
  9-bit up counter                                      : 1
-# Registers                                            : 148
+# Registers                                            : 147
  1-bit register                                        : 94
  11-bit register                                       : 1
- 16-bit register                                       : 29
+ 16-bit register                                       : 28
  2-bit register                                        : 13
  3-bit register                                        : 5
  4-bit register                                        : 6
@@ -943,6 +945,18 @@ WARNING:Xst:2677 - Node <out_instruction_2_7> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <out_instruction_2_8> of sequential type is unconnected in block <u6>.
 WARNING:Xst:2677 - Node <out_instruction_2_9> of sequential type is unconnected in block <u6>.
 WARNING:Xst:2677 - Node <out_instruction_2_10> of sequential type is unconnected in block <u6>.
+WARNING:Xst:2677 - Node <ins1_4> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_5> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_6> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_7> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_8> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_9> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_10> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_11> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_12> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_13> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_14> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_15> of sequential type is unconnected in block <u17>.
 WARNING:Xst:2677 - Node <ins2_4> of sequential type is unconnected in block <u17>.
 WARNING:Xst:2677 - Node <ins2_5> of sequential type is unconnected in block <u17>.
 WARNING:Xst:2677 - Node <ins2_6> of sequential type is unconnected in block <u17>.
@@ -955,18 +969,18 @@ WARNING:Xst:2677 - Node <ins2_12> of sequential type is unconnected in block <u1
 WARNING:Xst:2677 - Node <ins2_13> of sequential type is unconnected in block <u17>.
 WARNING:Xst:2677 - Node <ins2_14> of sequential type is unconnected in block <u17>.
 WARNING:Xst:2677 - Node <ins2_15> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_4> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_5> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_6> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_7> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_8> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_9> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_10> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_11> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_12> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_13> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_14> of sequential type is unconnected in block <u17>.
-WARNING:Xst:2677 - Node <ins3_15> of sequential type is unconnected in block <u17>.
+WARNING:Xst:2677 - Node <ins1_4> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_5> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_6> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_7> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_8> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_9> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_10> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_11> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_12> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_13> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_14> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <ins1_15> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <ins2_4> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <ins2_5> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <ins2_6> of sequential type is unconnected in block <ctrl>.
@@ -979,18 +993,6 @@ WARNING:Xst:2677 - Node <ins2_12> of sequential type is unconnected in block <ct
 WARNING:Xst:2677 - Node <ins2_13> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <ins2_14> of sequential type is unconnected in block <ctrl>.
 WARNING:Xst:2677 - Node <ins2_15> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_4> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_5> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_6> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_7> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_8> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_9> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_10> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_11> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_12> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_13> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_14> of sequential type is unconnected in block <ctrl>.
-WARNING:Xst:2677 - Node <ins3_15> of sequential type is unconnected in block <ctrl>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -1011,8 +1013,8 @@ Macro Statistics
  10-bit up counter                                     : 1
  32-bit down counter                                   : 3
  9-bit up counter                                      : 1
-# Registers                                            : 610
- Flip-Flops                                            : 610
+# Registers                                            : 594
+ Flip-Flops                                            : 594
 # Latches                                              : 29
  1-bit latch                                           : 28
  3-bit latch                                           : 1
@@ -1093,14 +1095,7 @@ WARNING:Xst:2677 - Node <u18/status2_0> of sequential type is unconnected in blo
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block CPU, actual ratio is 14.
-FlipFlop u19/vector_x_1 has been replicated 1 time(s)
-FlipFlop u19/vector_x_2 has been replicated 1 time(s)
-FlipFlop u19/vector_x_4 has been replicated 1 time(s)
-FlipFlop u19/vector_x_8 has been replicated 1 time(s)
-FlipFlop u19/vector_y_0 has been replicated 1 time(s)
-FlipFlop u19/vector_y_1 has been replicated 1 time(s)
-FlipFlop u19/vector_y_2 has been replicated 1 time(s)
-FlipFlop u19/vector_y_3 has been replicated 1 time(s)
+FlipFlop u6/out_instruction_12 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -1108,8 +1103,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 720
- Flip-Flops                                            : 720
+# Registers                                            : 697
+ Flip-Flops                                            : 697
 
 =========================================================================
 
@@ -1138,34 +1133,34 @@ Design Statistics
 # IOs                              : 116
 
 Cell Usage :
-# BELS                             : 2986
+# BELS                             : 2960
 #      GND                         : 1
 #      INV                         : 142
 #      LUT1                        : 51
 #      LUT2                        : 140
-#      LUT2_D                      : 10
-#      LUT2_L                      : 3
-#      LUT3                        : 534
-#      LUT3_D                      : 5
-#      LUT3_L                      : 15
-#      LUT4                        : 1126
-#      LUT4_D                      : 43
-#      LUT4_L                      : 29
+#      LUT2_D                      : 4
+#      LUT2_L                      : 2
+#      LUT3                        : 468
+#      LUT3_D                      : 16
+#      LUT3_L                      : 4
+#      LUT4                        : 1155
+#      LUT4_D                      : 21
+#      LUT4_L                      : 43
 #      MUXCY                       : 262
-#      MUXF5                       : 316
-#      MUXF6                       : 84
-#      MUXF7                       : 13
+#      MUXF5                       : 338
+#      MUXF6                       : 87
+#      MUXF7                       : 14
 #      VCC                         : 1
 #      XORCY                       : 211
-# FlipFlops/Latches                : 751
+# FlipFlops/Latches                : 728
 #      FD                          : 2
-#      FDC                         : 192
+#      FDC                         : 188
 #      FDC_1                       : 2
-#      FDCE                        : 423
-#      FDCE_1                      : 35
+#      FDCE                        : 419
+#      FDCE_1                      : 19
 #      FDE                         : 33
 #      FDP                         : 11
-#      FDPE                        : 20
+#      FDPE                        : 21
 #      FDR                         : 1
 #      FDS                         : 1
 #      LD                          : 28
@@ -1184,9 +1179,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     1123  out of   8672    12%  
- Number of Slice Flip Flops:            751  out of  17344     4%  
- Number of 4 input LUTs:               2098  out of  17344    12%  
+ Number of Slices:                     1089  out of   8672    12%  
+ Number of Slice Flip Flops:            728  out of  17344     4%  
+ Number of 4 input LUTs:               2046  out of  17344    11%  
  Number of IOs:                         116
  Number of bonded IOBs:                 115  out of    250    46%  
  Number of GCLKs:                         3  out of     24    12%  
@@ -1214,10 +1209,10 @@ Clock Signal                                 | Clock buffer(FF name)         | L
 ---------------------------------------------+-------------------------------+-------+
 u7/ND_cmp_eq0000(u7/ND_cmp_eq00001:O)        | NONE(*)(u7/ND_2)              | 3     |
 clk0                                         | IBUF+BUFG                     | 312   |
-u18/q1                                       | BUFG                          | 376   |
+u18/q1                                       | BUFG                          | 361   |
 u8/real_imm_9_or0000(u8/real_imm_9_or00001:O)| NONE(*)(u8/real_imm_9_mux0000)| 12    |
 u13/outre_15_or0001(u13/outre_15_or00011:O)  | NONE(*)(u13/outre_15_mux0005) | 16    |
-u19/clk_signal1                              | BUFG                          | 32    |
+u19/clk_signal1                              | BUFG                          | 24    |
 ---------------------------------------------+-------------------------------+-------+
 (*) These 3 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -1229,17 +1224,17 @@ Asynchronous Control Signals Information:
 ------------------------------------------+------------------------+-------+
 Control Signal                            | Buffer(FF name)        | Load  |
 ------------------------------------------+------------------------+-------+
-u1/rst_inv(u9/rst_inv1_INV_0:O)           | NONE(u1/var_PC_0)      | 342   |
-u9/rst_inv1_INV_0_1(u9/rst_inv1_INV_0_1:O)| NONE(u5/RegData_1)     | 341   |
+u1/rst_inv(u9/rst_inv1_INV_0:O)           | NONE(u1/var_PC_0)      | 330   |
+u9/rst_inv1_INV_0_1(u9/rst_inv1_INV_0_1:O)| NONE(u5/RegData_7)     | 330   |
 ------------------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 13.238ns (Maximum Frequency: 75.540MHz)
+   Minimum period: 15.402ns (Maximum Frequency: 64.927MHz)
    Minimum input arrival time before clock: 5.355ns
-   Maximum output required time after clock: 6.460ns
+   Maximum output required time after clock: 6.814ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -1248,10 +1243,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk0'
-  Clock period: 9.278ns (frequency: 107.782MHz)
+  Clock period: 9.598ns (frequency: 104.188MHz)
   Total number of paths / destination ports: 2505 / 526
 -------------------------------------------------------------------------
-Delay:               9.278ns (Levels of Logic = 15)
+Delay:               9.598ns (Levels of Logic = 15)
   Source:            u9/R0_0 (FF)
   Destination:       u9/T (FF)
   Source Clock:      clk0 rising
@@ -1275,69 +1270,70 @@ Delay:               9.278ns (Levels of Logic = 15)
      MUXCY:CI->O           1   0.059   0.000  u9/Mcompar_T_cmp_eq0005_cy<6> (u9/Mcompar_T_cmp_eq0005_cy<6>)
      MUXCY:CI->O           1   0.459   0.499  u9/Mcompar_T_cmp_eq0005_cy<7> (u9/Mcompar_T_cmp_eq0005_cy<7>)
      LUT4:I1->O            1   0.704   0.424  u9/T_mux000081 (u9/T_mux000081)
-     LUT4_L:I3->LO         1   0.704   0.275  u9/T_mux000094 (u9/T_mux000094)
+     LUT4:I3->O            1   0.704   0.595  u9/T_mux000094 (u9/T_mux000094)
      LUT4:I0->O            1   0.704   0.000  u9/T_mux0000105 (u9/T_mux0000)
      FDCE:D                    0.308          u9/T
     ----------------------------------------
-    Total                      9.278ns (6.538ns logic, 2.740ns route)
-                                       (70.5% logic, 29.5% route)
+    Total                      9.598ns (6.538ns logic, 3.060ns route)
+                                       (68.1% logic, 31.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'u18/q1'
-  Clock period: 13.238ns (frequency: 75.540MHz)
-  Total number of paths / destination ports: 40231 / 593
+  Clock period: 15.402ns (frequency: 64.927MHz)
+  Total number of paths / destination ports: 26766 / 563
 -------------------------------------------------------------------------
-Delay:               6.619ns (Levels of Logic = 4)
-  Source:            u6/out_instruction_13 (FF)
-  Destination:       u17/flag3_1 (FF)
+Delay:               7.701ns (Levels of Logic = 5)
+  Source:            u6/out_instruction_14 (FF)
+  Destination:       u17/c8_1 (FF)
   Source Clock:      u18/q1 rising
   Destination Clock: u18/q1 falling
 
-  Data Path: u6/out_instruction_13 to u17/flag3_1
+  Data Path: u6/out_instruction_14 to u17/c8_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDPE:C->Q             8   0.591   0.792  u6/out_instruction_13 (u6/out_instruction_13)
-     LUT4:I2->O            1   0.704   0.455  u17/flag3_cmp_eq00014155_SW0 (N665)
-     LUT4:I2->O            3   0.704   0.566  u17/flag3_cmp_eq00014155 (u17/flag3_cmp_eq0001)
-     LUT4_D:I2->O          1   0.704   0.424  u17/c8_not0001111 (u17/N461)
-     LUT4:I3->O            1   0.704   0.420  u17/flag3_not00011 (u17/flag3_not0001)
-     FDCE_1:CE                 0.555          u17/flag3_1
+     FDPE:C->Q            11   0.591   0.968  u6/out_instruction_14 (u6/out_instruction_14)
+     LUT3:I2->O            1   0.704   0.424  u17/flag3_cmp_eq00004143_SW0 (N517)
+     LUT4_D:I3->LO         1   0.704   0.104  u17/flag3_cmp_eq0000479 (N1164)
+     LUT4:I3->O            5   0.704   0.637  u17/flag3_cmp_eq00004199 (u17/flag3_cmp_eq0000)
+     LUT4_D:I3->O          1   0.704   0.455  u17/c8_not000121 (u17/N82)
+     LUT3:I2->O            2   0.704   0.447  u17/c8_not00011 (u17/c8_not0001)
+     FDCE_1:CE                 0.555          u17/c8_0
     ----------------------------------------
-    Total                      6.619ns (3.962ns logic, 2.657ns route)
-                                       (59.9% logic, 40.1% route)
+    Total                      7.701ns (4.666ns logic, 3.035ns route)
+                                       (60.6% logic, 39.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'u19/clk_signal1'
-  Clock period: 13.149ns (frequency: 76.053MHz)
-  Total number of paths / destination ports: 8298 / 45
+  Clock period: 13.935ns (frequency: 71.761MHz)
+  Total number of paths / destination ports: 6898 / 33
 -------------------------------------------------------------------------
-Delay:               13.149ns (Levels of Logic = 11)
-  Source:            u19/vector_x_3 (FF)
+Delay:               13.935ns (Levels of Logic = 11)
+  Source:            u19/vector_x_2 (FF)
   Destination:       u19/g_signal_0 (FF)
   Source Clock:      u19/clk_signal1 rising
   Destination Clock: u19/clk_signal1 rising
 
-  Data Path: u19/vector_x_3 to u19/g_signal_0
+  Data Path: u19/vector_x_2 to u19/g_signal_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             20   0.591   1.277  u19/vector_x_3 (u19/vector_x_3)
-     LUT4_D:I0->O          4   0.704   0.591  u19/r0_i_mux0000<3>118_1 (u19/r0_i_mux0000<3>118)
-     LUT4:I3->O           40   0.704   1.265  u19/r0_i_mux0000<1>1 (u19/r0_i_mux0000<1>)
-     MUXF5:S->O            1   0.739   0.000  u19/Mmux_r3_i_mux0000_4_f5 (u19/Mmux_r3_i_mux0000_4_f5)
-     MUXF6:I1->O           1   0.521   0.000  u19/Mmux_r3_i_mux0000_3_f6 (u19/Mmux_r3_i_mux0000_3_f6)
-     MUXF7:I1->O           1   0.521   0.455  u19/Mmux_r3_i_mux0000_2_f7 (u19/r3_i_mux0000)
-     LUT4:I2->O            2   0.704   0.451  u19/g_signal_mux0059<0>2614 (u19/g_signal_mux0059<0>2614)
-     LUT4:I3->O            1   0.704   0.000  u19/g_signal_mux0059<0>2996_SW1_F (N776)
-     MUXF5:I0->O           2   0.321   0.622  u19/g_signal_mux0059<0>2996_SW1 (N504)
-     LUT4:I0->O            1   0.704   0.455  u19/g_signal_mux0059<0>2933_SW0 (N577)
-     LUT4_L:I2->LO         1   0.704   0.104  u19/g_signal_mux0059<0>21039 (u19/g_signal_mux0059<0>21039)
-     LUT4:I3->O            1   0.704   0.000  u19/g_signal_mux0059<0>21199 (u19/N101)
+     FDC:C->Q             29   0.591   1.340  u19/vector_x_2 (u19/vector_x_2)
+     LUT4_D:I1->O          8   0.704   0.761  u19/r0_i_mux0000<3>1110 (u19/N2)
+     LUT4:I3->O           47   0.704   1.267  u19/r0_i_mux0000<1>1 (u19/r0_i_mux0000<1>)
+     MUXF5:S->O            1   0.739   0.000  u19/Mmux_SP_i_mux0000_4_f5 (u19/Mmux_SP_i_mux0000_4_f5)
+     MUXF6:I1->O           1   0.521   0.000  u19/Mmux_SP_i_mux0000_3_f6 (u19/Mmux_SP_i_mux0000_3_f6)
+     MUXF7:I1->O           1   0.521   0.424  u19/Mmux_SP_i_mux0000_2_f7 (u19/SP_i_mux0000)
+     LUT4:I3->O            1   0.704   0.455  u19/g_signal_mux0059<0>692 (u19/g_signal_mux0059<0>692)
+     LUT4:I2->O            1   0.704   0.424  u19/g_signal_mux0059<0>781 (u19/g_signal_mux0059<0>781)
+     LUT4:I3->O            1   0.704   0.424  u19/g_signal_mux0059<0>824 (u19/g_signal_mux0059<0>824)
+     LUT4_L:I3->LO         1   0.704   0.104  u19/g_signal_mux0059<0>927 (u19/g_signal_mux0059<0>927)
+     LUT4:I3->O            1   0.704   0.424  u19/g_signal_mux0059<0>1034 (u19/g_signal_mux0059<0>1034)
+     LUT4:I3->O            1   0.704   0.000  u19/g_signal_mux0059<0>1199 (u19/g_signal_mux0059<0>)
      FDC:D                     0.308          u19/g_signal_0
     ----------------------------------------
-    Total                     13.149ns (7.929ns logic, 5.220ns route)
-                                       (60.3% logic, 39.7% route)
+    Total                     13.935ns (8.312ns logic, 5.623ns route)
+                                       (59.6% logic, 40.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk0'
@@ -1364,7 +1360,7 @@ Offset:              5.355ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk0'
   Total number of paths / destination ports: 84 / 60
 -------------------------------------------------------------------------
-Offset:              5.131ns (Levels of Logic = 1)
+Offset:              5.130ns (Levels of Logic = 1)
   Source:            u5/RegIns_13 (FF)
   Destination:       outL<13> (PAD)
   Source Clock:      clk0 rising
@@ -1373,37 +1369,37 @@ Offset:              5.131ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            49   0.591   1.268  u5/RegIns_13 (u5/RegIns_13)
+     FDCE:C->Q            48   0.591   1.267  u5/RegIns_13 (u5/RegIns_13)
      OBUF:I->O                 3.272          outL_13_OBUF (outL<13>)
     ----------------------------------------
-    Total                      5.131ns (3.863ns logic, 1.268ns route)
+    Total                      5.130ns (3.863ns logic, 1.267ns route)
                                        (75.3% logic, 24.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'u19/clk_signal1'
   Total number of paths / destination ports: 11 / 5
 -------------------------------------------------------------------------
-Offset:              5.720ns (Levels of Logic = 2)
-  Source:            u19/hs_signal (FF)
+Offset:              5.693ns (Levels of Logic = 2)
+  Source:            u19/g_signal_0 (FF)
   Destination:       G<2> (PAD)
   Source Clock:      u19/clk_signal1 rising
 
-  Data Path: u19/hs_signal to G<2>
+  Data Path: u19/g_signal_0 to G<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDP:C->Q              2   0.591   0.622  u19/hs_signal (u19/hs_signal)
-     LUT3:I0->O            3   0.704   0.531  u19/G<1>1 (G_0_OBUF)
+     FDC:C->Q              1   0.591   0.595  u19/g_signal_0 (u19/g_signal_0)
+     LUT3:I0->O            3   0.704   0.531  u19/G<0>11 (G_0_OBUF)
      OBUF:I->O                 3.272          G_2_OBUF (G<2>)
     ----------------------------------------
-    Total                      5.720ns (4.567ns logic, 1.153ns route)
-                                       (79.8% logic, 20.2% route)
+    Total                      5.693ns (4.567ns logic, 1.126ns route)
+                                       (80.2% logic, 19.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'u18/q1'
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Offset:              6.460ns (Levels of Logic = 2)
+Offset:              6.814ns (Levels of Logic = 2)
   Source:            u10/c7 (FF)
   Destination:       outD<5> (PAD)
   Source Clock:      u18/q1 rising
@@ -1412,24 +1408,24 @@ Offset:              6.460ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             26   0.591   1.260  u10/c7 (u10/c7)
-     INV:I->O              5   0.704   0.633  outD<3>1_INV_0 (outD_3_OBUF)
+     FDC:C->Q             39   0.591   1.264  u10/c7 (u10/c7)
+     INV:I->O             13   0.704   0.983  outD<3>1_INV_0 (outD_3_OBUF)
      OBUF:I->O                 3.272          outD_5_OBUF (outD<5>)
     ----------------------------------------
-    Total                      6.460ns (4.567ns logic, 1.893ns route)
-                                       (70.7% logic, 29.3% route)
+    Total                      6.814ns (4.567ns logic, 2.247ns route)
+                                       (67.0% logic, 33.0% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 28.36 secs
+Total REAL time to Xst completion: 27.00 secs
+Total CPU time to Xst completion: 26.97 secs
  
 --> 
 
-Total memory usage is 367964 kilobytes
+Total memory usage is 368124 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  173 (   0 filtered)
+Number of warnings :  176 (   0 filtered)
 Number of infos    :   64 (   0 filtered)
 

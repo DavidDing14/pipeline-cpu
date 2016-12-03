@@ -59,6 +59,7 @@ shared variable p1, p2, p3, p4, p5: std_logic;
 shared variable i10, i11, i12, i13, i20, i21, i22, i23, i30, i31, i32, i33: std_logic_vector(3 downto 0);
 shared variable flag1, flag2, flag3: integer;
 shared variable num, num2, ctrl_ins: integer;
+shared variable flag4, flag5: integer;
 begin
 	process(clk, rst, instruction)
 	begin
@@ -83,6 +84,8 @@ begin
 			flag1:=0;
 			flag2:=0;
 			flag3:=0;
+			flag4:=0;
+			flag5:=0;
 			num:=0;
 			num2:=0;
 			ctrl_ins:=0;
@@ -94,14 +97,18 @@ begin
 				c2:='0';
 				c3:='0';
 			--end if;
-			if(ctrl_ins=0)then
-				ins4:=ins3;
-				ins3:=ins2;
-				ins2:=ins1;
-				ins1:=instruction;
-			else
-				ctrl_ins:=ctrl_ins-1;
-			end if;
+				if(ctrl_ins=0)then
+					ins4:=ins3;
+					ins3:=ins2;
+					ins2:=ins1;
+					ins1:=instruction;
+				else
+					ins4:=ins3;
+					ins3:=ins2;
+					ins2:=ins1;
+					ins1:="1111111111111111";
+					ctrl_ins:=ctrl_ins-1;
+				end if;
 			--只有前三条指令处理数据冲突，即ins1(ID),ins2(EX),ins3(MEM)
 			i10:=ins1(15 downto 12);
 			i11:=ins1(11 downto 8);
@@ -115,109 +122,143 @@ begin
 			i31:=ins3(11 downto 8);
 			i32:=ins3(7 downto 4);
 			i33:=ins3(3 downto 0);
-			if(i10="1010" or i10="1011")then	--LW/judge
-				if(i10="1010")then	--LW
-					ins1:="1111111111111111";
-					p1:='1';
-					c2:='1';
-					num:=3;
-				elsif(i10="1011")then	--judge
-					ins1:="1111111111111111";
+--			if(i10="1010" or i10="1011")then	--LW/judge
+--				if(i10="1010")then	--LW
+--					ins1:="1111111111111111";
+--					p1:='1';
+--					c2:='1';
+--					num:=4;
+--				elsif(i10="1011")then	--judge
+--					ins1:="1111111111111111";
+--					p1:='1';
+--					p2:='1';
+--					c3:='1';
+--					num2:=3;
+--					ctrl_ins:=4;
+--				end if;
+--			elsif(num>0 or num2>0)then
+--				if(num>0)then
+--					p1:='1';
+--					c2:='1';
+--					num:=num-1;
+--				elsif(num2>0)then
+--					p1:='1';
+--					p2:='1';
+--					c3:='1';
+--					num2:=num2-1;
+--				end if;
+--			else
+			if(i10="1010")then	--LW
+				ins1:=(others=>'0');
+				p1:='1';
+				c2:='1';
+				num:=3;
+				flag4:=1;
+			elsif(num>0)then
+				p1:='1';
+				c2:='1';
+				num:=num-1;
+				flag4:=1;
+			else
+				p1:='0';
+				c2:='0';
+				flag4:=0;
+			end if;
+			if(flag4=0)then
+				if(i10="1011")then	--judge
+					ins1:=(others=>'0');
 					p1:='1';
 					p2:='1';
+					c3:='1';
 					num2:=3;
 					ctrl_ins:=4;
-				end if;
-			elsif(num>0 or num2>0)then
-				if(num>0)then
-					p1:='1';
-					c2:='1';
-					num:=num-1;
-				elsif(num2>0)then
+					flag5:=1;
+				elsif(num2>0)then	
 					p1:='1';
 					p2:='1';
 					c3:='1';
 					num2:=num2-1;
-				end if;
-			else
-				p1:='0';
-				p2:='0';
-				c2:='0';
-				c3:='0';
-				if(i23/="1111" or i33/="1111")then	
-					if(i23/="1111" and i33/="1111")then
-						if(i33=i11)then
-							c6:="10";
-							flag1:=1;
-						end if;
-						if(i33=i12)then
-							c7:="10";
-							flag2:=1;
-						end if;
-						if(i33=i10)then
-							c8:="10";
-							flag3:=1;
-						end if;
-						if(i23=i11)then
-							c6:="01";
-							flag1:=1;
-						end if;
-						if(i23=i12)then
-							c7:="01";
-							flag2:=1;
-						end if;
-						if(i23=i10)then
-							c8:="01";
-							flag3:=1;
-						end if;
-					elsif(i23/="1111" and i33="1111")then
-						if(i23=i11)then
-							c6:="01";
-							flag1:=1;
-						end if;
-						if(i23=i12)then
-							c7:="01";
-							flag2:=1;
-						end if;
-						if(i23=i10)then
-							c8:="01";
-							flag3:=1;
-						end if;
-					elsif(i23="1111" and i33/="1111")then
-						if(i33=i11)then
-							c6:="10";
-							flag1:=1;
-						end if;
-						if(i33=i12)then
-							c7:="10";
-							flag2:=1;
-						end if;
-						if(i33=i10)then
-							c8:="10";
-							flag3:=1;
-						end if;
-					end if;
+					flag5:=1;
 				else
-					c6:="00";
-					c7:="00";
-					c8:="00";
-				end if;
-				if(flag1=1)then
-					flag1:=0;
-				else
-					c6:="00";
-				end if;
-				if(flag2=1)then
-					flag2:=0;
-				else
-					c7:="00";
-				end if;
-				if(flag3=1)then
-					flag3:=0;
-				else
-					c8:="00";
+					p1:='0';
+					p2:='0';
+					c3:='0';
+					flag5:=0;
 				end if;
 			end if;
+			if(i23/="1111" or i33/="1111")then	
+				if(i23/="1111" and i33/="1111")then
+					if(i33=i11)then
+						c6:="10";
+						flag1:=1;
+					end if;
+					if(i33=i12)then
+						c7:="10";
+						flag2:=1;
+					end if;
+					if(i33=i10)then
+						c8:="10";
+						flag3:=1;
+					end if;
+					if(i23=i11)then
+						c6:="01";
+						flag1:=1;
+					end if;
+					if(i23=i12)then
+						c7:="01";
+						flag2:=1;
+					end if;
+					if(i23=i10)then
+						c8:="01";
+						flag3:=1;
+					end if;
+				elsif(i23/="1111" and i33="1111")then
+					if(i23=i11)then
+						c6:="01";
+						flag1:=1;
+					end if;
+					if(i23=i12)then
+						c7:="01";
+						flag2:=1;
+					end if;
+					if(i23=i10)then
+						c8:="01";
+						flag3:=1;
+					end if;
+				elsif(i23="1111" and i33/="1111")then
+					if(i33=i11)then
+						c6:="10";
+						flag1:=1;
+					end if;
+					if(i33=i12)then
+						c7:="10";
+						flag2:=1;
+					end if;
+					if(i33=i10)then
+						c8:="10";
+						flag3:=1;
+					end if;
+				end if;
+			else
+				c6:="00";
+				c7:="00";
+				c8:="00";
+			end if;
+			end if;
+			if(flag1=1)then
+				flag1:=0;
+			else
+				c6:="00";
+			end if;
+			if(flag2=1)then
+				flag2:=0;
+			else
+				c7:="00";
+			end if;
+			if(flag3=1)then
+				flag3:=0;
+			else
+				c8:="00";
 			end if;
 		end if;
 		Control_PC<=c1;

@@ -1,7 +1,7 @@
 Release 13.3 - par O.76xd (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-Fri Dec 02 19:47:44 2016
+Sat Dec 03 13:04:22 2016
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -45,7 +45,7 @@ Pinout by Pin Number:
 |B5        |            |DIFFSI   |IP_L22N_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B6        |B<2>        |IOB      |IO_L20P_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |B7        |            |         |VCCAUX                   |         |           |              |          |         |           |         |2.5      |          |           |                |
-|B8        |clk         |IBUF     |IP_L13P_0/GCLK8          |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|B8        |            |DIFFMI   |IP_L13P_0/GCLK8          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B9        |clk0        |IBUF     |IP_L13N_0/GCLK9          |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |B10       |            |DIFFM    |IO_L12P_0/GCLK6          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B11       |outL<3>     |IOB      |IO/VREF_0                |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
@@ -312,7 +312,7 @@ Pinout by Pin Number:
 |U6        |            |IOB      |IO                       |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |U7        |            |         |VCCAUX                   |         |           |              |          |         |           |         |2.5      |          |           |                |
 |U8        |            |DIFFMI   |IP_L11P_2                |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|U9        |            |DIFFM    |IO_L13P_2/D4/GCLK14      |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|U9        |clk         |IBUF     |IO_L13P_2/D4/GCLK14      |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |U10       |rst         |IBUF     |IP_L14P_2/RDWR_B/GCLK0   |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |U11       |            |DIFFSI   |IP_L17N_2                |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |U12       |            |         |VCCAUX                   |         |           |              |          |         |           |         |2.5      |          |           |                |

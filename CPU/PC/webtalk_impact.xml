@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="impact" timeStamp="Fri Dec 02 19:49:38 2016">
+<application name="impact" timeStamp="Sat Dec 03 13:05:05 2016">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="b88f0926fc61480dbdfa58e0f0059930"/>
+<property name="ProjectID" value="37ba6f9fd9f34871a1128df65a53c127"/>
 <property name="ProjectIteration" value="1"/>
 </section>
 <section name="iMPACT Project Info" visible="true">
@@ -14,19 +14,17 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="OS Name" value="Microsoft Windows NT (64 Bit)"/>
 <property name="User Lic. Info" value="135256_15690819_173552794_661"/>
 </section>
-<section name="iMPACT One Step SVF File Mode" visible="true">
+<section name="iMPACT Boundary Scan Mode" visible="true">
 <item name="Chain Summary">
 <property name="Number of device" value="1"/>
-<property name="Number of Xilinx device" value="1"/>
-<property name="Number of Non-Xilinx device" value="0"/>
+<property name="Number of Xilinx device" value="0"/>
+<property name="Number of Non-Xilinx device" value="1"/>
 </item>
 <item name="Chain Description">
-<property name="Device1" value="spartan3e"/>
-<property name="Part1" value="xc3s1200e"/>
+<property name="Device1" value="Non-Xilinx"/>
+<property name="Part1" value="UNKNOWN"/>
 </item>
 <item name="Boundary Scan Operations Statistics">
-<property name="BSCAN Operation" value="Program -p 0
-"/>
 </item>
 <item name="Cable Summary">
 <property name="Cable Type" value="Platform Cable USB"/>
